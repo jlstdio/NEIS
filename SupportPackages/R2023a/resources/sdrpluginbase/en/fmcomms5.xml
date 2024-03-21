@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    
+    <message>
+        <!--errors-->
+        <entry key="channelMapping" context="error">"Channel mapping of three channels is invalid. {0}"</entry>
+        <entry key="ConfigureRfBandwidthFail" context="error" note="RF is acronym for Radio Frequency">Failed to set {0} RF bandwidth.</entry>
+        <entry key="ConfigureSamplingFrequencyFail" context="error">Failed to set {0} sampling frequency.</entry>
+        <entry key="PhaseSynchronizationFail" context="error">Failed to perform phase synchronization between channels.</entry>
+        <entry key="MultiChipSynchronizationFail" context="error">Failed to perform multichip synchronization of device.</entry>
+        <entry key="getHostInstDir_MissingDirectory" context="error">The libad9361-iio installation directory was not found. Try reinstalling the support package.</entry>
+
+    </message>
+</rsccat>

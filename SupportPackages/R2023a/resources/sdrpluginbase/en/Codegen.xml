@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message>
+
+<entry key="StopGapErrorIfMsg">
+An error occurred in the SDR driver library.
+</entry>
+
+<entry key="UnsupportedPlatform">
+Code generation of the SDR System objects are not supported on this platform.
+</entry>
+
+<entry key="RequiredCtorArg">
+Must specify {0} in constructor arguments when using codegen.
+</entry>
+
+
+</message>
+</rsccat>

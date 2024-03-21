@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>RDS/RBDS and RadioText Plus (RT+) FM Receiver</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../getting-started-with-communications-system-toolbox-support-package-for-pluto-radio.html",
+          "name": "Get Started with Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "getting-started-with-communications-system-toolbox-support-package-for-pluto-radio",
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "RDS/RBDS and RadioText Plus (RT+) FM Receiver",
+          "description": "Extract program or song information from FM radio stations using the RDS or RBDS standard and, optionally, the RadioText Plus (RT+) standard. You can use a captured signal, or receive signals over-the-air in real time using an RTL-SDR radio, an ADALM-PLUTO radio, or a USRP B200/B210 radio.",
+          "thumbnailURL": "../../../examples/comm/win64/RBDSExample_05.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "comm.RBDSExample",
+          "name": "RBDSExample",
+          "url": "rds-rbds-and-radiotext-plus-rt-fm-receiver.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('comm/RBDSExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "RBDSExample.mlx",
+        "RBDSCostasLoop.m",
+        "RBDSDataLinkDecoder.m",
+        "RBDSErrorCorrection.m",
+        "RBDSExampleApp.m",
+        "RBDSErrorDetection.m",
+        "RBDSFrequencyDivider.m",
+        "RBDSPhyDecoder.m",
+        "RBDSSessionDecoder.m",
+        "RadioTextPlus3A.m",
+        "RadioTextPlusMainGroup.m",
+        "helperRBDSConfig.m",
+        "helperRBDSInit.m",
+        "runRBDSReceiver.m",
+        "ExampleController.m",
+        "LogDataController.m",
+        "SignalSourceController.m",
+        "rbds_capture.bb",
+        "ExampleSourceType.m",
+        "helperFindUSRPRadio.m",
+        "helperFindPlutoSDR.m",
+        "helperFindRTLSDRRadio.m",
+        "helperRBDSController.m",
+        "helperRBDSViewer.m",
+        "RBDSBiphase1.png",
+        "RBDSBiphase2.png",
+        "RBDSDemodulation.png",
+        "RBDSFMMap.png"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to extract program or song information from FM radio stations using the RDS or RBDS standard and, optionally, the RadioText Plus (RT+) standard."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/comm/win64/RBDSExample_05.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script>
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../getting-started-with-communications-system-toolbox-support-package-for-pluto-radio.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Get Started with Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</span></a></li></ul><ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li><a href="../application-specific-examples.html?s_tid=CRUX_lftnav">Application-Specific</a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">RDS/RBDS and RadioText Plus (RT+) FM Receiver</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#RBDSExample-1" class="intrnllnk">Required Hardware and Software</a></li><li><a href="#RBDSExample-2" class="intrnllnk">Background</a></li><li><a href="#RBDSExample-3" class="intrnllnk">Physical Layer (Layer 1)</a></li><li><a href="#RBDSExample-4" class="intrnllnk">Data-link Layer (Layer 2)</a></li><li><a href="#RBDSExample-5" class="intrnllnk">Session and Presentation Layer (Layer 3)</a></li><li><a href="#RBDSExample-6" class="intrnllnk">Registering ODA Implementations: RadioText Plus (RT+)</a></li><li><a href="#RBDSExample-7" class="intrnllnk">Run the Example Code</a></li><li><a href="#RBDSExample-8" class="intrnllnk">Viewing Results</a></li><li><a href="#RBDSExample-9" class="intrnllnk">Further Exploration</a></li><li><a href="#RBDSExample-10" class="intrnllnk">References</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="example-plutoradioRBDSExample">RDS/RBDS and RadioText Plus (RT+) FM Receiver</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('CM')">Communications Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('RTLSDR')">Communications Toolbox Support Package for RTL-SDR Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRP')">Communications Toolbox Support Package for USRP Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('comm/RBDSExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="comm-RBDSExample"><meta itemprop="exampletitle" content="RDS/RBDS and RadioText Plus (RT+) FM Receiver"></div><span id="RBDSExample" class="anchor_target"></span><p class="shortdesc">This example shows how to extract program or song information from FM radio stations using the RDS or RBDS standard and, optionally, the RadioText Plus (RT+) standard. You can use a captured signal, or receive signals over-the-air in real time using an RTL-SDR radio, an ADALM-PLUTO radio, or a USRP B200/B210 radio.</p><div class="procedure"><h3 class="title" id="RBDSExample-1">Required Hardware and Software</h3><p>To run this example using recorded data from a file, you need Communications Toolbox&#8482;.</p><p>To receive signals in real time, you also need one of these SDR devices and the corresponding software add-on:</p><div class="itemizedlist"><ul><li><p>RTL-SDR radio and the Communications Toolbox Support Package for RTL-SDR Radio add-on</p></li><li><p>ADALM-PLUTO radio and the Communications Toolbox Support Package for Analog Devices&#174; ADALM-PLUTO Radio add-on</p></li><li><p>USRP radio and the Communications Toolbox Support Package for USRP Radio add-on</p></li></ul></div><p>For more information, see the <a href="https://www.mathworks.com/discovery/sdr.html" target="_blank"><span class="emphasis"><em>Software Defined Radio (SDR) discovery page</em></span></a>.</p><h3 class="title" id="RBDSExample-2">Background</h3><p>RBDS and RDS are very similar standards specifying how to supplement FM radio signals with additional information. RBDS is used in North America, while RDS was originally used in Europe and evolved to an international standard. RBDS and RDS comprise 3 layers:</p><div class="itemizedlist"><ul><li><p>Physical Layer (Layer 1)</p></li><li><p>Data-link Layer (Layer 2)</p></li><li><p>Session and presentation Layer (Layer 3)</p></li></ul></div><h3 class="title" id="RBDSExample-3">Physical Layer (Layer 1)</h3><p>The <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSPhyDecoder.m')" target="_blank"><code class="literal">RBDSPhyDecoder</code></a> helper receives the captured signal from a file or the live signal from the radio and performs these steps:</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">FM demodulation</strong>: Once the FM signal is demodulated, the RDS/RBDS signal resides at the 57 kHz +/- 2.4 kHz band. Be aware that the RDS/RBDS signal is transmitted with relatively low power, so it is not always visible in the FM spectrum as shown in this figure.</p></li></ul></div><div class="informalfigure"><div id="d124e4100" class="mediaobject"><p><img src="../../../examples/comm/win64/RBDSExample_01.png" height="314" width="734"></p></div></div><p>FM signals contain a pilot tone at 19 kHz, which can be used as a phase and frequency reference for coherent demodulation of the RDS/RBDS signal at 57 kHz and the stereo audio at 38 kHz. Pilot tones at 38 kHz and 57 kHz can be generated by doubling and tripling the frequency of the 19 kHz pilot tone <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_459B8F35" class="intrnllnk">[ 2 ]</a>.</p><p>Processing steps for coherent demodulation of the RDS/RBDS signal are:</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Bandpass filtering</strong>: The PHY receiver conducts bandpass filtering at 19 kHz and 57 kHz, to isolate the pilot tone and the RDS/RBDS signal, respectively.</p></li><li><p><strong class="emphasis bold">Frequency tripling</strong>: Raise the complex representation of the 19 kHz pilot tone to the 3rd power to triple its frequency and obtain a 57 kHz pilot tone.</p></li><li><p><strong class="emphasis bold">AM Demodulation</strong>: RDS and RBDS symbols are generated at an 1187.5 Hz rate and are AM-modulated to a 57 kHz carrier. The 57 kHz RDS/RBDS signal can be coherently demodulated with a 57 kHz carrier that is locked in frequency and phase. Typically, the frequency-tripled 19 kHz pilot tone suffices for coherent demodulation. The next figures show the 19 kHz and 57 kHz pilot tones, the 57 kHz RDS/RBDS signal, and the AM-demodulated baseband RDS/RBDS signal.</p></li></ul></div><div class="informalfigure"><div id="d124e4126" class="mediaobject"><p><img src="../../../examples/comm/win64/RBDSExample_02.png" height="492" width="676"></p></div></div><p>At the same time, there exist several FM stations whose 57 kHz RDS/RBDS signal exhibits a time-varying phase offset from the 19 kHz pilot tone and its frequency-tripled version. The PHY receiver contains a Costas loop to compensate for such time-varying phase offsets.</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Costas loop</strong>: The Costas loop performs 2 orthogonal AM demodulations, one demodulation with a 57 kHz sine and another with a 57 kHz cosine. The sampling rate of the received signal is carefully chosen as 228 kHz, which provides 4 samples per 57 kHz cycle. Therefore, a one sample delay of the 57 kHz pilot tone results to a one quarter wavelength phase offset, and allows us to generate a cosine wave from a sine wave. The sine-demodulated signal corresponds to the coherent demodulation output. The cosine-demodulated signal is used for detection of phase error. The products of the 57 kHz RDS/RBDS signal with the sine/cosine waves are low-pass filtered with the filter specified in Sec. 1.7 of <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A2D7FDD" class="intrnllnk">[ 1 ]</a>. The product of the two filter outputs is an error signal. The larger it is, the more the 19 kHz pilot tone is delayed to behave more like the cosine-based demodulator.</p></li><li><p><strong class="emphasis bold">Clock extraction</strong>: To perform biphase symbol decoding, a clock matching the RDS/RBDS symbol rate of 1187.5 Hz is extracted from the 19 kHz pilot tone. Note, 1187.5 Hz x 16 = 19 kHz. To account for frequency offsets, frequency division is used to extract the clock from the 19 kHz pilot tone. Since the frequency division operation provides multiple correct answers, the baseband RDS/RBDS signal serves as training data that aid in the determination of the desired output.</p></li><li><p><strong class="emphasis bold">Biphase symbol decoder</strong>: RDS and RBDS use bi-phase-level (bi- <span class="inlineequation"><math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:mwmmlx="https://www.mathworks.com/namespace/MathMLextensions" mwmmlx:extension="true" display="block"><mrow><mi>ϕ</mi></mrow></math></span> -L) coding, which is commonly known as Manchester coding. In each clock cycle, the RDS/RBDS symbol takes two opposite amplitude values, either a positive followed by a negative, or a negative followed by a positive. The biphase symbol decoder negates the second amplitude level, so that each symbol holds the same amplitude level throughout the entire clock cycle. The new clock-wide amplitude level corresponds to the symbol's bit representation. These plots correspond to the waveforms #1-6 in Figure 2 of <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A2D7FDD" class="intrnllnk">[ 1 ]</a>.</p></li></ul></div><div class="informalfigure"><div id="d124e4158" class="mediaobject"><p><img src="../../../examples/comm/win64/RBDSExample_03.png" height="573" width="711"></p></div></div><p>To obtain each symbol's bit value, the waveform is integrated over each clock cycle, and the outcome is compared to zero (slicer).</p><div class="informalfigure"><div id="d124e4164" class="mediaobject"><p><img src="../../../examples/comm/win64/RBDSExample_04.png" height="574" width="714"></p></div></div><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Differential decoding</strong>: Finally, the bits are differentially decoded to revert the differential encoding at the transmitter.</p></li></ul></div><h3 class="title" id="RBDSExample-4">Data-link Layer (Layer 2)</h3><p>Layer 2 is implemented using the <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSDataLinkDecoder.m')" target="_blank"><code class="literal">RBDSDataLinkDecoder</code></a> helper. This layer is responsible for synchronization and error correction.</p><p>The bit output of the PHY layer is logically organized in 104-bit groups comprising four 26-bit blocks. Each block contains a 16-bit information word and 10 parity bits (see Figure 8 in <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A2D7FDD" class="intrnllnk">[ 1 ]</a>). A distinct 10-bit offset word is modulo-2 added to the parity bits of each block.</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Synchronization</strong>: Initially, block and group boundaries are sought exhaustively using a sliding window of 104 bits. For each 104-bit window, the 4 offset words are sought at the last 10 bits of each 26-bit block. An offset word is identified if no bit errors are detected by the <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSErrorDetection.m')" target="_blank"><code class="literal">RBDSErrorDetection</code></a> helper. Once the offset words are identified, group-level synchronization is attained and the exhaustive sliding-window processing stops. Subsequently, the next 104 bits will be treated as the next group.</p></li></ul></div><p>If future groups contain bit errors and the offset words cannot be identified at their expected position, synchronization may be lost. In this case, Layer 2 first examines the possibility of 1-bit synchronization slips, exploiting the fact that the first information word (16 bits) is always the same for all bit groups. If the first information word is found dislocated by 1 bit (either leftward or rightward), synchronization is retained and the group boundaries are adjusted accordingly. If bit errors persist for 25 group receptions and at the same time synchronization cannot be reestablished using such leftward/rightward 1-bit shifts, then synchronization is lost and Layer 2 re-enters the exhaustive, sliding-window-based search for synchronization.</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Error correction</strong>: The RDS/RBDS error correction code is a (26, 16) cyclic code shortened from (341, 331). The <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSErrorCorrection.m')" target="_blank"><code class="literal">RBDSErrorCorrection</code></a> helper uses the shift-register scheme described in Annex B of <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A2D7FDD" class="intrnllnk">[ 1 ]</a>.</p></li></ul></div><h3 class="title" id="RBDSExample-5">Session and Presentation Layer (Layer 3)</h3><p>Layer 2 removes the parity/offset bits, therefore Layer 3 receives groups of 64-bits, comprising four 16-bit blocks. There exist up to 32 different group types, each labeled with a number from 0 to 15 and the letter 'A' or 'B', for example, 0B, 2A, 3A. The format of each group can be fixed or it can be abstract if this group is allocated for an Open Data Application (ODA, see list in <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A9D8520" class="intrnllnk">[ 3 ]</a>).</p><p>Layer 3 is implemented using the <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSSessionDecoder.m')" target="_blank"><code class="literal">RBDSSessionDecoder</code></a> helper. This object supports decoding of the 0A, 0B, 2A, 2B, 3A, 4A, 10A fixed-format group types.</p><div class="itemizedlist"><ul><li><p>0A and 0B convey an 8-character string, which typically changes in a scrolling-text fashion.</p></li><li><p>2A and 2B convey longer 64- or 32-character strings.</p></li><li><p>3A registers ODAs and specifies their dedicated abstract-format group type.</p></li><li><p>4A conveys the system time.</p></li><li><p>10A further categorizes the program type, such as 'Football' for 'Sports' program type.</p></li></ul></div><p>For ODAs, the RDS/RBDS receiver supports decoding of RadioText Plus (RT+). This ODA can break down the long 32- or 64-character string from group types 2A or 2B into two specific content types (for example, artist and song).</p><h3 class="title" id="RBDSExample-6">Registering ODA Implementations: RadioText Plus (RT+)</h3><p>The RDS/RBDS receiver is extensible. ODA implementations can be specified using the <code class="literal">registerODA</code>' function of the <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSSessionDecoder.m')" target="_blank"><code class="literal">RBDSSessionDecoder</code></a> helper. This function accepts the hexadecimal ID of the ODA (ODA IDs can be found in <a href="rds-rbds-and-radiotext-plus-rt-fm-receiver.html#mw_rtc_RBDSExample_M_1A9D8520" class="intrnllnk">[ 3 ]</a>), and handles to the functions that process the main ODA group type, as well as the ODA-specific part of the 3A group type. For example, the session decoder <code class="literal">RBDSSessionDecoder</code> object can be extended for RadioText Plus (RT+) using this code:</p><div class="code_responsive"><pre id="d124e4245" class="programlisting">rtID = <span style="color:#A020F0">'4BD7'</span>; <span style="color:#228B22">% hexadecimal ID of RadioText Plus (RT+)</span>
+registerODA(sessionDecoder, rtID, @RadioTextPlusMainGroup,
+@RadioTextPlus3A);
+</pre></div><h3 class="title" id="RBDSExample-7">Run the Example Code</h3><p>Use the <a href="matlab:openExample('comm/RBDSExample','supportingFile','helperRBDSInit.m')" target="_blank"><code class="literal">helperRBDSInit</code></a> helper function to set RDS/RBDS system parameters. The commented code lines shows alternate settings to run the example from captured data or various SDRs. Use the <a href="matlab:openExample('comm/RBDSExample','supportingFile','helperRBDSConfig.m')" target="_blank"><code class="literal">helperRBDSConfig</code></a> helper function to configure the RDS/RBDS system.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>userInput = helperRBDSInit();
+userInput.Duration = 10.8;
+<span style="color:#228B22">% userInput.SignalSource = 'File';</span>
+<span style="color:#228B22">% userInput.SignalFilename = 'rbds_capture.bb';</span>
+<span style="color:#228B22">% userInput.SignalSource = 'RTL-SDR';</span>
+<span style="color:#228B22">% userInput.CenterFrequency = 98.5e6;</span>
+<span style="color:#228B22">% userInput.SignalSource = 'ADALM-PLUTO';</span>
+<span style="color:#228B22">% userInput.CenterFrequency = 98.5e6;</span>
+<span style="color:#228B22">% userInput.SignalSource = 'USRP';</span>
+<span style="color:#228B22">% userInput.CenterFrequency = 98.5e6;</span>
+
+[rbdsParam, sigSrc] = helperRBDSConfig(userInput);</pre></div></div></div><p>Create and configure an FM broadcast receiver System object&#8482; with the RDS/RBDS parameters.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fmBroadcastDemod = comm.FMBroadcastDemodulator(<span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'SampleRate'</span>,228e3, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'FrequencyDeviation'</span>,rbdsParam.FrequencyDeviation, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'FilterTimeConstant'</span>,rbdsParam.FilterTimeConstant, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'AudioSampleRate'</span>,rbdsParam.AudioSampleRate, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'Stereo'</span>,true);
+
+<span style="color:#228B22">% Create audio player</span>
+player = audioDeviceWriter(<span style="color:#A020F0">'SampleRate'</span>,rbdsParam.AudioSampleRate);
+
+<span style="color:#228B22">% Layer 2 object</span>
+datalinkDecoder = RBDSDataLinkDecoder();
+
+<span style="color:#228B22">% Layer 3 object</span>
+sessionDecoder  = RBDSSessionDecoder();
+<span style="color:#228B22">% register processing implementation for RadioText Plus (RT+) ODA:</span>
+rtID = <span style="color:#A020F0">'4BD7'</span>;
+registerODA( <span style="color:#0000FF">...</span>
+    sessionDecoder,rtID,@RadioTextPlusMainGroup,@RadioTextPlus3A);
+
+<span style="color:#228B22">% Create the data viewer object</span>
+viewer = helperRBDSViewer();
+
+<span style="color:#228B22">% Start the viewer and initialize radio time</span>
+start(viewer)
+radioTime = 0;
+<span style="color:#228B22">% Main loop</span>
+<span style="color:#0000FF">while</span> radioTime &lt; rbdsParam.Duration
+    <span style="color:#228B22">% Receive baseband samples (Signal Source)</span>
+    rcv = sigSrc();
+
+    <span style="color:#228B22">% Demodulate FM broadcast signals and play the decoded audio</span>
+    audioSig = fmBroadcastDemod(rcv);
+    player(audioSig);
+
+    <span style="color:#228B22">% Process physical layer (Layer 1)</span>
+    bitsPHY = RBDSPhyDecoder(rcv, rbdsParam);
+
+    <span style="color:#228B22">% Process data-link layer (Layer 2)</span>
+    [enabled,iw1,iw2,iw3,iw4] = datalinkDecoder(bitsPHY);
+
+    <span style="color:#228B22">% Process session and presentation layer (Layer 3)</span>
+    outStruct = sessionDecoder(enabled,iw1,iw2,iw3,iw4);
+
+    <span style="color:#228B22">% View results packet contents (Data Viewer)</span>
+    update(viewer, outStruct);
+
+    <span style="color:#228B22">% Update radio time</span>
+    radioTime = radioTime + rbdsParam.FrameDuration;
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Stop the viewer and release the signal source and audio writer</span>
+stop(viewer);</pre></div></div></div><div class="informalfigure"><div id="d124e4263" class="mediaobject"><p><img src="../../../examples/comm/win64/RBDSExample_05.png" alt="Figure RDS / RBDS and RadioText Plus (RT+) Viewer contains an object of type uicontainer." width="552"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>release(sigSrc);
+release(player);</pre></div></div></div><h3 class="title" id="RBDSExample-8">Viewing Results</h3><p>This window shows the processed RDS/RBDS data.</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Basic RDS/RBDS information</strong>:</p></li><li><p>    The first field contains the program type, which is conveyed by the second information word of all group types. If 10A group types are received, the first field also provides further characterization, such as, Sports \ <strong class="emphasis bold">Football</strong>.</p></li><li><p>    The second field contains the 8-character text conveyed by 0A/0B groups. The displayed text wraps if the transmitted character string exceeds eight characters.</p></li><li><p>    The third field contains the longer 32/64-character text conveyed by 2A/2B group types.</p></li><li><p><strong class="emphasis bold">RadioText Plus (RT+)</strong>: This section is populated if any 3A groups indicate that the RadioText Plus (RT+) ODA uses an abstract-format group type, such as 11A. Upon reception of this abstract group type, the 32/64-character text conveyed by groups 2A/2B will be split to two substrings. The two labels will be updated to characterize the substrings (such as Artist and Song).</p></li><li><p><strong class="emphasis bold">Group type receptions</strong>: The tables provide a histogram displaying which group types have been received from a station and with what frequency. As a result, users may want to look at the logged data for further information that is not depicted in the graphical viewer (specifically, system time in 4A, alternate frequencies in 0A etc.).</p></li><li><p><strong class="emphasis bold">Open data applications (ODA)</strong>: If any 3A group types are received, this ODA list displays the name and the dedicated group type for each ODA received.</p></li></ul></div><h3 class="title" id="RBDSExample-9">Further Exploration</h3><p>You can further explore RDS/RBDS signals using the <a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSExampleApp.m')" target="_blank"><code class="literal">RBDSExampleApp</code></a> app. The <code class="literal">RBDSExampleApp</code> app allows you to:</p><div class="itemizedlist"><ul><li><p>Select the source of the signal (capture file or RTL-SDR, ADALM-PLUTO or USRP).</p></li><li><p>Specify the station frequency (for RTL-SDR, ADALM-PLUTO or USRP).</p></li><li><p>Run Layers 1 and 2 of the RDS/RBDS receiver though generated C code. These are the most time-consuming parts of the RDS/RBDS chain and generating code can help you achieve real-time processing.</p></li><li><p>Disable audio playback.</p></li><li><p>Open scopes, such as a Spectrum Analyzer and Time Scopes, that analyze the received signal and illustrate the decoding process. Enabling scopes requires extra computational effort and may preclude real-time decoding. In this case, RDS/RBDS decoding may only be successful for captured signals loaded from a file.</p></li><li><p>Log RBDS fields from other group types by selecting <strong class="emphasis bold">Log data to file</strong>.</p></li></ul></div><p>You can explore the RBDS implementation, initialization, and configuration in these functions and System objects:</p><div class="itemizedlist"><ul><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSPhyDecoder.m')" target="_blank"><code class="literal">RBDSPhyDecoder</code></a></p></li><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSCostasLoop.m')" target="_blank"><code class="literal">RBDSCostasLoop</code></a></p></li><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSDataLinkDecoder.m')" target="_blank"><code class="literal">RBDSDataLinkDecoder</code></a></p></li><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','RBDSSessionDecoder.m')" target="_blank"><code class="literal">RBDSSessionDecoder</code></a></p></li><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','helperRBDSInit.m')" target="_blank"><code class="literal">helperRBDSInit</code></a></p></li><li><p><a href="matlab:openExample('comm/RBDSExample','supportingFile','helperRBDSConfig.m')" target="_blank"><code class="literal">helperRBDSConfig</code></a></p></li></ul></div><h3 class="title" id="RBDSExample-10">References</h3><span id="mw_rtc_RBDSExample_M_1A2D7FDD" class="anchor_target"></span><p>1.    National Radio Systems Committee, United States RBDS standard, April 1998</p><span id="mw_rtc_RBDSExample_M_459B8F35" class="anchor_target"></span><p>2.    Der, Lawrence. "Frequency Modulation (FM) Tutorial". Silicon Laboratories Inc.</p><span id="mw_rtc_RBDSExample_M_1A9D8520" class="anchor_target"></span><p>3.    National Radio Systems Committee, List of ODA Applications in RDS</p><span id="mw_rtc_RBDSExample_M_9712158E" class="anchor_target"></span><p>4.    RadioText Plus (RT+) Specification</p><p>5.    Joseph P. Hoffbeck, "Teaching Communication Systems with Simulink&#174; and the USRP", ASEE Annual Conference, San Antonio, TX, June 2012</p></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message>
+
+<!-- 
+NOTE: the SDRPackageNotInstalled message must stay in an HDLCoder catalog since
+it must exist when our message catalog is not around. 
+-->
+
+<!-- ===============================================
+            Generic success message
+     =============================================== -->
+<entry key="SuccessfullyRun">
+Successfully run.
+</entry>
+
+<entry key="CantRefreshSlCustomizations">
+You must exit MATLAB and start a new session to use HDL Workflow Advisor with 
+the SDR download package.
+</entry>
+
+<!-- ===============================================
+            Task 2.5
+     =============================================== -->
+<entry key="TitleCheckSDRCompatibility">
+Check SDR Compatibility
+</entry>
+<entry key="AnalysisCheckSDRCompatibility">
+Check block compatibility with the SDR workflow.  When integrating custom logic
+into the FPGA there are restrictions on the signal interface.
+</entry>
+<entry key="ResultCheckSDRCompatibility">
+Check block compatibility with SDR workflow
+</entry>
+
+<!-- ===============================================
+            Task 2.5 failure messages
+     =============================================== -->
+<entry key="InvalidInputInterface">
+Invalid input port interface found. Valid configurations are: 
+{0} real scalar, one real vector with {1} elements, or {2} complex.
+</entry>
+<entry key="InvalidOutputInterface">
+Invalid output port interface found. Valid configurations are: 
+{0} real scalar, one real vector with {1} elements, or {2} complex.
+</entry>
+<entry key="InvalidInputInterface234">
+Invalid input port interface found. The number of input ports for the 
+targeted subsystem do not comply with the RF channel mapping provided in 
+Task 1.2 of the HDL Workflow Advisor. Valid configurations, for channel 
+mapping [{0}], are: {1} real scalar, one real vector with {2} elements, 
+or {3} complex.
+</entry>
+<entry key="InvalidOutputInterface234">
+Invalid output port interface found. The number of output ports for the
+targeted subsystem do not comply with the RF channel mapping provided  in 
+Task 1.2 of the HDL Workflow Advisor. Valid configurations, for channel 
+mapping [{0}], are: {1} real scalar, one real vector with {2} elements, 
+or {3} complex.
+</entry>
+<entry key="InvalidInputDataType">
+Found unsupported bit width {0} of data type "{1}" at input port {2}.  All 
+input and output ports must have data type of 16-bit width.
+</entry>
+<entry key="InvalidOutputDataType">
+Found unsupported bit width {0} of data type "{1}" at output port {2}.  All 
+input and output ports must have data type of 16-bit width.
+</entry>
+<entry key="InvalidInputSign">
+Found unsigned data type at input port {0}. All ports must have signed data 
+type.
+</entry>
+<entry key="InvalidOutputSign">
+Found unsigned data type at output port {0}. All ports must have signed data 
+type.
+</entry>
+<entry key="InvalidInputSampleTime">
+All input ports must have same sample time.
+</entry>
+<entry key="InvalidOutputSampleTime">
+All output ports must have same sample time.
+</entry>
+
+<!-- ===============================================
+       Task 3.2 HDL coder settings failure messages
+     =============================================== -->
+<entry key="IllegalCheckboxVal">
+For the SDR workflow, select "{0}" in task "{1}".
+</entry>
+<entry key="IllegalOptionVal">
+For the SDR workflow, select "{0}" for option "{1}" in task "{2}".
+</entry>
+
+<!-- ===============================================
+            Procedure 4 
+     =============================================== -->
+<entry key="TitleProcSDRImplementation">
+SDR FPGA Implementation
+</entry>
+<entry key="AnalysisProcSDRImplementation">
+Create an SDR FPGA Implementation.  The SDR FPGA integrates customer logic as
+generated in previous steps as well as SDR-specific code to provide data and 
+control paths between an RF board and the host.
+</entry>
+
+<!-- check 4.1 -->
+<entry key="TitleSetSDROptions">
+Set SDR Options
+</entry>
+<entry key="AnalysisSetSDROptions">
+Choose customization options for the completion of the SDR FPGA. One can add
+additional files to the FPGA project for HDL Coder black-box implementations 
+as well as custom back-end tooling scripts and constraints files.
+</entry>
+<entry key="ResultSetSDROptions">
+Set SDR Options
+</entry>
+<entry key="SDRBuildModeText">
+Selecting this option will use a pre-synthesized version of the base design 
+and reduce build time. Note, this will not produce a full project. 
+For more information view the FPGA Targeting Workflow documentation.
+</entry>
+<entry key="SDRBuildMode">
+Build options
+</entry>
+<entry key="SDRBuildCheckpointName">
+Speed up bitstream generation
+</entry>
+
+<!-- check 4.2 -->
+<entry key="TitleBuildSDR">
+Build SDR
+</entry>
+<entry key="AnalysisBuildSDR">
+Generate FPGA programming file for an SDR target. A Vivado project is generated, 
+syntax checking of the HDL code is performed and the bitstream generation process 
+will continue in an external command-line window. It is necessary to examine the 
+results of the build in the external window to determine the success of FPGA 
+programming file creation.
+</entry>
+<entry key="BadResultBuildSDR">
+FPGA build process is incomplete.
+</entry>
+
+<entry key="OverclockedSynthRateTooLow">
+Specified user logic synthesis frequency of {0} MHz is less than the calculated
+overclocked frequency of {3} MHz ({1} x {2} MHz).<![CDATA[<br/>]]>
+<![CDATA[<br/>]]>
+Ensure that a user logic synthesis frequency of {3} MHz or greater is specified 
+in <![CDATA[<b>]]>Step 1.2.<![CDATA[</b>]]> to properly constrain the DUT for synthesis. 
+</entry>
+
+<entry key="OverclockedClockTooLow">
+Calculated overclocked frequency of {0} MHz ({1} x {2} MHz) is less than the minimum
+required overclocked frequency of {3} MHz.<![CDATA[<br/>]]>
+<![CDATA[<br/>]]>To allow the generation of the targeted bitstream to complete successfully, do one of the following:<![CDATA[<br/>]]>
+<![CDATA[<br/>]]>
+- Increase the resource sharing factor.<![CDATA[<br/>]]>
+- Increase the baseband sample rate.<![CDATA[<br/>]]>
+- Convert the design to remove resource sharing.<![CDATA[<br/>]]>
+</entry>
+
+<!-- ===============================================
+            DDG for Step 1.2
+     =============================================== -->
+<entry key="DDGAnalysisGroup">Analysis</entry>
+<entry key="DDGSDRComponentGroup">SDR FPGA Component Options</entry>
+<entry key="DDGRFBoardRevLabel">RF board revision:</entry>
+<entry key="DDGChannelMappingLabel">RF channel mapping for user logic:</entry>
+<entry key="DDGVendorHDLSourceDirLabel">Folder with vendor HDL source code:</entry>
+<entry key="DDGOnBrowseForHDLDialogTitle">Choose a folder with vendor HDL source code</entry>
+<entry key="DDGUserLogicDatapathLabel">User logic data path:</entry>
+<entry key="DDGUserLogicSynthFreqLabel">User logic synthesis frequency (MHz):</entry>
+<entry key="DDGIPAddressLabel">IP address for radio:</entry>
+<entry key="DDGMACAddressLabel">MAC address for radio:</entry>
+<entry key="DDGUserLogicBasebandRateLabel">Baseband sample rate (MHz):</entry>
+<entry key="DDGBlackBoxFilesLabel">Additional build source and project files:</entry>
+
+<!-- ===============================================
+            BACKEND WORKFLOW
+     =============================================== -->
+<entry key="NoCodeInfo">
+Could not find the codeinfo.mat file generated during HDL Coder DUT code 
+generation.  Ensure that DUT code generation has completed successfully.
+</entry>
+<entry key="BadInfoVal">
+HW info register value {1} for property {0} was not valid.
+</entry>
+<entry key="BadFileType">
+File {0} with extension {1} does not match a default file type for the 
+SDRBuildInfo backend.
+</entry>
+<entry key="BadRegName">
+There is no SDR hardware info register with number {0}.
+</entry>
+<entry key="BadRegValMode">
+Cannot get SDR hardware info register value using mode {0}.
+</entry>
+<entry key="DUTIPCoreGenFailure">
+The DUT IP Core generation process did not complete successfully.
+</entry>
+<entry key="VendorHDLCompFailure">
+Compiling vendor source HDL did not complete successfully.
+</entry>
+<entry key="BuildFailure">
+The FPGA build process did not complete successfully.
+</entry>
+<entry key="DUTNamingConflict">
+Generated HDL file(s) for DUT have naming conflict: "{0}". Modify the names of corresponding blocks in DUT.
+</entry>
+<entry key="UnassignedPorts">
+The ports of the generated HDL are incompatible with SDR targeting. 
+Read the documentation for details on supported interfaces and limitations.  
+</entry>
+<entry key="WindowsPathLengthFailure">
+The host OS only allows 260 characters in a normal path. The current project 
+is stored in a path with more than 80 characters. This may result in issues 
+with IP, Block Designs, or files not being found, please consider moving the 
+project to a location with a shorter path. Alternately consider using the OS 
+subst command to map part of the path to a drive letter.
+</entry>
+<entry key="UnsupportedVivadoVersion">
+SDR Targeting is only supported for Xilinx Vivado {0}, use the setupTools 
+function to add the appropriate synthesis tool path to your system 
+path for the current MATLAB session. For more information, see the help 
+documentation for your radio device.\n\nWhen you use an external command to 
+add the synthesis tool path to your system path, use the ''Refresh'' 
+button in task 1.1 to import the new tool list.
+</entry>
+<!-- ===============================================
+            Generic success message
+     =============================================== -->
+<entry key="WarningSetupIPCoreGenDeprecated">
+The IP core generation setup function {0} is no longer required and will be 
+removed in a future release. SDR reference designs are now set up 
+automatically.
+</entry>
+     
+</message>
+</rsccat>
+

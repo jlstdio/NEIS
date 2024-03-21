@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>LTE Receiver Using Software Defined Radio</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "LTE Receiver Using Software Defined Radio",
+          "description": "Recover the master information block (MIB) and basic system information from an over-the-air LTE downlink (DL) waveform. This example also shows how to receive an LTE waveform using a software-defined radio (SDR) with single or multiple antennas.",
+          "thumbnailURL": "../../../examples/lte/win64/LTEReceiverUsingSDRExample_01.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "lte.LTEReceiverUsingSDRExample",
+          "name": "LTEReceiverUsingSDRExample",
+          "url": "lte-receiver-using-sdr-pluto.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('lte/LTEReceiverUsingSDRExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "LTEReceiverUsingSDRExample.mlx",
+        "capturedLTERCDLWaveform.mat",
+        "hGetUSRPRateInformation.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to recover the master information block (MIB) and basic system information from an over-the-air LTE downlink (DL) waveform."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/lte/win64/LTEReceiverUsingSDRExample_01.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/livecontrolpopover.js"></script>
+
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">LTE Receiver Using Software Defined Radio</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#LTEReceiverUsingSDRExample-1" class="intrnllnk">Introduction</a></li><li><a href="#LTEReceiverUsingSDRExample-2" class="intrnllnk">Example Setup</a></li><li><a href="#LTEReceiverUsingSDRExample-3" class="intrnllnk">Receiver Design: System Architecture</a></li><li><a href="#LTEReceiverUsingSDRExample-4" class="intrnllnk">Further Exploration</a></li><li><a href="#LTEReceiverUsingSDRExample-5" class="intrnllnk">SDR Troubleshooting</a></li><li><a href="#LTEReceiverUsingSDRExample-6" class="intrnllnk">Local Functions</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="mw_ac677a27-4aa3-4ee1-8d02-d47be851e90c">LTE Receiver Using Software Defined Radio</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('LS')">LTE Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRPEMBED')">Communications Toolbox Support Package for USRP Embedded Series Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRP')">Communications Toolbox Support Package for USRP Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('XILINXZYNQ')">Communications Toolbox Support Package for Xilinx Zynq-Based Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('lte/LTEReceiverUsingSDRExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="lte-LTEReceiverUsingSDRExample"><meta itemprop="exampletitle" content="LTE Receiver Using Software Defined Radio"></div><span id="LTEReceiverUsingSDRExample" class="anchor_target"></span><p class="shortdesc">This example shows how to recover the master information block (MIB) and basic system information from an over-the-air LTE downlink (DL) waveform. This example also shows how to receive an LTE waveform using a software-defined radio (SDR) with single or multiple antennas.</p><div class="procedure"><h3 class="title" id="LTEReceiverUsingSDRExample-1">Introduction</h3><div class="informalfigure"><div id="d124e6198" class="mediaobject"><p><img src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_01.png" alt="sdr_receive_diagram_published.png" height="170" width="494"></p></div></div><p>In LTE, the broadcast channel (BCH) carries the MIB. The MIB provides basic cell-wide settings, including the system bandwidth and frame number. This example decodes the MIB from a burst of captured frames, and then decodes the control format indicator (CFI) for each subframe, which informs the user equipment (UE) of the control region size. The example then continues to decode the physical downlink control channel (PDCCH). A UE requires these steps to be associated with a cell. For an example showing the procedure for cell search and system information acquisition, see <a href="../../../lte/ug/cell-search-mib-and-sib1-recovery.html" data-docid="lte_ug#example-SIB1RecoveryExample" class="a">Cell Search, MIB and SIB1 Recovery</a><span role="cross_prod"> (LTE Toolbox)</span>.</p><p>An LTE transmission contains the BCH in the middle six resource blocks (RBs). Therefore, the captured waveform bandwidth needs to be only 1.92 MHz to decode the MIB, regardless of the cell bandwidth. Even though the MIB exists only in subframe 0 of a frame, this example demodulates each entire frame for visualization and analysis.</p><p>This example supports these SDRs for LTE waveform capture.</p><div class="itemizedlist"><ul><li><p>ADALM-Pluto from the Communications Toolbox Support Package for Analog Devices&#174; ADALM-Pluto Radio</p></li><li><p>USRP&#8482; E310/E312 from the Communications Toolbox Support Package for USRP&#8482; Embedded Series Radio</p></li><li><p>AD936x/FMCOMMS5 from the Communications Toolbox Support Package for Xilinx&#174; Zynq&#174;-Based Radio</p></li><li><p>USRP&#8482; N300/N310/N320/N321/B200/B210/X300/X310 from the Communications Toolbox Support Package for USRP&#8482; Radio</p></li></ul></div><p>Alternatively, if an SDR is not available for waveform capture, the example supports importing a file with a precaptured waveform. </p><h3 class="title" id="LTEReceiverUsingSDRExample-2">Example Setup</h3><p>Before running the example, ensure that you have installed the appropriate support package for the SDR that you intend to use and that you have set up the hardware.</p><p>The <code class="literal">ReceiveOnSDR</code> field of the <code class="literal">rxsim</code> structure determines whether the example receives a waveform off the air or imports a waveform from a MAT file. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxsim.ReceiveOnSDR = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_05.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="false" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">false</span></span>;</pre></div></div></div><p>If you use an SDR for reception of LTE waveforms and the SDR detects no LTE waveforms, you can generate and transmit an LTE waveform by using the <a href="../../../lte/ug/lte-transmitter-using-software-defined-radio-sdr.html" data-docid="lte_ug#example-LTETransmitterUsingSDRExample" class="a">LTE Transmitter Using Software Defined Radio</a><span role="cross_prod"> (LTE Toolbox)</span>. </p><p>The parameters defined in the <code class="literal">rxsim</code> structure control the receiver. The sample rate of the receiver is 1.92 MHz, which is the standard sample rate for capturing an LTE bandwidth of 6 RBs. 6 RBs equates to a signal bandwidth of 1.4 MHz. To capture more frames, increase the <code class="literal">rxsim.NumCaptures</code> parameter value. By default, the example captures five LTE frames with each execution.</p><p>Specify the file name of a precaptured waveofrm in the <code class="literal">fileName</code> variable. Confirm that the MAT file contains a <code class="literal">numCaptures</code> variable, a <code class="literal">radioSampleRate</code> variable, and a <code class="literal">capturedData</code> variable. Each column of <code class="literal">captureData</code> represents one capture antenna and the third dimension of <code class="literal">captureData</code> represents the number of captures. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fileName = <span style="color:#A020F0">"capturedLTERCDLWaveform.mat"</span>;</pre></div></div></div><p>If you select the <code class="literal">ReceiveOnSDR</code> field of the <code class="literal">rxsim</code> structure, configure the variables required for SDR reception. If you use an SDR device capable of multi-channel reception, try increasing <code class="literal">rxsim.NumAntennas</code> to a value supported by your SDR.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> rxsim.ReceiveOnSDR
+    rxsim.SDRDeviceName = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_06.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="&#34;AD936x&#34;" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">"AD936x"</span></span>;        <span style="color:#228B22">% SDR that is used for waveform reception</span>
+    rxsim.RadioIdentifier = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_07.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="'192.168.3.2'" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">'192.168.3.2'</span></span>;      <span style="color:#228B22">% Value used to identify radio, for example, IP address, USB port, or serial number</span>
+    rxsim.RadioSampleRate = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_08.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="1.92e6" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">1.92e6</span></span>;      <span style="color:#228B22">% Configured for 1.92e6 Hz capture bandwidth</span>
+    rxsim.RadioCenterFrequency = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_09.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="2450000000" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">2450000000</span></span>; <span style="color:#228B22">% Center frequency in Hz</span>
+    rxsim.FramesPerCapture = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_10.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="8" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">8</span></span>;     <span style="color:#228B22">% Number of contiguous LTE frames to capture</span>
+    rxsim.NumCaptures = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_11.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="1" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">1</span></span>;          <span style="color:#228B22">% Number of captures for the SDR to perform</span>
+    rxsim.NumAntennas = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_12.png"><span data-examplename="openExample('lte/LTEReceiverUsingSDRExample')" tabindex="0" data-controlvalue="1" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">1</span></span>;          <span style="color:#228B22">% Number of receive antennas</span>
+
+    <span style="color:#228B22">% Derived parameter</span>
+    captureTime = (rxsim.FramesPerCapture + 1)* 10e-3; <span style="color:#228B22">% Increase capture frame by 1 to account for a full frame not being captured</span>
+
+<span style="color:#0000FF">else</span>
+    rx = load(fileName);
+
+    rxsim.NumCaptures = rx.numCaptures;
+    rxsim.RadioSampleRate = rx.radioSampleRate;
+
+<span style="color:#0000FF">end</span></pre></div></div></div><h3 class="title" id="LTEReceiverUsingSDRExample-3">Receiver Design: System Architecture</h3><p>Follow these steps to understand how the LTE receiver functions.</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>If using an SDR, capture a suitable number of frames of an LTE signal.</p></li><li><p>Determine and correct the frequency offset of the received signal.</p></li><li><p>Determine the cell identity by performing a blind cell search.</p></li><li><p>Synchronize the captured signal to the start of an LTE frame.</p></li><li><p>Extract an LTE resource grid by OFDM demodulating the received signal.</p></li><li><p>Perform a channel estimation for the received signal.</p></li><li><p>Determine the cell-wide settings by decoding the MIB for each captured frame.</p></li><li><p>Decode the CFI and PDCCH for each subframe within the captured signal.</p></li></ol></div><p>This example plots the power spectral density of the captured waveform and shows visualizations of the received LTE resource grid, estimated channel, and equalized PBCH symbols for each frame.</p><p><strong class="emphasis bold">Configure SDR Hardware</strong></p><p>This example communicates with the radio hardware using the object pertaining to the selected radio. For example, the AD936x radio uses the <a href="../../../supportpkg/xilinxzynqbasedradio/ug/comm.sdrrxad936x-system-object.html" data-docid="xilinxzynqbasedradio_ug#mw_e3e5b41b-fd4c-4165-82a0-6f2281fe2e61" class="a"><code class="olink">comm.SDRRxAD936x</code></a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span> object.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> rxsim.ReceiveOnSDR
+    <span style="color:#0000FF">if</span> matches(rxsim.SDRDeviceName, [<span style="color:#A020F0">"AD936x"</span>, <span style="color:#A020F0">"FMCOMMS5"</span>, <span style="color:#A020F0">"Pluto"</span>, <span style="color:#A020F0">"E3xx"</span>])
+        sdrReceiver = sdrrx( <span style="color:#0000FF">...</span>
+            rxsim.SDRDeviceName, <span style="color:#0000FF">...</span>
+            CenterFrequency=rxsim.RadioCenterFrequency, <span style="color:#0000FF">...</span>
+            BasebandSampleRate=rxsim.RadioSampleRate);
+        <span style="color:#0000FF">if</span> matches(rxsim.SDRDeviceName, [<span style="color:#A020F0">"AD936x"</span>, <span style="color:#A020F0">"FMCOMMS5"</span>, <span style="color:#A020F0">"E3xx"</span>])
+            sdrReceiver.ShowAdvancedProperties = true;
+            sdrReceiver.BypassUserLogic = true;
+            sdrReceiver.IPAddress = rxsim.RadioIdentifier;
+        <span style="color:#0000FF">else</span>
+            sdrReceiver.RadioID = rxsim.RadioIdentifier;
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">else</span>
+        <span style="color:#228B22">% For the USRP SDRs</span>
+        sdrReceiver = comm.SDRuReceiver(<span style="color:#0000FF">...</span>
+            Platform=rxsim.SDRDeviceName,<span style="color:#0000FF">...</span>
+            CenterFrequency=rxsim.RadioCenterFrequency);
+        [sdrReceiver.MasterClockRate, sdrReceiver.DecimationFactor] = <span style="color:#0000FF">...</span>
+            hGetUSRPRateInformation(rxsim.SDRDeviceName,rxsim.RadioSampleRate);
+        <span style="color:#0000FF">if</span> matches(rxsim.SDRDeviceName, [<span style="color:#A020F0">"B200"</span>, <span style="color:#A020F0">"B210"</span>])
+            <span style="color:#228B22">% Change the serial number as needed for USRP B200/B210</span>
+            sdrReceiver.SerialNum = rxsim.RadioIdentifier;
+        <span style="color:#0000FF">else</span>
+            sdrReceiver.IPAddress = rxsim.RadioIdentifier;
+        <span style="color:#0000FF">end</span>
+        sdrReceiver.EnableBurstMode = true;
+        sdrReceiver.SamplesPerFrame = 10e-3*rxsim.RadioSampleRate;
+        sdrReceiver.NumFramesInBurst = rxsim.FramesPerCapture + 1; <span style="color:#228B22">% Increase capture frame by 1 to account for a full frame not being captured</span>
+    <span style="color:#0000FF">end</span>
+    sdrReceiver.OutputDataType = <span style="color:#A020F0">"double"</span>;
+    numSamplesToCapture = ceil(captureTime*rxsim.RadioSampleRate);
+    sdrReceiver.ChannelMapping = 1:rxsim.NumAntennas;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Set up the spectrum analyzer to display the received waveform. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>spectrumScope = spectrumAnalyzer( <span style="color:#0000FF">...</span>
+    SampleRate=rxsim.RadioSampleRate, <span style="color:#0000FF">...</span>
+    SpectrumType=<span style="color:#A020F0">"power-density"</span>, <span style="color:#0000FF">...</span>
+    Title=<span style="color:#A020F0">"Baseband LTE Signal Spectrum"</span>, <span style="color:#0000FF">...</span>
+    YLabel=<span style="color:#A020F0">"Power Spectral Density"</span>);</pre></div></div></div><p><strong class="emphasis bold">LTE Setup</strong> </p><p>The <code class="literal">enb</code> structure contains the parameters for decoding the MIB. The example assumes frequency division duplexing (FDD), a normal cyclic prefix length, and four cell-specific reference ports (<code class="literal">CellRefP</code>) for the MIB decoding as these values are unknown. The MIB provides the actual value of <code class="literal">CellRefP</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>enb.DuplexMode = <span style="color:#A020F0">"FDD"</span>;
+enb.CyclicPrefix = <span style="color:#A020F0">"Normal"</span>;
+enb.CellRefP = 4;</pre></div></div></div><p>The sample rate of the signal controls the captured bandwidth and the number of RBs in the waveform. The example uses a lookup table to determine the number of RBs.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Bandwidth: {1.4 MHz, 3 MHz, 5 MHz, 10 MHz, 20 MHz}</span>
+SampleRateLUT = [1.92 3.84 7.68 15.36 30.72]*1e6;
+NDLRBLUT = [6 15 25 50 100];
+enb.NDLRB = NDLRBLUT(SampleRateLUT==rxsim.RadioSampleRate);
+<span style="color:#0000FF">if</span> rxsim.ReceiveOnSDR
+    fprintf(<span style="color:#A020F0">"\nSDR hardware sampling rate configured to capture %d LTE RBs.\n"</span>,enb.NDLRB);
+<span style="color:#0000FF">end</span></pre></div></div></div><p>The <code class="literal">cec</code> structure controls the channel estimation parameters. To minimize the effect of noise on pilot estimates, use a conservative 9-by-9 pilot averaging window.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cec.FreqWindow = 9;               <span style="color:#228B22">% Frequency averaging window in resource elements (REs)</span>
+cec.TimeWindow = 9;               <span style="color:#228B22">% Time averaging window in REs</span>
+cec.InterpType = <span style="color:#A020F0">"Cubic"</span>;         <span style="color:#228B22">% Cubic interpolation</span>
+cec.PilotAverage = <span style="color:#A020F0">"UserDefined"</span>; <span style="color:#228B22">% Pilot averaging method</span>
+cec.InterpWindow = <span style="color:#A020F0">"Centred"</span>;     <span style="color:#228B22">% Interpolation windowing method</span>
+cec.InterpWinSize = 3;            <span style="color:#228B22">% Interpolate up to 3 subframes simultaneously</span></pre></div></div></div><p><strong class="emphasis bold">Signal Capture and Processing</strong></p><p>To capture and decode bursts of LTE frames, the example uses a <code class="literal">while</code> loop. For each captured frame, the example decodes the MIB, and if decoding is successful, it decodes the CFI and the PDCCH for each subframe. For each successfully decoded subframe, the example displays the channel estimate and equalized PDCCH symbols.</p><p>Set up the constellation diagram viewer for equalized PDCCH symbols and the figure handle for the channel estimate plots.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>constellation = comm.ConstellationDiagram(<span style="color:#A020F0">"Title"</span>,<span style="color:#A020F0">"Equalized PDCCH Symbols"</span>) ;
+channelEstimatePlot = figure(<span style="color:#A020F0">"Visible"</span>,<span style="color:#A020F0">"Off"</span>);</pre></div></div></div><p>Store the default decoding parameters.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>enbDefault = enb;
+samplesPerFrame = 10e-3*rxsim.RadioSampleRate; <span style="color:#228B22">% LTE frame period is 10 ms</span></pre></div></div></div><p>Perform LTE receiver processing.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">for</span> i = 1:rxsim.NumCaptures
+    <span style="color:#228B22">% Set default LTE parameters</span>
+    enb = enbDefault;
+
+    <span style="color:#228B22">% rxWaveform holds |rxsim.FramesPerCapture| number of consecutive</span>
+    <span style="color:#228B22">% frames worth of contiguous baseband LTE samples.</span>
+    <span style="color:#0000FF">if</span> rxsim.ReceiveOnSDR
+        <span style="color:#228B22">% SDR Capture</span>
+        fprintf(<span style="color:#A020F0">"\nStarting a new RF capture.\n"</span>)
+        rxWaveform = captureWaveform(sdrReceiver,numSamplesToCapture);
+    <span style="color:#0000FF">else</span>
+        rxWaveform = rx.capturedData(:,:,i);
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Show power spectral density of captured burst</span>
+    spectrumScope(rxWaveform);
+    release(spectrumScope);
+
+    <span style="color:#228B22">% Perform frequency offset correction</span>
+    frequencyOffset = lteFrequencyOffset(enb,rxWaveform);
+    rxWaveform = lteFrequencyCorrect(enb,rxWaveform,frequencyOffset);
+    fprintf(<span style="color:#A020F0">"Corrected a frequency offset of %g Hz.\n"</span>,frequencyOffset)
+
+    <span style="color:#228B22">% Perform the blind cell search to obtain cell identity and timing</span>
+    <span style="color:#228B22">% offset Use "PostFFT" secondary synchronization signal (SSS) detection</span>
+    <span style="color:#228B22">% method to improve speed</span>
+    cellSearch.SSSDetection = <span style="color:#A020F0">"PostFFT"</span>;
+    cellSearch.MaxCellCount = 1;
+    [NCellID,frameOffset] = lteCellSearch(enb,rxWaveform,cellSearch);
+    fprintf(<span style="color:#A020F0">"Detected a cell identity of %i.\n"</span>, NCellID);
+    enb.NCellID = NCellID; <span style="color:#228B22">% From lteCellSearch</span>
+
+    <span style="color:#228B22">% Sync the captured samples to the start of an LTE frame, and trim off</span>
+    <span style="color:#228B22">% any samples that are part of an incomplete frame.</span>
+    rxWaveform = rxWaveform(frameOffset+1:end,:);
+    tailSamples = mod(length(rxWaveform),samplesPerFrame);
+    rxWaveform = rxWaveform(1:end-tailSamples,:);
+    enb.NSubframe = 0;
+
+    <span style="color:#228B22">% OFDM demodulation</span>
+    rxGrid = lteOFDMDemodulate(enb,rxWaveform);
+
+    <span style="color:#228B22">% Perform channel estimation</span>
+    [hest,nest] = lteDLChannelEstimate(enb,cec,rxGrid);
+
+    sfDims = lteResourceGridSize(enb);
+    Lsf = sfDims(2); <span style="color:#228B22">% OFDM symbols per subframe</span>
+    LFrame = 10*Lsf; <span style="color:#228B22">% OFDM symbols per frame</span>
+    numFullFrames = length(rxWaveform)/samplesPerFrame;
+
+    <span style="color:#228B22">% For each frame, decode the MIB and CFI</span>
+    <span style="color:#0000FF">for</span> frame = 0:(numFullFrames-1)
+        fprintf(<span style="color:#A020F0">"\nPerforming MIB decode for frame %i of %i in burst...\n"</span>, <span style="color:#0000FF">...</span>
+            frame+1,numFullFrames)
+
+        <span style="color:#228B22">% Extract subframe 0 from each frame of the received resource grid</span>
+        <span style="color:#228B22">% and channel estimate.</span>
+        enb.NSubframe = 0;
+        rxsf = rxGrid(:,frame*LFrame+(1:Lsf),:);
+        hestsf = hest(:,frame*LFrame+(1:Lsf),:,:);
+
+        <span style="color:#228B22">% PBCH demodulation. Extract REs corresponding to the PBCH from the</span>
+        <span style="color:#228B22">% received grid and channel estimate grid for demodulation. Assume</span>
+        <span style="color:#228B22">% 4 cell-specific reference signals for PBCH decode as initially</span>
+        <span style="color:#228B22">% the value is unknown.</span>
+        enb.CellRefP = 4;
+        pbchIndices = ltePBCHIndices(enb);
+        [pbchRx,pbchHest] = lteExtractResources(pbchIndices,rxsf,hestsf);
+        [~,~,nfmod4,mib,CellRefP] = ltePBCHDecode(enb,pbchRx,pbchHest,nest);
+
+        <span style="color:#228B22">% If PBCH decoding is not successful, go to next iteration of for-</span>
+        <span style="color:#228B22">% loop</span>
+        <span style="color:#0000FF">if</span> ~CellRefP
+            fprintf(<span style="color:#A020F0">"  No PBCH detected for frame = %d.\n"</span>,frame);
+            <span style="color:#0000FF">continue</span>;
+        <span style="color:#0000FF">end</span>
+
+        <span style="color:#228B22">% With successful PBCH decoding, decode the MIB and obtain system</span>
+        <span style="color:#228B22">% information including system bandwidth</span>
+        enb = lteMIB(mib,enb);
+        enb.CellRefP = CellRefP; <span style="color:#228B22">% From ltePBCHDecode</span>
+        <span style="color:#228B22">% Incorporate the nfmod4 value output from the function</span>
+        <span style="color:#228B22">% ltePBCHDecode, as the NFrame value established from the MIB is</span>
+        <span style="color:#228B22">% the system frame number modulo 4.</span>
+        enb.NFrame = enb.NFrame+nfmod4;
+        fprintf(<span style="color:#A020F0">"  Successful MIB Decode.\n"</span>)
+        fprintf(<span style="color:#A020F0">"  Frame number: %d.\n"</span>,enb.NFrame);
+
+        <span style="color:#228B22">% The eNodeB transmission bandwidth can be greater than the</span>
+        <span style="color:#228B22">% captured bandwidth, so limit the bandwidth for processing</span>
+        enb.NDLRB = min(enbDefault.NDLRB,enb.NDLRB);
+
+        <span style="color:#228B22">% Process subframes within frame</span>
+        <span style="color:#0000FF">for</span> sf = 0:9
+            <span style="color:#228B22">% Extract subframe</span>
+            enb.NSubframe = sf;
+            rxsf = rxGrid(:,frame*LFrame+sf*Lsf+(1:Lsf));
+
+            <span style="color:#228B22">% Perform channel estimation with the correct number of</span>
+            <span style="color:#228B22">% CellRefP</span>
+            [hestsf,nestsf] = lteDLChannelEstimate(enb,cec,rxsf);
+
+            <span style="color:#228B22">% Physical CFI channel (PCFICH) demodulation Extract REs</span>
+            <span style="color:#228B22">% corresponding to the PCFICH from the received grid and</span>
+            <span style="color:#228B22">% channel estimate for demodulation.</span>
+            pcfichIndices = ltePCFICHIndices(enb);
+            [pcfichRx,pcfichHest] = lteExtractResources(pcfichIndices,rxsf,hestsf);
+            [cfiBits,recsym] = ltePCFICHDecode(enb,pcfichRx,pcfichHest,nestsf);
+
+            <span style="color:#228B22">% CFI decoding</span>
+            enb.CFI = lteCFIDecode(cfiBits);
+            fprintf(<span style="color:#A020F0">"    Subframe %d, decoded CFI value: %d.\n"</span>,sf,enb.CFI);
+
+            <span style="color:#228B22">% PDCCH demodulation. Extract REs corresponding to the PDCCH</span>
+            <span style="color:#228B22">% from the received grid and channel estimate for demodulation.</span>
+            pdcchIndices = ltePDCCHIndices(enb);
+            [pdcchRx,pdcchHest] = lteExtractResources(pdcchIndices,rxsf,hestsf);
+            [pdcchBits,pdcchEq] = ltePDCCHDecode(enb,pdcchRx,pdcchHest,nestsf);
+
+            release(constellation);
+            constellation(pdcchEq);
+        <span style="color:#0000FF">end</span>
+
+        <span style="color:#228B22">% Plot channel estimate between CellRefP 0 and the receive antenna</span>
+        focalFrameIdx = frame*LFrame+(1:LFrame);
+        figure(channelEstimatePlot);
+        surf(abs(hest(:,focalFrameIdx,1,1)));
+        xlabel(<span style="color:#A020F0">"OFDM Symbol Index"</span>);
+        ylabel(<span style="color:#A020F0">"Subcarrier Index"</span>);
+        zlabel(<span style="color:#A020F0">"Magnitude"</span>);
+        title(<span style="color:#A020F0">"Estimate of Channel Magnitude Frequency Response"</span>);
+    <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="informalfigure"><div id="d124e6382" class="mediaobject"><p><img src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_02.png" width="800"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Corrected a frequency offset of -2.48294 Hz.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Detected a cell identity of 17.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing MIB decode for frame 1 of 4 in burst...
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 705.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    Subframe 0, decoded CFI value: 3.
+    Subframe 1, decoded CFI value: 3.
+    Subframe 2, decoded CFI value: 3.
+    Subframe 3, decoded CFI value: 3.
+    Subframe 4, decoded CFI value: 3.
+    Subframe 5, decoded CFI value: 3.
+    Subframe 6, decoded CFI value: 3.
+    Subframe 7, decoded CFI value: 3.
+    Subframe 8, decoded CFI value: 3.
+    Subframe 9, decoded CFI value: 3.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing MIB decode for frame 2 of 4 in burst...
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 706.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    Subframe 0, decoded CFI value: 3.
+    Subframe 1, decoded CFI value: 3.
+    Subframe 2, decoded CFI value: 3.
+    Subframe 3, decoded CFI value: 3.
+    Subframe 4, decoded CFI value: 3.
+    Subframe 5, decoded CFI value: 3.
+    Subframe 6, decoded CFI value: 3.
+    Subframe 7, decoded CFI value: 3.
+    Subframe 8, decoded CFI value: 3.
+    Subframe 9, decoded CFI value: 3.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing MIB decode for frame 3 of 4 in burst...
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 707.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    Subframe 0, decoded CFI value: 3.
+    Subframe 1, decoded CFI value: 3.
+    Subframe 2, decoded CFI value: 3.
+    Subframe 3, decoded CFI value: 3.
+    Subframe 4, decoded CFI value: 3.
+    Subframe 5, decoded CFI value: 3.
+    Subframe 6, decoded CFI value: 3.
+    Subframe 7, decoded CFI value: 3.
+    Subframe 8, decoded CFI value: 3.
+    Subframe 9, decoded CFI value: 3.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing MIB decode for frame 4 of 4 in burst...
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 700.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    Subframe 0, decoded CFI value: 3.
+    Subframe 1, decoded CFI value: 3.
+    Subframe 2, decoded CFI value: 3.
+    Subframe 3, decoded CFI value: 3.
+    Subframe 4, decoded CFI value: 3.
+    Subframe 5, decoded CFI value: 3.
+    Subframe 6, decoded CFI value: 3.
+    Subframe 7, decoded CFI value: 3.
+    Subframe 8, decoded CFI value: 3.
+    Subframe 9, decoded CFI value: 3.
+</pre></div></div></div><div class="informalfigure"><div id="d124e6423" class="mediaobject"><p><img src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_03.png" alt="Figure contains an axes object. The axes object with title Estimate of Channel Magnitude Frequency Response, xlabel OFDM Symbol Index, ylabel Subcarrier Index contains an object of type surface." width="560"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> rxsim.ReceiveOnSDR
+    release(sdrReceiver);
+<span style="color:#0000FF">end</span>
+release(constellation);  <span style="color:#228B22">% Release constellation diagram object</span></pre></div></div></div><div class="informalfigure"><div id="d124e6431" class="mediaobject"><p><img src="../../../examples/lte/win64/LTEReceiverUsingSDRExample_04.png" width="600"></p></div></div><h3 class="title" id="LTEReceiverUsingSDRExample-4">Further Exploration</h3><div class="itemizedlist"><ul><li><p>Transmit a standard compliant LTE waveform by using the <a href="../../../lte/ug/lte-transmitter-using-software-defined-radio-sdr.html" data-docid="lte_ug#example-LTETransmitterUsingSDRExample" class="a">LTE Transmitter Using Software Defined Radio</a><span role="cross_prod"> (LTE Toolbox)</span>. You can then decode the waveform using this example. In the companion example, try changing the cell identity and initial frame number, and observe the detected cell identity and frame number in this example. If using a supported multi-channel SDR, try increasing the number of antennas in the companion example to visualize the benefit of using multi-channel transmission/reception.</p></li><li><p>This example only decodes basic system information. For an example of how to robustly decode more physical channels, see the <a href="../../../lte/ug/cell-search-mib-and-sib1-recovery.html" data-docid="lte_ug#example-SIB1RecoveryExample" class="a">Cell Search, MIB and SIB1 Recovery</a><span role="cross_prod"> (LTE Toolbox)</span> example.</p></li></ul></div><h3 class="title" id="LTEReceiverUsingSDRExample-5">SDR Troubleshooting</h3><div class="itemizedlist"><ul><li><p>ADALM-PLUTO Radio <a href="common-problems-and-fixes.html" data-docid="plutoradio_ug#bvn89q2-68" class="a">Common Problems and Fixes</a></p></li><li><p>USRP Embedded Series Radio <a href="../../../supportpkg/usrpembeddedseriesradio/ug/common-problems-and-fixes.html" data-docid="usrpembeddedseriesradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Embedded Series Radio)</span></p></li><li><p>Xilinx Zynq-Based Radio <a href="../../../supportpkg/xilinxzynqbasedradio/ug/common-problems-and-fixes.html" data-docid="xilinxzynqbasedradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span></p></li><li><p>USRP Radio <a href="../../../supportpkg/usrpradio/ug/common-problems-and-fixes.html" data-docid="usrpradio_ug#bud4heb-1" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Radio)</span></p></li></ul></div><h3 class="title" id="LTEReceiverUsingSDRExample-6">Local Functions</h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">function</span> waveform = captureWaveform(sdrReceiver,numSamplesToCapture)
+<span style="color:#228B22">% CAPTUREWAVEFORM returns a column vector of complex values given an</span>
+<span style="color:#228B22">% SDRRECEIVER object and a scalar NUMSAMPLESTOCAPTURE value.</span>
+<span style="color:#228B22">% For a comm.SDRuReceiver object, use the burst capture technique to</span>
+<span style="color:#228B22">% acquire the waveform</span>
+    <span style="color:#0000FF">if</span> isa(sdrReceiver,<span style="color:#A020F0">'comm.SDRuReceiver'</span>)
+        waveform = complex(zeros(numSamplesToCapture,length(sdrReceiver.ChannelMapping)));
+        samplesPerFrame = sdrReceiver.SamplesPerFrame;
+        <span style="color:#0000FF">for</span> i = 1:sdrReceiver.NumFramesInBurst
+            waveform(samplesPerFrame*(i-1)+(1:samplesPerFrame),:) = sdrReceiver();
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">else</span>
+        waveform = capture(sdrReceiver,numSamplesToCapture);
+    <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">end</span></pre></div></div></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

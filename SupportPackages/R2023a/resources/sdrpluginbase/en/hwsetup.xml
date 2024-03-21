@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2014-2022 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+  <message>
+    <!-- ==============================================================
+         Hardware Setup for Xilinx FPGA and Zynq-Based Radio HSPs
+         ============================================================== -->
+    <!--- WindowsOnly -->
+    <entry key="WindowsOnly_Label">Configure radio hardware</entry>
+    <entry key="WindowsOnly_Description">Support for hardware setup through an interactive UI is available on Windows operating systems only.</entry>
+    <entry key="WindowsOnly_DocLinkText">To manually set up radio hardware follow the steps in the documentation:</entry>
+    <entry key="WindowsOnly_DocLink">Manual Support Package Hardware Setup</entry>
+
+    <!--- SelectHWConfig -->
+    <entry key="SelectHWConfig_Label">Select Hardware</entry>
+    <entry key="SelectHWConfig_Description">The system setup varies depending on your radio hardware.\n\nSelect your radio hardware:</entry>
+
+    <!--- SelectNIC -->
+    <entry key="SelectNIC_Label">Configure network connection on the host computer</entry>
+    <entry key="SelectNIC_Description">
+      The host computer communicates with the radio hardware using a Gigabit Ethernet connection. To configure a connection
+      \nautomatically, select it from the list, provide a valid IP address and click 'Next'.
+      \n\nIf your network connection is not listed or the automatic configuration is not successful, click 'Help' and follow the manual
+      \nsteps in the 'Configure Network Connection on the Host' section. Once configured, return to this screen, check the
+      \n'Skip this step...' checkbox and click 'Next' to continue.
+    </entry>
+    <entry key="SelectNIC_SelectNIC">Select a NIC to connect with the radio hardware</entry>
+    <entry key="SelectNIC_NICConfigText">\nClick 'Next' to configure the selected NIC with the above settings</entry>
+    <entry key="SelectNIC_SkipNICSelectText">Skip this step if your network card is already configured for communicating with radio hardware.</entry>
+    <entry key="SelectNIC_ButtonText">Refresh</entry>
+    <entry key="SelectNIC_WarningText">You have selected the "{0}" NIC to configure with IP address {1}. This network card appears to be in use. If you proceed, you may lose the connection to network or devices currently connected via this NIC.\n\nClick 'Yes' to proceed with the NIC configuration.\nClick 'No' if you wish to select a different NIC.</entry>
+    <entry key="SelectNIC_WarningLabel">Warning</entry>
+    <entry key="SelectNIC_AutoIPText">Automatically assign an IP address to the host NIC using Automatic Private IP Addressing (APIPA).\nThe Zynq radio will be assigned the IP address 169.254.1.10.</entry>
+    <entry key="SelectNIC_StaticIPText">Assign a static IP address to the host NIC. The Zynq radio will be assigned the IP address entered below.</entry>
+    <entry key="SelectNIC_ConfigChoice">Configure host and radio hardware IP addresses</entry>
+
+    <!--- SelectLoadFPGA -->
+    <entry key="SelectLoadFPGA_Label">Load FPGA programming file</entry>
+    <entry key="SelectLoadFPGA_Description">Your system requires an FPGA programming file (supplied with the support package)\nto be loaded on to the FPGA board before you can communicate with it.</entry>
+    <entry key="SelectLoadFPGA_RadioButtonDescription">Select a method for loading the FPGA programming file:</entry>
+    <entry key="SelectLoadFPGA_LoadBitStComboMeth1">Compact Flash (CF) card (requires CF reader)</entry>
+    <entry key="SelectLoadFPGA_LoadBitStComboMeth2">USB-JTAG Cable (requires Xilinx ISE installation)</entry>
+    <entry key="SelectLoadFPGA_LoadBitStComboMeth3">Do not load (FPGA Programming file is already loaded on the  board)</entry>
+
+    <!--- LoadCFCard -->
+    <entry key="LoadCFCard_Label">Insert compact flash card into FPGA board</entry>
+    <entry key="LoadCFCard_Description">Remove the CF card from the host computer and insert it into the card reader on the FPGA board.\nMake sure the board is switched off.</entry>
+    <entry key="LoadCFCard_TextImage1" translate="false" note="translate=false set due no translatable content">''</entry>
+
+    <!--- SetSwitches -->
+    <entry key="SetSwitches_Label">Set DIP switches on the FPGA board</entry>
+    <entry key="SetSwitches_Description">You must configure the DIP switches on the FPGA board so that the FPGA programming file\nis loaded from the compact flash upon power-up. Make sure the board is switched off.</entry>
+    <entry key="SetSwitches_TextImage2">Set the switch positions on the FPGA board as circled in the following image.\n</entry>
+
+    <!--- LocateXilinxTools -->
+    <entry key="LocateXilinxTools_Label">Locate the Xilinx ISE Design Suite</entry>
+    <entry key="LocateXilinxTools_Description">The installer requires the Xilinx ISE Design suite to load the FPGA programming file via a USB-JTAG cable.\n\nIf you do not have this software installed, click the link to download the ISE Design Suite from the vendor web site.</entry>
+    <entry key="LocateXilinxTools_UpdatedDescription">Specify the folder location of the Xilinx ISE Design suite:</entry>
+    <entry key="LocateXilinxTools_BrowseInfo">Choose the install location for the Xilinx ISE Design Suite:</entry>
+    <entry key="LocateXilinxTools_Browse">Browse...</entry>
+    <entry key="LocateXilinxTools_Progress">Validating Xilinx ISE Design Suite installation...</entry>
+    <entry key="LocateXilinxTools_ValidationDone">Validation Successful</entry>
+    <entry key="LocateXilinxTools_Folder">Specify the folder where the Xilinx ISE Design Suite is installed.</entry>
+    <entry key="LocateXilinxTools_BrowseToolTip">Navigate to the folder where Xilinx ISE Design Suite is installed.</entry>
+    <entry key="LocateXilinxTools_InvalidFolder">The specified folder does not contain a valid Xilinx ISE Design Suite installation.\nSpecify the folder location of the Xilinx ISE Design Suite.\nFor example, C:\\Xilinx\\14.6\\ISE_DS\\ISE\\bin\\nt64</entry>
+
+    <!--- Verify Results -->
+    <entry key="VerifyResults_Label">Verify setup</entry>
+    <entry key="VerifyResults_Description">Test results for the radio hardware are as follows:</entry>
+    <entry key="SdrzVerifyResults_Description">Test results for the Zynq-based radio hardware are as follows:</entry>
+    <entry key="VerifyResults_pinghostResultPass">Ping network card on the host computer - SUCCESS</entry>
+    <entry key="VerifyResults_pinghostResultFail">Ping network card on the host computer - FAILED</entry>
+    <entry key="VerifyResults_pingradioResultPass">Ping FPGA radio - SUCCESS</entry>
+    <entry key="SdrzVerifyResults_pingradioResultPass">Ping Zynq radio - SUCCESS</entry>
+    <entry key="SdrzVerifyResultsPico_pingradioResultPass">Ping ADI RF SOM radio - SUCCESS</entry>
+    <entry key="VerifyResults_pingradioResultFail">Ping FPGA radio - FAILED</entry>
+    <entry key="SdrzVerifyResults_pingradioResultFail">Ping Zynq radio - FAILED</entry>
+    <entry key="SdrzVerifyResultsPico_pingradioResultFail">Ping ADI RF SOM radio - FAILED</entry>
+    <entry key="VerifyResults_getInfoResultPass">Read hardware information from the FPGA radio - SUCCESS</entry>
+    <entry key="SdrzVerifyResults_getInfoResultPass">Read hardware information from the Zynq radio - SUCCESS</entry>
+    <entry key="SdrzVerifyResultsPico_getInfoResultPass">Read hardware information from the ADI RF SOM radio - SUCCESS</entry>
+    <entry key="VerifyResults_getInfoResultFail">Read hardware information from the FPGA radio - FAILED</entry>
+    <entry key="SdrzVerifyResults_getInfoResultFail">Read hardware information from the Zynq radio - FAILED</entry>
+    <entry key="SdrzVerifyResultsPico_getInfoResultFail">Read hardware information from the ADI RF SOM radio - FAILED</entry>
+    <entry key="VerifyResults_toneTestResultPass">Capture data from RF card - SUCCESS</entry>
+    <entry key="VerifyResults_toneTestResultFail">Capture data from RF card - FAILED</entry>
+    <entry key="VerifyResults_dataTestsResultPass">Test data path between host and RF card - SUCCESS</entry>
+    <entry key="VerifyResults_dataTestsResultFail">Test data path between host and RF card - FAILED</entry>
+    <entry key="VerifyResults_SuccessMessage">\nSetup of radio hardware is complete.\n</entry>
+    <entry key="VerifyResults_ButtonText">Verify Again</entry>
+    <entry key="VerifyResults_CheckBoxText">Run MATLAB example to receive a tone signal from radio hardware</entry>   <!--- Unused remove -->
+    <entry key="VerifyResults_DebugInstructions">Check the following:</entry>
+    <entry key="VerifyResults_Item1">1. Ethernet cable is connected between the selected network connection on the host computer and the FPGA board.</entry>
+    <entry key="VerifyResults_Item2">2. You have a compatible NIC card on the host and that it is operating properly.</entry>
+    <entry key="VerifyResults_Item3">3. CF Card is plugged in properly and the DIP switches are configured correctly (if you chose CF card method for loading the FPGA programming file).</entry>
+    <entry key="VerifyResults_Item4">4. Turn off antivirus software as it can potentially block the host port.</entry>
+    <entry key="VerifyResults_Item5">5. See Xilinx FPGA-Based Radio 'Common Problems and Fixes' for other tips and suggestions.</entry>
+    <!---<entry key="VerifyResults_PingFailed">
+        There was no response to a ''ping'' command at address {0}. Received the following response:\n
+        </entry> -->
+        <entry key="VerifyResults_PingHostConfirmMessage">
+          1. FPGA board is powered on.
+          \n2. Ethernet cable is connected between the selected network connection on the host computer and the FPGA board.
+          \n\nWhen the hardware is properly connected and configured you should notice:
+          \n- Two green LEDs are lit near the Ethernet port on the FPGA board.
+        </entry>
+        <entry key="SdrzVerifyResults_PingHostConfirmMessage">
+          1. Zynq board is powered on.
+          \n2. Ethernet cable is connected between the selected host network connection and the Zynq board.
+          \n3. The IP address used in the ping test above matches the one configured earlier.
+          \n\nWhen the hardware is properly connected and configured you should notice:
+          \n- One LED is constantly active on the Ethernet port of the Zynq board.
+          \n\nIf the problem persists, click the 'Help' button for guidance on how to verify and configure the network connection. Once configured, return to this screen and click 'Verify again' to continue with verify process.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_PingHostConfirmMessage"> <!-- FOR ADI RF SOM -->
+          1. ADI RF SOM is powered on.
+          \n2. Ethernet cable is connected between the selected host network connection and the ADI RF SOM carrier board.
+          \n3. The IP address used in the ping test above matches the one configured earlier.
+          \n\nWhen the hardware is properly connected and configured you should notice:
+          \n- One LED is constantly active on the Ethernet port of the ADI RF SOM carrier  board.
+          \n\nIf the problem persists, click the 'Help' button for guidance on how to verify and configure the network connection. Once configured, return to this screen and click 'Verify again' to continue with verify process.\n
+        </entry>
+
+        <entry key="VerifyResults_PingHostFinalMessage">
+          \nIf the problem persists, go back to 'Configure network connection on the host computer' step and try again.\n
+        </entry>
+
+        <entry key="VerifyResults_PingRadioConfirmMessage_CF">
+          1. FPGA board is powered on.
+          \n2. Ethernet cable is connected between the selected network connection on the host computer and the FPGA board.
+          \n3. The selected NIC is operating properly for Gigabit Ethernet connection.
+          \n4. The CF card is inserted properly into the card reader on the FPGA board.
+          \n5. The CF card is formatted properly before copying FPGA programming file.
+          \n6. Host blocking or anti-virus software is turned off.
+          \n\nWhen properly connected you should notice:
+          \n- Two green LEDs are lit near the Ethernet port on the FPGA board.
+          \n- A green SystemAce status LED DS1 is lit near the CF card. If this LED is red, then it may indicate
+          \n  an issue with the CF card. Refer to the Xilinx AR to format a CF card. Then load the FPGA programming
+          \n  file by going back to the 'Load FPGA programming file' step.
+        </entry>
+        <entry key="SdrzVerifyResults_PingRadioConfirmMessage">
+          1. Zynq board is powered on.
+          \n2. Ethernet cable is connected between the selected host network connection and the Zynq board.
+          \n3. The IP address used in the ping test above matches the one configured earlier. If not, go back to the 'Configure network card on the host computer' step and try again.
+          \n4. Host blocking or anti-virus software is turned off. Click 'Help' for guidance on how to turn these off.
+          \n\nWhen properly connected you should notice:
+          \n- One LED should be constantly active on the Ethernet port on the Zynq board.
+          \n\nIf the problem persists, click the 'Help' button for further guidance on how to diagnose and fix this problem. Once resolved return to this screen and click 'Verify again' to continue with verify process.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_PingRadioConfirmMessage">
+          1. ADI RF SOM is powered on.
+          \n2. Ethernet cable is connected between the selected host network connection and the ADI RF SOM carrier board.
+          \n3. The IP address used in the ping test above matches the one configured earlier. If not, go back to the 'Configure network card on the host computer' step and try again.
+          \n4. Host blocking or anti-virus software is turned off. Click 'Help' for guidance on how to turn these off.
+          \n\nWhen properly connected you should notice:
+          \n- One LED should be constantly active on the Ethernet port on the ADI RF SOM carrier board.
+          \n\nIf the problem persists, click the 'Help' button for further guidance on how to diagnose and fix this problem. Once resolved return to this screen and click 'Verify again' to continue with verify process.\n
+        </entry>
+        <entry key="VerifyResults_PingRadioConfirmMessage_USB">
+          1. FPGA board is powered on.
+          \n2. Ethernet cable is connected between the selected network connection on the host computer and the FPGA board.
+          \n3. Selected NIC is operating properly for a Gigabit Ethernet connection.
+          \n4. Host blocking or anti-virus software is turned off.
+          \n\nWhen the hardware is properly connected and configured you should notice:
+          \n- Two green LEDs are lit near the Ethernet port on the FPGA board.
+        </entry>
+        <entry key="VerifyResults_PingRadioFinalMessage">
+          \nIf the problem persists, go back to the 'Load FPGA programming file' step and try loading\nthe FPGA programming file again.\n
+        </entry>
+        <entry key="SdrzVerifyResults_PingRadioFinalMessage">
+          \nIf the problem persists, go back to the 'Configure network card on the host computer' step and try again.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_PingRadioFinalMessage">
+          \nIf the problem persists, go back to the 'Configure network card on the host computer' step and try again.\n
+        </entry>
+        <entry key="CanNotReadRFCardInfo">
+          Unable to read RF card information from the radio hardware.
+          \nHowever a compatible radio was found at {0} and the FPGA board information was read successfully.
+        </entry>
+        <entry key="VerifyResults_GetInfoConfirmMessage_RFCardIssue">
+          1. The RF card {0} is plugged into the FPGA board as shown in the picture on 'Connect hardware' step.
+          \n2. The RF card is operating properly.
+        </entry>
+        <entry key="SdrzVerifyResults_GetInfoConfirmMessage_RFCardIssue">
+          1. The RF card {0} is plugged into the Zynq board as shown in the picture on 'Connect hardware' step.
+          \n2. The RF card is operating properly.
+        </entry>
+        <entry key="SdrzVerifyResultsPico_GetInfoConfirmMessage_RFCardIssue">
+          1. The {0} SOM is plugged into the carrier board as shown in the picture on 'Connect hardware' step.
+          \n2. The RF card is operating properly.
+        </entry>
+        <entry key="VerifyResults_GetInfoFinalMessage_RFCardIssue">
+          \nIf the problem persists, go back to the 'Connect hardware' step and verify that the RF card is\nplugged into the FPGA board correctly as per the image.\n
+        </entry>
+        <entry key="SdrzVerifyResults_GetInfoFinalMessage_RFCardIssue">
+          \nIf the problem persists, go back to the 'Connect hardware' step and verify that the RF card is\nplugged into the Zynq board correctly as per the image.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_GetInfoFinalMessage_RFCardIssue">
+          \nIf the problem persists, go back to the 'Connect hardware' step and verify that the ADI RF SOM \nis plugged into the carrier board correctly as per the image.\n
+        </entry>
+        <entry key="IncompatRadio">
+          A device was found at {0} but it was not a compatible radio.\n
+        </entry>
+        <entry key="VerifyResults_GetInfoConfirmMessage_IncompatRadio_Generic">
+          1. The connected radio hardware is {0} and {1}.
+          \n2. The radio hardware is loaded with a FPGA programming file that is compatible with the MATLAB/Simulink release version.
+        </entry>
+        <entry key="SdrzVerifyResults_GetInfoConfirmMessage_IncompatRadio">
+          1. The connected radio hardware is {0} and {1}.
+          \n2. The radio hardware is loaded with SD card image that is compatible with the MATLAB/Simulink release version.
+          \n3. The AD-FMCOMMS card is mounted correctly.
+          \n\nIf the problem persists, go back to the 'Configure the SD Card' step and try repeating the steps or click the 'Help' button for further guidance on how to diagnose and fix this problem.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_GetInfoConfirmMessage_IncompatRadio" note="stringDatatypeUpdate"> <!-- Second argument ({1}) is an empty character vector... -->
+          1. The connected radio hardware is {0}{1}.
+          \n2. The radio hardware is loaded with SD card image that is compatible with the MATLAB/Simulink release version.
+        </entry>
+        <entry key="VerifyResults_GetInfoFinalMessage_IncompatRadio">
+          \nIf the problem persists, go back to the 'Load FPGA programming file' step and try loading\nthe FPGA programming file again.\n
+        </entry>
+        <entry key="SdrzVerifyResults_GetInfoFinalMessage_IncompatRadio">
+          \nIf the problem persists, go back to Write Firmware step and create a fresh SD card image.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_GetInfoFinalMessage_IncompatRadio">
+          \nIf the problem persists, go back to Write Firmware step and create a fresh SD card image.\n
+        </entry>
+        <entry key="VerifyResults_DataTestsConfirmMessage">
+          1. You have turned off the host port blocking or anti-virus software on your computer.
+          \n\nWhen the hardware is properly connected and configured you should notice:
+          \n- A green LED (DS16) is blinking periodically on the FPGA board.
+          \n- A blue LED is lit on the RF Card near the SMA connectors.
+        </entry>
+        <entry key="SdrzVerifyResults_DataTestsConfirmMessage">
+          1. You have turned off the host port blocking or anti-virus software on your computer.
+        </entry>
+        <entry key="SdrzVerifyResultsPico_DataTestsConfirmMessage">
+          1. You have turned off the host port blocking or anti-virus software on your computer.
+        </entry>
+        <entry key="VerifyResults_DataTestsFinalMessage">
+          \nIf the problem persists, go back to the 'Load FPGA programming file' step and try loading\nthe FPGA programming file again.\n
+        </entry>
+        <entry key="SdrzVerifyResults_DataTestsFinalMessage">
+          \nIf the problem persists, go back to Write Firmware step and create a fresh SD card image.\n
+        </entry>
+        <entry key="SdrzVerifyResultsPico_DataTestsFinalMessage">
+          \nIf the problem persists, go back to Write Firmware step and create a fresh SD card image.\n
+        </entry>
+        <entry key="VerifyResults_XARLink">Xilinx Answer Record</entry>
+        <entry key="VerifyResults_ExampleHeading">Get started with an example</entry>
+        <entry key="VerifyResults_ExampleDetail">
+          The receive tone signal example shows how to perform a simple loopback of a complex sinusoid signal at an RF carrier frequency.
+          \n
+        </entry>
+        <entry key="VerifyResults_OpenExample">Open Example</entry>
+        <entry key="VerifyResults_OpenExampleText">\nView the documentation for this example to learn more.</entry>
+        <entry key="VerifyResults_RunExample">Run Example</entry>
+        <entry key="VerifyResults_RunExampleText">Connect a loopback cable with attenuation or attach appropriate antenna between the 'RX' and 'TX' SMA connectors before you run the example.</entry>
+        <entry key="VerifyResults_AdditionalHeading">Additional setup steps for targeting</entry>
+        <entry key="VerifyResults_AdditionalDetail">If you plan to target SDR algorithms to the Zynq FPGA fabric, you must install the
+        HDL Coder Support Package for Xilinx Zynq Platform.
+        \n\nIf you plan to generate code for targeting the ARM portion of the Zynq device, you must install the Embedded Coder Support Package for Xilinx Zynq Platform. You must follow additional steps for setup of ARM targeting.
+        \n\nClick the "Setup for ARM Targeting" button.
+        </entry>
+        <entry key="VerifyResults_OpenARMDoc">Setup for ARM Targeting</entry>
+
+        <!--- SDRZ Host Checklist -->
+        <entry key="SdrzHostChecklist_Label">Setup host machine checklist</entry>
+        <entry key="SdrzHostChecklist_Description">The process to setup the host computer and radio hardware can take up to 10 minutes.\n\nVerify the following before continuing:\n
+        </entry>
+        <entry key="SdrzHostChecklist_HostChecklist">Checklist</entry>
+        <entry key="SdrzHostChecklist_Item1">The setup process requires elevated user permissions. If the following User Account Control window pops up, you must click 'Yes' to continue with the setup process.</entry>
+        <!-- SdrzHostChecklist_Item2 is an image -->
+        <entry key="SdrzHostChecklist_Item3">
+          An available Gigabit Ethernet connection is required, this can be:
+          \n      a. An integrated Network Interface Card (NIC)
+          \n\t -or-
+          \n      b. A USB-to-Ethernet adapter
+          \n            1. Only those certified as USB 3.0 are supported
+          \n            2. Ensure the adapter is plugged into a USB 3.0 port on the host computer
+        </entry>
+        <entry key="SdrzHostChecklist_Item4">An SD card reader is required</entry>
+
+        <!--- SDRZ Checklist -->
+        <entry key="SdrzChecklist_Label">Setup radio hardware checklist</entry>
+        <entry key="SdrzChecklist_Description">You will require the following hardware:\n</entry>
+        <entry key="SdrzChecklist_SetupChecklist">Checklist</entry>
+        <entry key="SdrzChecklist_Item1">A supported Zynq(TM)-Based Radio development platform (see table below)</entry>
+        <entry key="SdrzChecklist_Item2">Ethernet cable</entry>
+        <entry key="SdrzChecklist_Item3">Antennas or loopback cable</entry>
+        <entry key="SdrzChecklist_Item4">Do not power on the board until you are prompted at a later step.</entry>
+        <entry key="SdrzChecklist_ItemFinal">Click 'Next' to begin the step-by-step process to set up your hardware.</entry>
+
+        <!-- SD sdrive select -->
+        <entry key="SdrzSelectDrive_Label">Select a drive</entry>
+        <entry key="SdrzSelectDrive_Description">Insert a 4 GB or larger SD memory card into a memory card reader on the host computer.\n\nSelect the drive letter that corresponds to the memory card reader:</entry>
+        <entry key="SdrzSelectDrive_Drive">Drive:</entry>
+        <entry key="SdrzSelectDrive_Refresh">Refresh</entry>
+        <entry key="SdrzSelectDrive_Warning">
+          If you do not find the memory card reader in the list of drives, reinsert the memory card fully
+          \nand click 'Refresh'.
+          \n
+          \nIf the automatic SD Card configuration is not successful, click 'Help' and follow the manual
+          \nsteps listed in the "Select a drive" section. Once configured, return to this screen, check
+          \nthe 'Skip this step...' checkbox and click 'Next' to continue.\n
+        </entry>
+        <entry key="SdrzSelectDrive_NoCard">No memory card found</entry>
+
+        <!-- Write firmware -->
+        <entry key="SdrzWriteFirmware_Label">Write firmware</entry>
+        <entry key="SdrzWriteFirmware_Description">You chose to write to drive %s. The write operation may take several minutes.</entry>
+        <entry key="SdrzWriteFirmware_Warning">WARNING: All data in the memory card will be erased!</entry>
+        <entry key="SdrzWriteFirmware_Write">Write</entry>
+        <entry key="SdrzWriteFirmware_SdImageFolderEmpty">Error while writing Linux binaries to SD Card.\nFolder location {0} is either empty or does not exist.</entry>
+        <entry key="SdrzWriteFirmware_CopySDImagFailed">Error while writing binaries to SD Card:\n{0}</entry>
+
+        <!-- Connect hardware -->
+        <entry key="SdrzConnectHardware_Label">Connect the hardware</entry>
+        <entry key="SdrzConnectHardware_Description" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardware_Instructions">Instructions</entry>
+        <entry key="SdrzConnectHardware_Item1">1. Remove the SD memory card from the host computer and insert it into the Zynq board.</entry>
+        <entry key="SdrzConnectHardware_Item2">2. Plug the RF Card into the FMC connector.</entry>
+        <entry key="SdrzConnectHardware_Item3">3. Connect an Ethernet cable to the board. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="SdrzConnectHardware_Item4">4. Connect the power cable to the Zynq board.</entry>
+        <entry key="SdrzConnectHardware_Item5">5. Connect the antennas or loopback cable.</entry>
+        <entry key="SdrzConnectHardware_Item6">6. Turn on the power.</entry>
+        <entry key="SdrzConnectHardware_Link">\nMore info...</entry>
+
+        <entry key="SdrzConnectHardwareLED_Label">Connect the hardware</entry>
+
+        <entry key="SdrzConnectHardwareLEDZed_Label">Connect the hardware</entry>
+        <entry key="SdrzConnectHardwareLEDZed_Description" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDZed_Instructions" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDZed_Wait">WAIT until you see the following LEDs indicating readiness of the radio.</entry>
+        <entry key="SdrzConnectHardwareLEDZed_Note">
+          The LEDs are located next to the DIP switches:
+          \n   - LD12-DONE (Blue, steady)
+          \n   - LD0 (Red, blinking)
+          \n\nIf the LEDs do not light up as indicated, go
+          \nback and verify the following:
+          \n   - the jumpers are in the correct positions
+          \n   - the SD card has been properly configured
+          \n   - the FMC card is mounted correctly
+          \n\nIf the problem persists, click 'Help' for further
+          \nguidance on how to fix this problem
+          \n\nClick 'Next' to verify the connection
+        </entry>
+
+        <entry key="SdrzConnectHardwareLEDZC706_Label">Connect the hardware</entry>
+        <entry key="SdrzConnectHardwareLEDZC706_Description" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDZC706_Instructions" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDZC706_Wait">WAIT until you see the following LEDs indicating readiness of the radio.</entry>
+        <entry key="SdrzConnectHardwareLEDZC706_Note">
+          The LEDs are located near the power switch:
+          \n   - DONE (Green, steady)
+          \n   - GPIO-C (Green, blinking)
+          \n\nIf the LEDs do not light up as indicated, go
+          \nback and verify the following:
+          \n   - the jumpers are in the correct positions
+          \n   - the SD card has been properly configured
+          \n   - the FMC card is mounted correctly
+          \n\nIf the problem persists, click 'Help' for further
+          \nguidance on how to fix this problem
+          \n\nClick 'Next' to verify the connection
+        </entry>
+
+        <!-- Connect hardware ADI RF SOM -->
+        <entry key="SdrzConnectHardwarePico_Label">Connect the hardware</entry>
+        <entry key="SdrzConnectHardwarePico_Description" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwarePico_Instructions">Instructions</entry>
+        <entry key="SdrzConnectHardwarePico_Item1">1. Remove the SD memory card from the host computer and insert it into the ADI RF SOM carrier board.</entry>
+        <entry key="SdrzConnectHardwarePico_Item2">2. Ensure that the ADI RF SOM is correctly installed in the carrier board.</entry>
+        <entry key="SdrzConnectHardwarePico_Item3">3. Connect an Ethernet cable to the ETHERNET1 port of the carrier board, as pictured. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="SdrzConnectHardwarePico_Item4">4. Connect the power cable to the ADI RF SOM carrier board.</entry>
+        <entry key="SdrzConnectHardwarePico_Item5">5. Connect the U.FL to SMA coax connector cables to: TX1A, RX1A, TX2A and RX2A ports on the ADI RF SOM.</entry>
+        <entry key="SdrzConnectHardwarePico_Item6">6. Turn on the power.</entry>
+        <entry key="SdrzConnectHardwarePico_Link">\nMore info...</entry>
+
+        <entry key="SdrzConnectHardwareLEDPico_Label">Connect the hardware</entry>
+        <entry key="SdrzConnectHardwareLEDPico_Description" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDPico_Instructions" translate="false" note="translate=false set due no translatable content"></entry>
+        <entry key="SdrzConnectHardwareLEDPico_Wait">WAIT until you see the following LEDs indicating readiness of the radio.</entry>
+        <entry key="SdrzConnectHardwareLEDPico_Note">
+          The LEDs are located near the J2 SMA connector:
+          \n   - CFG DONE (Blue, steady)
+          \n   - DS3 (Red, blinking)
+          \n\nIf the LEDs do not light up as indicated, go
+          \nback and verify the following:
+          \n   - the jumpers are in the correct positions
+          \n   - the SD card has been properly configured
+          \n   - the SOM is mounted on the carrier board correctly
+          \n\nIf the problem persists, click 'Help' for further
+          \nguidance on how to fix this problem
+          \n\nClick 'Next' to verify the connection
+        </entry>
+
+
+        <!-- Set Jumpers -->
+        <entry key="SdrzSetJumpers_Label">Set jumpers on the Zynq development board</entry>
+        <entry key="SdrzSetJumpers_Description">You must configure the jumpers on the Zynq board.\nMake sure the board is switched off.</entry>
+        <entry key="SdrzSetJumpers_TextImage2">Set the jumper positions on the Zynq board as marked in the following image.\n</entry>
+
+        <!-- Set Jumpers ZC706 -->
+        <entry key="SdrzSetJumpersZC706_Label">Set switches on the ZC706 development board</entry>
+        <entry key="SdrzSetJumpersZC706_Description">The switch / jumper settings configure the boot mode and Ethernet interface of the development board.</entry>
+        <entry key="SdrzSetJumpersZC706_TextImage2">Make sure the board is switched off and set the switch and jumper positions on the ZC706 development board as highlighted in the following image.\n</entry>
+
+        <!-- Set Jumpers ZedBoard -->
+        <entry key="SdrzSetJumpersZedBoard_Label">Set jumpers on the ZedBoard development board</entry>
+        <entry key="SdrzSetJumpersZedBoard_Description">The jumpers JP[7 - 11] configure the ZedBoard to boot from the SD Card.</entry>
+        <entry key="SdrzSetJumpersZedBoard_TextImage2">Make sure the board is switched off and set the jumper positions on the ZedBoard as marked in the following image.\n</entry>
+
+        <!-- Set Jumpers ADI RF SOM-->
+        <entry key="SdrzSetJumpersPico_Label">Set jumpers on the ADI RF SOM</entry>
+        <entry key="SdrzSetJumpersPico_Description">The switch S1 configures the ADI RF SOM to boot from the SD Card slot on the carrier board.</entry>
+        <entry key="SdrzSetJumpersPico_TextImage2">Make sure the board is switched off and set the switch as marked in the following image (slide switch fully towards the center of the carrier board).\n</entry>
+
+        <!--- progress bar related -->
+        <entry key="Progress_EnumeratingNICs">Detecting network cards ...</entry>
+        <entry key="Progress_EnumeratingDrives">Detecting memory card drives ...</entry>
+        <entry key="Progress_Wait">Please wait ...</entry>
+        <entry key="Progress_CopyingFPGABitstreams">Copying FPGA programming files ...</entry>
+        <entry key="SdrzProgress_WritingFirmwareImage">Writing firmware image to SD card...</entry>
+
+        <entry key="FormatFailed">Error while formatting removable drive {0}: {1}</entry>
+        <entry key="NoNic">No network interface cards are detected on this computer.</entry>
+        <entry key="LoadingFPGAProgFile">Loading FPGA programming file</entry>
+        <entry key="ConfiguringNicForStaticIP">Configuring "{0}" with IP Address</entry>
+        <entry key="TestConnection">Running connection tests...</entry>
+        <entry key="VerifyHostIPAddress">Ping network card ...</entry>
+        <entry key="VerifyHWCommunication">Ping FPGA radio ...</entry>
+        <entry key="GettingSDRInfo">Read information from FPGA radio ...</entry>
+        <entry key="RunningDataTests">Test data path between host and RF card ...</entry>
+
+        <!--- Errors  -->
+        <entry key="UnableToAccessMemoryCard">Unable to access the memory card. If you removed the memory card from the computer, re-insert it and repeat this operation.</entry>
+        <entry key="RemoteCopyFailed">Unable to copy {0} to {1} on CF card.\nReceived the following error message:\n{2}</entry>
+        <entry key="ErrorWhileConfiguringNic">Error configuring "{0}" with IP address {1}.\nReceived the following error message:\n\n\t{2}\n</entry>
+        <entry key="IPAddressTaken">\nError configuring "{0}" with IP Address {1}.\nReceived the following error message:\n\n\t{2}\n\n{3} may already be specified for another NIC on your computer.\nTry a different IP address. It must be {4}.X, where X is any number between 3 and 254.</entry>
+        <entry key="SdrzIPAddressTaken">\nError configuring "{0}" with IP Address {1}.\nReceived the following error message:\n\n\t{2}\n\n{3} may already be specified for another NIC on your computer.\nTry a different IP address for the radio such as {4}.X.X, where X is any number between 3 and 254</entry>
+        <entry key="NetworkConnectionNotFound">
+          \nError configuring "{0}" with IP Address {1}.
+          \nReceived the following error message:
+          \n\n\t"{2}"
+          \n\nTry clicking the 'Refresh' button to trigger the network
+          \nconnection detection and repopulate the list of available
+          \nconnections.
+          \n\nIf the problem persists, click 'Additional information' for further
+          \nguidance on how to diagnose and verify the network connection.
+        </entry>
+
+        <entry key="EmptyErrorMessage">
+          \nError configuring "{0}" with IP Address {1}.
+          \n\nThere may be a problem executing system commands that
+          require elevated Windows administrative privileges.
+          If a User Account Control window pops up, you must click 'Yes'
+          to continue with the automatic setup process.
+          \n\nIf the problem persists, click 'Additional information' for further
+          \nguidance on how to diagnose and verify the network connection.
+        </entry>
+        <entry key="InvalidHostIPAddress">\nInvalid IP address for the host NIC. It must be on the same subnet as the FPGA radio.\nSet the IP address to {0}.X, where X is any number between 3 and 254.\n</entry>
+
+        <!-- Legacy -->
+        <entry key="RampTestFail_Error"> Error receiving data from the radio.</entry>
+        <entry key="RampTestFail_Confirm">
+          1. The network connection is configured correctly
+          \n2. Host blocking or anti-virus software is turned off. Click 'Help' for guidance on how to turn these off
+          \n3. If you are using a Gigabit Ethernet adapter to connect the radio to the host system, ensure it is USB3.0 certified and plugged into a USB3.0 port on the host machine
+          \n\nIf the problem persists, click the 'Help' button for guidance on how to diagnose and fix this issue\n
+        </entry>
+
+        <!-- Legacy -->
+        <entry key="ToneTestFail_Error">Error transmitting and receiving RF data on the RF card.</entry>
+        <entry key="ToneTestFail_Confirm">
+          1. If using ZC706/ZedBoard/ZCU102, ensure the RF card is connected firmly in the development board FMC
+          \n2. If using an ADI RF SOM, ensure the SOM is connected firmly in the carrier board
+          \n3. The antennas / loopback cable are connected correctly
+          \n\nIf the problem persists, click the 'Help' button for guidance on how to diagnose and fix this issue.\n
+        </entry>
+        
+        <!-- Legacy -->
+        <entry key="BISTTestFail_Error">Error receiving data from the RF card.</entry>
+        <entry key="BISTTestFail_Confirm">
+          1. If using ZC706/ZedBoard/ZCU102, ensure the RF card is connected firmly in the development board FMC
+          \n2. If using an ADI RF SOM, ensure the SOM is connected firmly in the carrier board
+          \n\nIf the problem persists, click the 'Help' button for guidance on how to diagnose and fix this issue.\n
+        </entry>
+        
+        <entry key="RFError">Error receiving data from the RF card.</entry>
+        <entry key="CorrectlyPluggedRF">
+            1. If using ZC706/ZedBoard/ZCU102, ensure the RF card is connected firmly in the development board FMC as shown in the picture on 'Connect hardware' step.
+            \n2. If using an ADI RF SOM, ensure the SOM is connected firmly in the carrier board as shown in the picture on 'Connect hardware' step.
+            \n\nIf the problem persists, click the 'Help' button for guidance on how to diagnose and fix this issue.\n
+        </entry>
+        <entry key="DataTestError_Confirm">
+            1. The network connection is configured correctly
+            \n2. Host blocking or anti-virus software is turned off. Click 'Additional information' for guidance on how to turn these off
+            \n3. If you are using a Gigabit Ethernet adapter to connect the radio to the host system, ensure it is USB3.0 certified and plugged into a USB3.0 port on the host machine
+            \n4. If using ZC706/ZedBoard/ZCU102, ensure the RF card is connected firmly in the development board FMC
+            \n5. If using an ADI RF SOM, ensure the SOM is connected firmly in the carrier board
+            \n\nIf the problem persists, click 'Additional information' for guidance on how to diagnose and fix this issue.\n
+        </entry>
+
+        <!--- Download  -->
+        <entry key="DownloadError">Could not download "{0}"</entry>
+
+
+        <!-- Hardware Setup specific -->
+        <!-- General -->
+        <entry key="AdditionalInformation">Additional information</entry>
+        <entry key="Note">Note</entry>
+        <!-- SetupHostMachine -->
+        <entry key="SetupHostMachine_Checklist_Item1">Elevated user permissions. If the following User Account Control window pops up, you must click 'Yes' to continue with the setup process.</entry>
+        <entry key="SetupHostMachine_Checklist_Item2">SD card reader and writable SD card</entry>
+        <entry key="SetupHostMachine_Label">Host Machine Checklist</entry>
+        <entry key="SetupHostMachine_10min">The process to setup the host computer and radio hardware can take up to 10 minutes</entry>
+        <entry key="SetupHostMachine_GigabitEthernetTitle">Gigabit Ethernet connection</entry>
+        <entry key="SetupHostMachine_GigabitEthernetText">
+          This can be either:
+          \na. An integrated Network Interface Card (NIC).
+          \n\nb. A USB-to-Ethernet adapter.
+          \nOnly those certified as USB 3.0 are supported. Ensure the adapter is plugged into a USB 3.0 port on the host computer
+        </entry>
+        <entry key="SetupHostMachine_VerifyFollowing">Make sure you have:</entry>
+        <entry key="SetupHostMachine_AvailableGigabit">Available Gigabit Ethernet connection</entry>
+
+        <!-- SetupRadioHardware -->
+        <entry key="SetupRadioHardware_SupportedHWTitle">Supported Hardware</entry>
+        <entry key="SetupRadioHardware_SOMText">System-On-Module (SOM) combination of SOM board plus carrier board:</entry>
+        <entry key="SetupRadioHardware_ZynqText">Zynq development board with an Analog Devices RF FMC card.</entry>
+        <entry key="SetupRadioHardware_ZynqText2">Zynq development board:</entry>
+        <entry key="SetupRadioHardware_ZynqText3">RF FMC card:</entry>
+        <entry key="SetupRadioHardware_Label">Radio Hardware Checklist</entry>
+        <entry key="SetupRadioHardware_Description">Make sure you have:\n</entry>
+        <entry key="SetupRadioHardware_Checklist_Item1">Supported radio hardware</entry>
+        <entry key="SetupRadioHardware_Checklist_Item2">Ethernet cable</entry>
+        <entry key="SetupRadioHardware_Checklist_Item3">Antennas or loopback cable</entry>
+        <entry key="SetupRadioHardwareNote">Do not power on the board until you are prompted to at a later step.</entry>
+
+
+        <!-- HardwareInterface -->
+        <entry key="HardwareInterface_NoNic">No available NIC detected</entry>
+        <entry key="HardwareInterface_NoNicDescription">Please connect a network interface card into your computer and click 'Refresh' button</entry>
+
+        <!-- SelectBoard -->
+        <entry key="SelectBoard_SelectHW">Select your radio hardware:</entry>
+        <entry key="SelectBoard_SystemSetupVaries">The system setup varies depending on your radio hardware.</entry>
+
+        <!-- SelectNewtork -->
+        <entry key="SelectNetwork_SelectNIC">Select a NIC to Connect with the Radio Hardware</entry>
+        <entry key="SelectNetwork_Label">Configure Network Connection on the Host</entry>
+        <entry key="SelectNetwork_ButtonText">Refresh</entry>
+        <entry key="SelectNetwork_SkipNICSelectText">Skip this step if your network card is already configured for communicating with radio hardware.</entry>
+        <entry key="SelectNetwork_WarningText">You have selected the "{0}" NIC to configure with IP address {1}. This network card appears to be in use. If you proceed, you may lose the connection to network or devices currently connected via this NIC.\n\nClick 'Yes' to proceed with the NIC configuration.\nClick 'No' if you wish to select a different NIC.</entry>
+        <entry key="SelectNetwork_WarningLabel">Warning</entry>
+
+        <entry key="SelectNetwork_Yes">Yes</entry>
+        <entry key="SelectNetwork_No">No</entry>
+        <entry key="SelectNetwork_FailedNetworkSetup">Impossible to set-up NIC</entry>
+        <entry key="SelectNetwork_AboutYourSelection">
+          The host computer communicates with the radio hardware using a Gigabit Ethernet connection.
+          To configure a connection automatically, select it from the list, provide a valid IP address and click 'Next'.
+        </entry>
+        <entry key="SelectNetwork_WhatToConsider">
+          If your network connection is not listed or the automatic configuration is not successful, click 'Additional information' and follow the manual
+          steps in the ''{0}'' section.
+          Once configured, return to this screen, check the 'Skip this step...' checkbox and click 'Next' to continue.
+        </entry>
+        <entry key="SelectNetwork_NoNic">No NIC found</entry>
+        <entry key="SelectNetwork_SetIP">Set Network Configuration</entry>
+        <entry key="SelectNetwork_SetZynqIP">Zynq Radio IP Address</entry>
+        <entry key="SelectNetwork_SetZynqSubnetMask">Subnet Mask</entry>
+        <entry key="SelectNetwork_HostIP">Host Network Card IP</entry>
+        <entry key="SelectNetwork_Table_Name">Name</entry>
+        <entry key="SelectNetwork_Table_Description">Description</entry>
+        <entry key="SelectNetwork_Table_MACAddress">MAC Address</entry>
+        <entry key="SelectNetwork_Table_IPAddress">IP Address</entry>
+        <entry key="SelectNetwork_InvalidIPAddress" note="stringDatatypeUpdate">{0} must be a dotted-quad character vector describing numbers not higher than 255, e.g. ''192.168.10.2''.</entry>
+        <entry key="SelectNetwork_InvalidIPAddressName" note="stringDatatypeUpdate">The IP address name must be a dotted-quad character vector.</entry>
+
+        <!-- SelectDrive -->
+        <entry key="SelectDrive_SkipText">Skip this step if your SD card is already configured with appropriate MathWorks image for SDR hardware.</entry>
+        <entry key="SelectDrive_HelpText">
+          If you do not find the memory card reader in the list of drives, reinsert the memory card fully and click 'Refresh'.
+          \n
+          \n
+          If the automatic SD Card configuration is not successful, click 'Additional information' and follow the manual
+          steps listed in the 'Select a Drive and Write Firmware' section. Once configured, return to this screen, check
+          the 'Skip this step...' checkbox and click 'Next' to continue.\n
+        </entry>
+        <entry key="SelectDrive_NoCard">No memory card found</entry>
+        <entry key="SelectDrive_Label">Select a Drive</entry>
+        <entry key="SelectDrive_Description">Insert a 4 GB or larger SD memory card into a memory card reader on the host computer.\n\nSelect the drive letter that corresponds to the memory card reader:</entry>
+        <entry key="SelectDrive_Drive">Drive:</entry>
+
+        <!-- WriteFirmware -->
+        <entry key="WriteFirmware_Label">Write Firmware</entry>
+        <entry key="WriteFirmware_Description">You chose to write to drive %s. The write operation may take several minutes.</entry>
+        <entry key="WriteFirmware_Warning">WARNING: All data in the memory card will be erased!</entry>
+        <entry key="WriteFirmware_Write">Write</entry>
+
+        <!-- SetJumpers -->
+        <!-- ZC706 -->
+        <entry key="SetJumpersZC706_Label">Set Switches on the ZC706 Development Board</entry>
+        <entry key="SetJumpersZC706_Description">These settings configure the boot mode and Ethernet interface of the development board.</entry>
+        <entry key="SetJumpersZC706_TextImage">1. Make sure the board is switched off.
+        \n2. Set the switch and jumper positions on the ZC706 development board as highlighted in the following image.\n</entry>
+
+        <!-- ZedBoard -->
+        <entry key="SetJumpersZedBoard_Label">Set Jumpers on the ZedBoard Development Board</entry>
+        <entry key="SetJumpersZedBoard_Description">The jumpers JP[7 - 11] configure the ZedBoard to boot from the SD Card.</entry>
+        <entry key="SetJumpersZedBoard_TextImage">1. Make sure the board is switched off.
+        \n2. Set the jumper positions on the ZedBoard as marked in the following image.</entry>
+
+        <!-- ADIRFSOM -->
+        <entry key="SetJumpersADIRFSOM_Label">Set Switch on the ADI RF SOM</entry>
+        <entry key="SetJumpersADIRFSOM_Description">The switch S1 configures the ADI RF SOM to boot from the SD Card slot on the carrier board.</entry>
+        <entry key="SetJumpersADIRFSOM_TextImage">1. Make sure the board is switched off.
+        \n2. Set the switch as marked in the following image (slide switch fully towards the center of the carrier board).</entry>
+
+        <!-- ZCU102 -->
+        <entry key="SetJumpersZCU102_Label">Set Switches on the ZCU102 Development Board</entry>
+        <entry key="SetJumpersZCU102_Description">The switches in SW6 configure the ZCU102 to boot from the SD Card on the Development board</entry>
+        <entry key="SetJumpersZCU102_TextImage">1. Make sure the board is switched off.
+        \n2. Set the switch positions on the ZCU102 board as highlighted in the following image.</entry>
+
+        <!--Connect Hardware -->
+        <entry key="ConnectHardware_Instructions">Complete Steps 1 to 6</entry>
+        <entry key="ConnectHardware_Label">Connect the Hardware</entry>
+        <!-- ZC706-->
+        <entry key="ConnectHardwareZC706_Item1">1. Remove the SD memory card from the host computer and insert it into the Zynq board.</entry>
+        <entry key="ConnectHardwareZC706_Item2">2. Plug the RF Card into the LPC FMC connector.</entry>
+        <entry key="ConnectHardwareZC706_Item3">3. Connect an Ethernet cable to the board. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="ConnectHardwareZC706_Item4">4. Connect the power cable to the Zynq board.</entry>
+        <entry key="ConnectHardwareZC706_Item5">5. Connect the antennas or loopback cable.</entry>
+        <entry key="ConnectHardwareZC706_Item6">6. Turn the board power on.</entry>
+        <entry key="ConnectHardwareZC706_Link">\nMore info...</entry>
+		 <!-- ZedBoard -->
+        <entry key="ConnectHardware_Item1">1. Remove the SD memory card from the host computer and insert it into the Zynq board.</entry>
+        <entry key="ConnectHardware_Item2">2. Plug the RF Card into the FMC connector.</entry>
+        <entry key="ConnectHardware_Item3">3. Connect an Ethernet cable to the board. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="ConnectHardware_Item4">4. Connect the power cable to the Zynq board.</entry>
+        <entry key="ConnectHardware_Item5">5. Connect the antennas or loopback cable.</entry>
+        <entry key="ConnectHardware_Item6">6. Turn the board power on.</entry>
+        <entry key="ConnectHardware_Link">\nMore info...</entry>
+        <!-- ADI RF SOM -->
+        <entry key="ConnectHardwareADIRFSOM_Item1">1. Remove the SD memory card from the host computer and insert it into the ADI RF SOM carrier board.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Item2">2. Ensure that the ADI RF SOM is correctly installed in the carrier board.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Item3">3. Connect an Ethernet cable to the ETHERNET1 port of the carrier board, as pictured. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Item4">4. Connect the power cable to the ADI RF SOM carrier board.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Item5">5. Connect the U.FL to SMA coax connector cables to: TX1A, RX1A, TX2A and RX2A ports on the ADI RF SOM.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Item6">6. Turn the board power on.</entry>
+        <entry key="ConnectHardwareADIRFSOM_Link">\nMore info...</entry>
+        <!-- ZCU102 -->
+        <entry key="ConnectHardwareZCU102_Item1">1. Remove the SD memory card from the host computer and insert it into the Zynq board.</entry>
+        <entry key="ConnectHardwareZCU102_Item2">2. Plug the RF Card into the FMC HPC0 connector.</entry>
+        <entry key="ConnectHardwareZCU102_Item3">3. Connect an Ethernet cable to the board. Connect the other end of the Ethernet cable to the network connection selected previously.</entry>
+        <entry key="ConnectHardwareZCU102_Item4">4. Connect the power cable to the Zynq board.</entry>
+        <entry key="ConnectHardwareZCU102_Item5">5. Connect the antennas or loopback cable.</entry>
+        <entry key="ConnectHardwareZCU102_Item6">6. Turn the board power on.</entry>
+        <entry key="ConnectHardwareZCU102_Link">\nMore info...</entry>
+
+
+        <!-- ConnectHwardareLED -->
+        <entry key="ConnectHardwareLED_Label">Verify Hardware is Ready</entry>
+        <entry key="ConnectHardwareLED_Wait">WAIT until you see the following LEDs indicating readiness of the radio.</entry>
+        <entry key="ConnectHardwareLED_Note_ZedBoard">
+          The LEDs are located next to the DIP switches:
+          \n   - LD12-DONE (Blue, steady)
+          \n   - LD7 (Red, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Note_ZedBoard_legacy">
+          The LEDs are located next to the DIP switches:
+          \n   - LD12-DONE (Blue, steady)
+          \n   - LD0 (Red, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Help_ZedBoard">
+          If the LEDs do not light up as indicated, go back and verify the following:
+          \n   - the jumpers are in the correct positions
+          \n   - the SD card has been properly configured
+          \n   - the FMC card is mounted correctly
+          \n\nIf the LEDs do not light up as indicated after waiting one minute, press PS-RST push button to reset and restart the board.
+        </entry>
+        <entry key="ConnectHardwareLED_Note_ZC706">
+          The LEDs are located near the power switch:
+          \n   - DONE (Green, steady)
+          \n   - GPIO-0 (Green, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Note_ZC706_legacy">
+          The LEDs are located near the power switch:
+          \n   - DONE (Green, steady)
+          \n   - GPIO-C (Green, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Help_ZC706">
+            If the LEDs do not light up as indicated, go back and verify the following:
+            \n   - the jumpers are in the correct positions
+            \n   - the SD card has been properly configured
+            \n   - the FMC card is mounted correctly
+            \n\nIf the LEDs do not light up as indicated after waiting one minute, press PS-POR push button to reset and restart the board.
+        </entry>
+        <entry key="ConnectHardwareLED_Note_FMCOMMS5">
+          The LEDs are located near the power switch:
+          \n   - DONE (Green, steady)
+          \n   - GPIO-0 (Green, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Help_FMCOMMS5">
+            If the LEDs do not light up as indicated, go back and verify the following:
+            \n   - the jumpers are in the correct positions
+            \n   - the SD card has been properly configured
+            \n   - the FMC card is mounted correctly
+            \n\nIf the LEDs do not light up as indicated after waiting one minute, press PS-POR push button to reset and restart the board.
+        </entry>
+        <entry key="ConnectHardwareLED_Note_ADIRFSOM">
+          The LEDs are located near the J2 SMA connector:
+          \n   - CFG DONE (Blue, steady)
+          \n   - DS3 (Red, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Help_ADIRFSOM">
+          If the LEDs do not light up as indicated, go back and verify the following:
+          \n   - the jumpers are in the correct positions
+          \n   - the SD card has been properly configured
+          \n   - the SOM is mounted on the carrier board correctly
+          \n\nIf the LEDs do not light up as indicated after waiting one minute, press CARRIER RESET push button to reset and restart the board.
+        </entry>
+        <entry key="ConnectHardwareLED_Note_ZCU102">
+          The LEDs are located near the SD Card slot:
+          \n   - DONE (Green, steady)
+          \n   - DS44 (Green, blinking)
+        </entry>
+        <entry key="ConnectHardwareLED_Help_ZCU102">
+            If the LEDs do not light up as indicated, go back and verify the following:
+            \n   - the jumpers are in the correct positions
+            \n   - the SD card has been properly configured
+            \n   - the FMC card is mounted correctly
+            \n\nIf the LEDs do not light up as indicated after waiting one minute, press PS-POR push button to reset and restart the board.
+        </entry>
+        <entry key="ConnectHardwareLED_Next">Click 'Next' to verify the connection</entry>
+
+        <!-- ConfirmConfiguration -->
+        <entry key="ConfirmConfiguration_Label">Verify Radio Connection</entry>
+        <entry key="ConfirmConfiguration_WhatToConsider">Click on 'Test Connection' to verify the connection with the hardware.</entry>
+        <entry key="ConfirmConfiguration_SkipPreviousConnection">Skip this step if you have previously verified the connection to the radio.</entry>
+        <entry key="ConfirmConfiguration_SuccessLabel">Success</entry>
+        <entry key="ConfirmConfiguration_SuccessText">Radio connection verified, click Next to continue.</entry>
+        <entry key="ConfirmConfiguration_TestConnection">Test Connection</entry>
+        <entry key="ConfirmConfiguration_ErrorPanel">Error message</entry>
+        <entry key="ConfirmConfiguration_PingHostName">Ping network card on the host computer</entry>
+        <entry key="ConfirmConfiguration_PingRadioName">Ping Zynq radio</entry>
+        <entry key="ConfirmConfiguration_GetInfoName">Read hardware information from the Zynq radio</entry>
+        <entry key="ConfirmConfiguration_DataTestName">Test data path between host and RF card</entry>
+        <entry key="ConfirmConfiguration_InfoPanel">Confirm the following</entry>
+        <entry key="ConfirmConfiguration_ErrorMessage_GetInfo">
+          1. The connected radio hardware is {0}.
+          \n2. The radio hardware is loaded with SD card image that is compatible with the MATLAB/Simulink release version.
+          \n3. The AD-FMCOMMS card is mounted correctly.
+          \n\nIf the problem persists, go back to the 'Configure the SD Card' step and try repeating the steps or click the 'Manual setup' button for further guidance on how to diagnose and fix this problem.\n
+        </entry>
+        <entry key="ConfirmConfiguration_PingHostFinalMessage">
+          \nIf the problem persists, go back to ''{0}'' step and try again.\n
+        </entry>
+        <entry key="ConfirmConfiguration_PingRadioConfirmMessage">
+          1. {0} board is powered on.
+          \n2. Ethernet cable is connected between the selected host network connection and the {0} board.
+          \n3. The IP address used in the ping test above matches the one configured earlier. If not, go back to the ''{1}'' step and try again.
+          \n4. Host blocking or anti-virus software is turned off. Click 'Additional information' for guidance on how to turn these off.
+          \n\nWhen properly connected you should notice:
+          \n- One LED should be constantly active on the Ethernet port on the {0} board.
+          \n\nIf the problem persists, click 'Additional information' for further guidance on how to diagnose and fix this problem. Once resolved return to this screen and click 'Verify again' to continue with verify process.\n
+        </entry>
+        <entry key="ConfirmConfiguration_GetInfoConfirmMessage_RFCardIssue">
+          1. The RF card {0} is plugged into the Zynq board as shown in the picture on 'Connect hardware' step.
+          \n2. The RF card is operating properly.
+        </entry>
+        <entry key="ConfirmConfigurationADIRFSOM_GetInfoConfirmMessage_RFCardIssue">
+          1. The {0} SOM is plugged into the carrier board as shown in the picture on 'Connect hardware' step.
+          \n2. The RF card is operating properly.
+        </entry>
+        <entry key="ConfirmConfiguration_SysrootRegFailure">Registration of sysroot failed: {0}</entry>
+        
+        <!-- SetupHwSwCoDesign -->
+        <entry key="SetupHwSwCoDesign_Label">Setup for HW/SW Co-Design</entry>
+        <entry key="SetupHwSwCoDesign_Description">For HW/SW co-design workflow, you must install third-party software and additional support packages.
+          \n\n\nIf Xilinx Vivado {0} is already installed you can set up HDL IP core repositories now.</entry>
+        <entry key="SetupHwSwCoDesign_AdditionalSetupButton">Click here for more info</entry>
+        <entry key="SetupHwSwCoDesign_Panel1Label">HDL IP Core Repositories Setup</entry>
+        <entry key="SetupHwSwCoDesign_Panel1BrowseMessage">Point to your install of Xilinx Vivado {0} \n\nFor example: {1}</entry>
+        <entry key="SetupHwSwCoDesign_ValidateTool">Validate Vivado location</entry>
+        <entry key="SetupHwSwCoDesign_CompileStatusMessage">Compile libraries</entry>
+        <entry key="SetupHwSwCoDesign_SkipInstallation">Skip this step if you do not need to set up HW/SW Co-Design.</entry>
+        <entry key="SetupHwSwCoDesign_WhatToConsider">To set up HDL IP core repositories later, you can run this hardware setup again or follow the instructions in the documentation.</entry>
+        <entry key="SetupHwSwCoDesign_CompileButtonText">Compile</entry>
+        <entry key="SetupHwSwCoDesign_InvalidFileError">
+            The specified file is not a valid vivado.bat file.
+            \nSpecify the correct location of the file.
+            \nFor example, 
+        </entry>
+        <entry key="SetupHwSwCoDesign_CompileMessage">Compilation will take several minutes</entry>
+        <entry key="SetupHwSwCoDesign_VivadoVersionWarning">Selected version of Vivado is not supported, designs may not run as expected.</entry>
+        <entry key="SetupHwSwCoDesign_WarningPopUpTitle">Warning</entry>
+        <entry key="SetupHwSwCoDesign_WarningPopUpMessage">The Vivado version you have selected is not supported. Your designs may not behave as expected.</entry>
+        <entry key="SetupHwSwCoDesign_WarningPopUpContinue">Continue</entry>
+        <entry key="SetupHwSwCoDesign_WarningPopUpCancel">Cancel</entry>
+        <entry key="SetupHwSwCoDesign2_WhatToConsider">For more information please read the documentation linked below:</entry>
+        <entry key="SetupHwSwCoDesign_HDLCoderError">This step requires HDL Coder(TM).\nInstall HDL Coder, then run the hardware setup again.</entry>
+        <entry key="SetupHwSwCoDesign_SetupZynqRadioRepoError">Failed to setup, see MATLAB Command Window for more information.</entry>
+
+        <!--- Firmware update catalog ends -->
+        <!-- SetupComplete -->
+        <entry key="SetupComplete_GettingStartedExampleLabel">Get Started with an Example</entry>
+        <entry key="SetupComplete_GettingStartedExampleDetail">
+            The receive tone signal example shows how to perform a simple loopback of a complex sinusoid signal at an RF carrier frequency.
+        </entry>
+        <entry key="SetupComplete_OpenExampleButton">Open Example</entry>
+        
+        <!-- WindowsOnlySupport -->
+        <entry key="WindowOnlySupport_Label">Guided Hardware Setup Not Supported</entry>
+        <entry key="WindowOnlySupport_PanelLabel">Manual Hardware Setup</entry>
+        <entry key="WindowOnlySupport_PanelDescription">
+            Support for hardware setup through an interactive UI is only available on Windows operating systems.
+            To manually set up radio hardware follow the steps in the documentation.
+        </entry>
+        <entry key="WindowsOnlySupportButton_Label">Manual Support Package Hardware Setup</entry>
+		
+      </message>
+    </rsccat>
+
+<!-- LocalWords:  Gigabit NIC APIPA Zynq JTAG SOM antivirus FMCOMMS SMA SDR
+     LocalWords:  FMC LD GPIO subnet sysroot
+-->

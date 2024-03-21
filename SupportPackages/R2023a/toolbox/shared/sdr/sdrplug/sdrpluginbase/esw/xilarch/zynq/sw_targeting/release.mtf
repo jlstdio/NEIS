@@ -1,0 +1,15 @@
+# This is the RELEASE template file for the Xilinx Zynq Based Radio Board Target
+
+# Copyright 2019 The MathWorks, Inc.
+
+# Include component's matlabModules info so gets to the pathdef via the phl file
+include derived/share/hardwaresupportpkgs/sdr/xilinxzynqradiotgt.mtf 
+ 
+# for SW targeting
+toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/[DIRS]/[FILES]
+-toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/registry/thirdpartytools/[FILES]
+-toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/create_sdr_zynq_cortex_target.m
+-toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/+codertarget/+xilinxsdrz/+internal/*.m
+-toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/+matlabshared/+target/+xilinxsdrz/*.m
+
+

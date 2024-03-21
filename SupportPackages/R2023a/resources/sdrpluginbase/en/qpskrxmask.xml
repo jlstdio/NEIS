@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Copyright 2012 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase">
+  <message>
+    <entry key="PositiveFFTSize">FFT Size should be positive and an integer power of 2.</entry>
+    <entry key="PositiveNumeSpecAverage">Number of spectrum averages should be a positive integer.</entry>
+    <entry key="PositiveFineFreqNormalizedBW">The normalized loop bandwidth of fine frequency compensation PLL should be a positive real number.</entry>
+    <entry key="PositiveFineFreqDampFactor">The damping factor of fine frequency compensation PLL should be a positive real number.</entry>
+    <entry key="PositiveTimeRecNormalizedBW">The normalized loop bandwidth of timing recovery PLL should be a positive real number.</entry>
+    <entry key="PositiveTimeRecDampFactor">The damping factor of timing recovery PLL should be a positive real number.</entry>
+    <entry key="PositiveAutoGainCtrlLoopGain">The loop gain should be a positive real number.</entry>
+    <entry key="PositiveAutoGainCtrlMaximumGain">The maximum gain should be a positive real number.</entry>    
+    <entry key="PositiveThreshold">The threshold should be a positive real number.</entry>
+  </message>
+</rsccat>

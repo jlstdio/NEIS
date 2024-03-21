@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Spectrum Analysis of Signals</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../getting-started-with-communications-system-toolbox-support-package-for-pluto-radio.html",
+          "name": "Get Started with Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../diagnostics.html",
+          "name": "Diagnostics"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "getting-started-with-communications-system-toolbox-support-package-for-pluto-radio",
+        "diagnostics"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Spectrum Analysis of Signals",
+          "description": "Downstream spectrum analysis of signals using MATLAB&#174;, Communications Toolbox&#8482; and DSP System Toolbox&#8482;. You can either use captured signals, or receive signals in real time using the RTL-SDR Radio, ADALM-PLUTO Radio or USRP&#8482; Radio. You can change the radio's center frequency to tune the radio to a band where a signal is present. You can then use the spectrum analyzer to view and make measurements on the received spectrum.",
+          "thumbnailURL": "../../../examples/comm/win64/SpectrumAnalysisExample_01.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "comm.SpectrumAnalysisExample",
+          "name": "SpectrumAnalysisExample",
+          "url": "spectral-analysis-with-adalm-pluto-radio.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('comm/SpectrumAnalysisExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "SpectrumAnalysisExample.mlx",
+        "helperSpectralAnalysisConfig.m",
+        "helperSpectralAnalysisController.m",
+        "helperSpectralAnalysisUserInput.m",
+        "ExampleController.m",
+        "SignalSourceController.m",
+        "spectrum_capture.bb",
+        "defaultInputSpecAnalysis.mat",
+        "LogDataController.m",
+        "helperFindUSRPRadio.m",
+        "ExampleSourceType.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows downstream spectrum analysis of signals using MATLAB&#174;, Communications Toolbox&#8482; and DSP System Toolbox&#8482;."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/comm/win64/SpectrumAnalysisExample_01.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/livecontrolpopover.js"></script>
+
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../getting-started-with-communications-system-toolbox-support-package-for-pluto-radio.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Get Started with Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</span></a></li></ul><ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li><a href="../diagnostics.html?s_tid=CRUX_lftnav">Diagnostics</a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Spectrum Analysis of Signals</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#SpectrumAnalysisExample-3" class="intrnllnk">Setup</a></li><li><a href="#SpectrumAnalysisExample-4" class="intrnllnk">Stream processing</a></li><li><a href="#SpectrumAnalysisExample-5" class="intrnllnk">Conclusion</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=getting-started-with-communications-system-toolbox-support-package-for-pluto-radio&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="example-plutoradioSpectralAnalysisExample">Spectrum Analysis of Signals</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('CM')">Communications Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('DS')">DSP System Toolbox</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('comm/SpectrumAnalysisExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="comm-SpectrumAnalysisExample"><meta itemprop="exampletitle" content="Spectrum Analysis of Signals"></div><span id="SpectrumAnalysisExample" class="anchor_target"></span><p class="shortdesc">This example shows downstream spectrum analysis of signals using MATLAB&#174;,  Communications Toolbox&#8482; and DSP System Toolbox&#8482;. You can either use captured signals, or receive signals in real time using the RTL-SDR Radio, ADALM-PLUTO Radio or USRP&#8482; Radio. You can change the radio's center frequency to tune the radio to a band where a signal is present. You can then use the spectrum analyzer to view and make measurements on the received spectrum.</p><p>For Simulink(R) implementation of this example, refer <a href="../../../comm/ug/spectral-analysis-of-signals-in-simulink.html" data-docid="comm_ug#sdrexample-SpectralAnalysisSimulink" class="a">Spectrum Analysis of Signals in Simulink</a><span role="cross_prod"> (Communications Toolbox)</span>.</p><div class="procedure"><h4 class="title" id="SpectrumAnalysisExample-1">Required Hardware and Software</h4><p>To run this example using captured signals, you need the following software:</p><p><a href="https://www.mathworks.com/products/communications.html" target="_blank">Communications Toolbox</a></p><p><a href="https://in.mathworks.com/products/dsp-system.html" target="_blank">DSP System Toolbox</a></p><p>To receive signals in real time, you also need one of the following hardware:</p><div class="itemizedlist"><ul><li><p>RTL-SDR radio and the corresponding software <a href="https://www.mathworks.com/hardware-support/rtl-sdr.html" target="_blank">Communications Toolbox Support Package for RTL-SDR Radio</a></p></li><li><p>ADALM-PLUTO radio and the corresponding software <a href="https://www.mathworks.com/hardware-support/adalm-pluto-radio.html" target="_blank">Communications Toolbox Support Package for ADALM-PLUTO Radio</a></p></li><li><p>USRP radio and the corresponding software <a href="https://in.mathworks.com/hardware-support/usrp.html" target="_blank">Communications Toolbox Support Package for USRP Radio</a> </p></li></ul></div><p>For a full list of Communications Toolbox supported SDR platforms, refer to the "MATLAB and Simulink Hardware Support for SDR" section of <a href="https://www.mathworks.com/discovery/sdr.html" target="_blank">Software-Defined Radio (SDR)</a>.</p><h4 class="title" id="SpectrumAnalysisExample-2">Example Code</h4><p>The receiver asks for user input and initializes variables. Then, it calls the signal source and FM broadcast receiver in a loop. The loop also keeps track of the radio time using the frame duration and lost samples reported by the signal source.</p><p>For the option to change default settings, set |cmdlineInput| to 1.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cmdlineInput = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/comm/win64/SpectrumAnalysisExample_02.png"><span data-examplename="openExample('comm/SpectrumAnalysisExample')" tabindex="0" data-controlvalue="false" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">false</span></span>;
+<span style="color:#0000FF">if</span> cmdlineInput
+<span style="color:#228B22">%     Request user input from the command-line for application parameters</span>
+    userInput = helperSpectralAnalysisUserInput;
+<span style="color:#228B22">%     Set initial parameters</span>
+    [SAParams, sigSrc] = helperSpectralAnalysisConfig(userInput);
+<span style="color:#0000FF">else</span>
+<span style="color:#228B22">%     Set initial parameters</span>
+    load <span style="color:#A020F0">defaultInputSpecAnalysis.mat</span>
+    [SAParams, sigSrc] = helperSpectralAnalysisConfig;
+<span style="color:#0000FF">end</span></pre></div></div></div><h3 class="title" id="SpectrumAnalysisExample-3">Setup<span id="mw_rtc_SpectrumAnalysisExample_H_3517D562" class="anchor_target"></span></h3><p>Create <code class="literal">spectrumAnalyzer</code> object and configure based on user input</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>hSpectrum = spectrumAnalyzer(<span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'Name'</span>,             <span style="color:#A020F0">'Passband Spectrum'</span>,<span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'Title'</span>,            <span style="color:#A020F0">'Passband Spectrum'</span>, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'Method'</span>,           <span style="color:#A020F0">'Welch'</span>, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'SpectrumType'</span>,     <span style="color:#A020F0">'Power density'</span>, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'FrequencySpan'</span>,    <span style="color:#A020F0">'Full'</span>, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'SampleRate'</span>,       SAParams.FrontEndSampleRate, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'SpectralAverages'</span>, 50, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'FrequencyOffset'</span>,  SAParams.CenterFrequency, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'YLimits'</span>,          [-120 10], <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'YLabel'</span>,           <span style="color:#A020F0">'Magnitude-squared, dB'</span>, <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">'Position'</span>,         figposition([50 30 30 40]));</pre></div></div></div><h3 class="title" id="SpectrumAnalysisExample-4">Stream processing<span id="mw_rtc_SpectrumAnalysisExample_H_92ABD0FC" class="anchor_target"></span></h3><p>View the spectrum. While the spectrum analyzer is running, you can measure peaks, occupied bandwidth, and other properties of the signal.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Initialize radio time</span>
+radioTime = 0;
+
+<span style="color:#228B22">% Main loop</span>
+<span style="color:#0000FF">while</span> radioTime &lt; userInput.Duration
+  <span style="color:#228B22">% Receive baseband samples (Signal Source)</span>
+  <span style="color:#0000FF">if</span> SAParams.isSourceRadio
+      <span style="color:#0000FF">if</span> SAParams.isSourcePlutoSDR
+          rcv = sigSrc();
+          lost = 0;
+          late = 1;
+      <span style="color:#0000FF">elseif</span> SAParams.isSourceUsrpRadio
+          rcv= sigSrc();
+          lost = 0;
+      <span style="color:#0000FF">else</span>
+          [rcv,~,lost,late] = sigSrc();
+      <span style="color:#0000FF">end</span>
+  <span style="color:#0000FF">else</span>
+    rcv = sigSrc();
+    lost = 0;
+    late = 1;
+  <span style="color:#0000FF">end</span>
+  
+    rcv = rcv - mean(rcv);  <span style="color:#228B22">% Remove DC component.</span>
+    step(hSpectrum, rcv);
+
+  <span style="color:#228B22">% Update radio time. If there were lost samples, add those too.</span>
+  radioTime = radioTime + SAParams.FrontEndFrameTime + <span style="color:#0000FF">...</span>
+    double(lost)/SAParams.FrontEndSampleRate;
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Release all System objects</span>
+release(sigSrc);
+release(hSpectrum);</pre></div></div></div><div class="informalfigure"><div id="d124e5920" class="mediaobject"><p><img src="../../../examples/comm/win64/SpectrumAnalysisExample_01.png" width="384"></p></div></div><h3 class="title" id="SpectrumAnalysisExample-5">Conclusion</h3><p>In this example, you used Communications Toolbox&#8482; System objects to analyze the spectrum of a received signal.</p></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

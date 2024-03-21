@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo version="2.0">
+   <name>Zynq Radio Deployer</name>
+   <buildconfigurationname>Zynq Radio Build Configuration</buildconfigurationname>
+   <enableoneclick>true</enableoneclick>
+   <externalmodeinfo closefcn="" setupfcn="codertarget.linux.internal.externalModeHooks(hObj,'setupfcn', 'ZYNQ', 'zynq', {});">
+      <name>Zynq Radio External mode</name>
+      <sourcefile>$(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c</sourcefile>
+      <sourcefile>$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c</sourcefile>
+      <preconnectfcn>codertarget.linux.internal.externalModeHooks(hObj,'preconnectfcn', 'ZYNQ', 'zynq', {});</preconnectfcn>
+      <transport name="tcpip">
+         <ipaddress value="getenv('ZYNQ_IPADDRESS')">
+            <visible>true</visible>
+         </ipaddress>
+         <port value="17725">
+            <visible>true</visible>
+         </port>
+         <verbose value="false" visible="true"/>
+         <type>tcp/ip</type>
+         <iointerfacename>Zynq Radio Ethernet Interface</iointerfacename>
+      </transport>
+      <task default="foreground">
+         <inbackground>true</inbackground>
+         <inforeground>true</inforeground>
+         <visible>true</visible>
+      </task>
+      <codertargetparameter name="Runtime.BuildAction" value="Build, load, and run"/>
+   </externalmodeinfo>
+   <targetservice>
+      <iointerfacename>Zynq Radio Ethernet Interface</iointerfacename>
+      <library>$(ZYNQ_EC_TARGET_ROOT)/bin/libcodertarget_TargetServices.lib</library>
+      <compileflags>$(TARGET_SYSROOT) -DBOOST_CB_DISABLE_DEBUG -DBOOST_LOG_API_VERSION=200 -DBOOST_THREAD_FUTURE=unique_future -DBOOST_ALL_NO_LIB -DBOOST_ALL_DYN_LINK</compileflags>
+      <linkflags>-lstdc++ -lboost_system -lboost_date_time -lboost_chrono -lboost_thread -lpthread -lboost_unit_test_framework $(TARGET_SYSROOT)</linkflags>
+      <toolchain>Linaro AArch32 Linux v6.3.1</toolchain>
+      <applicationservice linkflags="" name="ToAsyncQueueAppSvc">
+         <library>$(ZYNQ_EC_TARGET_ROOT)/bin/libcodertarget_ToAsyncQueueTgtAppSvc.lib</library>
+      </applicationservice>
+   </targetservice>   
+   <pilinfo>
+      <Name>Zynq Radio PIL</Name>
+      <Transport IPAddress="getenv('ZYNQ_IPADDRESS')" Port="17725">
+         <Type>tcp/ip</Type>
+         <Name>Zynq Radio PIL</Name>
+         <IOInterfaceName>Zynq Radio Ethernet Interface</IOInterfaceName>
+      </Transport>
+   </pilinfo>
+   <token Name="ZYNQ_EC_TARGET_ROOT" Value="codertarget.zynq.internal.getSpPkgRootDir"/>
+   <sourcefile>$(ZYNQ_EC_TARGET_ROOT)/src/axi4Lite.c</sourcefile> <!--- DONOT REMOVE THIS, required by AXI TLC SFCNS -->
+   <includepath>$(ZYNQ_EC_TARGET_ROOT)/include</includepath>      <!--- DONOT REMOVE THIS, required by AXI TLC SFCNS --> 
+   <includepath>$(ZYNQ_EC_TARGET_ROOT)/blocks/include</includepath>
+   <includepath>$(ARM_CORTEX_A_ROOT_DIR)/include</includepath>
+   <includepath>$(TARGET_ROOT)/include</includepath>      <!--- IOCTL and SW HEADERS -->
+   <includefile>$(TARGET_ROOT)/include/MW_poll_event_init.h</includefile> <!--- When using the event scheduling -->
+   <sourcefile>$(TARGET_ROOT)/src/MW_poll_event_init.c</sourcefile>       <!--- When using the event scheduling -->
+   <targetinitializationcall>setup_poll_info()</targetinitializationcall> <!--- Initialise polling descriptor -->
+   <mainfcnsignature>int main(int argc, char **argv)</mainfcnsignature>
+   <define>SDRZ_SW_PROJECT</define>
+   <token>ZYNQ_IPADDRESS</token>
+   <token>ZYNQ_USERNAME</token>
+   <token>ZYNQ_PASSWORD</token>
+   <token Name="ARM_CORTEX_A_ROOT_DIR" Value="codertarget.arm_cortex_a.internal.getSpPkgRootDir"/>
+   <token Name="BOOST_LIB" Value="codertarget.arm_cortex_a.internal.getBoostLibDir"/>
+   <token Name="TARGET_SYSROOT" Value="codertarget.linux.internal.SysrootInfo.getSysrootMacro('Xilinx Zynq-7000 based board')"/>
+   <onaftercodegenhook>codertarget.xilinxsdrz.internal.onAfterCodeGen</onaftercodegenhook>
+   <onbuildentryhook>codertarget.zynq.internal.onBuildEntryHook</onbuildentryhook>
+   <onhardwareselecthook>codertarget.zynq.internal.onHardwareSelect</onhardwareselecthook>
+   <profiler BufferName="profilingData" DataLength="4000" GetDataFcn="codertarget.zynq.internal.getProfileData" InstantPrint="0" PrintData="1" StoreCoreId="1" TimerDataType="uint32" TimerReadFcn="profileReadTimer" TimerTicksPerS="100000000" TimerUpcounting="1">
+      <Name>Zynq Radio Profiler</Name>
+      <TimerSrcFile>$(ARM_CORTEX_A_ROOT_DIR)/src/profile_timer.c</TimerSrcFile>
+      <TimerIncludeFile>$(ARM_CORTEX_A_ROOT_DIR)/include/profile_timer.h</TimerIncludeFile>
+   </profiler>
+   <detectoverrun>false</detectoverrun>
+   <targetinitializecall>true</targetinitializecall> <!-- custom init call -->
+   <includestdio>true</includestdio>
+</productinfo>

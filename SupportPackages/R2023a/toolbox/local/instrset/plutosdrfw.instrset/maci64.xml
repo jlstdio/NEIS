@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instructions>
+  <platform>maci64</platform>
+  <downloadInstruction>
+    <downloadUrl>https://ssd.mathworks.com/supportfiles/downloads/SupportPackageThirdParty/R2023a/plutosdrfw/common/plutosdr-fw-v0.35.zip</downloadUrl>
+    <archive>plutosdr-fw-v0.35.zip</archive>
+  </downloadInstruction>
+  <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtractInstruction">
+	<archiveType>ZIP_ARCHIVE</archiveType>
+	<archiveName>$IS_DOWNLOADED_FILE</archiveName>
+  </installInstructions>
+  <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="InstallationInstruction">
+        <command>cp</command>
+        <command>-f</command>
+        <command>$IS_DOWNLOADED_FILE</command>
+        <command>$IS_ROOT_DIR</command>
+        <passingReturnCodes> 
+            <codes>0</codes> 
+        </passingReturnCodes> 
+  </installInstructions>
+  <displayName>PlutoSDR Firmware</displayName>
+  <licenseUrl>https://github.com/analogdevicesinc/plutosdr-fw/blob/master/LICENSE.md</licenseUrl>
+  <checksum>a12923a5b182fafe8627f46599a66eee</checksum>
+</instructions>

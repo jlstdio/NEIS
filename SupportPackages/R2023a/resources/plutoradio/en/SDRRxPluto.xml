@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="plutoradio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message> 
+        <entry key="InvalidRadioAddress" note="stringDatatypeUpdate">
+          RadioAddress must be a character vector containing a scalar, non-negative integer.
+        </entry>
+        <entry key="UnsupportedOutputType">
+          Requested output data type, {0}, is not supported.
+        </entry>
+        <entry key="RBUSY">
+          The radio with ID {0} is already owned by a block, block dialog, or System object. Stop the simulation, close the open dialog, or call the release method of the System object to continue.
+        </entry>
+    </message>
+</rsccat>
+<!-- Copyright 2016-2021 The MathWorks, Inc.
+-->

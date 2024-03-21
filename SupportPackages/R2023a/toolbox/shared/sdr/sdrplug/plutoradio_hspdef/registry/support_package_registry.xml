@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--Copyright 2016-2022 The MathWorks, Inc. -->
+<!--ADALM-Pluto Radio Support Package Repository -->
+<PackageRepository>
+    <SupportPackage 
+        name="ADALM-Pluto Radio" 
+        fullname="Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio" 
+        version="23.1.0"
+        infotext="Design software-defined radio (SDR) systems using Analog Devices ADALM-Pluto Radio"
+        basecode="PLUTO" 
+        platform="PCWIN64,GLNXA64,MACI64"
+        visible="1"
+        enable="1"
+        baseproduct="Communications Toolbox"
+        url="https://www.mathworks.com" 
+        downloadurl=""
+        licenseurl=""
+        firmwareupdate="matlab.hwmgr.internal.hwsetup.register.PlutoRadioWorkFlow"
+        postinstallcmd="matlab:plutoradio.internal.postInstallCommands">
+    </SupportPackage>
+</PackageRepository>

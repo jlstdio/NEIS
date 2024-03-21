@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    
+    <message>
+        <!-- rfconverter_libiio\+comm\+libiio\+AD9361\base.m -->
+        <!-- errors -->
+        <entry key="DeviceSetupFail" context="error">Failed to perform device setup for: {0}.</entry>
+        <entry key="EnableChannelsFail" context="error">Failed to enable channels for: {0}.</entry>
+        <entry key="CreateBufferFail" context="error">Failed to create buffer for: {0}.</entry>
+        <entry key="UnableToClearStatusRegister" context="error">Unable to clear status register.</entry>
+        <entry key="UnableToReadOverflowRegister" context="error">Unable to read overflow register.</entry>
+        <entry key="UnableToReadUnderflowRegister" context="error">Unable to read underflow register.</entry>
+        <entry key="ConfigureRfBandwidthFail" context="error" note="RF is acronym for Radio Frequency">Failed to set {0} RF bandwidth.</entry>
+        <entry key="ConfigureSamplingFrequencyFail" context="error">Failed to set {0} sampling frequency.</entry>
+        <entry key="GetSamplingFrequencyFail" context="error">Failed to get {0} sampling frequency.</entry>
+        <entry key="ConfigureFilterFail" context="error">Failed to configure {0} filter.</entry>
+        <entry key="SetFilterEnableFail" context="error">Failed to set {0} filter enable.</entry>
+        <entry key="GetFilterEnableFail" context="error">Failed to get {0} filter enable.</entry>
+        <entry key="UpdateDeviceLoFail" context="error" note="LO is acronym for Local Oscillator">Failed to update LO for device: {0}.</entry>
+        <entry key="SetChannelGainFail" context="error">Failed to set gain for channel: {0}.</entry>
+        <entry key="GetTxChannelGainFail" context="error">Failed to get gain of Transmitter from channel: {0}.</entry>
+        <entry key="GainNotScalar" context="error">Gain must be a scalar for single channel mode.</entry>
+        <entry key="SetChannelGainModeFail" context="error">Failed to set gain mode for channel: {0}.</entry>
+        <entry key="SampleAndFilterRateMismatch" context="error">Mis-match in Base Band sample-rate ({0}) and Filter rate setting ({1}).</entry>
+        <entry key="TxRxFilterRateMismatch" context="error" note="Tx is abbreviation for Transmit, Rx is abbreviation for Receive">Tx/Rx baseband sample rates do not match.</entry>
+        <entry key="TxRxBistLoopbackMismatch" context="error" note="Tx is abbreviation for Transmit, Rx is abbreviation for Receive">Tx and Rx BIST Loopback settings do not match.</entry>
+        <entry key="TxRxBistToneMismatch" context="error" note="Tx is abbreviation for Transmit, Rx is abbreviation for Receive">Tx and Rx BIST Tone settings do not match.</entry>
+        <entry key="TxRxBistPrbsMismatch" context="error" note="Tx is abbreviation for Transmit, Rx is abbreviation for Receive">Tx and Rx BIST PRBS settings do not match.</entry>
+        <entry key="SetLoopbackModeFail" context="error">Failed to set loopback mode.</entry>
+        <entry key="SetBISTToneModeFail" context="error">Failed to set BIST tone mode.</entry>
+        <entry key="SetBISTPrbsModeFail" context="error">Failed to set BIST PRBS mode.</entry>
+        <entry key="EnsmPinControlSettingsMismatch" context="error" note="Tx is abbreviation for Transmit, Rx is abbreviation for Receive. ENSM is acronym for Enable State Machine">Tx and Rx ENSM Pin Control settings do not match.</entry>
+        <entry key="SetPinControlModeFail" context="error">Failed to set Pin Control mode.</entry>  
+        <entry key="ReleaseObjectBeforeDesignCustomFilter" context="error">You must release the object before using {0}.</entry> 
+        <entry key="NoCustomFilterDesigned" context="error">Custom filter has been selected, but no custom filter has been designed. You must design a custom filter first.</entry> 
+        <!-- UI -->
+        <entry key="MainRadioConnectionTitle" context="uistring">Radio Connection</entry>
+        <entry key="MainRadioConnectionLabel" context="uistring">Info</entry>
+        <entry key="MainRadioConnectionDescription" context="uistring">Communicate with the attached radio to test connectivity and to determine quantized radio configuration values.</entry>
+        <entry key="MainRadioPropertiesTitle" context="uistring">Radio Properties</entry>
+        <entry key="MainDataTitle" context="uistring">Data</entry>
+        <entry key="MainGroupTitle" context="uistring">Main</entry>
+        <entry key="AdvancedRadioPropertiesTitle" context="uistring">Advanced Radio Properties</entry>
+        <entry key="AdvancedFilterTitle" context="uistring">Custom Filter Configuration</entry>
+        <entry key="AdvancedFilterLabel" context="uistring">Launch filter wizard</entry>
+        <entry key="AdvancedFilterDescription" context="uistring" note="ADI is acronym for Analog Devices Incorporated">Launch the ADI filter wizard to design a custom filter for the AD936x.</entry>
+        <entry key="AdvancedDebugPropertiesTitle" context="uistring">Advanced Debugging Properties</entry>
+        <entry key="FilterGroupTitle" context="uistring">Filter</entry>
+        <!-- other -->
+        <entry key="ConnectingHardware">## Establishing connection to hardware. This process can take several seconds.</entry>
+        
+        <!-- rfconverter_libiio\+comm\+libiio\+AD9361\rx.m -->
+        <entry key="AD9361_Rx_InvalidGainLOPair" context="error">For a {0} Hz center frequency, gain must be between {1} and {2}. Gain provided: {3}.</entry>  
+        <entry key="OddNumSamplesBurst" context="error">In single channel mode the maximum burst size must be an even number of samples.</entry>  
+        <entry key="BurstTooLarge" context="error">The maximum burst size in samples for the current channel mapping is {0}. Reduce the samples per frame or number of frames in burst.</entry>
+        <entry key="rxHeaderTitle" context="uistring">AD9361 Radio Receiver</entry> 
+        <entry key="rxHeaderText" context="uistring">Receive data from an AD9361 radio.</entry>
+        <entry key="rxIconText" context="uistring">AD936x\nReceiver</entry>
+        <entry key="FrequencyNotDouble" context="error">Center Frequency must be type double.</entry> 
+        <entry key="OddNumSamplesFrame" context="error">In single channel mode the number of samples per frame must be even.</entry> 
+        <entry key="SamplesPerChannelLimit" context="error">The maximum samples per frame for the selected channel mapping is {0}.</entry> 
+        <entry key="SamplesPerChannelLowerLimit" context="error">The minimum samples per frame for the selected channel mapping is {0}.</entry>
+        <entry key="InvalidRxKernelBuffersCount" context="error">{0} is not a valid kernelBufferCount value. The maximum number available is affected by {1}, {2} and {3} properties.</entry> 
+        <entry key="captureTooFewArgs" context="error">capture function requires specifying a minimum of two input arguments. The SDRRx system object to capture with and the size of the proposed capture. e.g. capture(rx, 500) returns 500 samples. Type 'help capture' to learn more.</entry>
+        <entry key="captureSamplesRounding" context="warning">Capture size (Samples) must correspond to a whole number of samples. Rounding up to the nearest whole sample.</entry>
+        <entry key="captureSecondsRounding" context="warning">Capture size (Seconds) must correspond to a whole number of samples. Rounding up to the nearest whole sample.</entry>        
+        <entry key="captureLengthTooLarge" context="error">Requested capture length ({0} Samples) exceeds maximum value for this number of channels ({1} Samples). Use 'EnableOversizeCapture' to risk compromising data contiguity in return for a larger capture length.</entry>        
+        <entry key="captureInvalid" context="warning">Capture ended prematurely due to reception of invalid data from the SDR hardware.</entry>        
+        <entry key="captureDiscontiguity" context="warning">Data is not contiguous at indices: {0}. To guarantee contiguous data disable EnableOversizeCapture.</entry>
+        <entry key="captureMetadataOverwrite" context="warning">Provided UserMetadata field {0} overwrites the existing generated field {1} of the Metadata.</entry>
+        <entry key="captureTooManyArgs" context="error">capture function returns a maximum of three output arguments: [Data, Metadata, Filename]. Type 'help capture' to learn more.</entry>
+        <entry key="captureSpecifyFilenameArg" context="error">capture function only returns a Filename as an output argument when the 'Filename' name-value pair is specified as an input argument. e.g. [~,~,ACTUAL_FILENAME] = capture(RX, 500, 'Filename', MY_FILENAME). ACTUAL_FILENAME will vary from MY_FILENAME when the 'Timestamp' name-value pair is used. Type 'help capture' to learn more.</entry>
+        
+        <!-- rfconverter_libiio\+comm\+libiio\+AD9361\tx.m -->
+        <entry key="PrimingTransmit" note="displaying runtime information">priming transmit..</entry>
+        <entry key="UnableToSendSamplesToRadio" context="error">Unable to send the requested number of samples to the radio.</entry>
+        <entry key="IncorrectDdsToneFrequencySize" context="error" note="DDS acronym for Direct Digital Synthesis">DDS Tone {0} Frequency must be of size {1} for {2} channel mode.</entry>
+        <entry key="IncorrectDdsToneScaleSize" context="error" note="DDS acronym for Direct Digital Synthesis">DDS Tone {0} Scale must be of size {1} for {2} channel mode.</entry>
+        <entry key="DdsToneFrequencyTooLarge" context="error" note="DDS acronym for Direct Digital Synthesis">DDS Tone {0} Frequency must be less than 1/2 Sampling Frequency.</entry>
+        <entry key="txHeaderTitle" context="uistring">AD9361 Radio Transmitter</entry>
+        <entry key="txHeaderText" context="uistring">Transmit data to an AD9361 radio.</entry>
+        <entry key="txIconText" context="uistring">AD936x\nTransmitter</entry>
+        <entry key="IncorrectNumberInputSingalColumns" context="error">The number of columns of the input signal must match the number of channels selected for single-channel settings.</entry>
+        <entry key="IncorrectInputDataType" context="error">The input data type must be {0}, {1} or {2}.</entry>
+        <entry key="LoFrequencyNotDouble" context="error" note="LO is acronym for Local Oscillator">LO Frequency must be type {0}.</entry>
+        <entry key="InvalidTxKernelBuffersCount" context="error">Too many samples are being transmitted. Either reduce the {0} property, the number of samples being transmitted or the number of active channels.</entry>
+        <entry key="TransmitRepeat_Started">
+            ## Waveform transmission has started successfully and will repeat indefinitely.
+            \n## Call the release method to stop the transmission.
+        </entry>
+        <entry key="RealInput">Input X must be complex. ''{0}'' is optimized for I/Q (complex) signals.</entry>
+        
+        <!-- rfconverter_libiio\+comm\+libiio\+AD9361\+internal\checkBlockCompatibility.m -->
+        <entry key="Model_TooManyBlocks" context="error">Model should only have one {0} and {1} block at the most.</entry>
+        <entry key="Model_BlocksParamNoMatch_CheckPllBbsr" context="error">Parameter ''{0}'' in block {1} does not match block {2}. Ensure PLL and base-band sample-rates are the same.</entry>
+        <entry key="Model_BlocksParamNoMatch" context="error">Parameter ''{0}'' in block {1} does not match block {2}.</entry>
+        
+        <!-- rfconverter_libiio\+comm\+libiio\+AD9361\+internal\infoButtonCb.m -->
+        <entry key="Dialog_SdrDeviceSettings">
+            Values going to the SDR device are often quantized by the hardware.{0}The following values are the actual SDR device settings.
+        </entry>
+        <entry key="Dialog_error" context="error">Could not retrieve HW info or actual property values. Saw the following error:\n{0}</entry>
+    </message>
+</rsccat>

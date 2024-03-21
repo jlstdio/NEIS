@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2017-2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="plutoradio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message> 
+        <entry key="FirmwareIncompatible" context="warning">
+          ADALM-PLUTO radio with serial number ''{0}'' has firmware version "{1}". You can continue using version "{1}", with the understanding that this release of the support package was tested with version "{2}". 
+          If you experience unexpected behavior while using version "{1}", we recommend installing version "{2}". 
+          To switch the firmware version to "{2}", {3} then click {4} to start the Hardware Setup App.
+        </entry>
+        <entry key="Here">
+          here
+        </entry>
+        <entry key="Unknown">
+          Unknown
+        </entry>
+        <entry key="StopSimulation">
+          ensure that the simulation is stopped,
+        </entry>
+        <entry key="ReleaseSysObj">
+          release the System object,
+        </entry>
+        <entry key="OutOfRangeFrequency" context="error">
+          Specified center frequency is outside factory default range. 
+          To assign the center frequency to {0}, release the radio and click 
+          {1}. For more information, see 
+          &lt;a href="matlab:plutoradiodoc(''configureplutoradio_ref'')"&gt;help configurePlutoRadio&lt;/a&gt;.
+        </entry>
+        <entry key="RealInput">
+          Input X must be complex. PlutoSDR is optimized for I/Q (complex) signals. See &lt;a href="matlab:plutoradiodoc('pluto_tx_real_input')"&gt;documentation&lt;/a&gt; for more information. 
+        </entry>
+    </message>
+</rsccat>

@@ -1,0 +1,3 @@
+analogdevices9361filterwizard.instrset<@>Analog Devices AD936x Filter Wizard
+plutosdrfw.instrset<@>PlutoSDR Firmware
+libiio.instrset<@>Library for interfacing with IIO devices

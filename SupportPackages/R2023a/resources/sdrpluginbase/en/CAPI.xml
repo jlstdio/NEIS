@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message>
+
+<!-- 
+Errors come back from the driver as "SDR::CAPI::IDString", "SingleStringHole".  But,
+because there is no way to look up messages in C++ code by string (msg cat
+assumes use of namespaces), we are converting ALL our messages in C++ to utilize
+this special entry StopGapCPPMsg.  We do this so that at least we can show the
+IDString and message string argument easily enough.
+
+Please note that errors coming back through the MAPI have normal MATLAB message
+ID lookup (which *does* use a string for lookup).
+
+This StopGapCPPMsg is needed for sfunction calls made during simulation
+(mdlStart, mdlOutputs, mdlTerminate).
+
+MIA has proposed to create a switchyard in C++ to convert the strings to
+namespaces.  Although this is certainly possible for some cases, we have not yet
+implemented such a lookup since I don't think it'll solve all cases.
+
+Dimitry Markman has a hidden API that allows string ID lookup but we have not
+integrated use of that in our code either as it also wouldn't cover all of our
+cases and was not officially sanctioned.
+
+Other contexts for message catalogs also do not work but are noted in their
+respective XML files.  This includes:
+No message catalog exists at all for:
+* rapid accelerator executables (I hear that a stand-alone msgcat lib is
+  possible; check in with Senthil)
+* other Simulink Coder targets
+* MATLAB codegen (it cannot handle dynamic msg generation) 
+-->
+<entry key="StopGapCPPMsg">
+An error occurred in the driver library.  You can look up the full error message
+in MATLAB by executing message('ID','Message'):\n
+ID : {0}\n
+Message: {1}
+</entry>
+
+<!-- NOTE: All messages have a single "hole" whether used as part of message or
+not.  Be sure to include {0} in all messages. -->
+
+<!-- These come from the libraries that may not use std::exception as
+the basis for their exceptions. -->
+<entry key="UnknownException">
+An unknown exception occurred during the execution of a driver function.\n
+{0}
+</entry>
+
+<!-- Most of libstdc++ and likely most of boost derive their exceptions on
+std::exception and so will use this entry. -->
+<entry key="StdException">
+A standard exception occurred during the execution of a driver function. 
+The exception reported was:\n
+{0}
+</entry>
+
+<!-- These are exceptions that reflect internal error conditions in our own
+software (i.e. libmwsdrfdriver) that should not happen but are thrown to prevent
+more catastrophic behavior such as segfaults.  These are expressed in the code
+by use of the dbg::assrtm_throw command.  One can do a source code search to see
+them. -->
+<entry key="GenericSDRException">
+A generic SDR exception occurred during the execution of a driver function. 
+The exception reported was:\n
+{0}
+</entry>
+
+<entry key="UnknownEmbeddedError">
+  An unknown error occurred during the execution of the embedded software.\n
+  {0}
+</entry>
+
+<entry key="InternalEmbeddedError">
+  An internal error occurred during the execution of the embedded software.
+  The error reported was:\n
+  {0}
+</entry>
+
+<entry key="GenericEmbeddedError">
+  An error occurred during the execution of the embedded software.
+  The error reported was:\n
+  {0}
+</entry>
+
+<entry key="VendorInternalEmbeddedError">
+  An internal error occurred during the execution of the vendor embedded software.
+  The error reported was:\n
+  {0}
+</entry>
+
+<entry key="VendorEmbeddedError">
+  An error occurred during the execution of the embedded software.
+  The error reported was:\n
+  {0}
+</entry>  
+  
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The rest of this catalog are specific SDR IDs generated within the driver
+library and are expressed in the code by use of a throw of an MWErrIDException.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<!-- ~~~~~~~~~~~~~~~ HOST DRIVER CREATION ~~~~~~~~~~~~~~~ -->
+<entry key="DriverNotFound">
+Driver object not found. {0}
+</entry>
+
+<entry key="DriverNoDefaultImpl">
+(internal error) Attempted to execute a driver function that had no default 
+implementation. {0}
+</entry>
+
+<entry key="CreateDriverAlreadyInUse">
+Cannot create a driver for the specified address.  The address ''{0}'' is 
+already owned by a block, block dialog, or System object.  Stop the simulation, 
+close the open dialog, or call the release method of the System object to allow 
+a new owner to be assigned.
+</entry>
+
+<entry key="CreateDriverCouldNotCreateDriver">
+Cannot create a driver for the specified address.  Either no connection could be 
+made or the device on the specified address is not a known SDR radio.  The 
+following error was returned:\n
+{0}
+</entry>
+
+<entry key="CreateDriverNoDeviceSelected">
+Could not create a driver because no device was selected.  Select a radio using 
+the ''Radio IP address'' parameter of the block mask or the IPAddress property 
+of the System object. {0}
+</entry>
+
+<entry key="NoDriverAvailable" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+
+<!-- I deleted the following message keys since I did not find them in a
+codesearch of the host code.  Not sure if these might come from ESW. I'd think
+we would still need them.  Grab them from SDR:CAPI if needed.
+
+CtrlProtoNoReadResp
+DCMLockTimeout
+ADIRFCMDProcRxGainRange
+ADIRFCMDProcRxFreqRange
+ADIRFCMDProcTxFreqRange
+ADIRFCMDProcADCFreqRange
+ADIRFCMDProcDACFreqRange
+DecimationFactorRange
+InterpolationFactorRange
+IntermediateFrequencyRange
+BurstSequenceOverflow
+
+-->
+<entry key="ReceiveDataTimeout">
+Timed out waiting to receive data from the SDR device.  The connection may have
+been lost.\n
+{0}
+</entry>
+<entry key="TransmitDataTimeout">
+Timeout: not sending data to the FPGA radio.\n
+{0}
+</entry>
+
+<entry key="CtrlProtoNoReadResp">
+There was no response from the hardware.\n
+- Ensure the host and hardware are physically connected via GigE.\n
+- Ensure the host NIC is configured properly.\n
+- Check that the IPAddress of the hardware is specified correctly.\n
+Run launchSetupWizard to set up the host and the SDR device for\n
+proper communication or see the documentation for additional\n
+diagnostic information.
+{0}
+</entry>
+
+<!-- ~~~~~~~~~~~~~~~ HOST/HW PROTOCOL ~~~~~~~~~~~~~~~ -->
+<!-- FIXME: the errors in the host driver lib are fully formed.  When we move to
+the CAPI returning just the status and then explicitly getting the error ID and
+holes, we can do this right. -->
+<entry key="GetVersionError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="InitAction" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="SoftResetError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="ResetError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="GetPropertyError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="SetPropertyError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>  
+<entry key="WriteAddressError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="ReadAddressError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="TestLoopbackError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="TestCheckPatternError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="TestGeneratePatternError" translate="false" note="translate=false set due no translatable content">
+{0}
+</entry>
+<entry key="NoHardwareBufferForTransmitRepeat">
+The radio does not support the transmit repeat mode because it does not have a
+hardware buffer to store the waveform.  Run in streaming mode or software burst
+mode.  {0}
+</entry>
+<entry key="BurstExceedsHWBufferSize">
+<![CDATA[Hardware buffering enabled.  Requested number of samples is greater
+than what is available in the hardware buffer.  You must lower the sampling
+rate such that a host-based software buffer can be used or reduce your burst
+size. See the <a href="matlab:sdrzdoc('sdrz_burstmode')">doc</a> for further
+information.\n
+{0}]]>
+</entry>
+<entry key="TxWaveformExceedsHWBufferSize">
+Requested number of samples is greater than what is available in the hardware
+buffer.  You must reduce your waveform length or the number of channels.\n
+{0}
+</entry>
+<entry key="TxWaveformAlreadyRunning">
+The transmitter is currently busy sending a repeated waveform from the hardware
+memory.  Call release() to stop the current transmission. {0} 
+</entry> 
+<entry key="TxNoAcknowledgementAfterPriming">
+The radio hardware buffer has not acknowledged the transfer of priming data. {0} 
+</entry> 
+
+</message>
+</rsccat>
+

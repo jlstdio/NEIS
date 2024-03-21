@@ -1,0 +1,13 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\axi_lite_simpleint_pcore_v1_00_a\data\axi_lite_simpleint_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2013-09-23 14:44:28
+##############################################################################
+
+lib axi_lite_simpleint_pcore_v1_00_a SDRSimpleInt vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint_pcore_dut vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint_pcore_axi_lite_module vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint_pcore_addr_decoder vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint_pcore_axi_lite vhdl
+lib axi_lite_simpleint_pcore_v1_00_a axi_lite_simpleint_pcore vhdl

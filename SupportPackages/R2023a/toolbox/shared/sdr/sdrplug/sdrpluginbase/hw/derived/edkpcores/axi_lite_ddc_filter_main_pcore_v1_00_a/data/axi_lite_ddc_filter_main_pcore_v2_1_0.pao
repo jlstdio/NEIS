@@ -1,0 +1,18 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\axi_lite_ddc_filter_main_pcore_v1_00_a\data\axi_lite_ddc_filter_main_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2013-07-31 17:17:07
+##############################################################################
+
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCStage5 vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCStage4 vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCStage3 vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCStage2 vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCStage1 vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a SDRDDCMain vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main_pcore_dut vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main_pcore_axi_lite_module vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main_pcore_addr_decoder vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main_pcore_axi_lite vhdl
+lib axi_lite_ddc_filter_main_pcore_v1_00_a axi_lite_ddc_filter_main_pcore vhdl

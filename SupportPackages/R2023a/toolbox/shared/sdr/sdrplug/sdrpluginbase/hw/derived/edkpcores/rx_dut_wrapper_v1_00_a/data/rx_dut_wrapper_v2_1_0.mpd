@@ -1,0 +1,25 @@
+BEGIN rx_dut_wrapper
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION IMP_NETLIST = TRUE
+OPTION DESC = rx_dut_wrapper
+
+
+## AXI-S Bus Interfaces
+BUS_INTERFACE BUS = M_AXIS, BUS_STD = AXIS, BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = S_AXIS, BUS_STD = AXIS, BUS_TYPE = TARGET
+
+## AXI-S Ports
+PORT clk = "", DIR = I, SIGIS = CLK, BUS = M_AXIS:S_AXIS
+
+PORT dataOut = TDATA, DIR = O, VEC = [31:0], BUS = M_AXIS
+PORT dataOutVld = TVALID, DIR = O, BUS = M_AXIS
+
+PORT dataIn = TDATA, DIR = I, VEC = [31:0], BUS = S_AXIS
+PORT dataInVld = TVALID, DIR = I, BUS = S_AXIS
+
+## External Ports
+PORT rst = "", DIR = I, SIGIS = RST
+
+END

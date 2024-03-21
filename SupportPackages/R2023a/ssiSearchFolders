@@ -1,0 +1,16 @@
+toolbox/shared/sdr/rfconverter_libiio
+toolbox/shared/sdr/sdrplug/plutoradio_hspdef/plutoradiodemos
+toolbox/shared/sdr/sdrplug/sdrplugins/plutoradio
+toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting
+toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/registry
+toolbox/shared/sdr/sdrplug/plutoradio_hspdef/plutoradio_hspdef
+toolbox/shared/sdr/sdrplug/plutoradio_hspdef/supportpkginfo
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/funcs
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/sdrmapi
+toolbox/shared/sdr/sdrplug/sdrpluginbase/hw/xilarch/zynq
+examples/plutoradio/data
+toolbox/shared/libiio/base
+toolbox/shared/libiio/lib
+toolbox/shared/libiio/lib/maci64
+3P.instrset/analogdevices9361filterwizard.instrset/ad936x-filter-wizard-baf2990995cce46e7ad888998769fac9d461eb96

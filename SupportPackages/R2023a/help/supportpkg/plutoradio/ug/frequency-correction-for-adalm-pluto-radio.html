@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Frequency Correction for ADALM-PLUTO Radio</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../diagnostics.html",
+          "name": "Diagnostics"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "diagnostics"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Frequency Correction for ADALM-PLUTO Radio",
+          "description": "Synchronize both the baseband sample rate and the center frequency of two PlutoSDRs by using the FrequencyCorrection property of comm.SDRRxPluto and comm.SDRTxPluto.",
+          "thumbnailURL": "../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_04.png",
+          "genre": "Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "plutoradio.FrequencyCorrectionForADALMPLUTORadioExample",
+          "name": "FrequencyCorrectionForADALMPLUTORadioExample",
+          "url": "frequency-correction-for-adalm-pluto-radio.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('plutoradio/FrequencyCorrectionForADALMPLUTORadioExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "FrequencyCorrectionForADALMPLUTORadioExample.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to synchronize both the baseband sample rate and the center frequency of two PlutoSDRs by using the FrequencyCorrection property of comm.SDRRxPluto and comm.SDRTxPluto."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_04.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script>
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../diagnostics.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Diagnostics</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Frequency Correction for ADALM-PLUTO Radio</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#d124e3374" class="intrnllnk">Algorithm for Estimating Frequency Correction</a></li><li><a href="#d124e3540" class="intrnllnk">Set up the Transmitter and the Receiver</a></li><li><a href="#d124e3549" class="intrnllnk">Receive and Visualize Signal</a></li><li><a href="#d124e3561" class="intrnllnk">Estimate and Apply the Value of FrequencyCorrection</a></li><li><a href="#d124e3569" class="intrnllnk">Receive and Visualize Signal</a></li><li><a href="#d124e3581" class="intrnllnk">Change FrequencyCorrection of the Transmitter</a></li><li><a href="#d124e3590" class="intrnllnk">Receive and Visualize Signal</a></li><li><a href="#d124e3602" class="intrnllnk">Estimate and Apply the Value of FrequencyCorrection</a></li><li><a href="#d124e3640" class="intrnllnk">Receive and Visualize Signal</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=diagnostics&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=diagnostics&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=diagnostics&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=diagnostics&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=diagnostics&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=diagnostics&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="example-plutoradioFrequencyCorrectionExample">Frequency Correction for ADALM-PLUTO Radio</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('plutoradio/FrequencyCorrectionForADALMPLUTORadioExample')" data-ex-genre="Script">Open Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="plutoradio-FrequencyCorrectionForADALMPLUTORadioExample"><meta itemprop="exampletitle" content="Frequency Correction for ADALMPLUTO Radio"></div><span id="FrequencyCorrectionForADALMPLUTORadioExample" class="anchor_target"></span>
+
+<p class="shortdesc">This example shows how to synchronize both the baseband sample rate and the center frequency of two PlutoSDRs by using the FrequencyCorrection property of comm.SDRRxPluto and comm.SDRTxPluto.</p>
+
+<p>The baseband sample rate and the center frequency of a PlutoSDR are physically derived from the same oscillator. Although each PlutoSDR is factory-calibrated to use appropriate PLL settings to digitally compensate for component variations of the oscillator, the compensation is imperfect because of quantization effects and changes in operating conditions (temperature in particular). Consequently, two PlutoSDRs will operate at slightly different baseband sample rates and center frequencies even if the corresponding System objects for the two PlutoSDRs use the same values for the BasebandSampleRate and CenterFrequency properties. To solve this problem, the FrequencyCorrection property of comm.SDRRxPluto and comm.SDRTxPluto can be used.</p>
+
+<p>The FrequencyCorrection property specifies the parts-per-million change to the baseband sample rate and the center frequency. The default value is 0, which means that the radio will use its factory-calibrated PLL settings. In this example, we treat one PlutoSDR, the transmitter, as a source with accurate baseband sample rate and center frequency. We use the signal received by another PlutoSDR, the receiver, to estimate the right value of FrequencyCorrection for the receiver System object, and show that when FrequencyCorrection is set appropriately, the frequency offset between the transmitter and the receiver will be removed almost completely.</p>
+
+<p>Refer to the <a href="guided-host-radio-hardware-setup.html" data-docid="plutoradio_ug#bvn89q2-14" class="a">Guided Host-Radio Hardware Setup</a> documentation for details on configuring your host computer to work with the PlutoSDR.</p>
+
+<div class="procedure"><h3 class="title" id="d124e3374">Algorithm for Estimating Frequency Correction<span id="FrequencyCorrectionForADALMPLUTORadioExample-1" class="anchor_target"></span></h3><p>Consider a signal transmitted from one PlutoSDR to another PlutoSDR. Let <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq07909151849112608907.png" alt="$f_{c}$"></span></span> and <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq13323092606687413251.png" alt="$f_{s}$"></span></span> be the center frequency and the baseband sample rate of the transmitter. Let <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq05129178177171434565.png" alt="$f_{c'}$"></span></span> and <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq15343752510790758111.png" alt="$f_{s'}$"></span></span> be the center frequency and the baseband sample rate of the receiver. Assume that the oscillator of the transmitter has not drifted and the oscillator of the receiver has drifted by a factor <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq14155762934034653800.png" alt="$K$"></span></span>, i.e. <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq17862648715295848971.png" alt="$f_{c'} = K * f_{c}$"></span></span> and <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq18361824516013700734.png" alt="$f_{s'} = K * f_{s}$"></span></span> where <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq14155762934034653800.png" alt="$K$"></span></span> is a number very close to 1.</p><p>A tone at baseband frequency <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq12960454224951954396.png" alt="$f_{ref}$"></span></span> in the transmitted signal will appear as a tone at baseband frequency <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq09147310950204216715.png" alt="$f_{received}$"></span></span> in the receiver, where <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq09998978701527985576.png" alt="$f_{received} = {{f_{ref} + (f_{c} - K*f_c)}\over{K}}$"></span></span>. The term <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq04500558796088833459.png" alt="$(f_{c} - K*f_c)$"></span></span> in the numerator is due to the mismatch in center frequencies. The scaling factor <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq14155762934034653800.png" alt="$K$"></span></span> in the denominator is due to the mismatch in baseband sample rates. Hence, we can solve for <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq14155762934034653800.png" alt="$K$"></span></span> with <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq12960454224951954396.png" alt="$f_{ref}$"></span></span>, <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq09147310950204216715.png" alt="$f_{received}$"></span></span>, and <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq00421178254993820480.png" alt="$f_c$"></span></span>. <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq17056333731538761500.png" alt="$K = {{f_c + f_{ref}}\over{f_c + f_{received}}}$"></span></span>.</p><p>To remove the frequency offset between the transmitter and the receiver, we need to scale the baseband sample rate and the center frequency of the receiver by a factor of <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq01095227104565881068.png" alt="$1\over K$"></span></span>. Let <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq03729901751903020778.png" alt="$p$"></span></span> be the parts-per-million change to the baseband sample rate and the center frequency of the receiver. Then <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq10980287957856352076.png" alt="$1 + {p\over 10^6} = {1\over K}$"></span></span>. Therefore <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq08505987374268194565.png" alt="$p = {{f_{received} - f_{ref}}\over{f_{c} + f_{ref}}} * 10^6$"></span></span>.</p><h3 class="title" id="d124e3540">Set up the Transmitter and the Receiver<span id="FrequencyCorrectionForADALMPLUTORadioExample-2" class="anchor_target"></span></h3><p>We use one PlutoSDR to transmit three tones at 20, 40, and 80 kHz. The tone at 80 kHz is used to estimate the value for FrequencyCorrection for the receiver. The tones at 20 and 40 kHz are only used to help visualize the spectrum.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Set up parameters and signals</span>
+sampleRate = 200e3;
+centerFreq = 2.42e9;
+fRef = 80e3;
+s1 = exp(1j*2*pi*20e3*[0:10000-1]'/sampleRate);  <span style="color:#228B22">% 20 kHz</span>
+s2 = exp(1j*2*pi*40e3*[0:10000-1]'/sampleRate);  <span style="color:#228B22">% 40 kHz</span>
+s3 = exp(1j*2*pi*fRef*[0:10000-1]'/sampleRate);  <span style="color:#228B22">% 80 kHz</span>
+s = s1 + s2 + s3;
+s = 0.6*s/max(abs(s)); <span style="color:#228B22">% Scale signal to avoid clipping in the time domain</span>
+
+<span style="color:#228B22">% Set up the transmitter</span>
+<span style="color:#228B22">% Use the default value of 0 for FrequencyCorrection, which corresponds to</span>
+<span style="color:#228B22">% the factory-calibrated condition</span>
+tx = sdrtx(<span style="color:#A020F0">'Pluto'</span>, <span style="color:#A020F0">'RadioID'</span>, <span style="color:#A020F0">'usb:1'</span>, <span style="color:#A020F0">'CenterFrequency'</span>, centerFreq, <span style="color:#0000FF">...</span>
+           <span style="color:#A020F0">'BasebandSampleRate'</span>, sampleRate, <span style="color:#A020F0">'Gain'</span>, 0, <span style="color:#0000FF">...</span>
+           <span style="color:#A020F0">'ShowAdvancedProperties'</span>, true);
+<span style="color:#228B22">% Use the info method to show the actual values of various hardware-related</span>
+<span style="color:#228B22">% properties</span>
+txRadioInfo = info(tx)
+<span style="color:#228B22">% Send signals</span>
+disp(<span style="color:#A020F0">'Send 3 tones at 20, 40, and 80 kHz'</span>);
+transmitRepeat(tx, s);
+
+<span style="color:#228B22">% Set up the receiver</span>
+<span style="color:#228B22">% Use the default value of 0 for FrequencyCorrection, which corresponds to</span>
+<span style="color:#228B22">% the factory-calibrated condition</span>
+numSamples = 1024*1024;
+rx = sdrrx(<span style="color:#A020F0">'Pluto'</span>, <span style="color:#A020F0">'RadioID'</span>, <span style="color:#A020F0">'usb:0'</span>, <span style="color:#A020F0">'CenterFrequency'</span>, centerFreq, <span style="color:#0000FF">...</span>
+           <span style="color:#A020F0">'BasebandSampleRate'</span>, sampleRate, <span style="color:#A020F0">'SamplesPerFrame'</span>, numSamples, <span style="color:#0000FF">...</span>
+           <span style="color:#A020F0">'OutputDataType'</span>, <span style="color:#A020F0">'double'</span>, <span style="color:#A020F0">'ShowAdvancedProperties'</span>, true);
+<span style="color:#228B22">% Use the info method to show the actual values of various hardware-related</span>
+<span style="color:#228B22">% properties</span>
+rxRadioInfo = info(rx)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>## Establishing connection to hardware. This process can take several seconds.
+
+txRadioInfo = 
+
+  struct with fields:
+
+                     Status: 'Full information'
+            CenterFrequency: 2.4200e+09
+         BasebandSampleRate: 200000
+                  SerialNum: '10447354119600021d001f000af61ec621'
+                       Gain: 0
+       RadioFirmwareVersion: "0.34"
+    ExpectedFirmwareVersion: "0.34"
+            HardwareVersion: "B1"
+        FrequencyCorrection: 0
+
+Send 3 tones at 20, 40, and 80 kHz
+## Establishing connection to hardware. This process can take several seconds.
+## Waveform transmission has started successfully and will repeat indefinitely. 
+## Call the release method to stop the transmission.
+## Establishing connection to hardware. This process can take several seconds.
+Warning: ADALM-PLUTO radio with serial number
+'1044734c9605001118000d00408f4fdca4' has firmware version "0.31". You can
+continue using version "0.31", with the understanding that this release of the
+support package was tested with version "0.34". If you experience unexpected
+behavior while using version "0.31", we recommend installing version "0.34". To
+switch the firmware version to "0.34", release the System object, then click &lt;a
+href="matlab:plutoradio.internal.openHSA;"&gt;here&lt;/a&gt; to start the Hardware Setup
+App. 
+
+rxRadioInfo = 
+
+  struct with fields:
+
+                      Status: 'Full information'
+             CenterFrequency: 2.4200e+09
+          BasebandSampleRate: 199999
+                   SerialNum: '1044734c9605001118000d00408f4fdca4'
+             GainControlMode: 'AGC Slow Attack'
+        RadioFirmwareVersion: "0.31"
+     ExpectedFirmwareVersion: "0.34"
+             HardwareVersion: "B0"
+    EnableQuadratureTracking: 1
+          EnableRFDCTracking: 1
+    EnableBasebandDCTracking: 1
+         FrequencyCorrection: 0
+
+</pre></div></div></div><h3 class="title" id="d124e3549">Receive and Visualize Signal<span id="FrequencyCorrectionForADALMPLUTORadioExample-3" class="anchor_target"></span></h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>disp([<span style="color:#A020F0">'Capture signal and observe the frequency offset'</span> newline])
+receivedSig = rx();
+
+<span style="color:#228B22">% Find the tone that corresponds to the 80 kHz transmitted tone</span>
+y = fftshift(abs(fft(receivedSig)));
+[~, idx] = findpeaks(y,<span style="color:#A020F0">'MinPeakProminence'</span>,max(0.5*y));
+fReceived = (max(idx)-numSamples/2-1)/numSamples*sampleRate;
+
+<span style="color:#228B22">% Plot the spectrum</span>
+sa = spectrumAnalyzer(<span style="color:#A020F0">'SampleRate'</span>, sampleRate);
+sa.Title = sprintf(<span style="color:#A020F0">'Tone Expected at 80 kHz, Actually Received at %.3f kHz'</span>, <span style="color:#0000FF">...</span>
+                   fReceived/1000);
+receivedSig = reshape(receivedSig, [], 16); <span style="color:#228B22">% Reshape into 16 columns</span>
+<span style="color:#0000FF">for</span> i = 1:size(receivedSig, 2)
+    sa(receivedSig(:,i));
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Capture signal and observe the frequency offset
+
+## Establishing connection to hardware. This process can take several seconds.
+Warning: ADALM-PLUTO radio with serial number
+'1044734c9605001118000d00408f4fdca4' has firmware version "0.31". You can
+continue using version "0.31", with the understanding that this release of the
+support package was tested with version "0.34". If you experience unexpected
+behavior while using version "0.31", we recommend installing version "0.34". To
+switch the firmware version to "0.34", release the System object, then click &lt;a
+href="matlab:plutoradio.internal.openHSA;"&gt;here&lt;/a&gt; to start the Hardware Setup
+App. 
+</pre></div></div></div><div class="informalfigure"><div id="d124e3558" class="mediaobject"><p><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_01.png"></p></div></div><h3 class="title" id="d124e3561">Estimate and Apply the Value of FrequencyCorrection<span id="FrequencyCorrectionForADALMPLUTORadioExample-4" class="anchor_target"></span></h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rx.FrequencyCorrection = (fReceived - fRef) / (centerFreq + fRef) * 1e6;
+msg = sprintf([<span style="color:#A020F0">'Based on the tone detected at %.3f kHz, '</span> <span style="color:#0000FF">...</span>
+               <span style="color:#A020F0">'FrequencyCorrection of the receiver should be set to %.4f'</span>], <span style="color:#0000FF">...</span>
+               fReceived/1000, rx.FrequencyCorrection);
+disp(msg);
+rxRadioInfo = info(rx)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Based on the tone detected at 60.093 kHz, FrequencyCorrection of the receiver should be set to -8.2256
+
+rxRadioInfo = 
+
+  struct with fields:
+
+                      Status: 'Full information'
+             CenterFrequency: 2.4200e+09
+          BasebandSampleRate: 199999
+                   SerialNum: '1044734c9605001118000d00408f4fdca4'
+             GainControlMode: 'AGC Slow Attack'
+        RadioFirmwareVersion: "0.31"
+     ExpectedFirmwareVersion: "0.34"
+             HardwareVersion: "B0"
+    EnableQuadratureTracking: 1
+          EnableRFDCTracking: 1
+    EnableBasebandDCTracking: 1
+         FrequencyCorrection: -8.2250
+
+</pre></div></div></div><h3 class="title" id="d124e3569">Receive and Visualize Signal<span id="FrequencyCorrectionForADALMPLUTORadioExample-5" class="anchor_target"></span></h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Capture 10 frames, but only use the last frame to skip the transient</span>
+<span style="color:#228B22">% effects due to changing FrequencyCorrection</span>
+disp([<span style="color:#A020F0">'Capture signal and verify frequency correction'</span> newline])
+<span style="color:#0000FF">for</span> i = 1:10
+    receivedSig = rx();
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Find the tone that corresponds to the 80 kHz transmitted tone</span>
+<span style="color:#228B22">% fReceived2 should be very close to 80 kHz</span>
+y = fftshift(abs(fft(receivedSig)));
+[~,idx] = findpeaks(y,<span style="color:#A020F0">'MinPeakProminence'</span>,max(0.5*y));
+fReceived2 = (max(idx)-numSamples/2-1)/numSamples*sampleRate;
+
+<span style="color:#228B22">% Plot the spectrum</span>
+sa.Title = <span style="color:#A020F0">'3 Tones Received at 20, 40, and 80 kHz'</span>;
+receivedSig = reshape(receivedSig, [], 16); <span style="color:#228B22">% Reshape into 16 columns</span>
+<span style="color:#0000FF">for</span> i = 1:size(receivedSig, 2)
+    sa(receivedSig(:,i));
+<span style="color:#0000FF">end</span>
+msg = sprintf(<span style="color:#A020F0">'Tone detected at %.3f kHz\n'</span>, fReceived2/1000);
+disp(msg);
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Capture signal and verify frequency correction
+
+Tone detected at 79.916 kHz
+
+</pre></div></div></div><div class="informalfigure"><div id="d124e3578" class="mediaobject"><p><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_02.png"></p></div></div><h3 class="title" id="d124e3581">Change FrequencyCorrection of the Transmitter<span id="FrequencyCorrectionForADALMPLUTORadioExample-6" class="anchor_target"></span></h3><p>Now we change the FrequencyCorrection property of the transmitter to simulate the effect that the transmitter's oscillator has drifted.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>disp([<span style="color:#A020F0">'Change the FrequencyCorrection property of the transmitter to 1 to '</span> <span style="color:#0000FF">...</span>
+      <span style="color:#A020F0">'simulate the effect that the transmitter''s oscillator has drifted'</span>])
+tx.FrequencyCorrection = 1; <span style="color:#228B22">% 1 ppm</span>
+txRadioInfo = info(tx)
+tx.transmitRepeat(s);
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Change the FrequencyCorrection property of the transmitter to 1 to simulate the effect that the transmitter's oscillator has drifted
+
+txRadioInfo = 
+
+  struct with fields:
+
+                     Status: 'Full information'
+            CenterFrequency: 2.4200e+09
+         BasebandSampleRate: 200000
+                  SerialNum: '10447354119600021d001f000af61ec621'
+                       Gain: 0
+       RadioFirmwareVersion: "0.34"
+    ExpectedFirmwareVersion: "0.34"
+            HardwareVersion: "B1"
+        FrequencyCorrection: 1.0000
+
+## Waveform transmission has started successfully and will repeat indefinitely. 
+## Call the release method to stop the transmission.
+</pre></div></div></div><h3 class="title" id="d124e3590">Receive and Visualize Signal<span id="FrequencyCorrectionForADALMPLUTORadioExample-7" class="anchor_target"></span></h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Capture 10 frames, but use the last frame only to skip the transient</span>
+<span style="color:#228B22">% effects due to changing FrequencyCorrection</span>
+disp([<span style="color:#A020F0">'Capture signal and observe the frequency offset'</span> newline])
+<span style="color:#0000FF">for</span> i = 1:10
+    receivedSig = rx();
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Find the tone that corresponds to the 80 kHz transmitted tone</span>
+<span style="color:#228B22">% fReceived3 will not be close to 80 kHz because tx.FrequencyCorrection</span>
+<span style="color:#228B22">% has been changed</span>
+y = fftshift(abs(fft(receivedSig)));
+[~,idx] = findpeaks(y,<span style="color:#A020F0">'MinPeakProminence'</span>,max(0.5*y));
+fReceived3 = (max(idx)-numSamples/2-1)/numSamples*sampleRate;
+
+<span style="color:#228B22">% Plot the spectrum</span>
+sa.Title = sprintf(<span style="color:#A020F0">'Tone Expected at 80 kHz, Actually Received at %.3f kHz'</span>, <span style="color:#0000FF">...</span>
+                   fReceived3/1000);
+receivedSig = reshape(receivedSig, [], 16); <span style="color:#228B22">% Reshape into 16 columns</span>
+<span style="color:#0000FF">for</span> i = 1:size(receivedSig, 2)
+    sa(receivedSig(:,i));
+<span style="color:#0000FF">end</span>
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Capture signal and observe the frequency offset
+
+</pre></div></div></div><div class="informalfigure"><div id="d124e3599" class="mediaobject"><p><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_03.png"></p></div></div><h3 class="title" id="d124e3602">Estimate and Apply the Value of FrequencyCorrection<span id="FrequencyCorrectionForADALMPLUTORadioExample-8" class="anchor_target"></span></h3><p>We use the same method to estimate the required parts-per-million change to the baseband sample rate and the center frequency of the receiver. However, the estimated value needs to be combined appropriately with the current setting of FrequencyCorrection, which is nonzero. Since <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq01974128745325032787.png" alt="$(1+{p_1}/10^6)*(1+{p_2}/10^6) = 1 + ({p_1} + {p_2} + {p_1}*{p_2}*10^{-6})/10^6$"></span></span>, applying two changes <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq14724724439024755973.png" alt="$p_1$"></span></span> and <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq09694354862110137001.png" alt="$p_2$"></span></span> successively is equivalent to applying a single change of <span class="inlineequation"><span class="inlinemediaobject"><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_eq13623068688696828768.png" alt="&#36;{p_1} + {p_2} + {p_1}*{p_2}*10^{-6}$"></span></span> with respect to the factory-calibrated condition.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxRadioInfo = info(rx);
+currentPPM = rxRadioInfo.FrequencyCorrection;
+ppmToAdd = (fReceived3 - fRef) / (centerFreq + fRef) * 1e6;
+rx.FrequencyCorrection = currentPPM + ppmToAdd + currentPPM*ppmToAdd/1e6;
+msg = sprintf([<span style="color:#A020F0">'Based on the tone detected at %.3f kHz, '</span> <span style="color:#0000FF">...</span>
+               <span style="color:#A020F0">'FrequencyCorrection of the receiver should be changed from %.4f to %.4f'</span>], <span style="color:#0000FF">...</span>
+               fReceived3/1000, currentPPM, rx.FrequencyCorrection);
+disp(msg);
+rxRadioInfo = info(rx)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Based on the tone detected at 82.309 kHz, FrequencyCorrection of the receiver should be changed from -8.2250 to -7.2709
+
+rxRadioInfo = 
+
+  struct with fields:
+
+                      Status: 'Full information'
+             CenterFrequency: 2.4200e+09
+          BasebandSampleRate: 200000
+                   SerialNum: '1044734c9605001118000d00408f4fdca4'
+             GainControlMode: 'AGC Slow Attack'
+        RadioFirmwareVersion: "0.31"
+     ExpectedFirmwareVersion: "0.34"
+             HardwareVersion: "B0"
+    EnableQuadratureTracking: 1
+          EnableRFDCTracking: 1
+    EnableBasebandDCTracking: 1
+         FrequencyCorrection: -7.2750
+
+</pre></div></div></div><h3 class="title" id="d124e3640">Receive and Visualize Signal<span id="FrequencyCorrectionForADALMPLUTORadioExample-9" class="anchor_target"></span></h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Capture 10 frames, but use the last frame only to skip the transient</span>
+<span style="color:#228B22">% effects due to changing FrequencyCorrection</span>
+disp([<span style="color:#A020F0">'Capture signal and verify frequency correction'</span> newline])
+<span style="color:#0000FF">for</span> i = 1:10
+    receivedSig = rx();
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Find the tone that corresponds to the 80 kHz transmitted tone</span>
+<span style="color:#228B22">% fReceived4 should be very close to 80 kHz</span>
+y = fftshift(abs(fft(receivedSig)));
+[~,idx] = findpeaks(y,<span style="color:#A020F0">'MinPeakProminence'</span>,max(0.5*y));
+fReceived4 = (max(idx)-numSamples/2-1)/numSamples*sampleRate;
+
+<span style="color:#228B22">% Plot the spectrum</span>
+sa.Title = <span style="color:#A020F0">'3 Tones Received at 20, 40, and 80 kHz'</span>;
+receivedSig = reshape(receivedSig, [], 16); <span style="color:#228B22">% Reshape into 16 columns</span>
+<span style="color:#0000FF">for</span> i = 1:size(receivedSig, 2)
+    sa(receivedSig(:,i));
+<span style="color:#0000FF">end</span>
+msg = sprintf(<span style="color:#A020F0">'Tone detected at %.3f kHz'</span>, fReceived4/1000);
+disp(msg);
+
+<span style="color:#228B22">% Release the radios</span>
+release(tx);
+release(rx);
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Capture signal and verify frequency correction
+
+Tone detected at 79.994 kHz
+</pre></div></div></div><div class="informalfigure"><div id="d124e3649" class="mediaobject"><p><img src="../../../examples/plutoradio/win64/FrequencyCorrectionForADALMPLUTORadioExample_04.png"></p></div></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

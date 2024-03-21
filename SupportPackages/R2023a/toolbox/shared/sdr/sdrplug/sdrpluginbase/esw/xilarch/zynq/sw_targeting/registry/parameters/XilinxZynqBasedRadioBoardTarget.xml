@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+   <name>Xilinx Zynq Based Radio Board Target</name>
+   <parametergroup>
+      <name>Clocking</name>
+      <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="1" DoNotStore="false" Enabled="1" Entries="" Name="CPU Clock (MHz):" RowSpan="[0,0]" SaveValueAsString="true" Storage="Clocking.cpuClockRateMHz" Tag="CPU_Clock_in_MHz" ToolTip="" Type="edit" Value="800" ValueRange="" ValueType="" Visible="1"/>
+      <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="1" DoNotStore="false" Enabled="1" Entries="" Name="Allow interrupt driven timeout" RowSpan="[0,0]" SaveValueAsString="false" Storage="InterruptDrivenRate.allowTimeout" Tag="Allow_timeout" ToolTip="" Type="checkbox" Value="0" ValueRange="" ValueType="" Visible="0"/>
+   </parametergroup>
+    <parametergroup>
+        <name>Build options</name>
+    <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="0" DoNotStore="false" Enabled="1" Entries="Build; Build, load, and run" Name="Build action:" RowSpan="[1,1]" SaveValueAsString="true" Storage="Runtime.BuildAction" Tag="Build_action" Type="combobox" Value="Build, load, and run" Visible="1"/>
+    </parametergroup> 
+</productinfo>

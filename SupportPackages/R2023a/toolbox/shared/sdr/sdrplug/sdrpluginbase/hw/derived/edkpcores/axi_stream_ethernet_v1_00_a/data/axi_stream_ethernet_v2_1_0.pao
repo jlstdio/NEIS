@@ -1,0 +1,20 @@
+##############################################################################
+## Filename:          L:\Temp\EDK\pcores/axi_stream_ethernet_v1_00_a/data/axi_stream_ethernet_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Dec 12 14:17:45 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib axi_stream_ethernet_v1_00_a axi_stream_ethernet vhdl
+lib axi_stream_ethernet_v1_00_a MWDPRAM vhdl
+lib axi_stream_ethernet_v1_00_a MWEthAxisIF vhdl
+lib axi_stream_ethernet_v1_00_a MWEthAxisIFAsyncFIFO vhdl
+lib axi_stream_ethernet_v1_00_a MWEthAxisIFRx vhdl
+lib axi_stream_ethernet_v1_00_a MWEthAxisIFTx vhdl
+lib axi_stream_ethernet_v1_00_a MWEthCommLayer vhdl
+lib axi_stream_ethernet_v1_00_a MWMAC vhdl
+lib axi_stream_ethernet_v1_00_a mwpingram vhdl
+lib axi_stream_ethernet_v1_00_a mwrxmac vhdl
+lib axi_stream_ethernet_v1_00_a mwtxmac vhdl
+lib axi_stream_ethernet_v1_00_a MWUDPCRC vhdl
+lib axi_stream_ethernet_v1_00_a MWPKTBuffer vhdl
+lib axi_stream_ethernet_v1_00_a MWUDPPKTBuilder vhdl

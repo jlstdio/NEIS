@@ -1,0 +1,37 @@
+###################################################################
+##
+## Name     : axi_stream_loopback_buffer
+## Desc     : 
+##
+###################################################################
+
+BEGIN axi_stream_loopback_buffer
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION IMP_NETLIST = TRUE
+OPTION DESC = axi_stream_loopback_buffer
+
+
+## AXI-S Bus Interfaces
+BUS_INTERFACE BUS = M_AXIS, BUS_STD = AXIS, BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = S_AXIS, BUS_STD = AXIS, BUS_TYPE = TARGET
+
+## AXI-S Parameters
+PARAMETER DATA_WIDTH = 32, DT = INTEGER, RANGE = (32,64,128,256), BUS = M_AXIS:S_AXIS, DESC = FIFO width
+PARAMETER ADDR_WIDTH = 12, DT = INTEGER, BUS = M_AXIS:S_AXIS, DESC = FIFO depth
+
+## AXI-S Ports
+PORT data_out_clk = "", DIR = I, SIGIS = CLK, BUS = M_AXIS
+PORT data_out = TDATA, DIR = O, VEC = [DATA_WIDTH-1:0], BUS = M_AXIS
+PORT data_out_vld = TVALID, DIR = O, BUS = M_AXIS
+
+PORT data_in_clk = "", DIR = I, SIGIS = CLK, BUS = S_AXIS
+PORT data_in = TDATA, DIR = I, VEC = [DATA_WIDTH-1:0], BUS = S_AXIS
+PORT data_in_vld = TVALID, DIR = I, BUS = S_AXIS
+
+## External Ports
+PORT data_out_en = "", DIR = I
+PORT data_rst = "", DIR = I, SIGIS=RST
+
+END

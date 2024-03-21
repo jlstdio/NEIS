@@ -1,0 +1,1382 @@
+{ "schema" : "referenceapi_schema.json",
+  "schemaVersion" : "1.0",
+  "productName" : "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio",
+  "baseCode" : "PLUTO",
+  "helpFolder" : "plutoradio",
+  "helpLocation" : "supportpkg\/plutoradio",
+  "refItems" : [
+
+    { "href" : "ref\/comm.sdrrxpluto-system-object.html",
+      "refentity" : 
+      [ 
+        { "type" : "sysobj",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "type" : "function",
+          "name" : "comm.SDRRxPluto",
+          "fcntype" : "constructor" } ],
+      "packagename" : "comm",
+      "refpurpose" : "Receive data from Analog Devices ADALM-PLUTO radio",
+      "introduced" : "R2017a",
+      "description" : "The comm.SDRRxPluto System object is a signal source that receives data from an Analog Devices ADALM-PLUTO radio.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntaxtype" : "createobject",
+          "syntax" : 
+          [ "rxPluto = sdrrx('Pluto')",
+            "rxPluto = sdrrx('Pluto',Name,Value)" ] },
+        
+        { "title" : "",
+          "syntaxtype" : "usage",
+          "syntax" : 
+          [ "rxdata = rxPluto()",
+            "[rxdata,datavalid,overflow] = rxPluto()" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "rxdata",
+          "purpose" : "Received data",
+          "syntaxtype" : "usage",
+          "htmlid" : "d124e7151",
+          "value" : 
+          [ "vector of complex values" ] },
+        
+        { "name" : "datavalid",
+          "purpose" : "Data valid indicator",
+          "syntaxtype" : "usage",
+          "htmlid" : "mw_1c78fbfb-bc8c-4fe8-a204-d677e9ab9e5b",
+          "value" : 
+          [ "logical" ] },
+        
+        { "name" : "overflow",
+          "purpose" : "Lost samples indicator",
+          "syntaxtype" : "usage",
+          "htmlid" : "mw_28e0d0d4-c177-4180-8504-2be53a0ceb2c",
+          "value" : 
+          [ "logical" ] } ],
+      "classpropertygroup" : 
+      [ 
+        { "classproperty" : 
+          [ 
+            { "name" : "RadioID",
+              "purpose" : "Radio identification number",
+              "htmlid" : "bvn859s-1_sep_shared-RadioID",
+              "value" : 
+              [ "character vector",
+                "'usb:0'" ],
+              "defaultvalue" : "'usb:0'" },
+            
+            { "name" : "CenterFrequency",
+              "purpose" : "RF center frequency setting in Hz",
+              "htmlid" : "bvn859s-1_sep_shared-CenterFrequency",
+              "value" : 
+              [ "2.4e9",
+                "scalar" ],
+              "defaultvalue" : "2.4e9" },
+            
+            { "name" : "ChannelMapping",
+              "purpose" : "Channel mapping",
+              "htmlid" : "bvn859s-1_sep_shared-ChannelMapping",
+              "value" : 
+              [ "1" ],
+              "defaultvalue" : "1" },
+            
+            { "name" : "GainSource",
+              "purpose" : "Gain source",
+              "htmlid" : "bvn859s-1_sep_shared-GainSource",
+              "value" : 
+              [ "'AGC Slow Attack'",
+                "'AGC Fast Attack'",
+                "'Manual'" ],
+              "defaultvalue" : "'AGC Slow Attack'" },
+            
+            { "name" : "Gain",
+              "purpose" : "Radio receiver gain",
+              "htmlid" : "bvn859s-1_sep_mw_a9cb41e1-8044-438f-a203-259aebd4625d",
+              "value" : 
+              [ "10",
+                "scalar" ],
+              "defaultvalue" : "10" },
+            
+            { "name" : "BasebandSampleRate",
+              "purpose" : "Baseband sampling rate",
+              "htmlid" : "bvn859s-1_sep_shared-BasebandSampleRate",
+              "value" : 
+              [ "1.0e6",
+                "scalar" ],
+              "defaultvalue" : "1.0e6" },
+            
+            { "name" : "OutputDataType",
+              "purpose" : "Output signal data type",
+              "htmlid" : "bvn859s-1_sep_mw_e86776db-abd3-4d8b-80fe-7d1bc2802199",
+              "value" : 
+              [ "'int16'",
+                "'single'",
+                "'double'" ],
+              "defaultvalue" : "'int16'" },
+            
+            { "name" : "SamplesPerFrame",
+              "purpose" : "Number of samples per frame",
+              "htmlid" : "bvn859s-1_sep_shared-SamplesPerFrame",
+              "value" : 
+              [ "20,000",
+                "positive integer" ],
+              "defaultvalue" : "20,000" },
+            
+            { "name" : "EnableBurstMode",
+              "purpose" : "Option for burst mode",
+              "htmlid" : "bvn859s-1_sep_mw_c09871a2-9e35-4fa5-a0c3-071491df5c66",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "NumFramesInBurst",
+              "purpose" : "Number of frames in a contiguous burst",
+              "htmlid" : "bvn859s-1_sep_mw_6639a89c-a76c-42d3-b1ba-67c0112bc9cc",
+              "value" : 
+              [ "1",
+                "strictly positive integer" ],
+              "defaultvalue" : "1" } ] },
+        
+        { "title" : "Advanced Properties",
+          "classproperty" : 
+          [ 
+            { "name" : "ShowAdvancedProperties",
+              "purpose" : "Option to show advanced properties",
+              "htmlid" : "mw_9530d6ae-832d-4c3e-b51b-a1b9cc86662a",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "UseCustomFilter",
+              "purpose" : "Use custom filter",
+              "htmlid" : "mw_89dd8455-c1ec-4b14-948e-804cdcba977b",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "EnableQuadratureCorrection",
+              "purpose" : "Quadrature correction",
+              "htmlid" : "mw_5b8d0c4d-c7fb-4202-983f-a1d59421bf8a",
+              "value" : 
+              [ "true",
+                "false" ],
+              "defaultvalue" : "true" },
+            
+            { "name" : "EnableRFDCCorrection",
+              "purpose" : "RF DC correction",
+              "htmlid" : "mw_69a4bc3f-c8f0-4e7c-a05c-8c13e88f26fb",
+              "value" : 
+              [ "true",
+                "false" ],
+              "defaultvalue" : "true" },
+            
+            { "name" : "EnableBasebandDCCorrection",
+              "purpose" : "Baseband DC correction",
+              "htmlid" : "mw_8e6c39d2-3c37-46b0-99d6-0827055647dd",
+              "value" : 
+              [ "true",
+                "false" ],
+              "defaultvalue" : "true" },
+            
+            { "name" : "FrequencyCorrection",
+              "purpose" : "Frequency correction value in ppm",
+              "htmlid" : "d124e6833",
+              "value" : 
+              [ "0",
+                "scalar" ],
+              "defaultvalue" : "0" },
+            
+            { "name" : "BISTLoopbackMode",
+              "purpose" : "Built-in self-test (BIST) loopback mode",
+              "htmlid" : "bvn859s-1_sep_mw_2858fe15-bb5b-4eca-9706-1bca447fac05",
+              "value" : 
+              [ "'Disabled'",
+                "'Digital Tx -> Digital Rx'",
+                "'RF Rx -> RF Tx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTToneInject",
+              "purpose" : "BIST signal injection mode",
+              "htmlid" : "bvn859s-1_sep_mw_99dafa4e-bf93-4ce8-bc18-147c0925f7e0",
+              "value" : 
+              [ "'Disabled'",
+                "'Tone Inject Tx'",
+                "'Tone Inject Rx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTSignalGen",
+              "purpose" : "Source of BIST signal generation",
+              "htmlid" : "bvn859s-1_sep_mw_f6de8a92-79a2-42bd-8c1d-03d50453c0cf",
+              "value" : 
+              [ "'PRBS'",
+                "'Tone'" ],
+              "defaultvalue" : "'PRBS'" },
+            
+            { "name" : "BISTToneFreq",
+              "purpose" : "BIST tone frequency",
+              "htmlid" : "bvn859s-1_sep_mw_6ae200da-a80c-4810-8b8c-b51775b3086d",
+              "value" : 
+              [ "'Fs\/32'",
+                "'Fs\/16'",
+                "'Fs*3\/32'",
+                "'Fs\/8'" ],
+              "defaultvalue" : "'Fs\/32'" },
+            
+            { "name" : "BISTToneLevel",
+              "purpose" : "BIST tone level",
+              "htmlid" : "bvn859s-1_sep_mw_6501d0d1-a8ea-4520-bc9d-96897f0c7b95",
+              "value" : 
+              [ "'0'",
+                "'-6'",
+                "'-12'",
+                "'-18'" ],
+              "defaultvalue" : "'0'" } ] } ],
+      "examples" : 
+      [ 
+        { "url" : "comm.sdrrxpluto-system-object.html#bvn859s-1_ex1",
+          "open_command" : "openExample('plutoradio\/CreateReceiverSystemObjectAndReceiveDataOnSingleChannelExample')",
+          "title" : "Create Receiver System Object and Receive Data on Single Channel" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html#bvn859s-1_ex2",
+          "open_command" : "openExample('plutoradio\/UsingFrequencyCorrectionWithOneADALMPLUTORadioExample')",
+          "title" : "Using Frequency Correction with One ADALM-PLUTO Radio" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html#bvn859s-1_ex3",
+          "open_command" : "openExample('plutoradio\/GetADALMPLUTORadioInformationExample')",
+          "title" : "Get ADALM-PLUTO Radio Information" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html#bvn859s-1_ex4",
+          "open_command" : "openExample('plutoradio\/CaptureRFDataToBasebandFileUsingADALMPLUTORadioExample')",
+          "title" : "Capture RF Data to Baseband File Using ADALM-PLUTO Radio" } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "plutoreceiver.html",
+          "name" : "Pluto Receiver" } ] },
+    { "href" : "ref\/comm.sdrrxpluto.designcustomfilter.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "designCustomFilter",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "comm.SDRRxPluto.designCustomFilter",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "comm.SDRTxPluto.designCustomFilter",
+          "fcntype" : "instancemethod" } ],
+      "packagename" : "comm",
+      "refpurpose" : "Design custom filter for Analog Devices AD936x RF chip",
+      "introduced" : "R2017b",
+      "description" : "This MATLAB function opens the ADI filter wizard application.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "designCustomFilter(x)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "x",
+          "purpose" : "Receiver or transmitter",
+          "htmlid" : "d124e1156",
+          "value" : 
+          [ "System object" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" } ] },
+    { "href" : "ref\/comm.sdrtxpluto-system-object.html",
+      "refentity" : 
+      [ 
+        { "type" : "sysobj",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "type" : "function",
+          "name" : "comm.SDRTxPluto",
+          "fcntype" : "constructor" } ],
+      "packagename" : "comm",
+      "refpurpose" : "Transmit data to Analog Devices ADALM-PLUTO radio",
+      "introduced" : "R2017a",
+      "description" : "The comm.SDRTxPluto System object is a signal source that transmits data to an Analog Devices ADALM-PLUTO radio.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntaxtype" : "createobject",
+          "syntax" : 
+          [ "txPluto = sdrtx('Pluto')",
+            "txPluto = sdrtx('Pluto',Name,Value)" ] },
+        
+        { "title" : "",
+          "syntaxtype" : "usage",
+          "syntax" : 
+          [ "txPluto(data)",
+            "underflow = txPluto(data)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "data",
+          "purpose" : "Transmission data",
+          "syntaxtype" : "usage",
+          "htmlid" : "d124e8552",
+          "value" : 
+          [ "column vector" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "underflow",
+          "purpose" : "Lost samples indicator",
+          "syntaxtype" : "usage",
+          "htmlid" : "mw_c81ba507-9212-4dbf-b39c-cca15a1ee344",
+          "value" : 
+          [ "logical" ] } ],
+      "classpropertygroup" : 
+      [ 
+        { "title" : "Main Properties",
+          "classproperty" : 
+          [ 
+            { "name" : "RadioID",
+              "purpose" : "Radio identification number",
+              "htmlid" : "bvn_isv-1_sep_shared-RadioID",
+              "value" : 
+              [ "character vector",
+                "'usb:0'" ],
+              "defaultvalue" : "'usb:0'" },
+            
+            { "name" : "CenterFrequency",
+              "purpose" : "RF center frequency setting in Hz",
+              "htmlid" : "bvn_isv-1_sep_shared-CenterFrequency",
+              "value" : 
+              [ "2.4e9",
+                "scalar" ],
+              "defaultvalue" : "2.4e9" },
+            
+            { "name" : "Gain",
+              "purpose" : "Gain",
+              "htmlid" : "bvn_isv-1_sep_shared-Gain",
+              "value" : 
+              [ "-10",
+                "scalar" ],
+              "defaultvalue" : "-10" },
+            
+            { "name" : "ChannelMapping",
+              "purpose" : "Channel mapping",
+              "htmlid" : "bvn_isv-1_sep_shared-ChannelMapping",
+              "value" : 
+              [ "1" ],
+              "defaultvalue" : "1" },
+            
+            { "name" : "BasebandSampleRate",
+              "purpose" : "Baseband sampling rate",
+              "htmlid" : "bvn_isv-1_sep_shared-BasebandSampleRate",
+              "value" : 
+              [ "1.0e6",
+                "scalar" ],
+              "defaultvalue" : "1.0e6" } ] },
+        
+        { "title" : "Advance Properties",
+          "classproperty" : 
+          [ 
+            { "name" : "ShowAdvancedProperties",
+              "purpose" : "Option to show advanced properties",
+              "htmlid" : "bvn_isv-1_sep_mw_0b8bd99f-bfbc-416c-81d8-76ee6c5cd2d9",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "UseCustomFilter",
+              "purpose" : "Use custom filter",
+              "htmlid" : "bvn_isv-1_sep_mw_c27d31fa-41bf-4b55-bb97-cd236475dac8",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "FrequencyCorrection",
+              "purpose" : "Frequency correction value in ppm",
+              "htmlid" : "d124e8031",
+              "value" : 
+              [ "0",
+                "scalar" ],
+              "defaultvalue" : "0" },
+            
+            { "name" : "DataSourceSelect",
+              "purpose" : "Select data source",
+              "htmlid" : "bvn_isv-1_sep_mw_5a6ba7e9-779e-4650-8804-72f9c5d0074e",
+              "value" : 
+              [ "'Input Port'",
+                "'DDS'" ],
+              "defaultvalue" : "'Input Port'" },
+            
+            { "name" : "DDSTone1Freq",
+              "purpose" : "First DDS tone frequency in Hz",
+              "htmlid" : "bvn_isv-1_sep_mw_fa02647d-b374-4ffa-8e3d-cd0f739267cb",
+              "value" : 
+              [ "5000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "5000" },
+            
+            { "name" : "DDSTone2Freq",
+              "purpose" : "Second DDS tone frequency in Hz",
+              "htmlid" : "bvn_isv-1_sep_mw_02ed378d-5310-47c7-a11b-6d2d3f02d8df",
+              "value" : 
+              [ "10000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "10000" },
+            
+            { "name" : "DDSTone1Scale",
+              "purpose" : "First DDS tone scale",
+              "htmlid" : "bvn_isv-1_sep_mw_35a236c3-f8ca-437d-aa96-360ba3a9eeab",
+              "value" : 
+              [ "0.5000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "0.5000" },
+            
+            { "name" : "DDSTone2Scale",
+              "purpose" : "Second DDS tone scale",
+              "htmlid" : "bvn_isv-1_sep_mw_66a82280-7641-4e1e-809b-09ac7d1b5cca",
+              "value" : 
+              [ "0.2500",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "0.2500" },
+            
+            { "name" : "BISTLoopbackMode",
+              "purpose" : "Built-in self-test (BIST) loopback mode",
+              "htmlid" : "bvn_isv-1_sep_mw_2858fe15-bb5b-4eca-9706-1bca447fac05",
+              "value" : 
+              [ "'Disabled'",
+                "'Digital Tx -> Digital Rx'",
+                "'RF Rx -> RF Tx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTToneInject",
+              "purpose" : "BIST signal injection mode",
+              "htmlid" : "bvn_isv-1_sep_mw_99dafa4e-bf93-4ce8-bc18-147c0925f7e0",
+              "value" : 
+              [ "'Disabled'",
+                "'Tone Inject Tx'",
+                "'Tone Inject Rx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTSignalGen",
+              "purpose" : "Source of BIST signal generation",
+              "htmlid" : "bvn_isv-1_sep_mw_f6de8a92-79a2-42bd-8c1d-03d50453c0cf",
+              "value" : 
+              [ "'PRBS'",
+                "'Tone'" ],
+              "defaultvalue" : "'PRBS'" },
+            
+            { "name" : "BISTToneFreq",
+              "purpose" : "BIST tone frequency",
+              "htmlid" : "bvn_isv-1_sep_mw_6ae200da-a80c-4810-8b8c-b51775b3086d",
+              "value" : 
+              [ "'Fs\/32'",
+                "'Fs\/16'",
+                "'Fs*3\/32'",
+                "'Fs\/8'" ],
+              "defaultvalue" : "'Fs\/32'" },
+            
+            { "name" : "BISTToneLevel",
+              "purpose" : "BIST tone level",
+              "htmlid" : "bvn_isv-1_sep_mw_6501d0d1-a8ea-4520-bc9d-96897f0c7b95",
+              "value" : 
+              [ "'0'",
+                "'-6'",
+                "'-12'",
+                "'-18'" ],
+              "defaultvalue" : "'0'" } ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "url" : "plutotransmitter.html",
+          "name" : "Pluto Transmitter" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" } ] },
+    { "href" : "ref\/comm.sdrtxpluto.transmitrepeat.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "transmitRepeat",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "comm.SDRTxPluto.transmitRepeat",
+          "fcntype" : "instancemethod" } ],
+      "packagename" : "comm",
+      "refpurpose" : "Download waveform to radio and repeatedly transmit it over the air",
+      "introduced" : "R2017b",
+      "description" : "This MATLAB function downloads the waveform signal, data, to the radio hardware associated by the transmitter System object, tx, and transmits it repeatedly over the air.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "transmitRepeat(tx,data)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "tx",
+          "purpose" : "Transmitter System object",
+          "htmlid" : "d124e3449",
+          "value" : 
+          [ "comm.SDRTxPluto" ] },
+        
+        { "name" : "data",
+          "purpose" : "Signal to transmit",
+          "htmlid" : "bvn_ina-1-data",
+          "value" : 
+          [ "column vector" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "plutotransmitter.html",
+          "name" : "Pluto Transmitter" } ] },
+    { "href" : "ref\/configureplutoradio.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "configurePlutoRadio",
+          "fcntype" : "simple" } ],
+      "refpurpose" : "Configure ADALM-PLUTO radio firmware",
+      "introduced" : "R2017b",
+      "description" : "This MATLAB function configures the ADALM-PLUTO radio to operate in the specified chipset mode.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "result = configurePlutoRadio(chipset)",
+            "result = configurePlutoRadio(chipset,id)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "chipset",
+          "purpose" : "RF transceiver firmware configuration",
+          "htmlid" : "bvusb68-1-chipset",
+          "value" : 
+          [ "'AD9363'",
+            "'AD9364'" ] },
+        
+        { "name" : "id",
+          "purpose" : "USB port identifier",
+          "htmlid" : "mw_1fdd98ef-c117-407f-83fa-8931808f1336",
+          "value" : 
+          [ "'usb:0'",
+            "char vector" ],
+          "defaultvalue" : "'usb:0'" } ],
+      "outputs" : 
+      [ 
+        { "name" : "result",
+          "purpose" : "Outcome of ADALM-PLUTO radio configuration",
+          "htmlid" : "bvusb68-1-result",
+          "value" : 
+          [ "1",
+            "0" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "sdrdevpluto.html",
+          "name" : "comm.SDRDevPluto" } ] },
+    { "href" : "ref\/findplutoradio.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "findPlutoRadio",
+          "fcntype" : "simple" } ],
+      "refpurpose" : "Report information about attached radios",
+      "introduced" : "R2017a",
+      "description" : "This MATLAB function returns a structure array with information about any ADALM-PLUTO radios attached to the host.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "connectedRadios = findPlutoRadio" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "connectedRadios",
+          "purpose" : "List of connected ADALM-PLUTO radios",
+          "htmlid" : "bvp9qa_-connectedRadios",
+          "value" : 
+          [ "structure array" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "sdrdevpluto.html",
+          "name" : "comm.SDRDevPluto" } ] },
+    { "href" : "ref\/plutoradio.sdrrxpluto.capture.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "capture",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "plutoradio.SDRRxPluto.capture",
+          "fcntype" : "instancemethod" } ],
+      "packagename" : "plutoradio",
+      "refpurpose" : "Capture RF signal data using SDR device",
+      "introduced" : "R2019b",
+      "description" : "This MATLAB function uses the rxsdr System object and SDR device to capture the number of data samples specified by length.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "[data,mdata] = capture(rxsdr,length)",
+            "[___] = capture(rxsdr,length,unit)",
+            "[data,mdata,fn] = capture(___,'Filename',filename)",
+            "[___] = capture(___,'Filename',filename,Name,Value)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "rxsdr",
+          "purpose" : "Software-defined radio receiver",
+          "htmlid" : "mw_894df6c4-3535-458a-9a5e-c1c6190e1fc4",
+          "value" : 
+          [ "comm.SDRRxPluto System object" ] },
+        
+        { "name" : "length",
+          "purpose" : "Capture duration",
+          "htmlid" : "mw_c8942d2b-aede-4696-8768-37b5e272fa03",
+          "value" : 
+          [ "scalar" ] },
+        
+        { "name" : "unit",
+          "purpose" : "Capture duration unit",
+          "htmlid" : "mw_9f304257-6919-4a6c-be71-3eaad362c64f",
+          "value" : 
+          [ "'Samples'",
+            "'Seconds'" ],
+          "defaultvalue" : "'Samples'" },
+        
+        { "name" : "filename",
+          "purpose" : "File name for captured data",
+          "htmlid" : "mw_a96b52f8-426a-4e67-9836-b5ff2f79573c",
+          "value" : 
+          [ "character vector",
+            "string scalar" ] },
+        
+        { "namevaluepairs" : 
+          [ 
+            { "name" : "Timestamp",
+              "purpose" : "Append capture time stamp to saved file name",
+              "htmlid" : "mw_79d9948a-27e4-4d5a-a975-17da080aef75",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "UserMetadata",
+              "purpose" : "User data",
+              "htmlid" : "mw_ad4a2bd1-57a0-4775-8568-b8c82e541d83",
+              "value" : 
+              [ "structure" ] },
+            
+            { "name" : "EnableOversizeCapture",
+              "purpose" : "Remove limit on capture duration",
+              "htmlid" : "mw_200b9c8a-8b4c-4318-8a5d-50af7fbaf0b9",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" } ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "data",
+          "purpose" : "Received data",
+          "htmlid" : "mw_d12f4e5b-c186-4f21-8d5c-75f5af9d31cd",
+          "value" : 
+          [ "vector of complex values" ] },
+        
+        { "name" : "mdata",
+          "purpose" : "Capture-time configuration settings for SDR device",
+          "htmlid" : "mw_7d882868-c988-42e6-b89c-58f5629ed591",
+          "value" : 
+          [ "structure" ] },
+        
+        { "name" : "fn",
+          "purpose" : "File name of captured data",
+          "htmlid" : "mw_2d9fa9be-a122-4103-9ed3-5df994ac5328",
+          "value" : 
+          [ "character vector" ] } ],
+      "examples" : 
+      [ 
+        { "url" : "plutoradio.sdrrxpluto.capture.html#mw_fb86983f-78cd-4890-b8ab-f13d1ab4de32",
+          "open_command" : "openExample('plutoradio\/CaptureRFDataToBasebandFileUsingADALMPLUTORadioExample')",
+          "title" : "Capture RF Data to Baseband File Using ADALM-PLUTO Radio" } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "url" : "..\/..\/..\/comm\/ref\/comm.basebandfilereader-system-object.html",
+          "name" : "comm.BasebandFileReader" },
+        
+        { "url" : "findplutoradio.html",
+          "name" : "findPlutoRadio" },
+        
+        { "url" : "plutoradio.sdrrxpluto.info.html",
+          "name" : "info" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" } ] },
+    { "href" : "ref\/plutoradio.sdrrxpluto.info.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "info",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "plutoradio.SDRRxPluto.info",
+          "fcntype" : "instancemethod" },
+        
+        { "type" : "method",
+          "name" : "plutoradio.SDRTxPluto.info",
+          "fcntype" : "instancemethod" } ],
+      "packagename" : "plutoradio",
+      "refpurpose" : "Obtain radio information",
+      "introduced" : "R2017a",
+      "description" : "This MATLAB function returns a structure array containing the current radio settings for the radio hardware associated with the System object sdr.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "RadioSettings = info(sdr)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "sdr",
+          "purpose" : "Software defined radio",
+          "htmlid" : "bvn853n-1-rx",
+          "value" : 
+          [ "SDR System object" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "RadioSettings",
+          "purpose" : "Synchronized radio settings information",
+          "htmlid" : "bvn853n-1-RadioSettings",
+          "value" : 
+          [ "structure array" ] } ],
+      "examples" : 
+      [ 
+        { "url" : "plutoradio.sdrrxpluto.info.html#mw_c22e579c-c835-44ce-b6a5-501a4010f5ce",
+          "open_command" : "openExample('plutoradio\/GetADALMPLUTORadioInformationExample')",
+          "title" : "Get ADALM-PLUTO Radio Information" } ],
+      "seealso" : 
+      [ 
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" } ] },
+    { "href" : "ref\/plutoreceiver.html",
+      "refentity" : 
+      [ 
+        { "type" : "block",
+          "name" : "Pluto Receiver" } ],
+      "refpurpose" : "Receive data from Analog Devices ADALM-PLUTO radio",
+      "introduced" : "R2017a",
+      "description" : "The Pluto Receiver block is a signal source that receives data from an Analog Devices ADALM-PLUTO radio.",
+      "inputs" : 
+      [ 
+        { "name" : "center frequency",
+          "purpose" : "RF center frequency setting in Hz",
+          "htmlid" : "d124e3701",
+          "value" : 
+          [ "positive scalar" ] },
+        
+        { "name" : "gain",
+          "purpose" : "Receiver gain setting in dB",
+          "htmlid" : "d124e3760",
+          "value" : 
+          [ "scalar" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "data",
+          "purpose" : "Received data",
+          "htmlid" : "bvn84y9-1-data",
+          "value" : 
+          [ "vector of complex values" ] },
+        
+        { "name" : "overflow",
+          "purpose" : "Lost samples indicator",
+          "htmlid" : "d124e3868",
+          "value" : 
+          [ "logical" ] } ],
+      "examples" : 
+      [ 
+        { "url" : "..\/ug\/fm-broadcast-receiver-in-simulink.html",
+          "open_command" : "openExample('comm\/FMBroadcastReceiverInSimulinkExample')",
+          "title" : "FM Broadcast Receiver in Simulink" },
+        
+        { "url" : "..\/ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html",
+          "open_command" : "openExample('comm\/RBDSInSimulinkExample')",
+          "title" : "RDS\/RBDS and RadioText Plus (RT+) FM Receiver in Simulink" },
+        
+        { "url" : "..\/ug\/spectral-analysis-with-adalm-pluto-radio.html",
+          "open_command" : "openExample('comm\/SpectrumAnalysisExample')",
+          "title" : "Spectrum Analysis of Signals" },
+        
+        { "url" : "..\/ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html",
+          "open_command" : "openExample('plutoradio\/FrequencyCorrectionForADALMPLUTORadioInSimulinkExample')",
+          "title" : "Frequency Correction for ADALM-PLUTO Radio in Simulink" } ],
+      "seealso" : 
+      [ 
+        { "url" : "plutotransmitter.html",
+          "name" : "Pluto Transmitter" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" } ] },
+    { "href" : "ref\/plutotransmitter.html",
+      "refentity" : 
+      [ 
+        { "type" : "block",
+          "name" : "Pluto Transmitter" } ],
+      "refpurpose" : "Transmit data to Analog Devices ADALM-PLUTO radio",
+      "introduced" : "R2017a",
+      "description" : "The Pluto Transmitter block is a signal source that sends data to an Analog Devices ADALM-PLUTO radio.",
+      "inputs" : 
+      [ 
+        { "name" : "data",
+          "purpose" : "Data to transmit",
+          "htmlid" : "d124e4946",
+          "value" : 
+          [ "column vector" ] },
+        
+        { "name" : "center frequency",
+          "purpose" : "RF center frequency setting in Hz",
+          "htmlid" : "mw_83e210de-f0ac-4ca2-9487-8e24cdb71584",
+          "value" : 
+          [ "positive scalar" ] },
+        
+        { "name" : "gain",
+          "purpose" : "Transmitter gain setting in dB",
+          "htmlid" : "d124e5072",
+          "value" : 
+          [ "scalar" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "underflow",
+          "purpose" : "Lost samples indicator",
+          "htmlid" : "mw_754c28d7-6130-4b7c-8aac-f1b3028e1a36",
+          "value" : 
+          [ "logical" ] } ],
+      "examples" : 
+      [ 
+        { "url" : "..\/ug\/qpsk-transmitter-with-adalm-pluto-radio-1.html",
+          "open_command" : "openExample('plutoradio\/QPSKTransmitterWithADALMPLUTORadioSimulinkExample')",
+          "title" : "QPSK Transmitter with ADALM-PLUTO Radio in Simulink" },
+        
+        { "url" : "..\/ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html",
+          "open_command" : "openExample('plutoradio\/FrequencyCorrectionForADALMPLUTORadioInSimulinkExample')",
+          "title" : "Frequency Correction for ADALM-PLUTO Radio in Simulink" } ],
+      "seealso" : 
+      [ 
+        { "url" : "plutoreceiver.html",
+          "name" : "Pluto Receiver" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" } ] },
+    { "href" : "ref\/sdrdev.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "sdrdev",
+          "fcntype" : "simple" } ],
+      "refpurpose" : "Create radio object for specific radio hardware",
+      "introduced" : "R2017a",
+      "description" : "This MATLAB function returns a list of available SDR devices.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "list = sdrdev" ] },
+        
+        { "title" : "",
+          "syntax" : 
+          [ "dev = sdrdev(DeviceName)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "DeviceName",
+          "purpose" : "Name of radio hardware",
+          "htmlid" : "bvoxi8s-1_sep_shared-DeviceName",
+          "value" : 
+          [ "character vector" ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "dev",
+          "purpose" : "Interface to the radio hardware",
+          "htmlid" : "bvoxi8s-1-dev",
+          "value" : 
+          [ "radio object" ] },
+        
+        { "name" : "list",
+          "purpose" : "SDR radio names",
+          "htmlid" : "bvoxi8s-1-list",
+          "value" : 
+          [ "cell array" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "sdrdevpluto.html",
+          "name" : "comm.SDRDevPluto" } ] },
+    { "href" : "ref\/sdrdevpluto.html",
+      "refentity" : 
+      [ 
+        { "type" : "object",
+          "name" : "comm.SDRDevPluto" },
+        
+        { "type" : "object",
+          "name" : "SDRDevPluto" },
+        
+        { "type" : "function",
+          "name" : "comm.SDRDevPluto",
+          "fcntype" : "constructor" } ],
+      "refpurpose" : "Create object for Analog Devices ADALM-PLUTO radio",
+      "introduced" : "R2017a",
+      "description" : "Radio object for interacting with the ADALM-PLUTO radio.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "dev = sdrdev('Pluto')" ] } ],
+      "classpropertygroup" : 
+      [ 
+        { "classproperty" : 
+          [ 
+            { "name" : "DeviceName",
+              "purpose" : "Name of radio hardware",
+              "htmlid" : "bvn_vw2-1_sep_shared-DeviceName",
+              "value" : 
+              [ "character vector" ] },
+            
+            { "name" : "RadioID",
+              "purpose" : "Radio identification number",
+              "htmlid" : "bvn_vw2-1_sep_shared-RadioID",
+              "value" : 
+              [ "character vector",
+                "'usb:0'" ],
+              "defaultvalue" : "'usb:0'" } ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" } ] },
+    { "href" : "ref\/sdrrx.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "sdrrx",
+          "fcntype" : "simple" } ],
+      "refpurpose" : "Create receiver System object for radio hardware",
+      "introduced" : "R2017a",
+      "description" : "This MATLAB function creates a receiver System object with default properties that receives data from the radio hardware specified by DeviceName.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "rx = sdrrx(DeviceName)",
+            "rx = sdrrx(DeviceName,Name,Value)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "DeviceName",
+          "purpose" : "Name of radio hardware",
+          "htmlid" : "bvn84ra-1_sep_shared-DeviceName",
+          "value" : 
+          [ "character vector" ] },
+        
+        { "namevaluepairs" : 
+          [ 
+            { "name" : "RadioID",
+              "purpose" : "Radio identification number",
+              "htmlid" : "bvn84ra-1_sep_shared-RadioID",
+              "value" : 
+              [ "character vector",
+                "'usb:0'" ],
+              "defaultvalue" : "'usb:0'" },
+            
+            { "name" : "CenterFrequency",
+              "purpose" : "RF center frequency setting in Hz",
+              "htmlid" : "bvn84ra-1_sep_shared-CenterFrequency",
+              "value" : 
+              [ "2.4e9",
+                "scalar" ],
+              "defaultvalue" : "2.4e9" },
+            
+            { "name" : "ChannelMapping",
+              "purpose" : "Channel mapping",
+              "htmlid" : "bvn84ra-1_sep_shared-ChannelMapping",
+              "value" : 
+              [ "1" ],
+              "defaultvalue" : "1" },
+            
+            { "name" : "GainSource",
+              "purpose" : "Gain source",
+              "htmlid" : "bvn84ra-1_sep_shared-GainSource",
+              "value" : 
+              [ "'AGC Slow Attack'",
+                "'AGC Fast Attack'",
+                "'Manual'" ],
+              "defaultvalue" : "'AGC Slow Attack'" },
+            
+            { "name" : "Gain",
+              "purpose" : "Radio receiver gain",
+              "htmlid" : "bvn84ra-1_sep_mw_a9cb41e1-8044-438f-a203-259aebd4625d",
+              "value" : 
+              [ "10",
+                "scalar" ],
+              "defaultvalue" : "10" },
+            
+            { "name" : "BasebandSampleRate",
+              "purpose" : "Baseband sampling rate",
+              "htmlid" : "bvn84ra-1_sep_shared-BasebandSampleRate",
+              "value" : 
+              [ "1.0e6",
+                "scalar" ],
+              "defaultvalue" : "1.0e6" },
+            
+            { "name" : "OutputDataType",
+              "purpose" : "Output signal data type",
+              "htmlid" : "bvn84ra-1_sep_mw_e86776db-abd3-4d8b-80fe-7d1bc2802199",
+              "value" : 
+              [ "'int16'",
+                "'single'",
+                "'double'" ],
+              "defaultvalue" : "'int16'" },
+            
+            { "name" : "SamplesPerFrame",
+              "purpose" : "Number of samples per frame",
+              "htmlid" : "bvn84ra-1_sep_shared-SamplesPerFrame",
+              "value" : 
+              [ "20,000",
+                "positive integer" ],
+              "defaultvalue" : "20,000" },
+            
+            { "name" : "EnableBurstMode",
+              "purpose" : "Option for burst mode",
+              "htmlid" : "bvn84ra-1_sep_mw_c09871a2-9e35-4fa5-a0c3-071491df5c66",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "NumFramesInBurst",
+              "purpose" : "Number of frames in a contiguous burst",
+              "htmlid" : "bvn84ra-1_sep_mw_6639a89c-a76c-42d3-b1ba-67c0112bc9cc",
+              "value" : 
+              [ "1",
+                "strictly positive integer" ],
+              "defaultvalue" : "1" } ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "rx",
+          "purpose" : "Receiver System object",
+          "htmlid" : "bvn84ra-1-rx",
+          "value" : 
+          [ "character vector" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "sdrtx.html",
+          "name" : "sdrtx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "comm.sdrrxpluto-system-object.html",
+          "name" : "comm.SDRRxPluto" },
+        
+        { "url" : "plutoreceiver.html",
+          "name" : "Pluto Receiver" } ] },
+    { "href" : "ref\/sdrtx.html",
+      "refentity" : 
+      [ 
+        { "type" : "function",
+          "name" : "sdrtx",
+          "fcntype" : "simple" } ],
+      "refpurpose" : "Create transmitter System object for radio hardware",
+      "introduced" : "R2017a",
+      "description" : "This MATLAB function creates a transmitter System object, with default properties that transmits data to the radio hardware specified by DeviceName.",
+      "syntaxgroup" : 
+      [ 
+        { "title" : "",
+          "syntax" : 
+          [ "tx = sdrtx(DeviceName)",
+            "tx = sdrtx(DeviceName,Name,Value)" ] } ],
+      "inputs" : 
+      [ 
+        { "name" : "DeviceName",
+          "purpose" : "Name of radio hardware",
+          "htmlid" : "bvn84t3-1_sep_shared-DeviceName",
+          "value" : 
+          [ "character vector" ] },
+        
+        { "namevaluepairs" : 
+          [ 
+            { "name" : "RadioID",
+              "purpose" : "Radio identification number",
+              "htmlid" : "bvn84t3-1_sep_shared-RadioID",
+              "value" : 
+              [ "character vector",
+                "'usb:0'" ],
+              "defaultvalue" : "'usb:0'" },
+            
+            { "name" : "CenterFrequency",
+              "purpose" : "RF center frequency setting in Hz",
+              "htmlid" : "bvn84t3-1_sep_shared-CenterFrequency",
+              "value" : 
+              [ "2.4e9",
+                "scalar" ],
+              "defaultvalue" : "2.4e9" },
+            
+            { "name" : "Gain",
+              "purpose" : "Gain",
+              "htmlid" : "bvn84t3-1_sep_shared-Gain",
+              "value" : 
+              [ "-10",
+                "scalar" ],
+              "defaultvalue" : "-10" },
+            
+            { "name" : "ChannelMapping",
+              "purpose" : "Channel mapping",
+              "htmlid" : "bvn84t3-1_sep_shared-ChannelMapping",
+              "value" : 
+              [ "1" ],
+              "defaultvalue" : "1" },
+            
+            { "name" : "BasebandSampleRate",
+              "purpose" : "Baseband sampling rate",
+              "htmlid" : "bvn84t3-1_sep_shared-BasebandSampleRate",
+              "value" : 
+              [ "1.0e6",
+                "scalar" ],
+              "defaultvalue" : "1.0e6" },
+            
+            { "name" : "ShowAdvancedProperties",
+              "purpose" : "Option to show advanced properties",
+              "htmlid" : "bvn84t3-1_sep_mw_0b8bd99f-bfbc-416c-81d8-76ee6c5cd2d9",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "UseCustomFilter",
+              "purpose" : "Use custom filter",
+              "htmlid" : "bvn84t3-1_sep_mw_c27d31fa-41bf-4b55-bb97-cd236475dac8",
+              "value" : 
+              [ "false",
+                "true" ],
+              "defaultvalue" : "false" },
+            
+            { "name" : "FrequencyCorrection",
+              "purpose" : "Frequency correction value in ppm",
+              "htmlid" : "d124e2866",
+              "value" : 
+              [ "0",
+                "scalar" ],
+              "defaultvalue" : "0" },
+            
+            { "name" : "DataSourceSelect",
+              "purpose" : "Select data source",
+              "htmlid" : "bvn84t3-1_sep_mw_5a6ba7e9-779e-4650-8804-72f9c5d0074e",
+              "value" : 
+              [ "'Input Port'",
+                "'DDS'" ],
+              "defaultvalue" : "'Input Port'" },
+            
+            { "name" : "DDSTone1Freq",
+              "purpose" : "First DDS tone frequency in Hz",
+              "htmlid" : "bvn84t3-1_sep_mw_fa02647d-b374-4ffa-8e3d-cd0f739267cb",
+              "value" : 
+              [ "5000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "5000" },
+            
+            { "name" : "DDSTone2Freq",
+              "purpose" : "Second DDS tone frequency in Hz",
+              "htmlid" : "bvn84t3-1_sep_mw_02ed378d-5310-47c7-a11b-6d2d3f02d8df",
+              "value" : 
+              [ "10000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "10000" },
+            
+            { "name" : "DDSTone1Scale",
+              "purpose" : "First DDS tone scale",
+              "htmlid" : "bvn84t3-1_sep_mw_35a236c3-f8ca-437d-aa96-360ba3a9eeab",
+              "value" : 
+              [ "0.5000",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "0.5000" },
+            
+            { "name" : "DDSTone2Scale",
+              "purpose" : "Second DDS tone scale",
+              "htmlid" : "bvn84t3-1_sep_mw_66a82280-7641-4e1e-809b-09ac7d1b5cca",
+              "value" : 
+              [ "0.2500",
+                "numeric scalar",
+                "1-by-2 numeric vector" ],
+              "defaultvalue" : "0.2500" },
+            
+            { "name" : "BISTLoopbackMode",
+              "purpose" : "Built-in self-test (BIST) loopback mode",
+              "htmlid" : "bvn84t3-1_sep_mw_2858fe15-bb5b-4eca-9706-1bca447fac05",
+              "value" : 
+              [ "'Disabled'",
+                "'Digital Tx -> Digital Rx'",
+                "'RF Rx -> RF Tx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTToneInject",
+              "purpose" : "BIST signal injection mode",
+              "htmlid" : "bvn84t3-1_sep_mw_99dafa4e-bf93-4ce8-bc18-147c0925f7e0",
+              "value" : 
+              [ "'Disabled'",
+                "'Tone Inject Tx'",
+                "'Tone Inject Rx'" ],
+              "defaultvalue" : "'Disabled'" },
+            
+            { "name" : "BISTSignalGen",
+              "purpose" : "Source of BIST signal generation",
+              "htmlid" : "bvn84t3-1_sep_mw_f6de8a92-79a2-42bd-8c1d-03d50453c0cf",
+              "value" : 
+              [ "'PRBS'",
+                "'Tone'" ],
+              "defaultvalue" : "'PRBS'" },
+            
+            { "name" : "BISTToneFreq",
+              "purpose" : "BIST tone frequency",
+              "htmlid" : "bvn84t3-1_sep_mw_6ae200da-a80c-4810-8b8c-b51775b3086d",
+              "value" : 
+              [ "'Fs\/32'",
+                "'Fs\/16'",
+                "'Fs*3\/32'",
+                "'Fs\/8'" ],
+              "defaultvalue" : "'Fs\/32'" },
+            
+            { "name" : "BISTToneLevel",
+              "purpose" : "BIST tone level",
+              "htmlid" : "bvn84t3-1_sep_mw_6501d0d1-a8ea-4520-bc9d-96897f0c7b95",
+              "value" : 
+              [ "'0'",
+                "'-6'",
+                "'-12'",
+                "'-18'" ],
+              "defaultvalue" : "'0'" } ] } ],
+      "outputs" : 
+      [ 
+        { "name" : "tx",
+          "purpose" : "Transmitter System object",
+          "htmlid" : "bvn84t3-1-tx",
+          "value" : 
+          [ "character vector" ] } ],
+      "seealso" : 
+      [ 
+        { "url" : "sdrdev.html",
+          "name" : "sdrdev" },
+        
+        { "url" : "sdrrx.html",
+          "name" : "sdrrx" },
+        
+        { "url" : "configureplutoradio.html",
+          "name" : "configurePlutoRadio" },
+        
+        { "url" : "comm.sdrtxpluto-system-object.html",
+          "name" : "comm.SDRTxPluto" },
+        
+        { "url" : "plutotransmitter.html",
+          "name" : "Pluto Transmitter" } ] }
+  ]
+}

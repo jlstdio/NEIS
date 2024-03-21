@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          C:\Xilinx\Workspace\Development\axi_pcores\XPS\XPS_SDR_System\pcores/led_driver_v1_00_a/data/led_driver_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue Sep 17 15:15:11 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib led_driver_v1_00_a led_driver vhdl

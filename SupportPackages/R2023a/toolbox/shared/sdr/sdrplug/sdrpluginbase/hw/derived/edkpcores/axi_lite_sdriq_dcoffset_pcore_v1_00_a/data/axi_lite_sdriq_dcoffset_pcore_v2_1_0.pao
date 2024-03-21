@@ -1,0 +1,17 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\axi_lite_sdriq_dcoffset_pcore_v1_00_a\data\axi_lite_sdriq_dcoffset_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2013-08-28 18:09:31
+##############################################################################
+
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a SDRDCBlockingFilter vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a SDRDCBlockerTop_pkg vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a SDRDCBlockerTop vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a SDRIQBalance vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a SDRIQ_DCOffset vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset_pcore_dut vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset_pcore_axi_lite_module vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset_pcore_addr_decoder vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset_pcore_axi_lite vhdl
+lib axi_lite_sdriq_dcoffset_pcore_v1_00_a axi_lite_sdriq_dcoffset_pcore vhdl

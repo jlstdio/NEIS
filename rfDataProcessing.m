@@ -36,11 +36,11 @@ avg_power_density_diff = mean(power_density_diff_time, 2); % Average across time
 %title('Power Density Difference between Transmitter and Receiver over Time');
 
 % Plot the averaged power density difference
-%figure;
-%plot(F/1e6, avg_power_density_diff, 'LineWidth', 2);
-%xlabel('Frequency (MHz)');
-%ylabel('Average Power Density Difference (dB)');
-%title('Average Power Density Difference between Transmitter and Receiver by Frequency');
+figure;
+plot(F/1e6, avg_power_density_diff, 'LineWidth', 2);
+xlabel('Frequency (MHz)');
+ylabel('Average Power Density Difference (dB)');
+title('Average Power Density Difference between Transmitter and Receiver by Frequency');
 
 % Plot the STFT
 %figure;
@@ -75,8 +75,8 @@ E = (PwrAbs .* A) ./ (PwrGen * 4 * pi .* F .* V);
 % Display the result
 disp(['The value of E is ', mat2str(E)]);
 
-figure;
-plot(F, E);
-xlabel('Frequencies'); % Or 'Frequency (Hz)' if plotting against F
-ylabel('E value');
-title('E over Frequency');
+%figure;
+%plot(F, E);
+%xlabel('Frequencies'); % Or 'Frequency (Hz)' if plotting against F
+%ylabel('E value');
+%title('E over Frequency');

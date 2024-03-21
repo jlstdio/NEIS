@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018-19 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    
+<message>
+    <!-- zynqradioshared\+comm\+zynqradioshared\+dev\Base.m -->
+    <entry key="FileCreationFailed" context="error">Could not create file {0}.</entry>
+    <entry key="ChangeTargetIP">Board IP address will be changed from {0} to {1}</entry>
+    <entry key="ChangeHostNIC">
+        New board network configuration might require changes to your host network interface.
+        Ensure that you have updated your host network interface to comply with new board configuration.
+    </entry>
+    <entry key="IPArgumentNeeded" context="error">{0} argument needs to be set if {1} or {2} are set.</entry>
+    <entry key="MissingCurrentIPAddress">The target's current IPAddress field is not set.</entry>
+    <!-- libiio reference designs require ADI IP repository. Need useful error message if they are
+         the repository is not yet on path... -->
+    <!-- Requires explicit HTML tags because HDLWA doesn't format \n correctly. -->
+    <entry key="IPRepositoryADINotFound"><![CDATA[<br/><br/>]]>To enable this IP repository, run
+        <![CDATA[<a href="matlab:setupzynqradiorepositories()">setupzynqradiorepositories</a>]]>.
+        <![CDATA[<br/><br/><b>]]>NOTE<![CDATA[</b>]]>: This may take a few minutes to complete.
+    </entry>
+    <entry key="RampSignalNotFound" context="error">Failed to find ramp signal.</entry>
+
+    <!-- zynqradioshared\+comm\+zynqradioshared\rx.m -->            
+    <entry key="DeviceBusy" context="error">
+        The device with IPAddress {0} is busy. The device is already owned by a block, block dialog, or System object. Stop the simulation, close the opened dialog, or call the release methods of the System Object to allow a new owner to be assigned.
+    </entry>
+    <entry key="KernelBufferSetupFail" context="error">Failed to setup kernel buffers.</entry>
+    <entry key="rxHeaderTitle" context="uistring">AD936x Receiver</entry>
+    <entry key="rxHeaderText" context="uistring">Receive data from an AD936x.</entry>
+    
+    <!-- zynqradioshared\+comm\+zynqradioshared\tx.m --> 
+    <entry key="txHeaderTitle" context="uistring">AD936x Transmitter</entry>
+    <entry key="txHeaderText" context="uistring">Transmit data using an AD936x.</entry>
+</message>
+</rsccat>

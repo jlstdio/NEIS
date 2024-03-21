@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><data xmlns="https://www.mathworks.com/help/ref/data" count="2"><cat init="P"><ref type="block" target="ref/plutoreceiver.html" name="Pluto Receiver" init="P"><purpose>Receive data from <span xmlns="http://www.w3.org/1999/xhtml" class="trademark">Analog Devices</span>
+      ADALM-PLUTO radio</purpose></ref><ref type="block" target="ref/plutotransmitter.html" name="Pluto Transmitter" init="P"><purpose>Transmit data to <span xmlns="http://www.w3.org/1999/xhtml" class="trademark">Analog Devices</span> ADALM-PLUTO
+   radio</purpose></ref></cat>
+</data>

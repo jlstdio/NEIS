@@ -1,0 +1,16 @@
+###############################################################################
+#
+# DEPENDS.pcode:
+#   pcode generation list 
+#
+#       ALL FILENAMES SHOULD END IN .p
+#
+# Copyright 2019 The MathWorks, Inc.
+#  
+#
+###############################################################################
+# TARGET FILES 
+###############################################################################
+
++codertarget/+xilinxsdrz/+internal/*.p
++matlabshared/+target/+xilinxsdrz/*.p

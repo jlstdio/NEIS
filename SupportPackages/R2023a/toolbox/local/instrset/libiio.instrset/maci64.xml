@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instructions>
+  <downloadInstruction>
+      <downloadUrl>http://ssd.mathworks.com/supportfiles/downloads/SupportPackageThirdParty/R2021a/libiio/maci64/libiio-0.21.g565bf68-darwin-10.14.6.tar.gz</downloadUrl>
+    <archive>libiio-0.21.g565bf68-darwin-10.14.6.tar.gz</archive>
+  </downloadInstruction>
+  <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtractInstruction">
+    <archiveType>GZIPPED_TAR_ARCHIVE</archiveType>
+    <archiveName>$IS_DOWNLOADED_FILE</archiveName>
+    <destinationFolderName>maci64</destinationFolderName>
+  </installInstructions>
+  <displayName>Library for interfacing with IIO devices</displayName>
+  <licenseUrl>https://raw.githubusercontent.com/analogdevicesinc/libiio/0.21/COPYING.txt</licenseUrl>
+  <checksum>597144836da06a2606a240584b60b372</checksum>
+</instructions>

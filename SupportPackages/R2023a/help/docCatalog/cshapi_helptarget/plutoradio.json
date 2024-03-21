@@ -1,0 +1,573 @@
+{ "helplocation" : "supportpkg\/plutoradio",
+    "locale" : "en",
+    "helptargets" : 
+    { "AMRExample" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html",
+          "page_format" : "doc_center" } ],
+      "AMRExample-1" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e2971",
+          "page_format" : "doc_center" } ],
+      "AMRExample-11" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e3116",
+          "page_format" : "doc_center" } ],
+      "AMRExample-12" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e3155",
+          "page_format" : "doc_center" } ],
+      "AMRExample-2" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e2988",
+          "page_format" : "doc_center" } ],
+      "AMRExample-3" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e3018",
+          "page_format" : "doc_center" } ],
+      "AMRExample-5" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e3034",
+          "page_format" : "doc_center" } ],
+      "AMRExample-6" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading.html#d124e3055",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html#d124e7042",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample-10" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html#d124e7149",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html#d124e7059",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html#d124e7067",
+          "page_format" : "doc_center" } ],
+      "AMRSimulinkExample-9" : 
+      [ 
+        { "path" : "ug\/automatic-meter-reading-1.html#d124e7133",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-1" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2695",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-10" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2876",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-11" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2884",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-2" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2718",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-3" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2767",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsExample-8" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals.html#d124e2851",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsInSimulinkExample" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals-1.html",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsInSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals-1.html#d124e6828",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsInSimulinkExample-10" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals-1.html#d124e6959",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsInSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals-1.html#d124e6846",
+          "page_format" : "doc_center" } ],
+      "AirplaneTrackingUsingADSBSignalsInSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/airplane-tracking-using-ads-b-signals-1.html#d124e6854",
+          "page_format" : "doc_center" } ],
+      "CaptureRFDataToBasebandFileUsingADALMPLUTORadioExample" : 
+      [ 
+        { "path" : "ref\/comm.sdrrxpluto-system-object.html#bvn859s-1_ex4",
+          "group" : "plutoradio_ref",
+          "page_format" : "doc_center" },
+        
+        { "path" : "ref\/plutoradio.sdrrxpluto.capture.html#mw_fb86983f-78cd-4890-b8ab-f13d1ab4de32",
+          "group" : "plutoradio_ref",
+          "page_format" : "doc_center" },
+        
+        { "path" : "ug\/capture-rf-data-to-baseband-file-using-adalm-pluto-radio.html",
+          "group" : "plutoradio_ug",
+          "page_format" : "doc_center" } ],
+      "CreateReceiverSystemObjectAndReceiveDataOnSingleChannelExample" : 
+      [ 
+        { "path" : "ref\/comm.sdrrxpluto-system-object.html#bvn859s-1_ex1",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-1" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3239",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-2" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3259",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-3" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3268",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-4" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3287",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-5" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3293",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-6" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3301",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverExample-7" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver.html#d124e3324",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7203",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7241",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7249",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-4" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7272",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-8" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7312",
+          "page_format" : "doc_center" } ],
+      "FMBroadcastReceiverInSimulinkExample-9" : 
+      [ 
+        { "path" : "ug\/fm-broadcast-receiver-in-simulink.html#d124e7324",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-1" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3374",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-2" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3540",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-3" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3549",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-4" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3561",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-5" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3569",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-6" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3581",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-7" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3590",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-8" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3602",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioExample-9" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio.html#d124e3640",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html#d124e7376",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html#d124e7542",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html#d124e7559",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample-4" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html#d124e7565",
+          "page_format" : "doc_center" } ],
+      "FrequencyCorrectionForADALMPLUTORadioInSimulinkExample-5" : 
+      [ 
+        { "path" : "ug\/frequency-correction-for-adalm-pluto-radio-in-simulink.html#d124e7603",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8479",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-10" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8557",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8491",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-7" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8527",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-8" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8531",
+          "page_format" : "doc_center" } ],
+      "FrequencyOffsetCalibrationWithADALMPLUTORadioSimulinkExample-9" : 
+      [ 
+        { "path" : "ug\/frequency-offset-calibration-with-adalm-pluto-radio-simulink.html#d124e8546",
+          "page_format" : "doc_center" } ],
+      "GetADALMPLUTORadioInformationExample" : 
+      [ 
+        { "path" : "ref\/comm.sdrrxpluto-system-object.html#bvn859s-1_ex3",
+          "group" : "plutoradio_ref",
+          "page_format" : "doc_center" },
+        
+        { "path" : "ref\/plutoradio.sdrrxpluto.info.html#mw_c22e579c-c835-44ce-b6a5-501a4010f5ce",
+          "group" : "plutoradio_ref",
+          "page_format" : "doc_center" } ],
+      "LTEReceiverUsingSDRExample" : 
+      [ 
+        { "path" : "ug\/lte-receiver-using-sdr-pluto.html",
+          "page_format" : "doc_center" } ],
+      "LTETransmitterUsingSDRExample" : 
+      [ 
+        { "path" : "ug\/lte-transmitter-using-sdr-pluto.html",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-1" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3699",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-2" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3719",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-3" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3731",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-4" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3746",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-5" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3785",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-7" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3823",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioExample-8" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio.html#d124e3841",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7661",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-10" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7745",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-11" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7762",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-12" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7777",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-13" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7782",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-14" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7795",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-15" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7827",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-16" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7852",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7666",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-6" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7717",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-7" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7721",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-8" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7730",
+          "page_format" : "doc_center" } ],
+      "QPSKReceiverWithADALMPLUTORadioSimulinkExample-9" : 
+      [ 
+        { "path" : "ug\/qpsk-receiver-with-adalm-pluto-radio-1.html#d124e7735",
+          "page_format" : "doc_center" } ],
+      "QPSKTransmitterWithADALMPLUTORadioExample" : 
+      [ 
+        { "path" : "ug\/qpsk-transmitter-with-adalm-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "QPSKTransmitterWithADALMPLUTORadioSimulinkExample" : 
+      [ 
+        { "path" : "ug\/qpsk-transmitter-with-adalm-pluto-radio-1.html",
+          "page_format" : "doc_center" } ],
+      "QPSKTransmitterWithADALMPLUTORadioSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/qpsk-transmitter-with-adalm-pluto-radio-1.html#d124e7900",
+          "page_format" : "doc_center" } ],
+      "QPSKTransmitterWithADALMPLUTORadioSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/qpsk-transmitter-with-adalm-pluto-radio-1.html#d124e7940",
+          "page_format" : "doc_center" } ],
+      "QPSKTransmitterWithADALMPLUTORadioSimulinkExample-4" : 
+      [ 
+        { "path" : "ug\/qpsk-transmitter-with-adalm-pluto-radio-1.html#d124e7954",
+          "page_format" : "doc_center" } ],
+      "RBDSExample" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver.html",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8056",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-10" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8319",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8076",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8096",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-6" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8203",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-7" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8239",
+          "page_format" : "doc_center" } ],
+      "RBDSInSimulinkExample-8" : 
+      [ 
+        { "path" : "ug\/rds-rbds-and-radiotext-plus-rt-fm-receiver-1.html#d124e8269",
+          "page_format" : "doc_center" } ],
+      "SDRImageTransmissionReceptionUsing80211WaveformExample" : 
+      [ 
+        { "path" : "ug\/transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "SDRImageTransmissionReceptionUsingLTEWaveformExample" : 
+      [ 
+        { "path" : "ug\/transmission-and-reception-of-an-image-using-lte-toolbox-and-a-single-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "ShipTrackingUsingAISSignalsExample" : 
+      [ 
+        { "path" : "ug\/ship-tracking-using-ais-signals-2.html",
+          "page_format" : "doc_center" } ],
+      "SpectralAnalysisSimulinkExample" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio-simulink.html",
+          "page_format" : "doc_center" } ],
+      "SpectralAnalysisSimulinkExample-1" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio-simulink.html#d124e8383",
+          "page_format" : "doc_center" } ],
+      "SpectralAnalysisSimulinkExample-2" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio-simulink.html#d124e8396",
+          "page_format" : "doc_center" } ],
+      "SpectralAnalysisSimulinkExample-3" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio-simulink.html#d124e8408",
+          "page_format" : "doc_center" } ],
+      "SpectralAnalysisSimulinkExample-4" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio-simulink.html#d124e8420",
+          "page_format" : "doc_center" } ],
+      "SpectrumAnalysisExample" : 
+      [ 
+        { "path" : "ug\/spectral-analysis-with-adalm-pluto-radio.html",
+          "page_format" : "doc_center" } ],
+      "SpectrumSensingWithDeepLearning5GLTEExample" : 
+      [ 
+        { "path" : "ug\/spectrum-sensing-with-deep-learning-to-identify-5g-lte-signals.html",
+          "page_format" : "doc_center" } ],
+      "UsingFrequencyCorrectionWithOneADALMPLUTORadioExample" : 
+      [ 
+        { "path" : "ref\/comm.sdrrxpluto-system-object.html#bvn859s-1_ex2",
+          "page_format" : "doc_center" } ],
+      "comminternalsdrrxplutosl" : 
+      [ 
+        { "path" : "ref\/plutoreceiver.html",
+          "page_format" : "doc_center" } ],
+      "comminternalsdrtxplutosl" : 
+      [ 
+        { "path" : "ref\/plutotransmitter.html",
+          "page_format" : "doc_center" } ],
+      "commsdrrxpluto" : 
+      [ 
+        { "path" : "ref\/comm.sdrrxpluto-system-object.html",
+          "page_format" : "doc_center" } ],
+      "commsdrtxpluto" : 
+      [ 
+        { "path" : "ref\/comm.sdrtxpluto-system-object.html",
+          "page_format" : "doc_center" } ],
+      "configureplutoradio_ref" : 
+      [ 
+        { "path" : "ref\/configureplutoradio.html",
+          "page_format" : "doc_center" } ],
+      "host_not_communicating_w_radio" : 
+      [ 
+        { "path" : "ug\/common-problems-and-fixes.html#mw_f249f7ea-682d-4deb-8ab6-1d29e1831339",
+          "page_format" : "doc_center" } ],
+      "manual_sdrpluto_spsetup" : 
+      [ 
+        { "path" : "ug\/manual-host-radio-hardware-setup.html",
+          "page_format" : "doc_center" } ],
+      "pluto_tx_real_input" : 
+      [ 
+        { "path" : "ug\/common-problems-and-fixes.html#mw_0b591024-81df-4ed1-99b4-e5f9945397b1",
+          "page_format" : "doc_center" } ],
+      "plutoradio_doccenter-examplelandingpage" : 
+      [ 
+        { "path" : "examples.html",
+          "page_format" : "doc_center" } ],
+      "plutoradio_doccenter-prodlandingpage" : 
+      [ 
+        { "path" : "index.html",
+          "page_format" : "doc_center" } ],
+      "plutoradio_rn-rnlandingpage" : 
+      [ 
+        { "path" : "release-notes.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_burstmode" : 
+      [ 
+        { "path" : "ug\/burst-mode.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_doccenter" : 
+      [ 
+        { "path" : "index.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_hostsetup_checklist" : 
+      [ 
+        { "path" : "ug\/guided-host-radio-hardware-setup.html#bvn89q2-17",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_hwsetup_checklist" : 
+      [ 
+        { "path" : "ug\/guided-host-radio-hardware-setup.html#bvn89q2-21",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_linux_configure_failure" : 
+      [ 
+        { "path" : "ug\/common-problems-and-fixes.html#bvqk03p",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_repeatedwaveformtx" : 
+      [ 
+        { "path" : "ug\/repeated-waveform-transmitter.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_spsetup" : 
+      [ 
+        { "path" : "ug\/guided-host-radio-hardware-setup.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_troubleshoot" : 
+      [ 
+        { "path" : "ug\/common-problems-and-fixes.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_tworadios" : 
+      [ 
+        { "path" : "ug\/setup-for-two-radios-connecting-to-one-host.html",
+          "page_format" : "doc_center" } ],
+      "sdrpluto_txrxsingleboard" : 
+      [ 
+        { "path" : "ug\/repeated-waveform-transmitter.html#bvn89l_-10",
+          "page_format" : "doc_center" } ],
+      "transmitRepeat_pluto" : 
+      [ 
+        { "path" : "ref\/comm.sdrtxpluto.transmitrepeat.html",
+          "page_format" : "doc_center" } ],
+      "unpowered_usb_port" : 
+      [ 
+        { "path" : "ug\/common-problems-and-fixes.html#mw_1aad7e12-a385-45f9-ab8e-75d2e6484a87",
+          "page_format" : "doc_center" } ] } }

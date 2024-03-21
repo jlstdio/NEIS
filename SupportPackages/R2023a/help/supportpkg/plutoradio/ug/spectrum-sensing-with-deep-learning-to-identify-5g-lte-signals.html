@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Spectrum Sensing with Deep Learning to Identify 5G and LTE Signals</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Spectrum Sensing with Deep Learning to Identify 5G and LTE Signals",
+          "description": "Train a semantic segmentation network using deep learning for spectrum monitoring. One of the uses of spectrum monitoring is to characterize spectrum occupancy. The neural network in this example is trained to identify 5G NR and LTE signals in a wideband spectrogram.",
+          "thumbnailURL": "../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_10.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "deeplearning_shared.SpectrumSensingWithDeepLearning5GLTEExample",
+          "name": "SpectrumSensingWithDeepLearning5GLTEExample",
+          "url": "spectrum-sensing-with-deep-learning-to-identify-5g-lte-signals.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "SpectrumSensingWithDeepLearning5GLTEExample.mlx",
+        "helperSpecSenseDisplayIdentifiedSignals.m",
+        "helperSpecSenseDisplayResults.m",
+        "helperSpecSenseDownloadData.m",
+        "helperSpecSenseLTESignal.m",
+        "helperSpecSenseNRSignal.m",
+        "helperSpecSensePartitionData.m",
+        "helperSpecSenseTrainingData.m",
+        "helperIsPlutoSDRInstalled.m",
+        "helperSpecSenseSpectrogramImage.m",
+        "lte_capture_result1.png",
+        "lte_capture_result2.png",
+        "nr_capture_result1.png",
+        "nr_capture_result2.png"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to train a semantic segmentation network using deep learning for spectrum monitoring."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_10.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/livecontrolpopover.js"></script>
+
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Spectrum Sensing with Deep Learning to Identify 5G and LTE Signals</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-1" class="intrnllnk">Introduction</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-2" class="intrnllnk">Generate Training Data</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-6" class="intrnllnk">Train Deep Neural Network</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-9" class="intrnllnk">Test with Synthetic Signals</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-11" class="intrnllnk">Test with Over-the-Air Signals</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-12" class="intrnllnk">Conclusions and Further Exploration</a></li><li><a href="#SpectrumSensingWithDeepLearning5GLTEExample-13" class="intrnllnk">Supporting Functions</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="mw_e7811283-2fd2-4268-895d-a1aec6ffc929">Spectrum Sensing with Deep Learning to Identify 5G and LTE Signals</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('5G')">5G Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('CM')">Communications Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('VP')">Computer Vision Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('NN')">Deep Learning Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('RESNET50')">Deep Learning Toolbox Model for ResNet-50 Network</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('LS')">LTE Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('DM')">Parallel Computing Toolbox</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="deeplearning_shared-SpectrumSensingWithDeepLearning5GLTEExample"><meta itemprop="exampletitle" content="Spectrum Sensing with Deep Learning to Identify 5G and LTE Signals"></div><span id="SpectrumSensingWithDeepLearning5GLTEExample" class="anchor_target"></span><p class="shortdesc">This example shows how to train a semantic segmentation network using deep learning for spectrum monitoring. One of the uses of spectrum monitoring is to characterize spectrum occupancy. The neural network in this example is trained to identify 5G NR and LTE signals in a wideband spectrogram. </p><div class="procedure"><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-1">Introduction<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_E0A219A3" class="anchor_target"></span></h3><p>Computer vision uses the semantic segmentation technique to identify objects and their locations in an image or a video. In wireless signal processing, the objects of interest are wireless signals, and the locations of the objects are the frequency and time occupied by the signals. In this example we apply the semantic segmentation technique to wireless signals to identify spectral content in a wideband spectrogram. </p><p>In the following, you will:</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>Generate training signals. </p></li><li><p> Apply transfer learning to a semantic segmentation network to identify 5G NR and LTE signals in time and frequency. </p></li><li><p> Test the trained network with synthetic signals. </p></li><li><p> Use an SDR to test the network with over the air (OTA) signals.</p></li></ol></div><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-2">Generate Training Data<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_09E98E75" class="anchor_target"></span></h3><p>One advantage of wireless signals in the deep learning domain is the fact that the signals are synthesized. Also, we have highly reliable channel and RF impairment models. As a result, instead of collecting and manually labeling signals, you can generate 5G NR signals using 5G Toolbox&#8482; and LTE signals using LTE Toolbox&#8482; functions. You can pass these signals through standards-specified channel models to create the training data. </p><p>Train the network with frames that contain only 5G NR or LTE signals and then shift these signals in frequency randomly within the band of interest. Each frame is 40 ms long, which is the duration of 40 subframes. The network assumes that the 5G NR or LTE signal occupies the same band for the whole frame duration. To test the network performance, create frames that contain both 5G NR and LTE signals on distinct random bands within the band of interest.</p><p>Use a sampling rate of 61.44 MHz. This rate is high enough to process most of the latest standard signals and several low-cost software defined radio (SDR) systems can sample at this rate providing about 50 MHz of useful bandwidth. To monitor a wider band, you can increase the sample rate, regenerate training frames and retrain the network.</p><p>Use the <a href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample','supportingFile','helperSpecSenseTrainingData')" target="_blank"><code class="literal">helperSpecSenseTrainingData</code></a> function to generate training frames. This function generates 5G NR signals using the <a href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample','supportingFile','helperSpecSenseNRSignal')" target="_blank"><code class="literal">helperSpecSenseNRSignal</code></a> function and LTE signals using the <a href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample','supportingFile','helperSpecSenseLTESignal')" target="_blank"><code class="literal">helperSpecSenseLTESignal</code></a> function. This table lists 5G NR variable signal parameters.</p><div class="informalfigure"><div id="d124e5520" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_01.png" alt="5G_NR_Parameters.PNG" height="122" width="704"></p></div></div><p>This table lists LTE variable signal parameters.</p><div class="informalfigure"><div id="d124e5526" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_02.png" alt="lte_parameters.PNG" height="99" width="699"></p></div></div><p>Use the <a href="../../../5g/ref/nrcdlchannel-system-object.html" data-docid="5g_ref#mw_sysobj_nrCDLChannel" class="a"><code class="olink">nrCDLChannel</code></a><span role="cross_prod"> (5G Toolbox)</span> and the <a href="../../../lte/ref/ltefadingchannel.html" data-docid="lte_ref#bt3f52s" class="a"><code class="olink">lteFadingChannel</code></a><span role="cross_prod"> (LTE Toolbox)</span> functions to add channel impairments. For details of the channel configurations, see the <code class="literal">helperSpecSenseTrainingData</code> function. This table lists channel parameters. </p><div class="informalfigure"><div id="d124e5539" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_03.png" alt="channel_parameters.PNG" height="85" width="774"></p></div></div><p>The <code class="literal">helperSpecSenseTrainingData</code> function uses the <a href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample','supportingFile','helperSpecSenseSpectrogramImage')" target="_blank"><code class="literal">helperSpecSenseSpectrogramImage</code></a> function to create spectrogram images from complex baseband signals. Calculate the spectrograms using an FFT length of 4096. Generate 256 by 256 RGB images. This image size allows a large enough batch of images to fit in memory during training while providing enough resolution in time and frequency. If your GPU does not have sufficient memory, you can resize the images to smaller sizes or reduce the training batch size. </p><p>The <code class="literal">generateTrainData</code> variable determines whether training data is to be downloaded or generated. Choosing "Use downloaded data" sets the <code class="literal">generateTrainData</code> variable to <code class="literal">false</code>. Choosing "Generate training data" sets the <code class="literal">generateTrainData</code> variable to <code class="literal">true</code> to generate the training data from scratch. Data generation may take several hours depending on the configuration of your computer. Using a PC with Intel&#174; Xeon&#174; W-2133 CPU @ 3.60GHz and creating a parallel pool with six workers with the Parallel Computing Toolbox&#8482;, training data generation takes about an hour. Choose "Train network now" to train the network. This process takes about 20 minutes with the same PC and NVIDIA&#174; Titan V GPU. Choose "Use trained network" to skip network training. Instead, the example downloads the trained network. </p><p>Use 900 frames from each set of signals: 5G NR only, LTE only and 5G NR and LTE both. If you increase the number of possible values for the system parameters, increase the number of training frames. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imageSize = [256 256];    <span style="color:#228B22">% pixels</span>
+sampleRate = 61.44e6;     <span style="color:#228B22">% Hz</span>
+numSubFrames = 40;        <span style="color:#228B22">% corresponds to 40 ms</span>
+frameDuration = numSubFrames*1e-3;    <span style="color:#228B22">% seconds</span>
+trainDir = fullfile(pwd,<span style="color:#A020F0">'TrainingData'</span>);
+
+generateTrainData = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_15.png"><span data-examplename="openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample')" tabindex="0" data-controlvalue="false" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">false</span></span>;
+trainNow = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_16.png"><span data-examplename="openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample')" tabindex="0" data-controlvalue="false" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">false</span></span>;
+<span style="color:#0000FF">if</span> ~generateTrainData || ~trainNow
+  helperSpecSenseDownloadData()
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Starting download of data files from:
+	https://www.mathworks.com/supportfiles/spc/SpectrumSensing/SpectrumSenseTrainingDataNetwork.tar.gz
+Download complete. Extracting files.
+Extract complete.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> generateTrainData
+  numFramesPerStandard = 900;
+  helperSpecSenseTrainingData(numFramesPerStandard,imageSize,trainDir,numSubFrames,sampleRate);
+<span style="color:#0000FF">end</span></pre></div></div></div><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-3">Load Training Data<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_DF7745A2" class="anchor_target"></span></h4><p>Use the <a href="../../../matlab/ref/matlab.io.datastore.imagedatastore.html" data-docid="matlab_ref#butueui-1" class="a"><code class="olink">imageDatastore</code></a> function to load training images with the spectrogram of 5G NR and LTE signals. The <code class="literal">imageDatastore</code> function enables you to efficiently load a large collection of images from disk. Spectrogram images are stored in .png files. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imds = imageDatastore(trainDir,<span style="color:#A020F0">'IncludeSubfolders'</span>,false,<span style="color:#A020F0">'FileExtensions'</span>,<span style="color:#A020F0">'.png'</span>);</pre></div></div></div><p>Use the <a href="../../../vision/ref/pixellabeldatastore.html" data-docid="vision_ref#mw_c2246553-ba4a-4bad-aad4-6ab8fa2f7f2d" class="a"><code class="olink">pixelLabelDatastore</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span> function to load spectrogram pixel label image data. Each pixel is labeled as one of "NR", "LTE" or "Noise". A pixel label datastore encapsulates the pixel label data and the label ID to a class name mapping. Pixel labels are stored in .hdf files.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>classNames = [<span style="color:#A020F0">"NR"</span> <span style="color:#A020F0">"LTE"</span> <span style="color:#A020F0">"Noise"</span>];
+pixelLabelID = [127 255 0];
+pxdsTruth = pixelLabelDatastore(trainDir,classNames,pixelLabelID,<span style="color:#0000FF">...</span>
+  <span style="color:#A020F0">'IncludeSubfolders'</span>,false,<span style="color:#A020F0">'FileExtensions'</span>,<span style="color:#A020F0">'.hdf'</span>);</pre></div></div></div><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-4">Analyze Dataset Statistics<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_FA043697" class="anchor_target"></span></h4><p>To see the distribution of class labels in the training dataset, use the <a href="../../../vision/ref/pixellabelimagedatastore.counteachlabel.html" data-docid="vision_ref#mw_1c600e69-1a15-4538-9629-7bceaafbd4e7" class="a"><code class="olink">countEachLabel</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span> function to count the number of pixels by class label, and plot the pixel counts by class.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>tbl = countEachLabel(pxdsTruth);
+frequency = tbl.PixelCount/sum(tbl.PixelCount);
+figure
+bar(1:numel(classNames),frequency)
+grid <span style="color:#A020F0">on</span>
+xticks(1:numel(classNames)) 
+xticklabels(tbl.Name)
+xtickangle(45)
+ylabel(<span style="color:#A020F0">'Frequency'</span>)</pre></div></div></div><div class="informalfigure"><div id="d124e5609" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_04.png" width="414"></p></div></div><p>Ideally, all classes would have an equal number of observations. However, with wireless signals it is common for the classes in the training set to be imbalanced. 5G NR signals may have larger bandwidth than LTE signals, and noise fills the background. Because the learning is biased in favor of the dominant classes, imbalance in the number of observations per class can be detrimental to the learning process. In the <a href="spectrum-sensing-with-deep-learning-to-identify-5g-lte-signals.html#SpectrumSensingWithDeepLearning5GLTEExample-7" class="intrnllnk">Balance Classes Using Class Weighting</a> section, class weighting is used to mitigate bias caused by imbalance in the number of observations per class.</p><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-5"><strong class="emphasis bold">Prepare Training, Validation, and Test Sets</strong><span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_366AC23E" class="anchor_target"></span></h4><p>The deep neural network uses 80% of the single signal images from the dataset for training and, 20% of the images for validation. The <a href="matlab:openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample','supportingFile','helperSpecSensePartitionData')" target="_blank"><code class="literal">helperSpecSensePartitionData</code></a> function randomly splits the image and pixel label data into training and validation sets.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[imdsTrain,pxdsTrain,imdsVal,pxdsVal] = helperSpecSensePartitionData(imds,pxdsTruth,[80 20]);
+cdsTrain = combine(imdsTrain,pxdsTrain);
+cdsVal = combine(imdsVal,pxdsVal);
+
+<span style="color:#228B22">% Apply a transform to resize the image and pixel label data to the desired</span>
+<span style="color:#228B22">% size.</span>
+cdsTrain = transform(cdsTrain, @(data)preprocessTrainingData(data,imageSize));
+cdsVal = transform(cdsVal, @(data)preprocessTrainingData(data,imageSize));</pre></div></div></div><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-6">Train Deep Neural Network<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_64CB4A81" class="anchor_target"></span></h3><p>Use the <a href="../../../vision/ref/deeplabv3pluslayers.html" data-docid="vision_ref#mw_1db5f1f7-c311-4115-b0df-54380c77c01c" class="a"><code class="olink">deeplabv3plusLayers</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span> function to create a semantic segmentation neural network. Choose <a href="../../../deeplearning/ref/resnet50.html" data-docid="nnet_ref#mw_7e914435-71af-41f7-9ec9-8f2092892982" class="a"><code class="olink">resnet50</code></a><span role="cross_prod"> (Deep Learning Toolbox)</span> as the base network and specify the input image size (number of pixels used to represent time and frequency axes) and the number of classes. If the Deep Learning Toolbox&#8482; Model <span class="emphasis"><em>for ResNet-50 Network</em></span> support package is not installed, then the function provides a link to the required support package in the Add-On Explorer. To install the support package, click the link, and then click <strong class="emphasis bold">Install</strong>. Check that the installation is successful by typing <code class="literal">resnet50</code> at the command line. If the required support package is installed, then the function returns a <a href="../../../deeplearning/ref/dagnetwork.html" data-docid="nnet_ref#mw_219eb8df-d140-434a-ac88-ec6b5f41da47" class="a"><code class="olink">DAGNetwork</code></a><span role="cross_prod"> (Deep Learning Toolbox)</span> object.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>baseNetwork = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_17.png"><span data-examplename="openExample('deeplearning_shared/SpectrumSensingWithDeepLearning5GLTEExample')" tabindex="0" data-controlvalue="'resnet50'" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">'resnet50'</span></span>;
+lgraph = deeplabv3plusLayers(imageSize,numel(classNames),baseNetwork);</pre></div></div></div><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-7"><strong class="emphasis bold">Balance Classes Using Class Weighting</strong><span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_0F7CF551" class="anchor_target"></span></h4><p>To improve training when classes in the training set are not balanced, you can use class weighting to balance the classes. Use the pixel label counts computed earlier with the <code class="literal">countEachLabel</code> function and calculate the median frequency class weights.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imageFreq = tbl.PixelCount ./ tbl.ImagePixelCount;
+classWeights = median(imageFreq) ./ imageFreq;</pre></div></div></div><p>Specify the class weights using a <a href="../../../vision/ref/nnet.cnn.layer.pixelclassificationlayer.html" data-docid="vision_ref#mw_783aebd8-1ff1-4bc6-8508-90c8b71fca32" class="a"><code class="olink">pixelClassificationLayer</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pxLayer = pixelClassificationLayer(<span style="color:#A020F0">'Name'</span>,<span style="color:#A020F0">'labels'</span>,<span style="color:#A020F0">'Classes'</span>,tbl.Name,<span style="color:#A020F0">'ClassWeights'</span>,classWeights);
+lgraph = replaceLayer(lgraph,<span style="color:#A020F0">"classification"</span>,pxLayer);</pre></div></div></div><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-8"><strong class="emphasis bold">Select Training Options</strong><span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_40F8D599" class="anchor_target"></span></h4><p>Configure training using the <a href="../../../deeplearning/ref/trainingoptions.html" data-docid="nnet_ref#bu59f0q" class="a"><code class="olink">trainingOptions</code></a><span role="cross_prod"> (Deep Learning Toolbox)</span> function to specify the stochastic gradient descent with momentum (SGDM) optimization algorithm and the hyper-parameters used for SGDM. To get the best performance from the network, you can use the <a href="../../../deeplearning/ref/experimentmanager-app.html" data-docid="nnet_ref#mw_11ce840f-eed7-4975-9c28-baeebd79f092" class="a">Experiment Manager</a><span role="cross_prod"> (Deep Learning Toolbox)</span> to optimize training options. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>opts = trainingOptions(<span style="color:#A020F0">"sgdm"</span>,<span style="color:#0000FF">...</span>
+  MiniBatchSize = 40,<span style="color:#0000FF">...</span>
+  MaxEpochs = 20, <span style="color:#0000FF">...</span>
+  LearnRateSchedule = <span style="color:#A020F0">"piecewise"</span>,<span style="color:#0000FF">...</span>
+  InitialLearnRate = 0.02,<span style="color:#0000FF">...</span>
+  LearnRateDropPeriod = 10,<span style="color:#0000FF">...</span>
+  LearnRateDropFactor = 0.1,<span style="color:#0000FF">...</span>
+  ValidationData = cdsVal,<span style="color:#0000FF">...</span>
+  ValidationPatience = 5,<span style="color:#0000FF">...</span>
+  Shuffle=<span style="color:#A020F0">"every-epoch"</span>,<span style="color:#0000FF">...</span>
+  OutputNetwork = <span style="color:#A020F0">"best-validation-loss"</span>,<span style="color:#0000FF">...</span>
+  Plots = <span style="color:#A020F0">'training-progress'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>opts = 
+  TrainingOptionsSGDM with properties:
+
+                        Momentum: 0.9000
+                InitialLearnRate: 0.0200
+               LearnRateSchedule: 'piecewise'
+             LearnRateDropFactor: 0.1000
+             LearnRateDropPeriod: 10
+                L2Regularization: 1.0000e-04
+         GradientThresholdMethod: 'l2norm'
+               GradientThreshold: Inf
+                       MaxEpochs: 20
+                   MiniBatchSize: 40
+                         Verbose: 1
+                VerboseFrequency: 50
+                  ValidationData: [1×1 matlab.io.datastore.TransformedDatastore]
+             ValidationFrequency: 50
+              ValidationPatience: 5
+                         Shuffle: 'every-epoch'
+                  CheckpointPath: ''
+             CheckpointFrequency: 1
+         CheckpointFrequencyUnit: 'epoch'
+            ExecutionEnvironment: 'auto'
+                      WorkerLoad: []
+                       OutputFcn: []
+                           Plots: 'training-progress'
+                  SequenceLength: 'longest'
+            SequencePaddingValue: 0
+        SequencePaddingDirection: 'right'
+            DispatchInBackground: 0
+         ResetInputNormalization: 1
+    BatchNormalizationStatistics: 'population'
+                   OutputNetwork: 'best-validation-loss'
+
+</pre></div></div></div><p>Train the network using the combined training data store, <code class="literal">cdsTrain</code>. The combined training data store contains single signal frames and true pixel labels.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> trainNow
+  [net,trainInfo] = trainNetwork(cdsTrain,lgraph,opts); <span style="color:#228B22">%#ok&lt;UNRCH&gt; </span>
+<span style="color:#0000FF">else</span>
+  load <span style="color:#A020F0">specSenseTrainedNet</span> <span style="color:#A020F0">net</span>
+<span style="color:#0000FF">end</span></pre></div></div></div><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-9">Test with Synthetic Signals<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_A0E791AE" class="anchor_target"></span></h3><p>Test the network signal identification performance using signals that contain both 5G NR and LTE signals. Use the <a href="../../../vision/ref/semanticseg.html" data-docid="vision_ref#mw_bbecb1af-a6c9-43d1-91f5-48607edc15d1" class="a"><code class="olink">semanticseg</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span> function to get the pixel estimates of the spectrogram images in the test data set. Use the <a href="../../../vision/ref/evaluatesemanticsegmentation.html" data-docid="vision_ref#mw_ec14c36c-b93d-4fde-8512-ea7d51651b89" class="a"><code class="olink">evaluateSemanticSegmentation</code></a><span role="cross_prod"> (Computer Vision Toolbox)</span> function to compute various metrics to evaluate the quality of the semantic segmentation results. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>dataDir = fullfile(trainDir,<span style="color:#A020F0">'LTE_NR'</span>);
+imds = imageDatastore(dataDir,<span style="color:#A020F0">'IncludeSubfolders'</span>,false,<span style="color:#A020F0">'FileExtensions'</span>,<span style="color:#A020F0">'.png'</span>);
+pxdsResults = semanticseg(imds,net,<span style="color:#A020F0">"WriteLocation"</span>,tempdir);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Running semantic segmentation network
+-------------------------------------
+* Processed 900 images.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pxdsTruth = pixelLabelDatastore(dataDir,classNames,pixelLabelID,<span style="color:#0000FF">...</span>
+  <span style="color:#A020F0">'IncludeSubfolders'</span>,false,<span style="color:#A020F0">'FileExtensions'</span>,<span style="color:#A020F0">'.hdf'</span>);
+metrics = evaluateSemanticSegmentation(pxdsResults,pxdsTruth);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Evaluating semantic segmentation results
+----------------------------------------
+* Selected metrics: global accuracy, class accuracy, IoU, weighted IoU, BF score.
+* Processed 900 images.
+* Finalizing... Done.
+* Data set metrics:
+
+    GlobalAccuracy    MeanAccuracy    MeanIoU    WeightedIoU    MeanBFScore
+    ______________    ____________    _______    ___________    ___________
+
+       0.88609          0.87117       0.79066      0.79601        0.65623  
+</pre></div></div></div><p>Plot the normalized confusion matrix for all test frames.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cm = confusionchart(metrics.ConfusionMatrix.Variables, <span style="color:#0000FF">...</span>
+  classNames, Normalization=<span style="color:#A020F0">'row-normalized'</span>);
+cm.Title = <span style="color:#A020F0">'Normalized Confusion Matrix'</span>;</pre></div></div></div><div class="informalfigure"><div id="d124e5716" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_05.png" width="414"></p></div></div><p>Plot the histogram of the per-image intersection over union (IoU). For each class, IoU is the ratio of correctly classified pixels to the total number of ground truth and predicted pixels in that class.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imageIoU = metrics.ImageMetrics.MeanIoU;
+figure
+histogram(imageIoU)
+grid <span style="color:#A020F0">on</span>
+xlabel(<span style="color:#A020F0">'IoU'</span>)
+ylabel(<span style="color:#A020F0">'Number of Frames'</span>)
+title(<span style="color:#A020F0">'Frame Mean IoU'</span>)</pre></div></div></div><div class="informalfigure"><div id="d124e5724" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_06.png" width="414"></p></div></div><p>Inspecting low SNR frames shows that the spectrogram images do not contain visual features that can help the network identify the low SNR frames correctly. Repeat the same process, considering only the frames with average SNR of 50dB or 100dB and ignoring the frames with average SNR of 40dB. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>files = dir(fullfile(dataDir,<span style="color:#A020F0">'*.mat'</span>));
+dataFiles = {};
+labelFiles = {};
+<span style="color:#0000FF">for</span> p=1:numel(files)
+  load(fullfile(files(p).folder,files(p).name),<span style="color:#A020F0">'params'</span>);
+  <span style="color:#0000FF">if</span> params.SNRdB &gt; 40
+    [~,name] = fileparts(files(p).name);
+    dataFiles = [dataFiles; fullfile(files(p).folder,[name <span style="color:#A020F0">'.png'</span>])]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+    labelFiles = [labelFiles; fullfile(files(p).folder,[name <span style="color:#A020F0">'.hdf'</span>])]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+  <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">end</span>
+imds = imageDatastore(dataFiles);
+pxdsResults = semanticseg(imds,net,<span style="color:#A020F0">"WriteLocation"</span>,tempdir);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Running semantic segmentation network
+-------------------------------------
+* Processed 608 images.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pxdsTruth = pixelLabelDatastore(labelFiles,classNames,pixelLabelID);
+metrics = evaluateSemanticSegmentation(pxdsResults,pxdsTruth);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Evaluating semantic segmentation results
+----------------------------------------
+* Selected metrics: global accuracy, class accuracy, IoU, weighted IoU, BF score.
+* Processed 608 images.
+* Finalizing... Done.
+* Data set metrics:
+
+    GlobalAccuracy    MeanAccuracy    MeanIoU    WeightedIoU    MeanBFScore
+    ______________    ____________    _______    ___________    ___________
+
+       0.94487          0.94503       0.89799      0.89582        0.74699  
+</pre></div></div></div><p>Considering only the set of frames with higher SNR, replot the normalized confusion matrix and observe the improved network accuracy.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cm = confusionchart(metrics.ConfusionMatrix.Variables, <span style="color:#0000FF">...</span>
+  classNames, Normalization=<span style="color:#A020F0">'row-normalized'</span>);
+cm.Title = <span style="color:#A020F0">'Normalized Confusion Matrix'</span>;</pre></div></div></div><div class="informalfigure"><div id="d124e5740" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_07.png" width="414"></p></div></div><p>Considering only the set of frames with higher SNR, replot the per-image IoU histogram and observe the improved distribution.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imageIoU = metrics.ImageMetrics.MeanIoU;
+figure
+histogram(imageIoU)
+grid <span style="color:#A020F0">on</span>
+xlabel(<span style="color:#A020F0">'IoU'</span>)
+ylabel(<span style="color:#A020F0">'Number of Frames'</span>)
+title(<span style="color:#A020F0">'Frame Mean IoU'</span>)</pre></div></div></div><div class="informalfigure"><div id="d124e5748" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_08.png" width="414"></p></div></div><h4 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-10">Identify 5G NR and LTE Signals in Spectrogram<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_203EBB68" class="anchor_target"></span></h4><p>Visualize the received spectrum, true labels, and predicted labels for the image with index 602.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>imgIdx = 602;
+rcvdSpectrogram = readimage(imds,imgIdx);
+trueLabels = readimage(pxdsTruth,imgIdx);
+predictedLabels = readimage(pxdsResults,imgIdx);
+figure
+helperSpecSenseDisplayResults(rcvdSpectrogram,trueLabels,predictedLabels, <span style="color:#0000FF">...</span>
+  classNames,sampleRate,0,frameDuration)</pre></div></div></div><div class="informalfigure"><div id="d124e5759" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_09.png" width="414"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>figure
+helperSpecSenseDisplayIdentifiedSignals(rcvdSpectrogram,predictedLabels, <span style="color:#0000FF">...</span>
+  classNames,sampleRate,0,frameDuration)</pre></div></div></div><div class="informalfigure"><div id="d124e5765" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_10.png" width="414"></p></div></div><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-11">Test with Over-the-Air Signals<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_7664A78C" class="anchor_target"></span></h3><p>Test the performance of the trained network using over-the-air signal captures. Find a nearby base station and tune the center frequency of your radio to cover the band of the signals you want to identify. This example sets the center frequency to 2.35 GHz. If you have at least one ADALM-PLUTO radio and have installed <a href="https://www.mathworks.com/hardware-support/adalm-pluto-radio.html" target="_blank">Communication Toolbox Support Package for ADALM-PLUTO Radio</a>, you can run this section of the code. In case you do not have access to an ADALM-PLUTO radio, this example shows results of a test conducted using captured signals. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>runSDRSection = false;
+<span style="color:#0000FF">if</span> helperIsPlutoSDRInstalled()  
+  radios = findPlutoRadio();
+  <span style="color:#0000FF">if</span> length(radios) &gt;= 1
+    runSDRSection = true;
+  <span style="color:#0000FF">else</span>
+    disp(<span style="color:#A020F0">"At least one ADALM-PLUTO radios is needed. Skipping SDR test."</span>)
+  <span style="color:#0000FF">end</span>
+<span style="color:#0000FF">else</span>
+    disp(<span style="color:#A020F0">"Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio not found."</span>)
+    disp(<span style="color:#A020F0">"Click Add-Ons in the Home tab of the MATLAB toolstrip to install the support package."</span>)
+    disp(<span style="color:#A020F0">"Skipping SDR test."</span>)
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio not found.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Click Add-Ons in the Home tab of the MATLAB toolstrip to install the support package.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Skipping SDR test.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> runSDRSection
+  <span style="color:#228B22">% Set up PlutoSDR receiver</span>
+  rx = sdrrx(<span style="color:#A020F0">'Pluto'</span>);
+  rx.CenterFrequency = 2.35e9;
+  rx.BasebandSampleRate = sampleRate;
+  rx.SamplesPerFrame = frameDuration*rx.BasebandSampleRate;
+  rx.OutputDataType = <span style="color:#A020F0">'single'</span>;
+  rx.EnableBurstMode = true;
+  rx.NumFramesInBurst = 1;
+  Nfft = 4096;
+  overlap = 10;
+
+  meanAllScores = zeros([imageSize numel(classNames)]);
+  segResults = zeros([imageSize 10]);
+  <span style="color:#0000FF">for</span> frameCnt=1:10
+    rxWave = rx();
+    rxSpectrogram = helperSpecSenseSpectrogramImage(rxWave,Nfft,sampleRate,imageSize);
+
+    [segResults(:,:,frameCnt),scores,allScores] = semanticseg(rxSpectrogram,net);
+    meanAllScores = (meanAllScores*(frameCnt-1) + allScores) / frameCnt;
+  <span style="color:#0000FF">end</span>
+  release(rx)
+
+  [~,predictedLabels] = max(meanAllScores,[],3);
+  figure
+  helperSpecSenseDisplayResults(rxSpectrogram,[],predictedLabels,classNames,<span style="color:#0000FF">...</span>
+    sampleRate,rx.CenterFrequency,frameDuration)
+  figure
+  freqBand = helperSpecSenseDisplayIdentifiedSignals(rxSpectrogram,predictedLabels,<span style="color:#0000FF">...</span>
+    classNames,sampleRate,rx.CenterFrequency,frameDuration)
+<span style="color:#0000FF">else</span>
+  figure
+  imshow(<span style="color:#A020F0">'lte_capture_result1.png'</span>)
+  figure
+  imshow(<span style="color:#A020F0">'lte_capture_result2.png'</span>)
+  figure
+  imshow(<span style="color:#A020F0">'nr_capture_result1.png'</span>)
+  figure
+  imshow(<span style="color:#A020F0">'nr_capture_result2.png'</span>)
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="informalfigure"><div id="d124e5788" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_11.png" width="414"></p></div></div><div class="informalfigure"><div id="d124e5792" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_12.png" width="414"></p></div></div><div class="informalfigure"><div id="d124e5796" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_13.png" width="414"></p></div></div><div class="informalfigure"><div id="d124e5800" class="mediaobject"><p><img src="../../../examples/deeplearning_shared/win64/SpectrumSensingWithDeepLearning5GLTEExample_14.png" width="414"></p></div></div><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-12">Conclusions and Further Exploration<span id="mw_rtc_SpectrumSensingWithDeepLearning5GLTEExample_H_D8979809" class="anchor_target"></span></h3><p>The trained network can distinguish 5G NR and LTE signals including two example captures from real base stations. The network may not be able to identify every captured signal correctly. In such cases, enhance the training data either by generating more representative synthetic signals or capturing over-the-air signals and including these in the training set. </p><p>You can use the LTE <a href="../../../lte/ug/cell-search-mib-and-sib1-recovery.html" data-docid="lte_ug#example-SIB1RecoveryExample" class="a">Cell Search, MIB and SIB1 Recovery</a><span role="cross_prod"> (LTE Toolbox)</span> and the <a href="../../../5g/ug/nr-cell-search-and-mib-and-sib1-recovery.html" data-docid="5g_ug#mw_a4db8282-8f25-4802-8b02-548bab69b7dd" class="a">NR Cell Search and MIB and SIB1 Recovery</a><span role="cross_prod"> (5G Toolbox)</span> examples to identify LTE and 5G NR base stations manually to capture training data, respectively. </p><p>If you need to monitor wider bands of spectrum, increase the <code class="literal">sampleRate</code>, regenerate the training data and retrain the network.</p><h3 class="title" id="SpectrumSensingWithDeepLearning5GLTEExample-13">Supporting Functions</h3><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">function</span> data = preprocessTrainingData(data, imageSize)
+<span style="color:#228B22">% Resize the training image and associated pixel label image.</span>
+data{1} = imresize(data{1},imageSize);
+data{2} = imresize(data{2},imageSize);
+<span style="color:#0000FF">end</span></pre></div></div></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

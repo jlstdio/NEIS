@@ -1,0 +1,39 @@
+###################################################################
+##
+## Name     : axis_mux
+## Desc     : M_AXIS <= S_AXIS_1 when sel = '0' else S_AXIS_2
+##
+###################################################################
+
+BEGIN axis_mux
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION IMP_NETLIST = TRUE
+OPTION DESC = axis_mux
+
+
+## AXI-S Bus Interfaces
+BUS_INTERFACE BUS = M_AXIS,   BUS_STD = AXIS, BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = S_AXIS_1, BUS_STD = AXIS, BUS_TYPE = TARGET
+BUS_INTERFACE BUS = S_AXIS_2, BUS_STD = AXIS, BUS_TYPE = TARGET
+
+## AXI-S Parameters
+PARAMETER C_TDATA_WIDTH = 32, DT = INTEGER, RANGE = (32,64), BUS = M_AXIS:S_AXIS_1:S_AXIS_2, DESC = TDATA width
+PARAMETER C_M_AXIS_PROTOCOL = GENERIC, DT = STRING, TYPE = NON_HDL, ASSIGNMENT = CONSTANT, BUS = M_AXIS
+
+## AXI-S Ports
+PORT dataOut = TDATA, DIR = O, VEC = [C_TDATA_WIDTH-1:0], BUS = M_AXIS
+PORT dataOutVld = TVALID, DIR = O, BUS = M_AXIS
+
+PORT dataIn_1 = TDATA, DIR = I, VEC = [C_TDATA_WIDTH-1:0], BUS = S_AXIS_1
+PORT dataInVld_1 = TVALID, DIR = I, BUS = S_AXIS_1
+
+PORT dataIn_2 = TDATA, DIR = I, VEC = [C_TDATA_WIDTH-1:0], BUS = S_AXIS_2
+PORT dataInVld_2 = TVALID, DIR = I, BUS = S_AXIS_2
+
+## External Ports
+
+PORT sel = "", DIR = I
+
+END

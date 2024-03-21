@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message>
+
+
+<!-- ===============================================
+            general
+     =============================================== -->
+<entry key="FunctionNotFoundSdrz">
+Could not find ''{0}''.  Communications Toolbox Support 
+Package for Xilinx Zynq-Based Radios is not installed.  Install the
+support package using ''supportPackageInstaller''.
+</entry>
+<!-- ===============================================
+           loadsdrz
+     =============================================== -->
+<entry key="BadSDCardImageDirectoryName">
+The specified directory does not exist: {0}.
+</entry>
+
+<entry key="BadBitstreamFileName">
+The specified bitstream file does not exist: {0}.
+</entry>
+
+<entry key="BadBitstreamExtension">
+The specified file does not appear to be a bitstream: {0}.
+</entry>
+
+<entry key="BadMotherboardNameSdrz">
+Unsupported Zynq development board name: {0}.
+</entry>
+
+<!-- ===============================================
+             pingsdrz
+     =============================================== -->
+<entry key="NotZynqRadio">
+A device was found at ''{0}'' but it was not a compatible Zynq radio.\n
+This could be due to:\n
+- incompatible versions of host and hardware\n
+- hardware that is in a bad state and requires power-cycling\n
+See the documentation for additional diagnostic information.
+</entry>
+
+<entry key="NoPingHostResponseSdrz">
+There was no response to a ''ping'' command at address {0}.\n
+Saw following host response:\n
+{1}\n
+\n
+This could be due to:\n
+- an improperly specified device address\n
+- an improperly configured and/or incompatible network card on the host\n
+Confirm the following:\n
+- The radio hardware is powered on\n
+- Ethernet cable is connected between the radio hardware and the network card on the host computer\n
+- The selected NIC is operating properly for a gigabit Ethernet connection\n
+When properly connected, one LED should be constantly active on the Ethernet\n
+port on the radio hardware.\n\n
+See <![CDATA[<a href="matlab:{2}doc(''{2}spsetup'')">the documentation</a>]]> to configure the host and SDR device for proper communication.
+</entry>
+
+<entry key="NoPingRadioResponseSdrz">
+There was no response to a ''ping'' command at address {0}.\n
+Saw following host response:\n
+{1}\n
+\n
+This could be due to:\n
+- an unsuccessful boot from SD card image.\n
+- an improperly configured and/or incompatible network card on the host\n
+- host port blocking or anti-virus software.\n
+Confirm the following:\n
+- The network card is operating properly for gigabit Ethernet connection.\n
+- SD card has the correct image and is inserted properly on the radio hardware.\n
+- Host port blocking and antivirus software are turned off.\n\n 
+When properly connected, one LED should be constantly active on the Ethernet\n
+port on the radio hardware.\n\n
+See <![CDATA[<a href="matlab:{2}doc(''{2}spsetup'')">the documentation</a>]]> to configure the host and SDR device for proper communication.
+ </entry>
+ 
+ <!-- ===============================================
+           downloadImage
+     =============================================== -->
+<entry key="CheckConnectionFail">
+Error attempting to connect to address ''{0}''.\n 
+\n
+{1}\n
+This could be due to:\n
+- an improperly specified device IP address\n
+- an unsuccessful boot from SD card image\n
+- an improperly configured network card on the host\n
+- an incompatible network card on the host\n
+- host port blocking or anti-virus software\n
+\n
+See <![CDATA[<a href="matlab:{2}doc(''{2}spsetup'')">the documentation</a>]]> to configure the host and SDR device for proper communication.
+</entry>
+
+<entry key="RebootTimeout">
+Error attempting to connect to address ''{0}'' after reboot.\n 
+\n
+This could be due to:\n
+- an improperly specified device IP address\n
+- an incompatible host network address\n
+- an unsuccessful boot from SD card image\n
+\n
+See <![CDATA[<a href="matlab:{1}doc(''{1}spsetup'')">the documentation</a>]]> to configure the host and SDR device for proper communication.
+</entry>
+
+<entry key="UnknownDevice" context="error">Unknown SDR device name. Use {0} to return a list of supported devices.</entry>
+<entry key="DownloadImage_BoardNameHelp" context="error">
+Please provide the name of the board targeted.\n\n
+Example:\n\t{0}\n\n
+Available board names:\n\t{1}
+</entry>
+<entry key="DownloadImage_NoContent" context="error">Cannot find SD card image content.</entry>
+<entry key="DownloadImage_LoadingImage">Loading SD card image.</entry>
+<entry key="DownloadImage_CopyingSDCard">Copying to SD card.</entry>
+<entry key="DownloadImage_LoadingBitstream">Loading bitstream file.</entry>
+<entry key="DownloadImage_Rebooting">Rebooting board.</entry>
+<entry key="DownloadImage_RebootComplete">Reboot complete.</entry>
+
+ <!-- ===============================================
+           setupTools
+     =============================================== -->
+<entry key="InvalidToolPath">
+Must specify ''{0}'' when specifying ''{1}''.
+</entry>
+<entry key="InvalidToolNameValuePair">
+Must specify ''{0}'' and ''{1}'' name-value pairs.
+</entry>
+<entry key="InvalidToolPathVivado">
+\n''ToolPath'' ''{0}'' not valid.\n 
+\nPath specified for ''ToolPath'' must be absolute path to executable.\n
+Example:\n
+>> setupTools(dev, ''ToolName'', ''Xilinx Vivado'', ...\n
+                   ''ToolPath'', ''C:\\Xilinx\\Vivado\\2015.4\\bin\\vivado.bat'');\n
+\nNote: Xilinx Vivado launcher for Windows is a ''.bat'' file.\n
+</entry>
+<entry key="InvalidToolExecutable">
+Expected executable file to be ''{0}'', found ''{1}''.
+</entry>
+<entry key="InvalidToolExtension">
+Path specified for ''{0}'' must be absolute path to executable.\n
+Note: Xilinx Vivado launcher for Windows is a ''{1}'' file.
+</entry>
+<entry key="setupToolsDeprecationWarning">
+Future releases of setupTools will require ''Toolpath'' to be the full path to executable.
+\nSee help for examples of correct usage.
+</entry>
+
+ <!-- ===============================================
+           testConnection
+     =============================================== -->
+	 
+<entry key="BeginPingHost">
+Pinging host IP address
+</entry>
+<entry key="BeginPingRadio">
+Pinging radio IP address
+</entry>
+<entry key="BeginGetInfo">
+Checking compatibility of software with hardware
+</entry>
+<entry key="BeginDataTests">
+Performing data path tests
+</entry>	 
+<entry key="DataTestZynqToHost">
+Testing data path from Zynq board to host
+</entry>
+<entry key="DataTestRFLoopBack">
+Testing RF antenna loopback
+</entry>
+<entry key="DataTestRFCardToHost">
+Testing data path from RF card to host
+</entry>
+<entry key="pingHost_SameIpError">
+Host and device IP address can not be the same
+</entry>
+<entry key="TestConnection_Passed">
+All tests PASSED.
+</entry>
+
+
+<entry key="BadHostIPAddr">
+The specified host NIC IP address ''{0}'' was not a dotted-quad IP4 address.\n
+\n
+Please provide the host NIC IP address in this format, e.g.\n
+\n
+	'192.168.3.1'
+\n
+</entry>
+
+<entry key="BadCIDRSubnetMask">
+The specified CIDR subnet mask ''{0}'' was invalid.\n
+\n
+Please provide a valid CIDR subnet mask, e.g.\n
+\n
+    '/24'
+\n
+</entry>
+
+<entry key="IncompatRadio">	 
+A device was found at {0} but it was not a compatible radio.\n 
+</entry>
+
+<entry key="IncompatRadioConfirmMsg">	 
+{0}
+\n
+Confirm the following:\n
+- The correct hardware combination of Zynq board and RF card is connected.\n
+- The SD card image loaded on Zynq board is compatible with MATLAB/Simulink release version.\n
+\n
+</entry>
+
+<entry key="FirmwareIssue">
+Firmware major revision number mismatch detected:\n
+\n
+ ''{0}''.
+\n
+</entry>
+
+<entry key="FirmwareIssueConfirmMsg">
+\n
+{0}
+\n
+Confirm the following:\n
+- The correct hardware combination of Zynq board and RF card is connected.\n
+- The SD card image loaded on Zynq board is compatible with MATLAB/Simulink release version.\n
+\n
+</entry>
+
+<entry key="ProtoIssue">
+Protocol major revision number mismatch detected:\n
+\n
+ ''{0}''.
+ \n
+</entry>
+
+<entry key="ProtoIssueConfirmMsg">
+{0}\n
+\n
+Confirm the following:\n
+- The correct hardware combination of Zynq board and RF card is connected.\n
+- The SD card image loaded on Zynq board is compatible with MATLAB/Simulink release version.\n
+\n
+</entry>
+
+<entry key="RFCardIssue">
+RF card version mismatch detected:\n
+\n
+''{0}''
+\n
+</entry>
+
+<entry key="RFCardIssueConfirmMsg">
+Saw the following response from the hardware when attempting to read info from it:\n
+{0}\n
+\n
+Confirm the following:\n
+- The correct hardware combination of Zynq board and RF card is connected.\n
+- The SD card image loaded on Zynq board is compatible with MATLAB/Simulink release version.\n
+\n
+</entry>
+
+<entry key="HWIssue">
+FPGA hardware version mismatch detected:\n
+\n
+''{0}''
+\n
+</entry>
+
+<entry key="HWIssueConfirmMsg">
+Saw the following response from hardware when attempted to read info from it:\n
+{0}\n
+\n
+Confirm the following:\n
+- The correct hardware combination of Zynq board and RF card is connected.\n
+- The SD card image loaded on Zynq board is compatible with MATLAB/Simulink release version.\n
+\n
+</entry>
+
+<entry key="RampTestFail">
+Error receiving data from the radio on the host.\n
+\n
+This could be due to:\n
+- an improperly configured network card on the host\n
+- an incompatible network card on the host\n
+- host port blocking or anti-virus software\n
+- attempting to use a USB2.0 instead of USB3.0\n
+  Gigabit Ethernet adapter to connect the radio\n
+  to the host system\n
+\n
+</entry>
+ 
+<entry key="ToneTestFail">
+Error transmitting and receiving RF data.\n
+\n
+This could be due to:\n
+ - incorrectly connected antennae or cable\n
+ - a fault with the radio hardware\n
+\n
+Ensure the radio hardware is setup correctly and all external peripherals are 
+connected firmly. Verify the antennas or cable are connected to the correct\n
+Rx and Tx ports.\n 
+\n
+Should the problem persist, try switching the radio hardware off and back on again\n 
+or if possible try a different radio hardware.\n
+</entry>
+ 
+<entry key="BISTTestFail">
+Error receiving data from the radio hardware on the host.
+ 
+\n
+This could be due to:\n
+ - a fault with the radio hardware\n
+ - incorrectly configured radio hardware image\n
+ 
+Ensure the radio hardware is setup correctly.\n
+\n 
+Should the problem persist, try using different radio hardware, if possible. \n
+</entry>
+ 
+<entry key="TxVerifierFail">
+Error transmitting data from the host to the radio.
+\n
+This could be due to:\n
+- an improperly configured network card on the host\n
+- an incompatible network card on the host\n
+- host port blocking or anti-virus software\n
+- attempting to use a USB2.0 instead of USB3.0\n
+  Gigabit Ethernet adapter to connect the radio\n
+  to the host system\n
+\n
+</entry>
+</message>
+</rsccat>

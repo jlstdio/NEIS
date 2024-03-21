@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo version="2.0">
+   <name>Xilinx Zynq Based Radio Board Target</name>
+   <deviceid>ARM Cortex-A9</deviceid>
+   <subfamily>ARM Cortex-A</subfamily>
+   <numofcores>2</numofcores>
+   <productionhwdevicetype>ARM Compatible-&gt;ARM Cortex</productionhwdevicetype>
+   <enableprodhwdevicetype>false</enableprodhwdevicetype>
+   <supportsonlysimulation>false</supportsonlysimulation>
+   <toolchain loadcommand="codertarget.xilinxsdrz.internal.loadAndRun" loadcommandargs="get_param(getModel(hCS), 'Name')">
+      <name>Linaro AArch32 Linux v6.3.1</name>
+      <IsLoadCommandMATLABFcn>true</IsLoadCommandMATLABFcn>
+      <loadername>Zynq Radio Loader</loadername>
+   </toolchain>
+   <parameterinfo>$(TARGET_ROOT)/registry/parameters/XilinxZynqBasedRadioBoardTarget.xml</parameterinfo>
+   <attributeinfo>$(TARGET_ROOT)/registry/attributes/ZynqRadioDeployer.xml</attributeinfo>
+   <rtosinfo>$(TARGET_ROOT)/registry/rtos/zynq_radio_linux.xml</rtosinfo>  
+   <esbcompatible>0</esbcompatible>
+</productinfo>

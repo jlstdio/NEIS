@@ -1,0 +1,2 @@
+lib axi_stream_loopback_buffer_v1_00_a MWDPRAM vhdl
+lib axi_stream_loopback_buffer_v1_00_a axi_stream_loopback_buffer vhdl

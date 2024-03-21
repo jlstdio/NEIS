@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instructions>
+  <platform>all</platform>
+  <downloadInstruction>
+    <downloadUrl>
+      http://ssd.mathworks.com/supportfiles/downloads/SupportPackageThirdParty/R2019b/analogdevices9361filterwizard/common/baf2990995cce46e7ad888998769fac9d461eb96.zip
+    </downloadUrl>
+    <archive>baf2990995cce46e7ad888998769fac9d461eb96.zip</archive>
+  </downloadInstruction>
+  <installInstructions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ExtractInstruction">
+    <archiveType>ZIP_ARCHIVE</archiveType>
+    <archiveName>$IS_DOWNLOADED_FILE</archiveName>    
+  </installInstructions>
+  <matlabPathList>
+	<matlabPath>$IS_ROOT_DIR$IS_FILE_SEPad936x-filter-wizard-baf2990995cce46e7ad888998769fac9d461eb96</matlabPath>
+  </matlabPathList>
+  <displayName>Analog Devices AD936x Filter Wizard</displayName>
+  <licenseUrl>
+    https://raw.githubusercontent.com/analogdevicesinc/ad936x-filter-wizard/baf2990995cce46e7ad888998769fac9d461eb96/LICENSE
+  </licenseUrl>
+  <checksum>c7b978e54c827671e5b6bbd7a05b9fdb</checksum>
+</instructions>

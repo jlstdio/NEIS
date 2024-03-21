@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2017-2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="libiio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message>
+        <!-- libiio\base\+matlabshared\+libiio\base.m -->
+        <entry key="CreateContextUriFail" context="error">
+            Failed to create context for uri: {0}
+            \nThe address is not available. Make sure the device is connected and try again.
+        </entry>
+        <entry key="ContextManagerReset">## Internal context reset</entry>
+        <entry key="SetContextTimeoutFail" context="error">Failed to set context timeout.</entry>
+        <entry key="SetupKernelBuffersFail" context="error">Failed to setup kernel buffers.</entry>
+        <entry key="FindDeviceFail" context="error">Failed to find device: {0}.</entry>
+        <entry key="AttributeWriteFail" context="error">Failed to write attribute: {0} to device.</entry>
+        <entry key="ChannelNotFound" context="error">Channel: {0} not found.</entry>  
+        <entry key="GetDataFail" context="error">Failed to get data.</entry>
+        <entry key="CheckDataAvailableFail" context="error">Failed to check data available.</entry>
+        <entry key="RecreateBufferFail" context="error">Failed to re-create buffer.</entry>
+        <entry key="PushBufferFail" context="error">Failed to push buffer.</entry>
+        <entry key="RefillBufferFail" context="error">Failed to refill buffer.</entry>
+        <entry key="ConfigDeviceAndBuffersFail" context="error">Failed to configure device and buffers.</entry>
+        <entry key="DataSizeMismatch" context="error">Data size mismatch.</entry>
+        <entry key="BufferPollingSetupFail" context="error">Failed to setup buffer polling.</entry>
+        
+        <!-- libiio\base\+matlabshared\+libiio\ExternalDependency.m -->
+        <entry key="CodegenNotSupported" context="error">LibIIO codegen not supported for this target.</entry>
+        <entry key="UnsupportedPlatform" context="error">Unsupported platform.</entry>
+        <entry key="SysrootNotRegisteredForBoard" context="warning">
+            The chosen board "{0}" does not have a sysroot registered, cross-compilation may fail.
+        </entry>
+    </message>
+</rsccat>

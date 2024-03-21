@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase">
+    <message>
+        <entry key="InvalidIPAddress" note="stringDatatypeUpdate">IP address must be a row character vector with four numbers separated by three dots, e.g. ''192.168.10.2''.</entry>
+    </message>
+</rsccat>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2017-2019 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="plutoradio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+  <message> 
+    <!-- Connect Hardware -->
+    <entry key="ConnectHardwareTitle">
+      Connect Hardware
+    </entry>
+    <entry key="ConnectHardware_Instruction">
+      1) Connect the Micro USB Type B end of the cable to the USB port of the PlutoSDR.\n\n2) Connect the USB Type A end of the cable to a USB port of the host computer.
+    </entry>
+    <entry key="ConnectHardware_WhatToConsider">
+      You need Micro USB Type B to USB Type A cable and a host computer with a USB port.
+    </entry>
+    <entry key="ConnectHardware_NoRadio">
+      Cannot find an ADALM-PLUTO radio. Connect a radio to continue.
+    </entry>
+    <entry key="ConnectHardware_MoreThanOneRadio">
+      Found more than one ADALM-PLUTO radio. Connect only one radio for firmware update.
+    </entry>
+    <entry key="ConnectHardware_RadioBusy">
+      The radio with ID {0} is already owned by a block, block dialog, or System object. Stop the simulation, close the open dialog, or call the release method of the System object to continue.
+    </entry>
+    
+    <!-- Install Driver -->
+    <entry key="DriverInstallFailed">
+      Driver installation failed with message:\n{0}
+    </entry>
+
+    <!-- Install Driver - Windows -->
+    <entry key="InstallDriverWindows_Title">
+      Install USB Driver
+    </entry>
+    <entry key="InstallDriverWindows_InfoText1">
+      You need to install the PlutoSDR USB driver to use your radio.
+    </entry>
+    <entry key="InstallDriverWindows_InfoText2">
+      Click "Next" to start the USB driver installer app. 
+    </entry>
+    <entry key="InstallDriverWindows_WhatToConsider">
+      Installation of USB driver requires Administrator privileges. If you see a window asking you to give permission to the app to make changes to your PC, click "Yes" to continue.
+    </entry>
+    
+    <!-- Install Driver - Linux -->
+    <entry key="InstallDriverLinux_Title">
+      Install udev Rules
+    </entry>
+    <entry key="InstallDriverLinux_InfoText1">
+      You need to install the udev rule for PlutoSDR to use your radio.
+    </entry>
+    <entry key="InstallDriverLinux_InfoText2">
+      Click "Next" to start the udev rule installation. You will be asked to enter your sudo password on the MATLAB command window.
+    </entry>
+    <entry key="InstallDriverLinux_WhatToConsider">
+      &lt;br&gt;Installation of udev rules requires Administrator privileges. If you do not have sudo permissions, contact your system administrator.
+    </entry>
+    
+    <!-- Install Driver - Mac -->
+    <entry key="InstallDriverMac_Title">
+      Install Library for Interfacing with IIO Devices (libiio)
+    </entry>
+    <entry key="InstallDriverMac_InfoText1">
+      You need to install the Library for Interfacing with IIO Devices (libiio) to use your radio.
+    </entry>
+    <entry key="InstallDriverMac_InfoText2">
+      Click "Next" to start the libiio installation. 
+    </entry>
+    <entry key="InstallDriverMac_WhatToConsider">
+      &lt;br&gt;Installation of libiio requires Xcode Command Line Developer Tools. If you do not have Xcode Command Line Developer Tools, a popup window will appear. Follow the instructions to install these tools. After installation of Xcode Command Line Developer Tools, click "Next" again to finish installing libiio. 
+    </entry>
+    <entry key="libiioInstallFailed">
+      libiio installation failed with message:\n\n{0}
+    </entry>
+    
+    <!-- Configure Compiler -->
+    <entry key="ConfigureCompiler_Title">
+      No Compiler Found
+    </entry>
+    <entry key="ConfigureCompiler_InfoTextNotFound1">
+      You need a supported C compiler to use ADALM-PLUTO radio with MATLAB, but your host computer does not have one installed.
+    </entry>
+    <entry key="ConfigureCompiler_InfoTextNotFound2">
+      Visit Mac&#174; App Store to install Xcode&#174;, Apple&#174;'s C compiler for macOS&#174;.
+    </entry>
+    <entry key="ConfigureCompiler_InfoTextNotFound3">
+      After completing compiler installation, continue ADALM-PLUTO setup via Add-Ons > Manage Add-Ons. Find the ADALM-PLUTO support package and click the gear icon. 
+    </entry>
+    <entry key="ConfigureCompiler_WhatToConsider">
+      See &lt;a href="https://www.mathworks.com/support/compilers.html"&gt;Supported and Compatible Compilers&lt;/a&gt;.
+    </entry>
+
+    <!-- Configure Hardware -->
+    <entry key="ConfigureHardware_Title">
+      Configure ADALM-PLUTO Radio
+    </entry>
+    <entry key="ConfigureHardware_InfoText">
+      The AD9363 RF part in the Pluto SDR is specified to operate from 
+      325 MHz to 3.8 GHz. This support package reconfigures the radio to 
+      operate over a tuning range of 70 MHz to 6 GHz with a 56 MHz 
+      channel bandwidth. Click “Configure” to enable this operating range.
+    </entry>
+    <entry key="ConfigureHardware_Configure">
+      Configure
+    </entry>
+    <entry key="ConfigureHardware_StatusTitle1">
+      Check USB connection
+    </entry>
+    <entry key="ConfigureHardware_StatusTitle2">
+      Update radio configuration
+    </entry>
+    <entry key="ConfigureHardware_WhatToConsider">
+      If USB connection fails, disconnect and reconnect your radio and try again. 
+    </entry>
+    <entry key="ConfigureHardware_WhatToConsider2">
+      If configuration fails, refer to "Common Problems and Fixes" section of the documentation. Type plutoradiodoc(''sdrpluto_troubleshoot'') to open this section.
+    </entry>
+    <entry key="ConfigureHardware_ConnectingToHW">
+      Connecting to hardware...
+    </entry>
+    <entry key="ConfigureHardware_ConnectedToHW">
+      Connected to hardware...
+    </entry>
+    <entry key="ConfigureHardware_FailedToConnectHW">
+      Failed to connect to hardware.
+    </entry>
+    <entry key="ConfigureHardware_ConfiguringRadio" note="As in changing the radio settings">
+      Configuring radio...
+    </entry>
+    <entry key="ConfigureHardware_CheckingUSBConnection">
+      Checking USB connection...
+    </entry>
+    <entry key="ConfigureHardware_Done">
+      Done configuring radio and host.
+    </entry>
+    <entry key="ConfigureHardware_ConfigPass">
+      If the configuration succeeds, click &lt;b&gt;Next&lt;/b&gt; to finish the setup process.
+    </entry>
+    <entry key="ConfigureHardware_ConfigFail">
+      If the configuration fails, click &lt;b&gt;Back&lt;/b&gt; and follow the instructions again.
+    </entry>
+    <entry key="SerialConnectionFailed">
+      Cannot connect to radio using serial port. Refer to "Hardware Setup on Linux — Configure ADALM-PLUTO Radio Failure" in "Common Problems and Fixes" section of the documentation. Type plutoradiodoc(''sdrpluto_troubleshoot'') to open this section.
+    </entry>
+    
+    <!-- Test Connection -->
+    <entry key="TestConnection_Title">
+      Test ADALM-PLUTO Radio Connection
+    </entry>
+    <entry key="TestConnection_RadioName">
+      Radio Platform
+    </entry>
+    <entry key="TestConnection_RadioAddress">
+      Radio ID
+    </entry>
+    <entry key="TestConnection_SerialNumber">
+      Serial Number
+    </entry>
+    <entry key="TestConnection_Test">
+      Test Connection
+    </entry>
+    <entry key="TestConnection_StatusConnect">
+      Search and connect
+    </entry>
+    <entry key="TestConnection_StatusTestTx">
+      Test transmitter
+    </entry>
+    <entry key="TestConnection_StatusTestRx">
+      Test receiver
+    </entry>
+    <entry key="TestConnection_WhatToConsider1">
+      This test will transmit and receive signals using the radio. We recommend that you install antennas on both transmitter and receiver ports.
+    </entry>
+    <entry key="TestConnection_WhatToConsider2">
+      If ''Radio ID'' is ''Not found'', disconnect and reconnect your radio and click "Test Connection" button.
+    </entry>
+    <entry key="TestConnection_ConfigFail">
+      If the connection tests fail, check that you have antennas connected to your radio, click &lt;b&gt;Back&lt;/b&gt;, and follow the instructions again.
+    </entry>
+    <entry key="TestConnection_Done">
+      Done testing PlutoSDR connection.
+    </entry>
+    <entry key="RadioNotFound">
+      Cannot find an ADALM-PLUTO radio. Connect a radio and restart hardware setup.
+    </entry>
+
+    <!-- Unexpected Firmware -->
+    <entry key="UnexpectedFirmware_Title">
+      Unexpected PlutoSDR Radio Firmware
+    </entry>
+    <entry key="UnexpectedFirmware_InfoText">
+      ADALM-PLUTO radio with serial number ''{0}'' has firmware version "{1}". MathWorks recommends radio firmware version "{2}" with the Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio. 
+      If you do not want to update your radio firmware to the recommended version, uncheck the following checkbox.
+    </entry>
+    <entry key="UnexpectedFirmware_UpdateCheckbox">
+      Update firmware to recommended version
+    </entry>
+    <entry key="UnexpectedFirmware_WhatToConsiderInfo">
+      ADALM-PLUTO support package is tested with radio firmware version "{0}". Using the support package with a different firmware version may result in unexpected behavior. 
+    </entry>
+    <entry key="UnexpectedFirmware_WhatToConsiderRevert">
+      If you update the firmware with this application, later you can revert to your current firmware version ("{0}") following the instructions in &lt;a href="https://wiki.analog.com/university/tools/pluto/users/firmware"&gt;Pluto Firmware Updates&lt;/a&gt;.
+    </entry>
+    
+    <!-- Update Firmware -->
+    <entry key="UpdateFirmware_Title">
+      Update PlutoSDR Radio Firmware
+    </entry>
+    <entry key="UpdateFirmware_InfoText">
+      This hardware setup app will guide you to update radio firmware to version "{0}". Click ''Update Firmware'' button to start firmware update.
+    </entry>
+    <entry key="UpdateFirmware_UpdateButton">
+      Update Firmware
+    </entry>
+    <entry key="UpdateFirmware_StatusFindDrive">
+      Find PlutoSDR mass storage device drive
+    </entry>
+    <entry key="UpdateFirmware_StatusCopyFirmware">
+      Copy firmware files to PlutoSDR mass storage device
+    </entry>
+    <entry key="UpdateFirmware_StatusEject">
+      Wait for PlutoSDR mass storage device to be ejected
+    </entry>
+    <entry key="UpdateFirmware_StatusUpdate">
+      Update firmware
+    </entry>
+    <entry key="UpdateFirmware_StatusTest">
+      Test firmware update
+    </entry>
+    <entry key="UpdateFirmware_WhatToConsiderInfo">
+      See &lt;a href="https://wiki.analog.com/university/tools/pluto/users/firmware"&gt;Pluto Firmware Updates&lt;/a&gt; for more information on updating the firmware.
+    </entry>
+    <entry key="UpdateFirmware_WhatToConsiderFail">
+      If firmware update fails, you can manually try to update the firmware following the steps in &lt;a href="https://wiki.analog.com/university/tools/pluto/users/firmware"&gt;Pluto Firmware Updates&lt;/a&gt;. Compatible firmware files are downloaded to &lt;a href="matlab:msgbox(matlab.internal.get3pInstallLocation('plutosdrfw.instrset'), 'Firmware download folder:');"&gt;here&lt;/a&gt;.
+    </entry>
+    <entry key="UpdateFirmware_EjectMsg">
+      Eject PlutoSDR mass storage device using ''{0}''. Right click PlutoSDR drive and select ''Eject', which will cause firmware programming to start and LED1 to blink rapidly. {1}
+    </entry>
+    <entry key="UpdateFirmware_EjectMsgExtraWindows">
+      Do NOT eject using ''Safely Remove Hardware and Eject Media'' icon on the Taskbar.
+    </entry>
+    <entry key="UpdateFirmware_EjectFailedMsg">
+      Timed out waiting for eject. Click 'Update firmware' to start again. 
+    </entry>
+    <entry key="UpdateFirmware_BrowseTitle">
+      Select PlutoSDR mass storage device drive
+    </entry>
+    <entry key="UpdateFirmware_UpdateMsg">
+      Do not remove power (or USB) while the device is blinking rapidly. It takes approximately 4 minutes to properly program the device. 
+    </entry>
+    <entry key="UpdateFirmware_USBSearchFailed">
+      Cannot find PlutoSDR mass storage device: {0}
+    </entry>
+    <entry key="UpdateFirmware_NotMounted">
+      PlutoSDR radio is not mounted or not accessible as a mass storage device.
+    </entry>
+    
+    <!-- Setup Complete -->
+    <entry key="SetupCompleteDescription">
+      The hardware setup process for ADALM-PLUTO radio is complete.
+    </entry>
+    
+    <entry key="CannotConnect">
+      Cannot connect to radio. Check radio connection.
+    </entry>
+    <entry key="CannotGetConfiguration">
+      Cannot get radio configuration. Check radio connection.
+    </entry>
+    <entry key="USBConnectionFailed">
+      USB connection to radio with radio ID ''{0}'' failed. Check that radio is connected to your host computer. If so, release the radio System object and try again. If you still cannot connect, reinstall the USB driver using the Hardware Setup App. Start the ADALM-PLUTO setup via Add-Ons > Manage Add-Ons. Find the ADALM-PLUTO support package and click the gear icon. See &lt;a href="matlab:plutoradiodoc(''sdrpluto_linux_configure_failure'')"&gt;Common Problems and Fixes&lt;/a&gt;.
+    </entry>
+  </message>
+</rsccat>

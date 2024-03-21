@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2022 The MathWorks, Inc. -->
+<demos>
+    <name>Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</name>
+    <type>matlab</type>
+    <icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+    <description isCdata="no">
+        <p>Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio provides a library of blocks and System objects
+            to utilize PlutoSDR hardware to design and prototype systems that process real-time wireless signals in MATLAB&#174; and Simulink&#174;
+        </p>
+    </description>
+    <website>
+        <a href="matlab:plutoradiodoc">Documentation for Analog Devices ADALM-PLUTO Radio</a>
+    </website>
+
+</demos>

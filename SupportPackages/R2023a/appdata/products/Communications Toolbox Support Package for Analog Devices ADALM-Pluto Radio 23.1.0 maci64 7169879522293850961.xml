@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productData>
+  <altDependencies>
+    <product>
+      <productBaseCode>CM</productBaseCode>
+      <productName>Communications Toolbox</productName>
+      <productNumber>36</productNumber>
+      <productVersion>8.0</productVersion>
+      <releaseDescription>R2023a</releaseDescription>
+      <releaseFamily>R2023a</releaseFamily>
+    </product>
+  </altDependencies>
+  <dependsOn>
+    <component>
+      <name>3p/analogdevices9361filterwizard.instrset_common</name>
+      <instrset>1</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1668889195</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/licenses/asla_license_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1675180471</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/plutoradio_hspdef_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1677248505</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/sdrplugins/plutoradio_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1677248495</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/plutoradio_examples_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1677268342</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/plutoradio_resources_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1668903380</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/plutoradio_doc_en_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1677319165</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/sdrpluginbase_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1669031791</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/xilinxzynqradiotgt_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1669060036</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/sdrpluginbase_resources_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1668903380</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/rfconverter_libiio_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1669030223</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/libiio_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1673975097</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/libiio_resources_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1668903380</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/examples/plutoradio_common</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maca64</platform>
+        <platform>maci64</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1677266761</version>
+    </component>
+  </dependsOn>
+  <installerUsage>
+    <usage>professional</usage>
+  </installerUsage>
+  <isControllingProduct>false</isControllingProduct>
+  <licenseAgreementType>ASLA</licenseAgreementType>
+  <platformList>
+    <platform>glnxa64</platform>
+    <platform>maci64</platform>
+    <platform>win64</platform>
+  </platformList>
+  <productBaseCode>PLUTO</productBaseCode>
+  <productName>Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</productName>
+  <productNumber>2159</productNumber>
+  <productType>hardwareSupportPkg</productType>
+  <productVersion>23.1.0</productVersion>
+  <releaseDescription>R2023a</releaseDescription>
+  <releaseFamily>R2023a</releaseFamily>
+  <requiredProducts />
+</productData>

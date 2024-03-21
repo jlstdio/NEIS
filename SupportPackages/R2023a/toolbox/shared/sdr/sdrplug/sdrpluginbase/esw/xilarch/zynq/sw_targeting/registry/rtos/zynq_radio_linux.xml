@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+   <name>Linux</name>
+   <sourcefile>$(TARGET_ROOT)/src/linuxinitialize.c</sourcefile>
+   <includepath>$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc</includepath>
+   <includefile>linuxinitialize.h</includefile>  
+   <initcall>myRTOSInit</initcall>
+   <semaphoredatatype>sem_t</semaphoredatatype>
+   <semaphoreinitcall>sem_init</semaphoreinitcall>
+   <semaphorewaitcall>sem_wait</semaphorewaitcall>
+   <semaphorepostcall>sem_post</semaphorepostcall>
+   <semaphoredestroycall>sem_destroy</semaphoredestroycall>   
+   <taskdatatype>pthread_t</taskdatatype>
+   <taskcreatecall>pthread_create</taskcreatecall>
+   <taskexitcall>pthread_exit</taskexitcall>
+   <taskjoincall>pthread_join</taskjoincall> 
+   <eventdatatype>int</eventdatatype> 
+   <eventwaitcall>myWaitForThisEvent</eventwaitcall> 
+   <eventblockcall>myAddBlockForThisEvent</eventblockcall>
+   <eventaddhandlercall>myAddHandlerForThisEvent</eventaddhandlercall>
+   <eventrestorehandlercall>myAddHandlerForThisEvent</eventrestorehandlercall>   
+   <eventsendcall>raise</eventsendcall>  
+   <baseratetrigger>Operating system timer</baseratetrigger>   
+   <baseratetrigger>Receiver interrupt</baseratetrigger>
+   <baseratetrigger>Transmitter interrupt</baseratetrigger>
+   <baseratepriority>40</baseratepriority>
+</productinfo>

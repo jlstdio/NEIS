@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Airplane Tracking Using ADS-B Signals in Simulink</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Airplane Tracking Using ADS-B Signals in Simulink",
+          "description": "Track planes by processing automatic dependent surveillance-broadcast (ADS-B) signals using Simulink&#174; and Communications Toolbox&#8482;. You can use captured and saved signals, or receive signals in real time using an RTL-SDR radio, an ADALM-PLUTO radio or a Universal Software Radio Peripheral (USRP&#8482;) radio. You can also visualize the tracked planes on a map, if you have the Mapping Toolbox&#8482; software.",
+          "thumbnailURL": "../../../examples/comm/win64/sdrrFlightsOnMap.png",
+          "genre": "Model",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "Simulink"
+
+        },
+          "identifier": "comm.AirplaneTrackingUsingADSBSignalsInSimulinkExample",
+          "name": "AirplaneTrackingUsingADSBSignalsInSimulinkExample",
+          "url": "airplane-tracking-using-ads-b-signals-1.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('comm/AirplaneTrackingUsingADSBSignalsInSimulinkExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "AirplaneTrackingUsingADSBSignalsInSimulinkExample.m",
+        "ADSBSimulinkExample.slx",
+        "sdrrTrackedFlightsOnApp.png",
+        "sdrrFlightsOnMap.png",
+        "ADSBExampleLib.slx",
+        "adsb_capture_01.bb",
+        "helperAdsbConfig.m",
+        "dataAdsbBusObjects.mat",
+        "helperAdsbCheckModelParams.m",
+        "AirplaneE.png",
+        "AirplaneN.png",
+        "AirplaneNE.png",
+        "AirplaneNW.png",
+        "AirplaneS.png",
+        "AirplaneSE.png",
+        "AirplaneSW.png",
+        "AirplaneW.png",
+        "ADSBCPRFormat.m",
+        "ADSBFieldNames.m",
+        "ADSBStatus.m",
+        "ADSBVehicleCategory.m",
+        "ADSBVelocitySubtype.m",
+        "ExampleSourceType.m",
+        "helperAdsbBin2Hex.m",
+        "helperAdsbNL.m",
+        "helperAdsbPhyPacket.m",
+        "helperAdsbRxMsgParserFun.m",
+        "helperAdsbRxPhyBitParser.m",
+        "helperAdsbRxPhyPacketSearch.m",
+        "helperAdsbViewerAdaptor.m",
+        "helperAdsbViewer.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="ug">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="other">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to track planes by processing automatic dependent surveillance-broadcast (ADS-B) signals using Simulink&#174; and Communications Toolbox&#8482;."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/comm/win64/sdrrFlightsOnMap.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script>
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Airplane Tracking Using ADS-B Signals in Simulink</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#d124e6828" class="intrnllnk">Required Hardware and Software</a></li><li><a href="#d124e6846" class="intrnllnk">Introduction</a></li><li><a href="#d124e6854" class="intrnllnk">Receiver Structure</a></li><li><a href="#d124e6959" class="intrnllnk">References</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-topic">
+<section itemprop="content"><h1 class="r2023a" itemprop="title content" id="example-plutoradioADSBSimulinkExample">Airplane Tracking Using ADS-B Signals in Simulink</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('CM')">Communications Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('RTLSDR')">Communications Toolbox Support Package for RTL-SDR Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('SL')">Simulink</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRP')">Communications Toolbox Support Package for USRP Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('comm/AirplaneTrackingUsingADSBSignalsInSimulinkExample')" data-ex-genre="Model">Open Model</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="comm-AirplaneTrackingUsingADSBSignalsInSimulinkExample"><meta itemprop="exampletitle" content="Airplane Tracking Using ADSB Signals in Simulink"></div><span id="AirplaneTrackingUsingADSBSignalsInSimulinkExample" class="anchor_target"></span>
+
+<p class="shortdesc">This example shows how to track planes by processing automatic dependent surveillance-broadcast (ADS-B) signals using Simulink&#174; and Communications Toolbox&#8482;. You can use captured and saved signals, or receive signals in real time using an RTL-SDR radio, an ADALM-PLUTO radio or a Universal Software Radio Peripheral (USRP&#8482;) radio. You can also visualize the tracked planes on a map, if you have the Mapping Toolbox&#8482; software.</p>
+
+<div class="procedure"><h3 class="title" id="d124e6828">Required Hardware and Software<span id="AirplaneTrackingUsingADSBSignalsInSimulinkExample-1" class="anchor_target"></span></h3><p>To run this example using captured signals, you need Simulink&#174; and Communications Toolbox&#8482; software.</p><p>To receive signals in real time, you also need one of these SDR devices and the corresponding software add-on:</p><div class="itemizedlist"><ul><li><p>An RTL-SDR radio and Communications Toolbox Support Package for RTL-SDR Radio add-on</p></li><li><p>An ADALM-PLUTO radio and Communications Toolbox Support Package for Analog Devices&#174; ADALM-PLUTO Radio add-on</p></li><li><p>A USRP radio and the corresponding Communications Toolbox Support Package for USRP Radio Add-On</p></li></ul></div><p>For a full list of Communications Toolbox supported SDR platforms, refer to Supported Hardware section of <a href="https://www.mathworks.com/discovery/sdr.html" target="_blank"><span class="emphasis"><em>Software Defined Radio (SDR) discovery page</em></span></a>.</p><h3 class="title" id="d124e6846">Introduction<span id="AirplaneTrackingUsingADSBSignalsInSimulinkExample-2" class="anchor_target"></span></h3><p>For an introduction on the Mode-S signaling scheme and ADS-B technology for tracking aircraft, refer to the <a href="../../../comm/ug/airplane-tracking-using-ads-b-signals.html" data-docid="comm_ug#example-ADSBExample" class="a">Airplane Tracking Using ADS-B Signals</a><span role="cross_prod"> (Communications Toolbox)</span> MATLAB&#174; example.</p><h3 class="title" id="d124e6854">Receiver Structure<span id="AirplaneTrackingUsingADSBSignalsInSimulinkExample-3" class="anchor_target"></span></h3><p>This diagram summarizes the receiver code structure. The processing has four main parts: signal source, physical layer, message parser, and data viewer.</p><div class="informalfigure"><div id="d124e6860" class="mediaobject"><p><img src="../../../examples/comm/win64/AirplaneTrackingUsingADSBSignalsInSimulinkExample_01.png"></p></div></div><p><strong class="emphasis bold">Signal Source</strong></p><p>You can specify one of these signal sources:</p><div class="itemizedlist"><ul><li><p><code class="literal">''Captured Signal''</code> - Over-the-air signals written to a file and sourced using a baseband file reader block at 2.4 Msps</p></li><li><p><code class="literal">''RTL-SDR Radio''</code> - RTL-SDR radio at 2.4 Msps</p></li><li><p><code class="literal">''ADALM-PLUTO''</code> - ADALM-PLUTO radio at a sample rate of 12 Msps</p></li><li><p><code class="literal">''USRP Radio''</code> - USRP radio at a sample rate of 20 Msps for all                    radios except N310/N300 radio, that uses 2.4 Msps                    sample rate</p></li></ul></div><p>The extended squitter message is 120 micro seconds long, so the signal source is configured to process enough samples to contain 180 extended squitter messages simultaneously, and set <code class="literal">SamplesPerFrame</code> of the signal property accordingly. The rest of the algorithm searches for Mode-S packets in this frame of data and outputs all correctly identified packets. This type of processing is reffered to as batch processing. An alternative approach is to process one extended squitter message at a time. This single packet processing approach incurs 180 times more overhead than the batch processing, while it has 180 times less delay. Since the ADS-B receiver is delay tolerant, you use batch processing in this example.</p><p><strong class="emphasis bold">Physical Layer</strong></p><p>The physical layer (PHY) processes the baseband samples from the signal source are processed by the to produce packets that contain the PHY layer header information and the raw message bits. This diagram shows the physical layer structure.</p><div class="informalfigure"><div id="d124e6893" class="mediaobject"><p><img src="../../../examples/comm/win64/AirplaneTrackingUsingADSBSignalsInSimulinkExample_02.png"></p></div></div><p>The RTL-SDR radio can use a sampling rate in the range [200e3, 2.8e6] Hz. When the source is an RTL-SDR radio, the example uses a sampling rate of 2.4 MHz and interpolates by a factor of 5 to a practical sampling rate of 12 MHz.</p><p>The ADALM-PLUTO radio can use a sampling rate in the range [520e3, 61.44e6] Hz. When the source is an ADALM-PLUTO radio, the example samples the input directly at 12 MHz.</p><p>The USRP radios are capable of using different sampling rates. When the source is a USRP radio, the example samples the input directly at 20 MHz. For the N310/N300 radio the data is received at 2.4 MHz sample rate and interpolates by a factor of 5 to a practical sampling rate of 12e6.</p><p>For example, if the data rate is 1 Mbit/s and the effective sampling rate is 12 MHz, the signal contains 12 samples per symbol. The receive processing chain uses the magnitude of the complex symbols.</p><p>The packet synchronizer works on subframes of data that is equivalent to two extended squitter packets, i.e. 1440 samples at 12 MHz or 120 micro seconds. This subframe length ensures that the subframe contains the whole extended squitter. Packet synchronizer first correlates the received signal with the 8 microsecond preamble and finds the peak value. The synchronizer then validates the found synchronization point by checking if it confirms to the preamble sequence, [1 0 0 0 0 0 1 0 1 0 0 0 0 0 0], where a value of 1 represents a high value and a value of 0 represents a low value.</p><p>The Mode-S PPM scheme defines two symbols. Each symbol has two chips, where one has a high value and the other has a low value. If the first chip is high and the subsequent chip is low, then the symbol is 1. Alternatively, if the first chip is low and subsequent chip is high, then the symbol is 0. The bit parser demodulates the received chips and creates a binary message. The CRC checker validates the binary message. The output of bit parser is a vector of Mode-S physical layer header packets that contains these fields:</p><div class="itemizedlist"><ul><li><p>RawBits - Raw message bits</p></li><li><p>CRCError - FALSE if CRC passes, TRUE if CRC fails</p></li><li><p>Time - Time of reception in seconds, from the start of reception</p></li><li><p>DF - Downlink format (packet type)</p></li><li><p>CA - Capability</p></li></ul></div><p><strong class="emphasis bold">Message Parser</strong></p><p>The message parser extracts the raw bits based on the packet type as described in [ <a href="#AirplaneTrackingUsingADSBSignalsInSimulinkExample-10" class="intrnllnk">2</a> ]. This example can parse short squitter packets and extended squitter packets that contain airborne velocity, identification, and airborne position data.</p><p><strong class="emphasis bold">Data Viewer</strong></p><p>The data viewer shows the received messages on a graphical user interface (GUI). For each packet type, the data viewer shows the number of detected packets, the number of correctly decoded packets and the packet error rate (PER). As the radio captures data, the application lists information decoded from these messages in a table.</p><p><strong class="emphasis bold">Launch Map and Log Data</strong></p><p>You can also launch the map and start text file logging using the two slider switches(Launch Map and Log Data).</p><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Log Data</strong>* - When Log Data is On, it Saves the captured data in a TXT file. You can use the saved data for later for post processing.</p></li></ul></div><div class="itemizedlist"><ul><li><p><strong class="emphasis bold">Launch Map</strong> - When Launch Map is On, map will be launched where the tracked flights can be viewed. <strong class="emphasis bold">NOTE:</strong> You must have a valid license for the Mapping Toolbox if you want to use this feature.</p></li></ul></div><p>These figures illustrate how the application tracks and lists flight details and displays them on a map.</p><p></p>
+<div class="informalfigure"><div id="d124e6949" class="mediaobject"><p><img src="../../../examples/comm/win64/xxsdrrTrackedFlightsOnApp.png"></p></div></div><p>
+ </p><p></p>
+<div class="informalfigure"><div id="d124e6955" class="mediaobject"><p><img src="../../../examples/comm/win64/xxsdrrFlightsOnMap.png"></p></div></div><p>
+ </p><h3 class="title" id="d124e6959">References<span id="AirplaneTrackingUsingADSBSignalsInSimulinkExample-10" class="anchor_target"></span></h3><div class="orderedlist"><ol style="list-style: decimal;"><li><p>International Civil Aviation Organization, Annex 10, Volume 4. Surveillance and Collision Avoidance Systems.</p></li><li><p>Technical Provisions For Mode S Services and Extended Squitter (Doc 9871)</p></li></ol></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

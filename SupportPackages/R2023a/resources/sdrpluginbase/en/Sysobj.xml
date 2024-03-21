@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message> 
+
+<entry key="QuantNoConn">
+Could not determine quantized parameter value for property ''{0}'' because there
+is no connection to the radio.
+</entry>
+
+<entry key="ClobberingPreviousValue">
+Clobbering the previous value for property ''{0}''.\n
+Current value: {1}\n
+New value: {2}
+</entry>
+
+<entry key="BadSDRDevCtorCall">
+Plugin structure required.  Construct an SDR device object using ''sdrdev''.
+</entry>
+
+<entry key="FMCOMMS1NotSupported">
+Support for the Analog Devices FMCOMMS1 RevB/C RF card with Zynq hardware has been removed.
+</entry>
+
+<entry key="SDRWorkflowRemoved">
+HDL code generation using the Software Defined Radio target workflow in 
+HDL Coder will be removed in a future release. See documentation for 
+further guidance and recommended alternatives.
+</entry>
+
+<entry key="DeprecateLegacyPlugins">
+Support for {0} has been removed. Use 'AD936x' instead.
+</entry>
+
+<entry key="DeprecateLegacyDev">
+<![CDATA[The ''{0}'' radio object has been removed. Create an {1} object instead by calling sdrdev(''{1}''). <a href="matlab:sdrzdoc('sdrz_libiio_upgrade'); ">Learn more</a>.]]>
+</entry>
+
+<entry key="DeprecateLegacySysObjs">
+<![CDATA[The {0} System object has been removed. Create a comm.SDR{1}{2} System object instead by calling {3}(''{2}''). <a href="matlab:sdrzdoc('sdrz_libiio_upgrade'); ">Learn more</a>.]]>
+</entry>
+
+<entry key="DeprecateLegacyDev_e3xx">
+<![CDATA[The ''{0}'' radio object has been removed. Create an {1} object instead by calling sdrdev(''{1}''). <a href="matlab:usrpe3xxdoc('sdrz_libiio_upgrade'); ">Learn more</a>.]]>
+</entry>
+
+<entry key="DeprecateLegacySysObjs_e3xx">
+<![CDATA[The {0} System object has been removed. Create a comm.SDR{1}{2} System object instead by calling {3}(''{2}''). <a href="matlab:usrpe3xxdoc('sdrz_libiio_upgrade'); ">Learn more</a>.]]>
+</entry>
+
+
+<entry key="DeprecateLegacyBlocks">
+The ''{0}'' block has been removed. Use the {2} {1} block from the {3} instead.
+</entry>
+
+<entry key="DeprecateLegacyReferenceDesigns">
+Target platform ''{0}'' has been removed. Use ''{1}'' instead.
+</entry>
+
+<entry key="DeprecateTrackingProperties">
+{0} has been removed. Use {1} instead.
+</entry>
+
+
+</message>
+</rsccat>
+<!-- Copyright 2014-2019 The MathWorks, Inc.
+-->

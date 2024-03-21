@@ -1,0 +1,161 @@
+#
+# pin constraints
+#
+NET CLK_N LOC = "H9"  |  DIFF_TERM = "TRUE"  |  IOSTANDARD = "LVDS_25";
+NET CLK_P LOC = "J9"  |  DIFF_TERM = "TRUE"  |  IOSTANDARD = "LVDS_25";
+NET RESET LOC = "H10"  |  IOSTANDARD = "SSTL15"  |  TIG;
+NET RS232_Uart_1_sin LOC = "J24"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sout LOC = "J25"  |  IOSTANDARD = "LVCMOS25";
+# RF board
+
+NET axi_iic_0_Scl_pin LOC = "AF13" | IOSTANDARD = LVCMOS25;
+NET axi_iic_0_Sda_pin LOC = "AG13" | IOSTANDARD = LVCMOS25;
+NET axi_iic_0_Sda_pin PULLUP;
+NET axi_iic_0_Scl_pin PULLUP;
+
+NET axi_lite_adc_if_pcore_0_adc_clk_in_p_pin       LOC = "F33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_clk_in_n_pin       LOC = "G33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_or_p_pin      LOC = "K26"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_or_n_pin      LOC = "K27"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[0]   LOC = "L29"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[0]   LOC = "L30"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[1]   LOC = "C33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[1]   LOC = "B34"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[2]   LOC = "D34"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[2]   LOC = "C34"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[3]   LOC = "J31"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[3]   LOC = "J32"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[4]   LOC = "H34"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[4]   LOC = "H33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[5]   LOC = "F30"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[5]   LOC = "G30"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[6]   LOC = "E32"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[6]   LOC = "E33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[7]   LOC = "G32"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[7]   LOC = "H32"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[8]   LOC = "G31"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[8]   LOC = "H30"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[9]   LOC = "K28"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[9]   LOC = "J29"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[10]  LOC = "L25"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[10]  LOC = "L26"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[11]  LOC = "J30"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[11]  LOC = "K29"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[12]  LOC = "K33"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[12]  LOC = "J34"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_p_pin[13]  LOC = "F31"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_adc_if_pcore_0_adc_data_in_n_pin[13]  LOC = "E31"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET led_driver_adc_led_pin LOC = "AP24" | IOSTANDARD = LVCMOS18;
+
+
+
+NET axi_lite_dac_if_pcore_0_dac_clk_in_p_pin       LOC = "A10"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_dac_if_pcore_0_dac_clk_in_n_pin       LOC = "B10"  | IOSTANDARD = "LVDS_25" | DIFF_TERM = "TRUE";
+NET axi_lite_dac_if_pcore_0_dac_clk_out_p_pin      LOC = "R26"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_clk_out_n_pin      LOC = "T26"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_frame_out_p_pin    LOC = "D31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_frame_out_n_pin    LOC = "D32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[0]  LOC = "N25"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[0]  LOC = "M25"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[1]  LOC = "K32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[1]  LOC = "K31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[2]  LOC = "M26"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[2]  LOC = "M27"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[3]  LOC = "N33"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[3]  LOC = "M33"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[4]  LOC = "M31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[4]  LOC = "L31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[5]  LOC = "N34"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[5]  LOC = "P34"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[6]  LOC = "N32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[6]  LOC = "P32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[7]  LOC = "P31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[7]  LOC = "P30"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[8]  LOC = "N27"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[8]  LOC = "P27"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[9]  LOC = "R31"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[9]  LOC = "R32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[10] LOC = "L33"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[10] LOC = "M32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[11] LOC = "R28"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[11] LOC = "R27"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[12] LOC = "M30"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[12] LOC = "N30"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[13] LOC = "P29"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[13] LOC = "R29"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[14] LOC = "C32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[14] LOC = "B32"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_p_pin[15] LOC = "A33"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET axi_lite_dac_if_pcore_0_dac_data_out_n_pin[15] LOC = "B33"  | IOSTANDARD = "LVDS_25" | SLEW = "FAST";
+NET led_driver_dac_led_pin LOC = "AE21" | IOSTANDARD = LVCMOS18;
+# RF Board
+
+NET "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" TNM_NET = "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin";
+TIMESPEC "TS_axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" = PERIOD "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" 100 MHz;
+NET "axi_lite_adc_if_pcore_0_adc_clk_in_n_pin" TNM_NET = "axi_lite_adc_if_pcore_0_adc_clk_in_n_pin";
+TIMESPEC "TS_axi_lite_adc_if_pcore_0_adc_clk_in_n_pin" = PERIOD "axi_lite_adc_if_pcore_0_adc_clk_in_n_pin" 100 MHz;
+NET "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# can't use real numbers as bufg alone exceeds 4ns
+OFFSET = IN BEFORE "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" RISING;
+OFFSET = IN BEFORE "axi_lite_adc_if_pcore_0_adc_clk_in_p_pin" FALLING;
+
+
+NET "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" TNM_NET = "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin";
+TIMESPEC "TS_axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" = PERIOD "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" 100 MHz;
+NET "axi_lite_dac_if_pcore_0_dac_clk_in_n_pin" TNM_NET = "axi_lite_dac_if_pcore_0_dac_clk_in_n_pin";
+TIMESPEC "TS_axi_lite_dac_if_pcore_0_dac_clk_in_n_pin" = PERIOD "axi_lite_dac_if_pcore_0_dac_clk_in_n_pin" 100 MHz;
+#NET "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" CLOCK_DEDICATED_ROUTE = FALSE;
+
+#OFFSET = OUT AFTER "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" REFERENCE_PIN "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" RISING;
+#OFFSET = OUT AFTER "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" REFERENCE_PIN "axi_lite_dac_if_pcore_0_dac_clk_in_p_pin" FALLING;
+
+#
+# additional constraints
+#
+
+
+NET "CLK_N" TNM_NET = CLK_N;
+TIMESPEC TS_CLK_N = PERIOD "CLK_N" 5 ns HIGH 50%;
+NET "CLK_P" TNM_NET = CLK_P;
+TIMESPEC TS_CLK_P = PERIOD "CLK_P" 5 ns HIGH 50%;
+
+## IO PIN MAP##
+
+NET "ETH_COL"      LOC = "AK13";
+NET "ETH_CRS"      LOC = "AL13";
+NET "ETH_GTXCLK"   LOC = "AH12";
+NET "ETH_MDC"      LOC = "AP14";
+NET "ETH_RESET_n"  LOC = "AH13";
+NET "ETH_RXCLK"    LOC = "AP11";
+NET "ETH_RXD[0]"   LOC = "AN13";
+NET "ETH_RXD[1]"   LOC = "AF14";
+NET "ETH_RXD[2]"   LOC = "AE14";
+NET "ETH_RXD[3]"   LOC = "AN12";
+NET "ETH_RXD[4]"   LOC = "AM12";
+NET "ETH_RXD[5]"   LOC = "AD11";
+NET "ETH_RXD[6]"   LOC = "AC12";
+NET "ETH_RXD[7]"   LOC = "AC13";
+NET "ETH_RXDV"     LOC = "AM13";
+NET "ETH_RXER"     LOC = "AG12";
+NET "ETH_TXD[0]"   LOC = "AM11";
+NET "ETH_TXD[1]"   LOC = "AL11";
+NET "ETH_TXD[2]"   LOC = "AG10";
+NET "ETH_TXD[3]"   LOC = "AG11";
+NET "ETH_TXD[4]"   LOC = "AL10";
+NET "ETH_TXD[5]"   LOC = "AM10";
+NET "ETH_TXD[6]"   LOC = "AE11";
+NET "ETH_TXD[7]"   LOC = "AF11";
+NET "ETH_TXEN"     LOC = "AJ10";
+NET "ETH_TXER"     LOC = "AH10";
+
+
+## Clocking ##
+NET "ETH_RXCLK" TNM_NET = "ETH_RXCLK";
+TIMESPEC "TS_ETH_RXCLK" = PERIOD "ETH_RXCLK" 8 ns HIGH 50%;
+
+## False Path ## 
+TIMESPEC TS_RXCLK_0 = FROM "ETH_RXCLK" TO "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0" TIG;
+TIMESPEC TS_RXCLK_1 = FROM "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0" TO "ETH_RXCLK" TIG;
+TIMESPEC TS_TXCLK_0 = FROM "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0" TO "clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0" TIG;
+TIMESPEC TS_TXCLK_1 = FROM "clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0" TO "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0" TIG;

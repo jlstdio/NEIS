@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+<message>
+
+
+<!-- ===============================================
+            general
+     =============================================== -->
+
+<entry key="FunctionNotFoundSdrf">
+Could not find ''{0}''.  Communications Toolbox Support 
+Package for Xilinx FPGA-Based Radios is not installed.  Install the
+support package using ''supportPackageInstaller''.
+</entry>
+
+</message>
+</rsccat>
+

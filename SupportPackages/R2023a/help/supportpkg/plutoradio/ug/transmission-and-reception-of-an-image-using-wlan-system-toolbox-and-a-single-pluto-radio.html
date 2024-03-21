@@ -1,0 +1,648 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Image Transmission and Reception Using 802.11 Waveform and SDR</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Image Transmission and Reception Using 802.11 Waveform and SDR",
+          "description": "Encode and pack an image file into WLAN packets for transmission and subsequently decode the packets to retrieve the image. The example also shows how to use a software-defined radio (SDR) for over-the-air transmission and reception of the WLAN packets.",
+          "thumbnailURL": "../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_07.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "wlan.SDRImageTransmissionReceptionUsing80211WaveformExample",
+          "name": "SDRImageTransmissionReceptionUsing80211WaveformExample",
+          "url": "transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "SDRImageTransmissionReceptionUsing80211WaveformExample.mlx",
+        "helperInterpretLSIG.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to encode and pack an image file into WLAN packets for transmission and subsequently decode the packets to retrieve the image."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_07.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/livecontrolpopover.js"></script>
+
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Image Transmission and Reception Using 802.11 Waveform and SDR</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-1" class="intrnllnk">Introduction</a></li><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-2" class="intrnllnk">Example Setup</a></li><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-3" class="intrnllnk">Transmitter Design</a></li><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-4" class="intrnllnk">Receiver Design</a></li><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-5" class="intrnllnk">Further Exploration</a></li><li><a href="#SDRImageTransmissionReceptionUsing80211WaveformExample-6" class="intrnllnk">SDR Troubleshooting</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="example-plutoradioWLANTransmitReceiveExample">Image Transmission and Reception Using 802.11 Waveform and SDR</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('WL')">WLAN Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRPEMBED')">Communications Toolbox Support Package for USRP Embedded Series Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('XILINXZYNQ')">Communications Toolbox Support Package for Xilinx Zynq-Based Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="wlan-SDRImageTransmissionReceptionUsing80211WaveformExample"><meta itemprop="exampletitle" content="Image Transmission and Reception Using 802.11 Waveform and SDR"></div><span id="SDRImageTransmissionReceptionUsing80211WaveformExample" class="anchor_target"></span><p class="shortdesc">This example shows how to encode and pack an image file into WLAN packets for transmission and subsequently decode the packets to retrieve the image.  The example also shows how to use a software-defined radio (SDR) for over-the-air transmission and reception of the WLAN packets.</p><div class="procedure"><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-1">Introduction</h3><p>This example imports and segments an image file into multiple medium access control (MAC) service data units (MSDUs). It passes each MSDU to the <a href="../../../wlan/ref/wlanmacframe.html" data-docid="wlan_ref#mw_9f2e549d-99ee-49ae-b9c3-3a78e29a6c1a" class="a"><code class="olink">wlanMACFrame</code></a><span role="cross_prod"> (WLAN Toolbox)</span> function to create a MAC protocol data unit (MPDU). This function also utilizes a <a href="../../../wlan/ref/wlanmacframeconfig.html" data-docid="wlan_ref#mw_a004c76e-748e-42b5-84b2-360a063ea1f9" class="a"><code class="olink">wlanMACFrameConfig</code></a><span role="cross_prod"> (WLAN Toolbox)</span> object as an input, which sequentially numbers the MPDUs through the <code class="literal">SequenceNumber</code> property. The example then passes the MPDUs to the physical (PHY) layer as PHY Layer Service Data Units (PSDUs). Each PSDU uses a single non-high-throughput (non-HT), 802.11a&#8482; WLAN packet for transmission. This example creates a WLAN baseband waveform using the <a href="../../../wlan/ref/wlanwaveformgenerator.html" data-docid="wlan_ref#buwv1f3" class="a"><code class="olink">wlanWaveformGenerator</code></a><span role="cross_prod"> (WLAN Toolbox)</span> function. This function utilizes multiple PSDUs and processes each to form a series of physical layer convergence procedure (PLCP) protocol data units (PPDUs) ready for transmission.</p><p> <span class="guiicon"><span class="inlinemediaobject"><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_01.png" height="496" width="887"></span></span></p><p>The generated waveform then passes through an additive white Gaussian noise (AWGN) channel to simulate an over-the-air transmission. Subsequently, the <a href="../../../wlan/ref/wlanmpdudecode.html" data-docid="wlan_ref#mw_function_wlanMPDUDecode" class="a"><code class="olink">wlanMPDUDecode</code></a><span role="cross_prod"> (WLAN Toolbox)</span> function takes the noisy waveform and decodes it. Then, the <code class="literal">SequenceNumber</code> property in the recovered MAC frame configuration object allows the example to sequentially order the extracted MSDUs. The information bits in the multiple received MSDUs combine to recover the transmitted image. This diagram shows the receiver processing.</p><div class="informalfigure"><div id="d124e4413" class="mediaobject"><p><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_02.png" height="469" width="1178"></p></div></div><p>Alternatively, the generated WLAN waveform can be transmitted over the air and received using these supported SDRs.</p><p> <span class="guiicon"><span class="inlinemediaobject"><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_03.png" alt="sdrFig.png" height="248" width="780"></span></span></p><p><strong class="emphasis bold">Communications Toolbox Support Package for Analog Devices</strong>&#174;<strong class="emphasis bold"> ADALM-Pluto Radio</strong></p><div class="itemizedlist"><ul><li><p><a href="../installation-and-setup.html" data-docid="plutoradio_doccenter#bvn85h5-16" class="a">Installation and Setup</a></p></li><li><p><a href="supported-hardware-and-required-software.html#bvn89q2-7" data-docid="plutoradio_ug#bvn89q2-7" class="a">Supported Hardware</a></p></li></ul></div><p><strong class="emphasis bold">Communications Toolbox Support Package for USRP</strong>&#174;<strong class="emphasis bold"> Embedded Series Radio</strong></p><div class="itemizedlist"><ul><li><p><a href="../../../supportpkg/usrpembeddedseriesradio/installation-and-setup.html" data-docid="usrpembeddedseriesradio_doccenter#bvh3g86-1" class="a">Installation and Setup</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Embedded Series Radio)</span></p></li><li><p><a href="../../../supportpkg/usrpembeddedseriesradio/ug/hardware-and-software-requirements.html#bu1kohy-7" data-docid="usrpembeddedseriesradio_ug#bu1kohy-7" class="a">Hardware Support</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Embedded Series Radio)</span></p></li></ul></div><p><strong class="emphasis bold">Communications Toolbox Support Package for Xilinx</strong>&#174;<strong class="emphasis bold"> Zynq</strong>&#174;<strong class="emphasis bold">-Based Radio</strong></p><div class="itemizedlist"><ul><li><p><a href="../../../supportpkg/xilinxzynqbasedradio/installation-and-setup.html" data-docid="xilinxzynqbasedradio_doccenter#bu1klmu-2" class="a">Installation and Setup</a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span></p></li><li><p><a href="../../../supportpkg/xilinxzynqbasedradio/ug/hardware-and-software-requirements.html#bu1kohy-7" data-docid="xilinxzynqbasedradio_ug#bu1kohy-7" class="a">Hardware Support</a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span></p></li></ul></div><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-2">Example Setup</h3><p>Before running the example, set the <code class="literal">channel</code> variable to be one of these options:</p><div class="itemizedlist"><ul><li><p><code class="literal">OverTheAir</code>: Use an SDR to transmit and receive the WLAN waveform</p></li><li><p><code class="literal">GaussianNoise</code>: Pass the transmission waveform through an AWGN channel (default)</p></li><li><p><code class="literal">NoImpairments</code>: Pass the transmission waveform through with no impairments</p></li></ul></div><p>If you set <code class="literal">channel</code> to <code class="literal">OverTheAir</code>, set frequency band and channel, transmission gain, reception gain, and desired SDR:</p><div class="itemizedlist"><ul><li><p>Set to <code class="literal">Pluto</code> to use the ADALM-Pluto Radio (default)</p></li><li><p>Set to <code class="literal">E3xx</code> to use the USRP Embedded Series Radio</p></li><li><p>Set to <code class="literal">AD936x</code> or <code class="literal">FMCOMMS5</code> to use the Xilinx Zynq-Based Radio</p></li></ul></div><span id="mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_E4A20069" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>channel = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_08.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="&#34;GaussianNoise&#34;" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">"GaussianNoise"</span></span>;
+<span style="color:#0000FF">if</span> strcmpi(channel,<span style="color:#A020F0">"OverTheAir"</span>)
+    deviceName = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_09.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="&#34;Pluto&#34;" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">"Pluto"</span></span>;
+    channelNumber = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_10.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="5" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">5</span></span>;
+    frequencyBand = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_11.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="2.4" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">2.4</span></span>;
+    txGain = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_12.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="-10" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">-10</span></span>;
+    rxGain = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_13.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="10" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">10</span></span>;
+<span style="color:#0000FF">elseif</span> strcmpi(channel,<span style="color:#A020F0">"GaussianNoise"</span>)
+    <span style="color:#228B22">% Specify SNR of received signal for a simulated channel </span>
+    SNR = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_14.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="20" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">20</span></span>;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Configure all the scopes and figures for the example.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Setup handle for image plot</span>
+<span style="color:#0000FF">if</span> ~exist(<span style="color:#A020F0">'imFig'</span>,<span style="color:#A020F0">'var'</span>) || ~ishandle(imFig) <span style="color:#228B22">%#ok&lt;SUSENS&gt; </span>
+    imFig = figure;
+    imFig.NumberTitle = <span style="color:#A020F0">'off'</span>;
+    imFig.Name = <span style="color:#A020F0">'Image Plot'</span>;
+    imFig.Visible = <span style="color:#A020F0">'off'</span>;
+<span style="color:#0000FF">else</span>
+    clf(imFig); <span style="color:#228B22">% Clear figure</span>
+    imFig.Visible = <span style="color:#A020F0">'off'</span>;
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Setup Spectrum viewer</span>
+spectrumScope = spectrumAnalyzer( <span style="color:#0000FF">...</span>
+    SpectrumType=<span style="color:#A020F0">'power-density'</span>, <span style="color:#0000FF">...</span>
+    Title=<span style="color:#A020F0">'Received Baseband WLAN Signal Spectrum'</span>, <span style="color:#0000FF">...</span>
+    YLabel=<span style="color:#A020F0">'Power spectral density'</span>, <span style="color:#0000FF">...</span>
+    Position=[69 376 800 450]);
+
+<span style="color:#228B22">% Setup the constellation diagram viewer for equalized WLAN symbols</span>
+refQAM = wlanReferenceSymbols(<span style="color:#A020F0">'64QAM'</span>);
+constellation = comm.ConstellationDiagram(<span style="color:#0000FF">...</span>
+    Title=<span style="color:#A020F0">'Equalized WLAN Symbols'</span>,<span style="color:#0000FF">...</span>
+    ShowReferenceConstellation=true,<span style="color:#0000FF">...</span>
+    ReferenceConstellation=refQAM,<span style="color:#0000FF">...</span>
+    Position=[878 376 460 460]);</pre></div></div></div><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-3">Transmitter Design</h3><p>These steps describe the general procedure of the WLAN transmitter.</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>Import an image file and convert it to a stream of decimal bytes</p></li><li><p>Generate a baseband WLAN signal using the WLAN Toolbox</p></li><li><p>Pack the data stream into multiple 802.11a packets</p></li></ol></div><p>If using an SDR, these steps describe the setup of the SDR transmitter.</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>Prepare the baseband signal for transmission using the SDR hardware</p></li><li><p>Send the baseband data to the SDR hardware for upsampling and continuous transmission at the desired center frequency</p></li></ol></div><p><strong class="emphasis bold">Prepare Image File</strong></p><p>Read data from the image file, scale it for transmission, and convert it to a stream of decimal bytes. The scaling of the image reduces the quality by decreasing the size of the binary data stream.</p><p>The size of the binary data stream impacts the number of WLAN packets required for the transmission of the image data. The number of WLAN packets generated for transmission depends on these factors.</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>The image scaling, set when importing the image file</p></li><li><p>The length of the data carried in a packet, specified by the <code class="literal">msduLength</code> variable </p></li><li><p>The modulation and coding scheme (MCS) value of the transmitted packet</p></li></ol></div><p>The combination of the scaling factor and MSDU length determines the number of WLAN radio packets required for transmission. Setting <code class="literal">scale</code> to <code class="literal">0.2</code> and <code class="literal">msduLength</code> to <code class="literal">2304</code> requires the transmission of 11 WLAN radio packets. Increasing the scaling factor or decreasing the MSDU length will result in the transmission of more packets.</p><span id="mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_061064CA" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Input an image file and convert to binary stream</span>
+fileTx = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_15.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="'peppers.png'" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">'peppers.png'</span></span>;                   <span style="color:#228B22">% Image file name</span>
+fData = imread(fileTx);                          <span style="color:#228B22">% Read image data from file</span>
+scale = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_16.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="0.2" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">0.2</span></span>;                    <span style="color:#228B22">% Image scaling factor</span>
+origSize = size(fData);                          <span style="color:#228B22">% Original input image size</span>
+scaledSize = max(floor(scale.*origSize(1:2)),1); <span style="color:#228B22">% Calculate new image size</span>
+heightIx = min(round(((1:scaledSize(1))-0.5)./scale+0.5),origSize(1));
+widthIx = min(round(((1:scaledSize(2))-0.5)./scale+0.5),origSize(2));
+fData = fData(heightIx,widthIx,:);               <span style="color:#228B22">% Resize image</span>
+imsize = size(fData);                            <span style="color:#228B22">% Store new image size</span>
+txImage = fData(:);
+
+<span style="color:#228B22">% Plot transmit image</span>
+imFig.Visible = <span style="color:#A020F0">'on'</span>;
+subplot(211);
+imshow(fData);
+title(<span style="color:#A020F0">'Transmitted Image'</span>);
+subplot(212);
+title(<span style="color:#A020F0">'Received image appears here...'</span>);
+set(gca,<span style="color:#A020F0">'Visible'</span>,<span style="color:#A020F0">'off'</span>);</pre></div></div></div><div class="informalfigure"><div id="d124e4608" class="mediaobject"><p><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_04.png" alt="Figure Image Plot contains an axes object. The axes object with title Transmitted Image contains an object of type image." width="560"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>set(findall(gca, <span style="color:#A020F0">'type'</span>, <span style="color:#A020F0">'text'</span>), <span style="color:#A020F0">'visible'</span>, <span style="color:#A020F0">'on'</span>);</pre></div></div></div><p><strong class="emphasis bold">Fragment Transmit Data</strong></p><p>Split the data stream (<code class="literal">txImage</code>) into smaller transmit units (MSDUs) of size <code class="literal">msduLength</code>. Then, create an MPDU for each transmit unit using the <code class="literal">wlanMACFrame</code> function. Each call to this function creates an MPDU corresponding to the given MSDU and the frame configuration object. Next, create the frame configuration object using <code class="literal">wlanMACFrameConfig</code> to configure the sequence number of the MPDU. All the MPDUs are then sequentially passed to the physical layer for transmission.</p><p>To ensure that the MSDU size of the transmission does not exceed the standard-specified maximum, set the <code class="literal">msduLength</code> field to <code class="literal">2304</code> bytes. To make all MPDUs the same size, append zeros to the data in the last MPDU. </p><span id="mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_62368931" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>msduLength = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_17.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="2304" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">2304</span></span>; <span style="color:#228B22">% MSDU length in bytes</span>
+numMSDUs = ceil(length(txImage)/msduLength);
+padZeros = msduLength-mod(length(txImage),msduLength);
+txData = [txImage;zeros(padZeros,1)];
+txDataBits = double(int2bit(txData,8,false));
+
+<span style="color:#228B22">% Divide input data stream into fragments</span>
+bitsPerOctet = 8;
+data = zeros(0,1);
+
+<span style="color:#0000FF">for</span> i=0:numMSDUs-1
+
+    <span style="color:#228B22">% Extract image data (in octets) for each MPDU</span>
+    frameBody = txData(i*msduLength+1:msduLength*(i+1),:);
+
+    <span style="color:#228B22">% Create MAC frame configuration object and configure sequence number</span>
+    cfgMAC = wlanMACFrameConfig(FrameType=<span style="color:#A020F0">'Data'</span>,SequenceNumber=i);
+
+    <span style="color:#228B22">% Generate MPDU</span>
+    [psdu, lengthMPDU]= wlanMACFrame(frameBody,cfgMAC,OutputFormat=<span style="color:#A020F0">'bits'</span>);
+
+    <span style="color:#228B22">% Concatenate PSDUs for waveform generation</span>
+    data = [data; psdu]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+
+<span style="color:#0000FF">end</span></pre></div></div></div><p><strong class="emphasis bold">Generate 802.11a Baseband WLAN Signal</strong></p><p>Synthesize a non-HT waveform using the <code class="literal">wlanWaveformGenerator</code> function with a non-HT format configuration object created by the <a href="../../../wlan/ref/wlannonhtconfig.html" data-docid="wlan_ref#buw6f2v" class="a"><code class="olink">wlanNonHTConfig</code></a><span role="cross_prod"> (WLAN Toolbox)</span> object. In this example, the configuration object has a 20 MHz bandwidth, one transmit antenna and 64QAM rate 2/3 (MCS 6).</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>nonHTcfg = wlanNonHTConfig;       <span style="color:#228B22">% Create packet configuration</span>
+nonHTcfg.MCS = 6;                 <span style="color:#228B22">% Modulation: 64QAM Rate: 2/3</span>
+nonHTcfg.NumTransmitAntennas = 1; <span style="color:#228B22">% Number of transmit antenna</span>
+chanBW = nonHTcfg.ChannelBandwidth;
+nonHTcfg.PSDULength = lengthMPDU; <span style="color:#228B22">% Set the PSDU length</span></pre></div></div></div><p>Initialize the scrambler with a random integer for each packet.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>scramblerInitialization = randi([1 127],numMSDUs,1);</pre></div></div></div><p>Set the oversampling factor to <code class="literal">1.5</code> to generate the waveform at 30 MHz for transmission.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>osf = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_18.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="1.5" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">1.5</span></span>;
+
+sampleRate = wlanSampleRate(nonHTcfg); <span style="color:#228B22">% Nominal sample rate in Hz</span>
+
+<span style="color:#228B22">% Generate baseband NonHT packets separated by idle time</span>
+txWaveform = wlanWaveformGenerator(data,nonHTcfg, <span style="color:#0000FF">...</span>
+    NumPackets=numMSDUs,IdleTime=20e-6, <span style="color:#0000FF">...</span>
+    ScramblerInitialization=scramblerInitialization,<span style="color:#0000FF">...</span>
+    OversamplingFactor=osf);</pre></div></div></div><p><strong class="emphasis bold">Configure SDR for Transmission</strong></p><p>If using an SDR, set the transmitter gain parameter (<code class="literal">txGain</code>) to reduce transmission quality and impair the received waveform.</p><p>Create an <code class="literal">sdrTransmitter</code> object using the <code class="literal">sdrtx</code> function. Set the center frequency, sample rate, and gain to the corresponding properties of the <code class="literal">sdrTransmitter</code> object. For an 802.11a signal on channel 5 in the 2.4 GHz frequency band, the corresponding center frequency is 2.432 GHz as defined in section 16.3.6.3 of the IEEE Std 802.11-2016.</p><p>The <code class="literal">sdrTransmitter</code> object uses the transmit repeat functionality to transmit the baseband WLAN waveform in a loop from the double data rate (DDR) memory on the SDR.</p><span id="mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_5D84A363" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> strcmpi(channel,<span style="color:#A020F0">"OverTheAir"</span>)
+
+    <span style="color:#228B22">% Transmitter properties</span>
+    sdrTransmitter = sdrtx(deviceName);
+    sdrTransmitter.BasebandSampleRate = sampleRate*osf;
+    sdrTransmitter.CenterFrequency = wlanChannelFrequency(channelNumber,frequencyBand);
+    sdrTransmitter.Gain = txGain;
+    
+    <span style="color:#228B22">% Pass the SDR I/O directly to host skipping FPGA on Zynq Radio or USRP</span>
+    <span style="color:#228B22">% Embedded Series Radio</span>
+    <span style="color:#0000FF">if</span> ~strcmpi(deviceName,<span style="color:#A020F0">"Pluto"</span>)
+        sdrTransmitter.ShowAdvancedProperties = true;
+        sdrTransmitter.BypassUserLogic = true;
+    <span style="color:#0000FF">end</span>
+
+    fprintf(<span style="color:#A020F0">'\nGenerating WLAN transmit waveform:\n'</span>)
+
+    <span style="color:#228B22">% Scale the normalized signal to avoid saturation of RF stages</span>
+    powerScaleFactor = 0.8;
+    txWaveform = txWaveform.*(1/max(abs(txWaveform))*powerScaleFactor);
+
+    <span style="color:#228B22">% Transmit RF waveform</span>
+    transmitRepeat(sdrTransmitter,txWaveform);
+<span style="color:#0000FF">end</span></pre></div></div></div><p>The <code class="literal">transmitRepeat</code> function transfers the baseband WLAN packets with idle time to the SDR, and stores the signal samples in hardware memory. The example then transmits the waveform continuously over the air until the release of the transmit object.</p><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-4">Receiver Design</h3><p>The steps listed below describe the general structure of the WLAN receiver.</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>If using SDR hardware, capture multiple packets of the transmitted WLAN signal</p></li><li><p>Detect a packet</p></li><li><p>Coarse carrier frequency offset is estimated and corrected</p></li><li><p>Fine timing synchronization is established. The L-STF, L-LTF and L-SIG samples are provided for fine timing to allow to adjust the packet detection at the start or end of the L-STF</p></li><li><p>Fine carrier frequency offset is estimated and corrected</p></li><li><p>Perform a channel estimation for the received signal using the L-LTF</p></li><li><p>Detect the format of the packet</p></li><li><p>Decode the L-SIG field to recover the MCS value and the length of the data portion</p></li><li><p>Decode the data field to obtain the transmitted data within each packet</p></li><li><p>Decode the received PSDU and check if the frame check sequence (FCS) passed for the PSDU</p></li><li><p>Order the decoded MSDUs based on the <code class="literal">SequenceNumber</code> property in the recovered MAC frame configuration object</p></li><li><p>Combine the decoded MSDUs from all the transmitted packets to form the received image</p></li></ol></div><p>This example plots the power spectral density (PSD) of the received waveform, and shows visualizations of the equalized data symbols and the received image.</p><p><strong class="emphasis bold">Receiver Setup</strong></p><p>If using an SDR, create an <code class="literal">sdrReceiver</code> object using the <code class="literal">sdrrx</code> function. Set the center frequency, sample rate, and output data type to the corresponding properties of the <code class="literal">sdrReceiver</code> object. </p><p>Otherwise, apply gaussian noise to the <code class="literal">txWaveform</code> using the <a href="../../../comm/ref/awgn.html" data-docid="comm_ref#fp1221678" class="a"><code class="olink">awgn</code></a><span role="cross_prod"> (Communications Toolbox)</span> function or pass the <code class="literal">txWaveform</code> straight through to receiver processing. </p><span id="mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_C64FF99E" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> strcmpi(channel,<span style="color:#A020F0">"OverTheAir"</span>)
+
+    sdrReceiver = sdrrx(deviceName);
+    sdrReceiver.BasebandSampleRate = sdrTransmitter.BasebandSampleRate;
+    sdrReceiver.CenterFrequency = sdrTransmitter.CenterFrequency;
+    sdrReceiver.OutputDataType = <span style="color:#A020F0">'double'</span>;
+    sdrReceiver.GainSource = <span style="color:#A020F0">'Manual'</span>;
+    sdrReceiver.Gain = rxGain;
+
+    <span style="color:#0000FF">if</span> ~strcmpi(deviceName,<span style="color:#A020F0">"Pluto"</span>)
+        sdrReceiver.ShowAdvancedProperties = true;
+        sdrReceiver.BypassUserLogic = true;
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Configure the capture length equivalent to twice the length of the</span>
+    <span style="color:#228B22">% transmitted signal, this is to ensure that PSDUs are received in order.</span>
+    <span style="color:#228B22">% On reception the duplicate MAC fragments are removed.</span>
+    sdrReceiver.SamplesPerFrame = 2*length(txWaveform);
+    fprintf(<span style="color:#A020F0">'\nStarting a new RF capture.\n'</span>)
+
+    rxWaveform = capture(sdrReceiver,sdrReceiver.SamplesPerFrame,<span style="color:#A020F0">'Samples'</span>);
+<span style="color:#0000FF">elseif</span> strcmpi(channel,<span style="color:#A020F0">"GaussianNoise"</span>)
+    rxWaveform = awgn(txWaveform,SNR,<span style="color:#A020F0">'measured'</span>);
+<span style="color:#0000FF">else</span> <span style="color:#228B22">% No Impairments</span>
+    rxWaveform = txWaveform;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Show the power spectral density of the received waveform.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>spectrumScope.SampleRate = sampleRate*osf;
+spectrumScope(rxWaveform);
+release(spectrumScope);</pre></div></div></div><div class="informalfigure"><div id="d124e4753" class="mediaobject"><p><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_05.png" width="800"></p></div></div><p><strong class="emphasis bold">Receiver Processing</strong> </p><p>Design a rate conversion filter for resampling the waveform to the nominal baseband rate for receiver processing using the <a href="../../../dsp/ref/designmultiratefir.html" data-docid="dsp_ref#bu36evg-1" class="a"><code class="olink">designMultirateFIR</code></a><span role="cross_prod"> (DSP System Toolbox)</span> function. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>aStop = 40; <span style="color:#228B22">% Stopband attenuation</span>
+ofdmInfo = wlanNonHTOFDMInfo(<span style="color:#A020F0">'NonHT-Data'</span>,nonHTcfg); <span style="color:#228B22">% OFDM parameters</span>
+SCS = sampleRate/ofdmInfo.FFTLength; <span style="color:#228B22">% Subcarrier spacing</span>
+txbw = max(abs(ofdmInfo.ActiveFrequencyIndices))*2*SCS; <span style="color:#228B22">% Occupied bandwidth</span>
+[L,M] = rat(1/osf);
+maxLM = max([L M]);
+R = (sampleRate-txbw)/sampleRate;
+TW = 2*R/maxLM; <span style="color:#228B22">% Transition width</span>
+b = designMultirateFIR(L,M,TW,aStop);</pre></div></div></div><p>Resample the oversampled waveform back to 20 MHz for processing using the <a href="../../../dsp/ref/dsp.firrateconverter-system-object.html" data-docid="dsp_ref#bsfxw06_5" class="a"><code class="olink">dsp.FIRRateConverter</code></a><span role="cross_prod"> (DSP System Toolbox)</span> System object and the filter designed above.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>firrc = dsp.FIRRateConverter(L,M,b);
+rxWaveform = firrc(rxWaveform);</pre></div></div></div><p>If using an SDR, the SDR continuously transmits the 802.11 waveform over-the-air in a loop. The first packet received by the <code class="literal">sdrReceiver</code> may not be the first transmitted packet. This means that the packets may be decoded out of sequence. To enable the received packets to be recombined in the correct order, their sequence number must be determined. The <code class="literal">wlanMPDUDecode</code> function decodes the MPDU from the decoded PSDU bits of each packet and outputs the MSDU as well as the recovered MAC frame configuration object <code class="literal">wlanMACFrameConfig</code>. The <code class="literal">SequenceNumber</code> property in the recovered MAC frame configuration object can be used for ordering the MSDUs in the transmitted sequence. </p><p>To display each packet's decoded L-SIG contents, the EVM measurements, and sequence number, check the <code class="literal">displayFlag</code> box. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>displayFlag = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_19.png"><span data-examplename="openExample('wlan/SDRImageTransmissionReceptionUsing80211WaveformExample')" tabindex="0" data-controlvalue="false" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">false</span></span>; </pre></div></div></div><p>Set up required variables for receiver processing.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxWaveformLen = size(rxWaveform,1);
+searchOffset = 0; <span style="color:#228B22">% Offset from start of the waveform in samples</span></pre></div></div></div><p>Get the required field indices within a PSDU.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>ind = wlanFieldIndices(nonHTcfg);
+Ns = ind.LSIG(2)-ind.LSIG(1)+1; <span style="color:#228B22">% Number of samples in an OFDM symbol</span>
+
+<span style="color:#228B22">% Minimum packet length is 10 OFDM symbols</span>
+lstfLen = double(ind.LSTF(2)); <span style="color:#228B22">% Number of samples in L-STF</span>
+minPktLen = lstfLen*5;
+pktInd = 1;
+fineTimingOffset = [];
+packetSeq = [];
+rxBit = [];
+
+<span style="color:#228B22">% Perform EVM calculation</span>
+evmCalculator = comm.EVM(AveragingDimensions=[1 2 3]);
+evmCalculator.MaximumEVMOutputPort = true;</pre></div></div></div><p>Use a <code class="literal">while</code> loop to process the received out-of-order packets.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">while</span> (searchOffset+minPktLen)&lt;=rxWaveformLen
+    <span style="color:#228B22">% Packet detect</span>
+    pktOffset = wlanPacketDetect(rxWaveform,chanBW,searchOffset,0.5);
+
+    <span style="color:#228B22">% Adjust packet offset</span>
+    pktOffset = searchOffset+pktOffset;
+    <span style="color:#0000FF">if</span> isempty(pktOffset) || (pktOffset+double(ind.LSIG(2))&gt;rxWaveformLen)
+        <span style="color:#0000FF">if</span> pktInd==1
+            disp(<span style="color:#A020F0">'** No packet detected **'</span>);
+        <span style="color:#0000FF">end</span>
+        <span style="color:#0000FF">break</span>;
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Extract non-HT fields and perform coarse frequency offset correction</span>
+    <span style="color:#228B22">% to allow for reliable symbol timing</span>
+    nonHT = rxWaveform(pktOffset+(ind.LSTF(1):ind.LSIG(2)),:);
+    coarseFreqOffset = wlanCoarseCFOEstimate(nonHT,chanBW);
+    nonHT = frequencyOffset(nonHT,sampleRate,-coarseFreqOffset);
+
+    <span style="color:#228B22">% Symbol timing synchronization</span>
+    fineTimingOffset = wlanSymbolTimingEstimate(nonHT,chanBW);
+
+    <span style="color:#228B22">% Adjust packet offset</span>
+    pktOffset = pktOffset+fineTimingOffset;
+
+    <span style="color:#228B22">% Timing synchronization complete: Packet detected and synchronized</span>
+    <span style="color:#228B22">% Extract the non-HT preamble field after synchronization and</span>
+    <span style="color:#228B22">% perform frequency correction</span>
+    <span style="color:#0000FF">if</span> (pktOffset&lt;0) || ((pktOffset+minPktLen)&gt;rxWaveformLen)
+        searchOffset = pktOffset+1.5*lstfLen;
+        <span style="color:#0000FF">continue</span>;
+    <span style="color:#0000FF">end</span>
+    fprintf(<span style="color:#A020F0">'\nPacket-%d detected at index %d\n'</span>,pktInd,pktOffset+1);
+
+    <span style="color:#228B22">% Extract first 7 OFDM symbols worth of data for format detection and</span>
+    <span style="color:#228B22">% L-SIG decoding</span>
+    nonHT = rxWaveform(pktOffset+(1:7*Ns),:);
+    nonHT = frequencyOffset(nonHT,sampleRate,-coarseFreqOffset);
+
+    <span style="color:#228B22">% Perform fine frequency offset correction on the synchronized and</span>
+    <span style="color:#228B22">% coarse corrected preamble fields</span>
+    lltf = nonHT(ind.LLTF(1):ind.LLTF(2),:);           <span style="color:#228B22">% Extract L-LTF</span>
+    fineFreqOffset = wlanFineCFOEstimate(lltf,chanBW);
+    nonHT = frequencyOffset(nonHT,sampleRate,-fineFreqOffset);
+    cfoCorrection = coarseFreqOffset+fineFreqOffset; <span style="color:#228B22">% Total CFO</span>
+
+    <span style="color:#228B22">% Channel estimation using L-LTF</span>
+    lltf = nonHT(ind.LLTF(1):ind.LLTF(2),:);
+    demodLLTF = wlanLLTFDemodulate(lltf,chanBW);
+    chanEstLLTF = wlanLLTFChannelEstimate(demodLLTF,chanBW);
+
+    <span style="color:#228B22">% Noise estimation</span>
+    noiseVarNonHT = wlanLLTFNoiseEstimate(demodLLTF);
+
+    <span style="color:#228B22">% Packet format detection using the 3 OFDM symbols immediately</span>
+    <span style="color:#228B22">% following the L-LTF</span>
+    format = wlanFormatDetect(nonHT(ind.LLTF(2)+(1:3*Ns),:), <span style="color:#0000FF">...</span>
+        chanEstLLTF,noiseVarNonHT,chanBW);
+    disp([<span style="color:#A020F0">'  '</span> format <span style="color:#A020F0">' format detected'</span>]);
+    <span style="color:#0000FF">if</span> ~strcmp(format,<span style="color:#A020F0">'Non-HT'</span>)
+        fprintf(<span style="color:#A020F0">'  A format other than Non-HT has been detected\n'</span>);
+        searchOffset = pktOffset+1.5*lstfLen;
+        <span style="color:#0000FF">continue</span>;
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Recover L-SIG field bits</span>
+    [recLSIGBits,failCheck] = wlanLSIGRecover( <span style="color:#0000FF">...</span>
+        nonHT(ind.LSIG(1):ind.LSIG(2),:), <span style="color:#0000FF">...</span>
+        chanEstLLTF,noiseVarNonHT,chanBW);
+
+    <span style="color:#0000FF">if</span> failCheck
+        fprintf(<span style="color:#A020F0">'  L-SIG check fail \n'</span>);
+        searchOffset = pktOffset+1.5*lstfLen;
+        <span style="color:#0000FF">continue</span>;
+    <span style="color:#0000FF">else</span>
+        fprintf(<span style="color:#A020F0">'  L-SIG check pass \n'</span>);
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Retrieve packet parameters based on decoded L-SIG</span>
+    [lsigMCS,lsigLen,rxSamples] = helperInterpretLSIG(recLSIGBits,sampleRate);
+
+    <span style="color:#0000FF">if</span> (rxSamples+pktOffset)&gt;length(rxWaveform)
+        disp(<span style="color:#A020F0">'** Not enough samples to decode packet **'</span>);
+        <span style="color:#0000FF">break</span>;
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Apply CFO correction to the entire packet</span>
+    rxWaveform(pktOffset+(1:rxSamples),:) = frequencyOffset(<span style="color:#0000FF">...</span>
+        rxWaveform(pktOffset+(1:rxSamples),:),sampleRate,-cfoCorrection);
+
+    <span style="color:#228B22">% Create a receive Non-HT config object</span>
+    rxNonHTcfg = wlanNonHTConfig;
+    rxNonHTcfg.MCS = lsigMCS;
+    rxNonHTcfg.PSDULength = lsigLen;
+
+    <span style="color:#228B22">% Get the data field indices within a PPDU</span>
+    indNonHTData = wlanFieldIndices(rxNonHTcfg,<span style="color:#A020F0">'NonHT-Data'</span>);
+
+    <span style="color:#228B22">% Recover PSDU bits using transmitted packet parameters and channel</span>
+    <span style="color:#228B22">% estimates from L-LTF</span>
+    [rxPSDU,eqSym] = wlanNonHTDataRecover(rxWaveform(pktOffset+<span style="color:#0000FF">...</span>
+        (indNonHTData(1):indNonHTData(2)),:), <span style="color:#0000FF">...</span>
+        chanEstLLTF,noiseVarNonHT,rxNonHTcfg);
+
+    constellation(reshape(eqSym,[],1)); <span style="color:#228B22">% Current constellation</span>
+    release(constellation);
+
+    refSym = wlanClosestReferenceSymbol(eqSym,rxNonHTcfg);
+    [evm.RMS,evm.Peak] = evmCalculator(refSym,eqSym);
+
+    <span style="color:#228B22">% Decode the MPDU and extract MSDU</span>
+    [cfgMACRx,msduList{pktInd},status] = wlanMPDUDecode(rxPSDU,rxNonHTcfg); <span style="color:#228B22">%#ok&lt;*SAGROW&gt;</span>
+
+    <span style="color:#0000FF">if</span> strcmp(status,<span style="color:#A020F0">'Success'</span>)
+        disp(<span style="color:#A020F0">'  MAC FCS check pass'</span>);
+
+        <span style="color:#228B22">% Store sequencing information</span>
+        packetSeq(pktInd) = cfgMACRx.SequenceNumber;
+
+        <span style="color:#228B22">% Convert MSDU to a binary data stream</span>
+        rxBit{pktInd} = int2bit(hex2dec(cell2mat(msduList{pktInd})),8,false);
+
+    <span style="color:#0000FF">else</span> <span style="color:#228B22">% Decoding failed</span>
+        <span style="color:#0000FF">if</span> strcmp(status,<span style="color:#A020F0">'FCSFailed'</span>)
+            <span style="color:#228B22">% FCS failed</span>
+            disp(<span style="color:#A020F0">'  MAC FCS check fail'</span>);
+        <span style="color:#0000FF">else</span>
+            <span style="color:#228B22">% FCS passed but encountered other decoding failures</span>
+            disp(<span style="color:#A020F0">'  MAC FCS check pass'</span>);
+        <span style="color:#0000FF">end</span>
+
+        <span style="color:#228B22">% Since there are no retransmissions modeled in this example, we</span>
+        <span style="color:#228B22">% extract the image data (MSDU) and sequence number from the MPDU,</span>
+        <span style="color:#228B22">% even though FCS check fails.</span>
+
+        <span style="color:#228B22">% Remove header and FCS. Extract the MSDU.</span>
+        macHeaderBitsLength = 24*bitsPerOctet;
+        fcsBitsLength = 4*bitsPerOctet;
+        msduList{pktInd} = rxPSDU(macHeaderBitsLength+1:end-fcsBitsLength);
+
+        <span style="color:#228B22">% Extract and store sequence number</span>
+        sequenceNumStartIndex = 23*bitsPerOctet+1;
+        sequenceNumEndIndex = 25*bitsPerOctet-4;
+        conversionLength = sequenceNumEndIndex-sequenceNumStartIndex+1;
+        packetSeq(pktInd) = bit2int(rxPSDU(sequenceNumStartIndex:sequenceNumEndIndex),conversionLength,false);
+
+        <span style="color:#228B22">% MSDU binary data stream</span>
+        rxBit{pktInd} = double(msduList{pktInd});
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Display decoded information</span>
+    <span style="color:#0000FF">if</span> displayFlag
+        fprintf(<span style="color:#A020F0">'  Estimated CFO: %5.1f Hz\n\n'</span>,cfoCorrection); <span style="color:#228B22">%#ok&lt;*UNRCH&gt; </span>
+
+        disp(<span style="color:#A020F0">'  Decoded L-SIG contents: '</span>);
+        fprintf(<span style="color:#A020F0">'                            MCS: %d\n'</span>,lsigMCS);
+        fprintf(<span style="color:#A020F0">'                         Length: %d\n'</span>,lsigLen);
+        fprintf(<span style="color:#A020F0">'    Number of samples in packet: %d\n\n'</span>,rxSamples);
+
+        fprintf(<span style="color:#A020F0">'  EVM:\n'</span>);
+        fprintf(<span style="color:#A020F0">'    EVM peak: %0.3f%%  EVM RMS: %0.3f%%\n\n'</span>, <span style="color:#0000FF">...</span>
+            evm.Peak,evm.RMS);
+
+        fprintf(<span style="color:#A020F0">'  Decoded MAC Sequence Control field contents:\n'</span>);
+        fprintf(<span style="color:#A020F0">'    Sequence number: %d\n\n'</span>,packetSeq(pktInd));
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Update search index</span>
+    searchOffset = pktOffset+double(indNonHTData(2));
+    
+    <span style="color:#228B22">% Finish processing when a duplicate packet is detected. The</span>
+    <span style="color:#228B22">% recovered data includes bits from duplicate frame</span>
+    <span style="color:#228B22">% Remove the data bits from the duplicate frame</span>
+    <span style="color:#0000FF">if</span> length(unique(packetSeq)) &lt; length(packetSeq)
+        rxBit = rxBit(1:length(unique(packetSeq)));
+        packetSeq = packetSeq(1:length(unique(packetSeq)));
+        <span style="color:#0000FF">break</span>
+    <span style="color:#0000FF">end</span>
+
+    pktInd = pktInd+1;
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-1 detected at index 7
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-2 detected at index 8647
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-3 detected at index 17287
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-4 detected at index 25927
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-5 detected at index 34567
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-6 detected at index 43207
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-7 detected at index 51847
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-8 detected at index 60487
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-9 detected at index 69127
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-10 detected at index 77767
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Packet-11 detected at index 86407
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Non-HT format detected
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  L-SIG check pass 
+</pre></div></div></div><div class="informalfigure"><div id="d124e4897" class="mediaobject"><p><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_06.png" width="460"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  MAC FCS check pass
+</pre></div></div></div><p>If using an SDR, release the <code class="literal">sdrTransmitter</code> and <code class="literal">sdrReceiver</code> objects to stop the continuous transmission of the 802.11 waveform and to allow for any modification of the SDR object properties.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> strcmpi(channel,<span style="color:#A020F0">"OverTheAir"</span>)
+    release(sdrTransmitter);
+    release(sdrReceiver);
+<span style="color:#0000FF">end</span></pre></div></div></div><p><strong class="emphasis bold">Reconstruct Image</strong></p><p>Reconstruct the image using the received MAC frames.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> ~(isempty(fineTimingOffset) || isempty(pktOffset))
+
+    <span style="color:#228B22">% Convert decoded bits from cell array to column vector</span>
+    rxData = cat(1,rxBit{:});
+    <span style="color:#228B22">% Remove any extra bits</span>
+    rxData = rxData(1:end-(mod(length(rxData),msduLength*8)));
+    <span style="color:#228B22">% Reshape such that each column length has bits equal to msduLength*8</span>
+    rxData = reshape(rxData,msduLength*8,[]);
+
+    <span style="color:#228B22">% Remove duplicate packets if any. Duplicate packets are located at the</span>
+    <span style="color:#228B22">% end of rxData</span>
+    <span style="color:#0000FF">if</span> length(packetSeq)&gt;numMSDUs
+        numDupPackets = size(rxData,2)-numMSDUs;
+        rxData = rxData(:,1:end-numDupPackets);
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Initialize variables for while loop</span>
+    startSeq = [];
+    i=-1;
+
+    <span style="color:#228B22">% Only execute this if one of the packet sequence values have been decoded</span>
+    <span style="color:#228B22">% accurately</span>
+    <span style="color:#0000FF">if</span> any(packetSeq&lt;numMSDUs)
+        <span style="color:#0000FF">while</span> isempty(startSeq)
+            <span style="color:#228B22">% This searches for a known packetSeq value</span>
+            i = i + 1;
+            startSeq = find(packetSeq==i);
+        <span style="color:#0000FF">end</span>
+        <span style="color:#228B22">% Circularly shift data so that received packets are in order for image reconstruction. It</span>
+        <span style="color:#228B22">% is assumed that all packets following the starting packet are received in</span>
+        <span style="color:#228B22">% order as this is how the image is transmitted.</span>
+        rxData = circshift(rxData,[0 -(startSeq(1)-i-1)]); <span style="color:#228B22">% Order MAC fragments</span>
+
+        <span style="color:#228B22">% Perform bit error rate (BER) calculation on reordered data</span>
+        bitErrorRate = comm.ErrorRate;
+        err = bitErrorRate(double(rxData(:)), <span style="color:#0000FF">...</span>
+            txDataBits(1:length(reshape(rxData,[],1))));
+        fprintf(<span style="color:#A020F0">'  \nBit Error Rate (BER):\n'</span>);
+        fprintf(<span style="color:#A020F0">'          Bit Error Rate (BER) = %0.5f\n'</span>,err(1));
+        fprintf(<span style="color:#A020F0">'          Number of bit errors = %d\n'</span>,err(2));
+        fprintf(<span style="color:#A020F0">'    Number of transmitted bits = %d\n\n'</span>,length(txDataBits));
+    <span style="color:#0000FF">end</span>
+
+    decData = bit2int(reshape(rxData(:),8,[]),8,false)';
+
+    <span style="color:#228B22">% Append NaNs to fill any missing image data</span>
+    <span style="color:#0000FF">if</span> length(decData)&lt;length(txImage)
+        numMissingData = length(txImage)-length(decData);
+        decData = [decData;NaN(numMissingData,1)];
+    <span style="color:#0000FF">else</span>
+        decData = decData(1:length(txImage));
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Recreate image from received data</span>
+    fprintf(<span style="color:#A020F0">'\nConstructing image from received data.\n'</span>);
+    receivedImage = uint8(reshape(decData,imsize));
+    <span style="color:#228B22">% Plot received image</span>
+    <span style="color:#0000FF">if</span> exist(<span style="color:#A020F0">'imFig'</span>,<span style="color:#A020F0">'var'</span>) &amp;&amp; ishandle(imFig) <span style="color:#228B22">% If Tx figure is open</span>
+        figure(imFig); subplot(212);
+    <span style="color:#0000FF">else</span>
+        figure; subplot(212);
+    <span style="color:#0000FF">end</span>
+    imshow(receivedImage);
+    title(sprintf(<span style="color:#A020F0">'Received Image'</span>));
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  
+Bit Error Rate (BER):
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>          Bit Error Rate (BER) = 0.00000
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>          Number of bit errors = 0
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    Number of transmitted bits = 202752
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Constructing image from received data.
+</pre></div></div></div><div class="informalfigure"><div id="d124e4928" class="mediaobject"><p><img src="../../../examples/wlan/win64/SDRImageTransmissionReceptionUsing80211WaveformExample_07.png" alt="Figure Image Plot contains 2 axes objects. Axes object 1 with title Transmitted Image contains an object of type image. Axes object 2 with title Received Image contains an object of type image." width="564"></p></div></div><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-5">Further Exploration</h3><div class="itemizedlist"><ul><li><p>If using an SDR, modify <a href="transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_E4A20069" class="intrnllnk"><code class="literal">txGain</code></a> or <a href="transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_E4A20069" class="intrnllnk"><code class="literal">rxGain</code></a> to observe the difference in the EVM and BER after signal reception and processing. You may see errors in the displayed, received image. </p></li><li><p>If running the example without an SDR, modify <a href="transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_C64FF99E" class="intrnllnk"><code class="literal">SNR</code></a> to observe the difference in the EVM and BER after signal reception and processing.</p></li><li><p>Increase the scaling factor (<a href="transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_061064CA" class="intrnllnk"><code class="literal">scale</code></a>) to improve the quality of the received image by generating more transmit bits. This also increases the number of transmitted PPDUs.</p></li><li><p>Decrease MSDU size (<a href="transmission-and-reception-of-an-image-using-wlan-system-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsing80211WaveformExample_M_62368931" class="intrnllnk"><code class="literal">msduLength</code></a>) to decrease the number of bits transmitted per packet and observe the differences in EVM and BER when a signal is received with a lower SNR.</p></li></ul></div><h3 class="title" id="SDRImageTransmissionReceptionUsing80211WaveformExample-6">SDR Troubleshooting</h3><div class="itemizedlist"><ul><li><p>ADALM-PLUTO Radio <a href="common-problems-and-fixes.html" data-docid="plutoradio_ug#bvn89q2-68" class="a">Common Problems and Fixes</a></p></li><li><p>USRP Embedded Series Radio <a href="../../../supportpkg/usrpembeddedseriesradio/ug/common-problems-and-fixes.html" data-docid="usrpembeddedseriesradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Embedded Series Radio)</span></p></li><li><p>Xilinx Zynq-Based Radio <a href="../../../supportpkg/xilinxzynqbasedradio/ug/common-problems-and-fixes.html" data-docid="xilinxzynqbasedradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span></p></li></ul></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

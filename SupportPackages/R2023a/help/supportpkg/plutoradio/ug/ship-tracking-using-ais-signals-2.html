@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ship Tracking Using AIS Signals</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Ship Tracking Using AIS Signals",
+          "description": "Track ships by processing automatic identification system (AIS) signals. You can use captured signals or receive signals in real time using an RTL-SDR radio, an ADALM-PLUTO radio or a USRP&#8482; Radio . You can also show the tracked ships on a map using the Mapping Toolbox&#8482;.",
+          "thumbnailURL": "../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_05.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "comm.ShipTrackingUsingAISSignalsExample",
+          "name": "ShipTrackingUsingAISSignalsExample",
+          "url": "ship-tracking-using-ais-signals-2.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('comm/ShipTrackingUsingAISSignalsExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ShipTrackingUsingAISSignalsExample.mlx",
+        "ais_capture.bb",
+        "AISFlowDiagram.png",
+        "AISPacket.png",
+        "AIS_PHY.png",
+        "sdrrShipsOnMap.png",
+        "sdrrTrackedShipsOnViewer.png",
+        "helperAISConfig.m",
+        "helperAISRxPhy.m",
+        "helperAISRxPhyBitParser.m",
+        "helperAISRxPhyFreqComp.m",
+        "helperAISRxPhyPacketSearch.m",
+        "helperAISUserInput.m",
+        "helperAISViewer.m",
+        "helperAISRxPhySyncDemod.m",
+        "helperAISController.m",
+        "helperAISSyncGen.m",
+        "ship.png",
+        "defaultInputs.mat",
+        "AISExampleApp.m",
+        "runAISReceiver.m",
+        "AISFieldNames.m",
+        "SignalSourceController.m",
+        "ExampleController.m",
+        "LogDataController.m",
+        "helperFindUSRPRadio.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to track ships by processing automatic identification system (AIS) signals."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_05.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script>
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Ship Tracking Using AIS Signals</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#ShipTrackingUsingAISSignalsExample-1" class="intrnllnk">Required Hardware and Software</a></li><li><a href="#ShipTrackingUsingAISSignalsExample-2" class="intrnllnk">Overview</a></li><li><a href="#ShipTrackingUsingAISSignalsExample-3" class="intrnllnk">Receiver Structure</a></li><li><a href="#ShipTrackingUsingAISSignalsExample-4" class="intrnllnk">Track Ships Using AIS Signals</a></li><li><a href="#ShipTrackingUsingAISSignalsExample-5" class="intrnllnk">Further Exploration</a></li><li><a href="#ShipTrackingUsingAISSignalsExample-6" class="intrnllnk">References</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="mw_6e70e739-74c1-427f-884e-b4f9fc9bf1d0">Ship Tracking Using AIS Signals</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('CM')">Communications Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRP')">Communications Toolbox Support Package for USRP Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('RTLSDR')">Communications Toolbox Support Package for RTL-SDR Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="comm-ShipTrackingUsingAISSignalsExample"><meta itemprop="exampletitle" content="Ship Tracking Using AIS Signals"></div><span id="ShipTrackingUsingAISSignalsExample" class="anchor_target"></span><p class="shortdesc">This example shows how to track ships by processing automatic identification system (AIS) signals. You can use captured signals or receive signals in real time using an RTL-SDR radio, an ADALM-PLUTO radio or a USRP&#8482; Radio . You can also show the tracked ships on a map using the Mapping Toolbox&#8482;. </p><div class="procedure"><h3 class="title" id="ShipTrackingUsingAISSignalsExample-1">Required Hardware and Software</h3><p>To run this example using captured signals, you need the Communications Toolbox&#8482;.</p><p>To receive signals in real time, you also need one of these SDR devices and the corresponding support package Add-On:</p><div class="itemizedlist"><ul><li><p>An RTL-SDR radio and the Communications Toolbox Support Package for RTL-SDR Radio software Add-On</p></li><li><p>An ADALM-PLUTO radio and the Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio software Add-On </p></li><li><p>A USRP radio and the corresponding Communications Toolbox Support Package for USRP Radio software Add-On </p></li></ul></div><p>For a full list of Communications Toolbox supported SDR platforms, refer to Supported Hardware section of <a href="https://www.mathworks.com/discovery/sdr.html" target="_blank">Software Defined Radio (SDR) discovery page</a>.</p><h3 class="title" id="ShipTrackingUsingAISSignalsExample-2">Overview</h3><p>In marine transportation, vessel traffic services use AIS as a component of the marine traffic monitoring system. AIS performs these functions:</p><div class="itemizedlist"><ul><li><p>Transmit vessel identifier, position, course, and speed.</p></li><li><p>Receive and process specified interrogating calls.</p></li><li><p>Operate continuously while sailing or at anchor.</p></li></ul></div><p>AIS has these attributes:</p><div class="itemizedlist"><ul><li><p>A transmit frequency in the range 156.025 MHz-162.025 MHz</p></li><li><p>Gaussian frequency shift keying modulation</p></li><li><p>A bit rate of 9600 bits/sec</p></li><li><p>A transmit bandwidth-time product of 0.4</p></li><li><p>A receive bandwidth-time product of 0.5</p></li><li><p>A modulation index of 0.5</p></li></ul></div><p>AIS transmission packets contain these fields:</p><div class="itemizedlist"><ul><li><p>Training Sequence &#8212; 24-bit sequence of alternating zeros and ones (0101...)</p></li><li><p>Start Flag &#8212; 8-bit sequence, 01111110</p></li><li><p>Data &#8212; The data portion is 168 bits long in the default transmission packet</p></li><li><p>Frame Check Sequence (FCS) &#8212; Uses the cyclic redundancy check (CRC) 16-bit polynomial to calculate the checksum</p></li><li><p>End Flag &#8212; Identical to the start flag</p></li><li><p>Buffer &#8212; 24 bits long to account for bit stuffing (maximum 4 bits), distance delay (14 bits), and synchronization jitter (6 bits)</p></li></ul></div><p>This figure shows the AIS packet format</p><div class="informalfigure"><div id="d124e6574" class="mediaobject"><p><img src="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_01.png" alt="Fields in the AIS packet format." height="111" width="643"></p></div></div><h3 class="title" id="ShipTrackingUsingAISSignalsExample-3">Receiver Structure</h3><p>This block diagram shows the receiver code structure. The processing has three main parts: signal source, physical layer and data viewer.</p><div class="informalfigure"><div id="d124e6582" class="mediaobject"><p><img src="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_02.png" alt="Block diagram showing receiver code flow cart." height="338" width="738"></p></div></div><p><strong class="emphasis bold">Signal Source</strong></p><p>Specify the signal source as one of these values</p><div class="itemizedlist"><ul><li><p>''<code class="literal">File</code>'' &#8212; Uses the <a href="../../../comm/ref/comm.basebandfilereader-system-object.html" data-docid="comm_ref#bvbbo5v-1" class="a"><code class="olink">comm.BasebandFileReader</code></a><span role="cross_prod"> (Communications Toolbox)</span> object to read a file that contains a captured signal.</p></li><li><p>''<code class="literal">RTL-SDR</code>'' &#8212; Uses an RTL-SDR radio to receive a live signal. </p></li><li><p>''<code class="literal">ADALM-PLUTO</code>'' &#8212; Uses a Pluto radio to receive a live signal.</p></li><li><p>''<code class="literal">USRP</code>'' &#8212; Uses a USRP radio to receive a live signal.</p></li></ul></div><p>The example uses a signal symbol rate of 9600 Hz and 24 samples per symbol.</p><p>If you specify ''<code class="literal">RTL-SDR</code>'' as the signal source, the example searches your computer for an RTL-SDR radio at the radio address '<code class="literal">0</code>' and uses that radio as the signal source.</p><p>If you specify ''<code class="literal">ADALM-PLUTO</code>'' as the signal source, the example searches your computer for a Pluto radio at the radio address '<code class="literal">usb:0</code>' and uses that radio as the signal source.</p><p>If you specify ''<code class="literal">USRP</code>'' as the signal source, the example searches your computer for a USRP radio at the radio address you specify and uses that radio as the signal source.</p><p><strong class="emphasis bold">Physical Layer</strong></p><p>The physical layer (PHY) processes the baseband samples from the signal source to produce packets that contain the ship position information and raw message bytes. This figure shows the PHY processing components.</p><div class="informalfigure"><div id="d124e6636" class="mediaobject"><p><img src="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_03.png" alt="Block diagram showing PHY processing components." height="268" width="652"></p></div></div><div class="itemizedlist"><ul><li><p>Packet Search &#8212; Search for the strongest burst in the received signal by dividing into multiple windows.</p></li><li><p>DC Offset Removal &#8212; Remove DC offset from the detected signal.</p></li><li><p>Frequency Compensation &#8212; Estimate and compensate for the carrier frequency offset.</p></li><li><p>Matched Filtering &#8212; Perform filtering with a Gaussian pulse generated according to AIS specifications.</p></li><li><p>Synchronization and Demodulation &#8212; Perform timing synchronization by correlating the received signal with the known preamble and demodulate to produce bits.</p></li><li><p>AIS Bit Parser &#8212; Detect the Start Flag and End Flags, then perform CRC detection. If the CRC is successful, then decodes the ship information.</p></li></ul></div><p>AIS signal contains 64 specific message types. Ship position information is included in 11 of the message types. In this example, you decode all of the 11 message types that contain ship position information.</p><p>This example lists the ship position information including the ship ID, latitude, and longitude, as well as the associated date and time in a table. For decoding additional information from the messages, see [<a href="ship-tracking-using-ais-signals-2.html#mw_rtc_ShipTrackingUsingAISSignalsExample_M_40E379FE" class="intrnllnk">1</a>].</p><p><strong class="emphasis bold">Data Viewer</strong></p><p>The data viewer shows the received messages on a graphical user interface (GUI). As data is captured, the application lists information that it decodes from these messages in a table.</p><h3 class="title" id="ShipTrackingUsingAISSignalsExample-4">Track Ships Using AIS Signals</h3><p>The default configuration runs for a duration of 10 seconds and uses signal data from a captured data file, and outputs to a text file. To provide input values from the command line, you must change <code class="literal">cmdlineInput</code> to 1, then you will be prompted to enter the following information when you run the example:</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>Reception duration in seconds,</p></li><li><p>Signal source (Captured data file or RTL-SDR radio or ADALM-PLUTO radio or USRP radio),</p></li><li><p>Optional output methods (map, text file, or both).</p></li></ol></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cmdlineInput = 0;
+<span style="color:#0000FF">if</span> cmdlineInput
+    <span style="color:#228B22">% Request user input from the command-line for application parameters</span>
+    userInput = helperAISUserInput;
+<span style="color:#0000FF">else</span>
+    load(<span style="color:#A020F0">'defaultInputs.mat'</span>);
+<span style="color:#0000FF">end</span>
+<span style="color:#228B22">% Calculate AIS parameters based on the user input</span>
+[aisParam,sigSrc] = helperAISConfig(userInput);
+
+<span style="color:#228B22">% Create the data viewer object and configure based on user input</span>
+viewer = helperAISViewer(<span style="color:#A020F0">'LogFileName'</span>,userInput.LogFilename, <span style="color:#0000FF">...</span>
+                         <span style="color:#A020F0">'SignalSourceType'</span>,userInput.SignalSourceType);
+
+<span style="color:#228B22">% Launch map based on user input</span>
+<span style="color:#0000FF">if</span> userInput.LaunchMap
+    startMapUpdate(viewer);
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Log data based on user input</span>
+<span style="color:#0000FF">if</span> userInput.LogData
+    startDataLog(viewer);
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Start the viewer and initialize radio time</span>
+start(viewer)
+radioTime = 0;
+
+<span style="color:#228B22">% Main loop for capturing and decoding the AIS samples</span>
+<span style="color:#0000FF">while</span> radioTime &lt; userInput.Duration  
+    <span style="color:#0000FF">if</span> aisParam.isSourceRadio       
+        <span style="color:#0000FF">if</span> aisParam.isSourceRTLSDRRadio         <span style="color:#228B22">% For RTL-SDR</span>
+            [rcv,~,lost,~] = sigSrc();
+            lostFlag = logical(lost);         
+        <span style="color:#0000FF">elseif</span> aisParam.isSourcePlutoSDRRadio   <span style="color:#228B22">% For ADALM-PLUTO</span>
+            [rcv,~,lostFlag] = sigSrc();
+        <span style="color:#0000FF">elseif</span> aisParam.isSourceUSRPRadio       <span style="color:#228B22">% For USRP</span>
+            [rcv,~,lostFlag] = sigSrc(); 
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">else</span>                                        <span style="color:#228B22">% For baseband file</span>
+        rcv = sigSrc();
+        lostFlag = uint32(0);
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Recover the information by decoding AIS samples</span>
+    [info, pkt] = helperAISRxPhy(rcv,aisParam);
+
+    <span style="color:#228B22">% View decoded information on viewer</span>
+    update(viewer, info, pkt, lostFlag);
+
+    <span style="color:#228B22">% Update radio time</span>
+    radioTime = radioTime + aisParam.FrameDuration;
+<span style="color:#0000FF">end</span>
+
+<span style="color:#228B22">% Stop the viewer and release the signal source</span>
+stop(viewer)</pre></div></div></div><div class="informalfigure"><div id="d124e6679" class="mediaobject"><p><img src="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_04.png" alt="Figure AIS Ship Tracking contains an object of type uipanel." width="870"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>release(sigSrc)</pre></div></div></div><p>If you have the Mapping Toolbox, you can also observe AIS tracking of ships on a map.</p><div class="informalfigure"><div id="d124e6687" class="mediaobject"><p><img src="../../../examples/comm/win64/ShipTrackingUsingAISSignalsExample_05.png" alt="Map of Boston Harbor showing AIS tracked ships." height="495" width="640"></p></div></div><h3 class="title" id="ShipTrackingUsingAISSignalsExample-5">Further Exploration</h3><p>You can investigate AIS signals using the  <a href="matlab:commandwindow;AISExampleApp" target="_blank">AISExampleApp</a>. To launch the app, enter <code class="literal">AISExampleApp</code> in the MATLAB&#174; Command Window. Use the app interface to select the signal source and change the duration.</p><p>You can explore the supporting functions and System objects for details of the physical layer implementation.</p><div class="itemizedlist"><ul><li><p><a href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample','supportingFile','helperAISRxPhy.m')" target="_blank">helperAISRxPhy.m</a></p></li><li><p><a href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample','supportingFile','helperAISRxPhyPacketSearch.m')" target="_blank">helperAISRxPhyPacketSearch.m</a></p></li><li><p><a href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample','supportingFile','helperAISRxPhyFreqComp.m')" target="_blank">helperAISRxPhyFreqComp.m</a></p></li><li><p><a href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample','supportingFile','helperAISRxPhySyncDemod.m')" target="_blank">helperAISRxPhySyncDemod.m</a></p></li><li><p><a href="matlab:openExample('comm/ShipTrackingUsingAISSignalsExample','supportingFile','helperAISRxPhyBitParser.m')" target="_blank">helperAISRxPhyBitParser.m</a></p></li></ul></div><h3 class="title" id="ShipTrackingUsingAISSignalsExample-6">References</h3><span id="mw_rtc_ShipTrackingUsingAISSignalsExample_M_40E379FE" class="anchor_target"></span><p>[1] Recommendation ITU-R M.1371-5. "Technical characteristics for an automatic identification system using time division multiple access in the VHF maritime mobile frequency band",<span class="emphasis"><em> International Telecommunication Union. </em></span><a href="https://www.itu.int/rec/R-REC-M.1371-5-201402-I/en" target="_blank">https://www.itu.int/rec/R-REC-M.1371-5-201402-I/en</a></p></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/examples/plutoradio</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/examples/plutoradio_common_1677266761.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/examples/plutoradio_common</componentName>
+    <componentVersion>1677266761</componentVersion>
+    <contentType>common</contentType>
+    <demo>1</demo>
+    <doc>0</doc>
+    <doc_build>0</doc_build>
+    <doc_search>0</doc_search>
+    <gpu>0</gpu>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>29</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maca64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2023a</releaseFamily>
+    <size>350411</size>
+    <type />
+    <uncompressedBytes>438232</uncompressedBytes>
+  </component>
+</componentData>

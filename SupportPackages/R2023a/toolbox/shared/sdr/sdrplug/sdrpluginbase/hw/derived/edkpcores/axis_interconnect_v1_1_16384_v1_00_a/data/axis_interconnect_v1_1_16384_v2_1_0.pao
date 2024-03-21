@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          C:\Neil\SDR\Zynq\ZynqWorkspaces\PcoreWithMassiveFIFO\PcoreTestingWithChipscope\pcores/axis_interconnect_v1_1_16384_v1_00_a/data/axis_interconnect_v1_1_16384_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue Jul 30 10:04:52 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib axis_interconnect_v1_1_16384_v1_00_a axis_interconnect_v1_1_16384_synth vhdl

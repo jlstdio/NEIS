@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><data xmlns="https://www.mathworks.com/help/ref/data" count="2"><cat target="index.html"><title>Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</title><cat target="getting-started-with-communications-system-toolbox-support-package-for-pluto-radio.html"><title>Get Started with Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</title></cat>
+<cat target="installation-and-setup.html"><title>Installation and Setup</title></cat>
+<cat target="radio-configuration.html"><title>Radio Configuration</title></cat>
+<cat target="radio-io.html"><title>Radio I/O</title><ref type="block" target="ref/plutoreceiver.html" name="Pluto Receiver" init="P"><purpose>Receive data from <span xmlns="http://www.w3.org/1999/xhtml" class="trademark">Analog Devices</span>
+      ADALM-PLUTO radio</purpose></ref><ref type="block" target="ref/plutotransmitter.html" name="Pluto Transmitter" init="P"><purpose>Transmit data to <span xmlns="http://www.w3.org/1999/xhtml" class="trademark">Analog Devices</span> ADALM-PLUTO
+   radio</purpose></ref></cat>
+<cat target="performance.html"><title>Performance</title></cat>
+<cat target="diagnostics.html"><title>Diagnostics</title></cat>
+<cat target="digital-modulation.html"><title>Digital Modulation</title></cat>
+<cat target="application-specific-examples.html"><title>Application-Specific</title></cat>
+<cat target="troubleshooting.html"><title>Troubleshooting in Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</title></cat>
+</cat></data>

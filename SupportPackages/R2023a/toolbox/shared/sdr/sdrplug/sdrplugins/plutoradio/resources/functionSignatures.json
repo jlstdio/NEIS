@@ -1,0 +1,16 @@
+{
+    "comm.SDRRxPluto":
+    {
+        "inputs":
+        [
+            {"kind":"varargin","type":["comm.SDRRxPluto"]}
+        ]
+    },
+    "comm.SDRTxPluto":
+    {
+        "inputs":
+        [
+            {"kind":"varargin","type":["comm.SDRTxPluto"]}
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--Copyright 2022 The MathWorks, Inc. -->
+<!--Signal Processing Toolbox Support Package for Linux IIO Devices -->
+<RTTPackageRepository>
+    <SupportPackage
+        name="libiio"
+        fullname="Signal Processing Toolbox Support Package for Linux IIO Devices"
+        displayname="Libiio"
+        version="23.1.0"
+        infotext="Send and Receive data from MATLAB to IIO devices."
+        basecode="LIBIIO"
+        platform="PCWIN64, GLNXA64, MACI64"
+        visible="1"
+        enable="1"
+        baseproduct="Signal Processing Toolbox"
+        url="http://www.mathworks.com"
+        downloadurl=""
+        licenseurl=""
+        folder=""
+        firmwareupdate=""
+        urlcatalog=""
+        postinstallcmd=""
+        demoxml="">   
+    </SupportPackage>
+</RTTPackageRepository>

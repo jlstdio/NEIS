@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/plutoradio_ex_doc_images</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/plutoradio_ex_doc_images_maci64_1675308349.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/plutoradio_ex_doc_images_maci64</componentName>
+    <componentVersion>1675308349</componentVersion>
+    <contentType>maci64</contentType>
+    <demo>0</demo>
+    <doc>1</doc>
+    <doc_build>1</doc_build>
+    <doc_search>0</doc_search>
+    <gpu>0</gpu>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>62</numFiles>
+    <platformList>
+      <platform>maci64</platform>
+    </platformList>
+    <releaseFamily>R2023a</releaseFamily>
+    <size>412702</size>
+    <type />
+    <uncompressedBytes>403729</uncompressedBytes>
+  </component>
+</componentData>

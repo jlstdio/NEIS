@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          C:\Neil\SDR\Zynq\ZynqWorkspaces\DMA_Sample_counter\pcores/axi_stream_sample_counter_v1_00_a/data/axi_stream_sample_counter_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Mon Nov 04 18:06:00 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib axi_stream_sample_counter_v1_00_a axi_stream_sample_counter vhdl

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>QPSK Receiver with ADALM-PLUTO Radio</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../digital-modulation.html",
+          "name": "Digital Modulation"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "digital-modulation"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "QPSK Receiver with ADALM-PLUTO Radio",
+          "description": "Use the ADALM-PLUTO Radio System objects to implement a QPSK receiver. The receiver addresses practical issues in wireless communications, such as carrier frequency and phase offset, timing offset and frame synchronization. This system receives the signal sent by the QPSK Transmitter with ADALM-PLUTO Radio example. The receiver demodulates the received symbols and prints a simple message to the MATLAB&#174; command line.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "plutoradio.QPSKReceiverWithADALMPLUTORadioExample",
+          "name": "QPSKReceiverWithADALMPLUTORadioExample",
+          "url": "qpsk-receiver-with-adalm-pluto-radio.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "QPSKReceiverWithADALMPLUTORadioExample.m",
+        "QPSKDataDecoder.m",
+        "QPSKReceiver.m",
+        "plutoradioqpskreceiver_init.m",
+        "runPlutoradioQPSKReceiver.m",
+        "FrameSynchronizer.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to use the ADALM-PLUTO Radio System objects to implement a QPSK receiver."><meta xmlns="http://www.w3.org/1999/xhtml" content="../includes/product/images/doc_center/DefaultImage.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script>
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../digital-modulation.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Digital Modulation</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">QPSK Receiver with ADALM-PLUTO Radio</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#d124e3699" class="intrnllnk">Implementations</a></li><li><a href="#d124e3719" class="intrnllnk">Introduction</a></li><li><a href="#d124e3731" class="intrnllnk">Initialization</a></li><li><a href="#d124e3746" class="intrnllnk">Code Architecture</a></li><li><a href="#d124e3785" class="intrnllnk">Execution and Results</a></li><li><a href="#d124e3823" class="intrnllnk">Appendix</a></li><li><a href="#d124e3841" class="intrnllnk">References</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=digital-modulation&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=digital-modulation&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=digital-modulation&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=digital-modulation&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=digital-modulation&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=digital-modulation&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="example-plutoradioQPSKReceiverExample">QPSK Receiver with ADALM-PLUTO Radio</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample')" data-ex-genre="Script">Open Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="plutoradio-QPSKReceiverWithADALMPLUTORadioExample"><meta itemprop="exampletitle" content="QPSK Receiver with ADALMPLUTO Radio"></div><span id="QPSKReceiverWithADALMPLUTORadioExample" class="anchor_target"></span>
+
+<p class="shortdesc">This example shows how to use the ADALM-PLUTO Radio System objects to implement a QPSK receiver. The receiver addresses practical issues in wireless communications, such as carrier frequency and phase offset, timing offset and frame synchronization. This system receives the signal sent by the <a href="matlab:openExample('plutoradio/QPSKTransmitterWithADALMPLUTORadioExample.m')" target="_blank">QPSK Transmitter with ADALM-PLUTO Radio</a> example. The receiver demodulates the received symbols and prints a simple message to the MATLAB&#174; command line.</p>
+
+<div class="procedure"><h3 class="title" id="d124e3699">Implementations<span id="QPSKReceiverWithADALMPLUTORadioExample-1" class="anchor_target"></span></h3><p>This example describes the MATLAB implementation of a QPSK receiver with ADALM-PLUTO Radio. There is another implementation of this example that uses Simulink&#174;.</p><p>MATLAB script using System objects: <a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample.m')" target="_blank">QPSKReceiverWithADALMPLUTORadioExample</a>.</p><p>Simulink implementation using blocks: <a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioSimulinkExample.m')" target="_blank">QPSKReceiverWithADALMPLUTORadioSimulinkExample</a>.</p><p>You can also explore a no-radio QPSK Transmitter and Receiver example that models a general wireless communication system using an AWGN channel and simulated channel impairments at <a href="matlab:openExample('comm/QPSKTransmitterAndReceiverExample')" target="_blank">QPSKTransmitterAndReceiverExample</a>.</p><h3 class="title" id="d124e3719">Introduction<span id="QPSKReceiverWithADALMPLUTORadioExample-2" class="anchor_target"></span></h3><p>This example has the following motivation:</p><div class="itemizedlist"><ul><li><p>To implement a real QPSK-based transmission-reception environment in MATLAB using ADALM-PLUTO System objects.</p></li></ul></div><div class="itemizedlist"><ul><li><p>To illustrate the use of key Communications Toolbox&#8482; System objects for QPSK system design, including coarse and fine carrier frequency compensation, closed-loop timing recovery with bit stuffing and stripping, frame synchronization, carrier phase ambiguity resolution, and message decoding.</p></li></ul></div><p>In this example, the ADALM-PLUTO System object receives data corrupted by the transmission over the air and outputs complex baseband signals which are processed by the QPSK Receiver System object. This example provides a reference design of a practical digital receiver that can cope with wireless channel impairments. The receiver includes FFT-based coarse frequency compensation, PLL-based fine frequency compensation, timing recovery with fixed-rate re-sampling and bit stuffing/skipping, frame synchronization, and phase ambiguity resolution.</p><h3 class="title" id="d124e3731">Initialization<span id="QPSKReceiverWithADALMPLUTORadioExample-3" class="anchor_target"></span></h3><p>The <a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','plutoradioqpskreceiver_init.m')" target="_blank">plutoradioqpskreceiver_init.m</a> script initializes the simulation parameters and generates the structure <span class="emphasis"><em>prmQPSKReceiver</em></span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Receiver parameter structure</span>
+prmQPSKReceiver = plutoradioqpskreceiver_init;
+<span style="color:#228B22">% Specify Radio ID</span>
+prmQPSKReceiver.Address = <span style="color:#A020F0">'usb:0'</span>
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>
+prmQPSKReceiver = 
+
+  struct with fields:
+
+                           Rsym: 200000
+                ModulationOrder: 4
+                  Interpolation: 2
+                     Decimation: 1
+                           Tsym: 5.0000e-06
+                             Fs: 400000
+                     BarkerCode: [1 1 1 1 1 -1 -1 1 1 -1 1 -1 1]
+                   BarkerLength: 13
+                   HeaderLength: 26
+                        Message: 'Hello world'
+                  MessageLength: 16
+                NumberOfMessage: 100
+                  PayloadLength: 11200
+                      FrameSize: 5613
+                      FrameTime: 0.0281
+                  RolloffFactor: 0.5000
+                  ScramblerBase: 2
+            ScramblerPolynomial: [1 1 1 0 1]
+     ScramblerInitialConditions: [0 0 0 0]
+         RaisedCosineFilterSpan: 10
+                   DesiredPower: 2
+                AveragingLength: 50
+                   MaxPowerGain: 60
+         MaximumFrequencyOffset: 6000
+     PhaseRecoveryLoopBandwidth: 0.0100
+     PhaseRecoveryDampingFactor: 1
+    TimingRecoveryLoopBandwidth: 0.0100
+    TimingRecoveryDampingFactor: 1
+        TimingErrorDetectorGain: 5.4000
+     PreambleDetectionThreshold: 0.8000
+                    MessageBits: [11200×1 double]
+                        BerMask: [7700×1 double]
+           PlutoCenterFrequency: 915000000
+                      PlutoGain: 30
+        PlutoFrontEndSampleRate: 400000
+               PlutoFrameLength: 11226
+                 PlutoFrameTime: 0.0281
+                       StopTime: 10
+                        Address: 'usb:0'
+
+</pre></div></div></div><h3 class="title" id="d124e3746">Code Architecture<span id="QPSKReceiverWithADALMPLUTORadioExample-4" class="anchor_target"></span></h3><p>The function runPlutoradioQPSKReceiver implements the QPSK receiver using the QPSK receiver System object, QPSKReceiver, and ADALM-PLUTO radio System object, comm.SDRRxPluto.</p><p><strong class="emphasis bold">ADALM-PLUTO Receiver</strong></p><p>This example communicates with the ADALM-PLUTO radio using the ADALM-PLUTO Receiver System object. The parameter structure <span class="emphasis"><em>prmQPSKReceiver</em></span> sets the CenterFrequency, Gain, and InterpolationFactor etc.</p><p><strong class="emphasis bold">QPSK Receiver</strong></p><p>This component regenerates the original transmitted message. It is divided into six subcomponents, modeled using System objects. Each subcomponent is modeled by other subcomponents using System objects.</p><p>1) Automatic Gain Control: Sets its output power to a level ensuring that the equivalent gains of the phase and timing error detectors keep constant over time. The AGC is placed before the <code class="literal">Raised Cosine Receive Filter</code> so that the signal amplitude can be measured with an oversampling factor of two. This process improves the accuracy of the estimate.</p><p>2) Coarse frequency compensation: Uses a correlation-based algorithm to roughly estimate the frequency offset and then compensate for it. The estimated coarse frequency offset is averaged so that fine frequency compensation is allowed to lock/converge. Hence, the coarse frequency offset is estimated using a "comm.CoarseFrequencyCompensator" System object and an averaging formula; the compensation is performed using a "comm.PhaseFrequencyOffset" System object.</p><p>3) Timing recovery: Performs timing recovery with closed-loop scalar processing to overcome the effects of mismatched sample rate between the transmitter and the receiver due to inaccuracies of crystal oscillators used in sampling clock generation, we employ a  <code class="literal">comm.SymbolSynchronizer</code> System object. The object implements a PLL to correct the symbol timing error in the received signal. The rotationally-invariant Gardner timing error detector is chosen for the object in this example; thus, timing recovery can precede fine frequency compensation. The input to the object is a fixed-length frame of samples. The output of the object is a frame of symbols whose length can vary due to bit stuffing and stripping, depending on actual channel delays.</p><p>4) Fine frequency compensation: Performs closed-loop scalar processing and compensates for the frequency offset accurately, using a <code class="literal">comm.CarrierSynchronizer</code> System object. The object implements a phase-locked loop (PLL) to track the residual frequency offset and the phase offset in the input signal.</p><p>5) Frame Synchronization: Detects the location of the known Barker code in the input and performs frame synchronization using a <code class="literal">FrameSynchronizer</code> System object. It also converts the variable-length symbol inputs into fixed-length outputs. The object has a secondary output that is a boolean scalar indicating if the first frame output is valid.</p><p>6) Data decoder: Performs phase ambiguity resolution and demodulation. Also, the data decoder compares the regenerated message with the transmitted one and calculates the BER.</p><p>For more information about the system components, refer to the <a href="qpsk-receiver-with-adalm-pluto-radio-1.html" data-docid="plutoradio_ug#example-plutoradioQPSKReceiverSimulinkExample" class="a">QPSK Receiver with ADALM-PLUTO Radio in Simulink</a>.</p><h3 class="title" id="d124e3785">Execution and Results<span id="QPSKReceiverWithADALMPLUTORadioExample-5" class="anchor_target"></span></h3><p>Connect two ADALM-PLUTO Radios to the computer. Start the <a href="matlab:openExample('plutoradio/QPSKTransmitterWithADALMPLUTORadioExample.m')" target="_blank">QPSK Transmitter with ADALM-PLUTO Radio</a> example in one MATLAB session and then start the receiver script in another MATLAB session.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>printReceivedData = false;    <span style="color:#228B22">% true if the received data is to be printed</span>
+
+BER = runPlutoradioQPSKReceiver(prmQPSKReceiver, printReceivedData);
+
+fprintf(<span style="color:#A020F0">'Error rate is = %f.\n'</span>,BER(1));
+fprintf(<span style="color:#A020F0">'Number of detected errors = %d.\n'</span>,BER(2));
+fprintf(<span style="color:#A020F0">'Total number of compared samples = %d.\n'</span>,BER(3));
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>## Establishing connection to hardware. This process can take several seconds.
+Error rate is = 0.504279.
+Number of detected errors = 1036748.
+Total number of compared samples = 2055900.
+</pre></div></div></div><p>When you run the simulations, the received messages are decoded and printed out in the MATLAB command window while the simulation is running. BER information is also shown at the end of the script execution. The calculation of the BER value includes the first received frames, when some of the adaptive components in the QPSK receiver still have not converged.  During this period, the BER is quite high.  Once the transient period is over, the receiver is able to estimate the transmitted frame and the BER dramatically improves. In this example, to guarantee a reasonable execution time of the system in simulation mode, the simulation duration is fairly short.  As such, the overall BER results are significantly affected by the high BER values at the beginning of the simulation. To increase the simulation duration and obtain lower BER values,  you can change the SimParams.StopTime variable in the <a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','plutoradioqpskreceiver_init.m')" target="_blank">receiver initialization file</a>.</p><p>If the message is not properly decoded by the receiver system, you can vary the gain of the source signals in the <code class="literal">ADALM-PLUTO Transmitter</code> and <code class="literal">ADALM-PLUTO Receiver</code> System objects by changing the SimParams.PlutoGain value in the <a href="matlab:openExample('plutoradio/QPSKTransmitterWithADALMPLUTORadioExample','supportingFile','plutoradioqpsktransmitter_init.m')" target="_blank">transmitter initialization file</a> and in the <a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','plutoradioqpskreceiver_init.m')" target="_blank">receiver initialization file</a>.</p><p>Finally, a large relative frequency offset between the transmit and receive devices can prevent the receiver functions from properly decoding the message.  If that happens, you can determine the offset by running the <a href="matlab:plutoradiofreqcalib" target="_blank">Frequency Offset Calibration (Tx) with ADALM-PLUTO Radio</a> and the <a href="matlab:plutoradiofreqcalib_rx" target="_blank">Frequency Offset Calibration (Rx) with ADALM-PLUTO Radio</a> models, then applying that offset to the center frequency of the ADALM-PLUTO Receiver System object.</p><h3 class="title" id="d124e3823">Appendix<span id="QPSKReceiverWithADALMPLUTORadioExample-7" class="anchor_target"></span></h3><p>This example uses the following script and helper functions:</p><div class="itemizedlist"><ul><li><p><a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','runPlutoradioQPSKReceiver.m')" target="_blank">runPlutoradioQPSKReceiver.m</a></p></li><li><p><a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','plutoradioqpskreceiver_init.m')" target="_blank">plutoradioqpskreceiver_init.m</a></p></li><li><p><a href="matlab:openExample('plutoradio/QPSKReceiverWithADALMPLUTORadioExample','supportingFile','QPSKReceiver.m')" target="_blank">QPSKReceiver.m</a></p></li></ul></div><h3 class="title" id="d124e3841">References<span id="QPSKReceiverWithADALMPLUTORadioExample-8" class="anchor_target"></span></h3><p>1. Rice, Michael. <span class="emphasis"><em>Digital Communications - A Discrete-Time Approach</em></span>. 1st ed. New York, NY: Prentice Hall, 2008.</p></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>

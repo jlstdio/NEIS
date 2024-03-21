@@ -1,0 +1,1 @@
+installLocation = /Users/joonheelee/Documents/MATLAB/SupportPackages/R2023a/3P.instrset/libiio.instrset

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="libiio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message>
+        <!-- Sample time validation errors taken from svd_resources -->
+        <entry key="SampleTimeNonTunable">Sample time is a non-tunable property. You cannot change the sample time value while the model is running.</entry>
+        <entry key="InvalidSampleTimeNeedScalar">Invalid sample time. Sample time must be a real scalar value or an array of two real values.</entry>
+        <entry key="InvalidSampleTimeNeedPositive">Invalid sample time. Sample time must be non-negative or -1 (for inherited).</entry>
+        <entry key="InvalidSampleTimeNeedSmallerOffset">Invalid sample time. Sample time offset must be smaller than the sample time period.</entry>
+        <entry key="InvalidSampleTimeNeedZeroOffset">Invalid sample time. When the period is -1, offset must be 0.</entry>
+        <entry key="InvalidSampleTimeNeedOffsetOne">Invalid sample time. When the period is 0, offset must be 1.</entry>
+        
+        <!-- matlabshared.libiio.internal.ContextManager -->
+        <entry key="ContextManager_CannotDecrement" context="error">Cannot decrement use count below 0 for {0}.</entry>
+        <entry key="ContextManager_UriAlreadyRegistered" context="error">The context for URI {0} is already registered.</entry>
+        <entry key="ContextManager_UriNotRegistered" context="error">The context for URI {0} is not registered.</entry>
+        <entry key="ContextManager_WrongContextDataType" context="error">The context data must be of type matlabshared.libiio.internal.ContextData.</entry>
+        
+        <!-- matlabshared.libiio.internal.getHostInstDir -->
+        <entry key="getHostInstDir_MissingDirectory" context="error">The libiio installation directory was not found. Try reinstalling the support package.</entry>
+    </message>
+</rsccat>

@@ -1,0 +1,2 @@
+lib rx_dut_wrapper_v1_00_a UnitDelayRxDUT vhdl
+lib rx_dut_wrapper_v1_00_a rx_dut_wrapper vhdl

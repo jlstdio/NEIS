@@ -1,0 +1,3 @@
+% MATLAB path entries for hardwaresupportpkgs/sdr/xilinxzynqradiotgt
+toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting
+toolbox/shared/sdr/sdrplug/sdrpluginbase/esw/xilarch/zynq/sw_targeting/registry

@@ -1,0 +1,8 @@
+% MATLAB path entries for hardwaresupportpkgs/sdr/sdrpluginbase
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/funcs
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/sdrmapi
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/derived/bin/glnxa64
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/derived/lib/win64
+toolbox/shared/sdr/sdrplug/sdrpluginbase/host/derived/bin/win64
+toolbox/shared/sdr/sdrplug/sdrpluginbase/hw/xilarch/zynq

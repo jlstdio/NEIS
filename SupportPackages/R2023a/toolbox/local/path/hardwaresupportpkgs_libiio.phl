@@ -1,0 +1,6 @@
+% MATLAB path entries for hardwaresupportpkgs/libiio
+toolbox/shared/libiio/base
+toolbox/shared/libiio/lib
+toolbox/shared/libiio/lib/win64
+toolbox/shared/libiio/lib/glnxa64
+toolbox/shared/libiio/lib/maci64

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message> 
+        <entry key="BadArch">This support package does not support the platform ''{0}''.</entry>
+        <entry key="ResourceRegFailed">Resource catalog registry failed.</entry>
+        <entry key="setupzynqradiorepositories_success">HDL IP Core repositories for Xilinx Zynq-Based \nFMCOMMS2/3/4/5 and ADI RF SOM radios have been set up successfully.\n</entry>
+        <entry key="setupzynqradiorepositories_hdlsetuptoolpath_error">Environment variable ''XILINX_VIVADO'' is not set. Use hdlsetuptoolpath(''ToolName'',TOOLNAME,''ToolPath'',TOOLPATH) to setup the Vivado tool path and environment variable.</entry>
+        <entry key="setupusrpe3xxrepositories_success">HDL IP Core repositories for USRP Embedded Based \nE310 and E312 radios have been set up successfully.\n</entry>
+        <entry key="setupusrpe3xxrepositories_hdlsetuptoolpath_error">Environment variable ''XILINX_VIVADO'' is not set. Use hdlsetuptoolpath(''ToolName'',TOOLNAME,''ToolPath'',TOOLPATH) to setup the Vivado tool path and environment variable.</entry>
+    </message>
+</rsccat>
+<!-- Copyright 2013-2019 The MathWorks, Inc. -->

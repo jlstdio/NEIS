@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productAdditionalComps>
+  <dependsOn>
+    <component>
+      <name>3p/libiio.instrset_maci64</name>
+      <instrset>1</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1668903878</version>
+    </component>
+    <component>
+      <name>3p/plutosdrfw.instrset_maci64</name>
+      <instrset>1</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1668903891</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/sdr/sdrpluginbase_maci64</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1677202255</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/libiio_maci64</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1669145895</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/plutoradio_ex_doc_images_maci64</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1675308349</version>
+    </component>
+  </dependsOn>
+  <isControllingProduct>false</isControllingProduct>
+  <licenseAgreementType>ASLA</licenseAgreementType>
+  <platform>maci64</platform>
+  <productBaseCode>PLUTO</productBaseCode>
+  <productName>Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</productName>
+  <productNumber>2159</productNumber>
+  <productType>hardwareSupportPkg</productType>
+  <productVersion>23.1.0</productVersion>
+  <releaseDescription>R2023a</releaseDescription>
+  <releaseFamily>R2023a</releaseFamily>
+</productAdditionalComps>

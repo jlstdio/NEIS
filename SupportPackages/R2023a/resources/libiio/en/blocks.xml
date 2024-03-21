@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2017-2018 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="libiio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message>
+        <entry key="AXI4StreamIIORdName" translate="false">AXI4-Stream IIO Read</entry>
+        <entry key="AXI4StreamIIOWrName" translate="false">AXI4-Stream IIO Write</entry>
+        <entry key="AXI4StreamIIORd_Icon" translate="false">AXI4-Stream\nIIO Read</entry>
+        <entry key="AXI4StreamIIOWr_Icon" translate="false">AXI4-Stream\nIIO Write</entry>
+        <entry key="AXI4StreamIIORd_Desc">Reads the DMA buffer of AXI4-Stream IP core device using IIO driver framework.\n\nUse the Frame size parameter to determine the number of samples read for each DMA transfer. Use the Timeout parameter to determine the length of time for the DMA transfer to complete.</entry>
+        <entry key="AXI4StreamIIOWr_Desc">Write to the DMA buffer of AXI4-Stream IP core device using IIO driver framework.\n\nUse the Timeout parameter to determine the length of time for the DMA transfer to complete.</entry>
+    </message>
+</rsccat>

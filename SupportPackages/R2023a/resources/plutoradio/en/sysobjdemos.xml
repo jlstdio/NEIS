@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2017 The MathWorks, Inc.-->
+<rsccat version="1.0" locale="en_US" product="plutoradio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    <message> 
+        <entry key="PlutoRadioNotFound">No available Pluto SDR found. Skipping main loop.</entry>
+    </message>
+</rsccat>

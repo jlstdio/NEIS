@@ -4,16 +4,14 @@ Fs = 1e6; % Sample rate: 1 MHz
 T = 2; % Duration in seconds
 N = T * Fs; % Total number of samples
 
-%% Generate a sine wave
-sw = dsp.SineWave;
-sw.Amplitude = 2;
-sw.Frequency = Fc;
-sw.ComplexOutput = true;
-sw.SampleRate = Fs;
-sw.SamplesPerFrame = 1000; % to meet waveform size requirements
-tx_waveform = sw();
+%% Generate a chirp signal
+startFreq = 2.9e9; % Start frequency of 2.9 GHz
+endFreq = 3.1e9; % End frequency of 3.1 GHz
+t = (0:N-1) / Fs; % Time vector for the duration of the signal
+tx_waveform = chirp(t, startFreq, T, endFreq, 'linear');
 
 %% Setup PlutoSDR transmitter
+Fc = (startFreq + endFreq) / 2; % Center frequency for the chirp
 tx = sdrtx('Pluto');
 tx.CenterFrequency = Fc;
 tx.BasebandSampleRate = Fs;

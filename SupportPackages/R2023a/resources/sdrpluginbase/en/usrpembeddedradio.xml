@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2019 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schema/msgcat.xsd">
+    
+<message>
+    <!-- e3xx\+comm\+usrpembeddedradio\rx.m --> 
+    <entry key="rxHeaderTitle" context="uistring">E3xx Receiver</entry>
+    <entry key="rxHeaderText" context="uistring">Receive data from an E3xx.</entry>  
+    <!-- e3xx\+comm\+usrpembeddedradio\tx.m --> 
+    <entry key="txHeaderTitle" context="uistring">E3xx Transmitter</entry>
+    <entry key="txHeaderText" context="uistring">Transmit data using an E3xx.</entry>
+    <!-- Requires explicit HTML tags because HDLWA doesn't format \n correctly. -->
+    <entry key="IPRepositoryADINotFound"><![CDATA[<br/><br/>]]>To enable this IP repository, run
+        <![CDATA[<a href="matlab:setupusrpe3xxrepositories()">setupusrpe3xxrepositories</a>]]>.
+        <![CDATA[<br/><br/><b>]]>NOTE<![CDATA[</b>]]>: This may take a few minutes to complete.
+    </entry>
+</message>
+</rsccat>

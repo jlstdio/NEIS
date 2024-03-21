@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- Copyright 2011 The MathWorks, Inc. -->
+<rsccat version="1.0" locale="en_US" product="sdrpluginbase">
+<message>
+
+<entry key="InvalidFolder">
+Folder ''{0}'' does not exist.
+</entry>
+<entry key="InvalidFile">
+File ''{0}'' does not exist.
+</entry>
+<entry key="InvalidSelection">
+''{0}'' is not a valid selection for ''{1}''.  Choose one of: {2}.
+</entry>
+<entry key="StringRequired">
+''{0}'' must be a non-empty string.
+</entry>
+<entry key="InvalidIPAddress" note="stringDatatypeUpdate">
+The IP address must be specified as ''N.N.N.N'', where N is a numeric character vector between 0 and 255.
+</entry>
+<entry key="InvalidMACAddress" note="stringDatatypeUpdate">
+The MAC address must be specified as ''NN-NN-NN-NN-NN-NN'', where N is a hexadecimal character vector between 0 and F.
+</entry>
+<entry key="ValueOutOfRange">
+The value ''{0}'' for parameter ''{1}'' is out of range.\n
+Minimum: {2}\n
+Maximum: {3}\n
+</entry>
+<entry key="InvalidNumChannels">
+The value ''{0}'' for parameter ''NumChannels'' is invalid.\n
+Valid values are: {1}\n
+</entry>
+<entry key="InvalidChannelMapping">
+The value ''{0}'' for parameter ''ChannelMapping'' is invalid.\n
+Valid values are: 1, 2 or [1,2].\n
+</entry>
+<entry key="UnsupportedOS">
+Current platform is unsupported.
+</entry>
+
+  <!--
+    <entry key="InvalidBoard">"{0}" is not a valid board value.</entry>
+    <entry key="InvalidFreq">"{0}" is not a valid value for synthesis frequency.</entry>
+    <entry key="InvalidVendor">"{0}" is not a valid value for FPGA vendor.</entry>
+    <entry key="InvalidTool">"{0}" is not a valid value for Tool.</entry>
+    <entry key="InvalidSkipFPGAProgFile">"{0}" is not a valid value for SkipFPGAProgFile.</entry>
+    <entry key="InvalidIPAddr" note="stringDatatypeUpdate">IP address must be specified as ''N.N.N.N'', where N is numeric character vector between 0 to 255.</entry>
+    <entry key="InvalidMACAddrFormat" note="stringDatatypeUpdate">MAC address must be specified as ''NN-NN-NN-NN-NN-NN'', where N is hexadecimal character vector between 0 to F.</entry>
+    <entry key="InvalidHDLTopName">"{0}" is not a valid top-level module name.</entry>
+    <entry key="InvalidResetLvl">"{0}" is not a valid value for reset asserted level.</entry>
+    <entry key="InvalidClkEnLvl">"{0}" is not a valid value for clock enable asserted level.</entry>
+    <entry key="InvalidAutoPortInfo1">Property "AutoPortInfo" must have a number.</entry>
+    <entry key="InvalidAutoPortInfo2">Property "AutoPortInfo" must be 0 or 1</entry>
+    <entry key="InvalidHDLSrcType">"{0}" is not a valid value for HDL source type.</entry>
+    <entry key="UndefinedDir">Undefined port direction.</entry>
+    <entry key="NonHDLTop">Top-level source file must be VHDL or Verilog.</entry>
+    <entry key="ChangePortType">Port type for "{0}" has been reset to default value, because "{1}" is not valid for an {2}put port.</entry>
+    <entry key="NoHDLSrcFile">There must be at least one HDL source file.</entry>
+    <entry key="MissingSrcFile">The following source file does not exist:\n{0}</entry>
+    <entry key="InvalidHDLPortName">"{0}" is not a valid port name.</entry>
+    <entry key="InvalidPortDataType">"{0}" is not a valid value for port datatype</entry>
+    <entry key="AtLeastOneOut">Sink blocks are not supported.  There must be at least one output data port.</entry>
+    <entry key="DuplicatePort">The following port name is not unique:\n{0}</entry>
+    <entry key="MultipleClocks">DUT has more than one clock. Only zero or one clock is currently supported for FIL.</entry>
+    <entry key="MultipleClockEnables">DUT has more than one clock enable. Only zero or one clock enable is supported for FIL.</entry>
+    <entry key="ClkEnRstNotOne">For sequential design, there must be one set of clock and reset port.</entry>
+    <entry key="ClkNot1Bit">Clock port must be 1-bit.</entry>
+    <entry key="ClkEnNot1Bit">Clock enable port must be 1-bit.</entry>
+    <entry key="RstNot1Bit">Reset port must be 1-bit.</entry>
+    <entry key="ClkEnRstNotZero">For combinatorial design, there must be no clock, clock enable or reset port. Reset must be specified as "Data" and driven manually.</entry>
+    <entry key="InvalidIPByte">Each IP address octet must be a number between 0 and 255.</entry>
+    <entry key="InvalidMACAddr">Each MAC address octet must be composed of two hexadecimal digits.</entry>
+    <entry key="UndefinedVendor">Undefined FPGA vendor.</entry>
+    <entry key="InvalidFileIdx">Index ({0,number,integer}) exceeds number of source files ({1,number,integer}).</entry>
+    <entry key="InvalidFileType">"{0}" is not a valid value for file type.</entry>
+    <entry key="InvalidPortIdx">Index ({0,number,integer}) exceeds number of DUT ports ({1,number,integer}).</entry>
+    <entry key="InvalidPortDir">"{0}" is not a valid value for port direction.</entry>
+    <entry key="InvalidPortType">"{0}" is not a valid value for {1}put port type.</entry>
+    <entry key="InvalidOutputDataType">"{0}" is not a valid value for output data type.</entry>
+    <entry key="InvalidOutputDataTypeIdx">Index ({0,number,integer}) exceeds number of output data type ({1,number,integer}).</entry>
+    <entry key="DuplicateOutputDataType">The following output name is not unique:\n{0}</entry>
+    <entry key="InputNotStr" note="stringDatatypeUpdate">{0} must be a non-empty character vector.</entry>
+    <entry key="InputNotPosInt">{0} must be a positive integer.</entry>
+    <entry key="InputNotInt">{0} must be an integer.</entry>
+    <entry key="InputNotLog">{0} must be a logical.</entry>
+    <entry key="PortSizeOverMTU">The input or output signals exceed the maximum allowed aggregate size. You must reduce the overall size of the input or output data set.</entry>
+    <entry key="PortSizeTooLarge">The aggregate size of input or output signals exceeds 512 bytes. The FPGA might not have enough routing resource for the design.</entry>
+    <entry key="InvalidPortConnectivity">"{0}" is not a valid value for port connectivity. Valid port Connectivities are 'Drive', 'ExternalIO', 'Capture', Strobe'.</entry>
+  -->
+  <!-- 
+    <entry key="NoInOrOutPort">There must be at least one input and one output data port.</entry> 
+  -->
+  </message>
+</rsccat>

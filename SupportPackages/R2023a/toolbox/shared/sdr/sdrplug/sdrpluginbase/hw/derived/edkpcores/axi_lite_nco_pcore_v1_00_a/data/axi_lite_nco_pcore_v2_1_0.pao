@@ -1,0 +1,18 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\axi_lite_nco_pcore_v1_00_a\data\axi_lite_nco_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2013-11-25 17:36:45
+##############################################################################
+
+lib axi_lite_nco_pcore_v1_00_a SDRNCOLookUpTableGen vhdl
+lib axi_lite_nco_pcore_v1_00_a SDRNCOWaveformGen vhdl
+lib axi_lite_nco_pcore_v1_00_a SDRNCODitherGen vhdl
+lib axi_lite_nco_pcore_v1_00_a SDRNCOComp vhdl
+lib axi_lite_nco_pcore_v1_00_a SDRNCO_pkg vhdl
+lib axi_lite_nco_pcore_v1_00_a SDRNCO vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_NCO vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_nco_pcore_dut vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_nco_pcore_axi_lite_module vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_nco_pcore_addr_decoder vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_nco_pcore_axi_lite vhdl
+lib axi_lite_nco_pcore_v1_00_a axi_lite_nco_pcore vhdl

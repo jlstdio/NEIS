@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta xmlns="http://www.w3.org/1999/xhtml" charset="utf-8">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Image Transmission and Reception Using LTE Waveform and SDR</title>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+      {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [{
+          "@type": "ListItem",
+          "position": 1,
+
+          "item": {
+          "@id": "../index.html",
+          "name": "Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio"
+}
+
+          } 
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+
+          "item": {
+          "@id": "../application-specific-examples.html",
+          "name": "Application-Specific"
+}
+
+          }]
+      }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "VisibleBreadcrumbs",
+
+        "itemListElement":
+        [
+        "application-specific-examples"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Image Transmission and Reception Using LTE Waveform and SDR",
+          "description": "Transmit and receive an image using an LTE waveform and a software-defined radio (SDR). The example generates a single or multi-antenna LTE waveform for simultaneous transmission and reception on a single SDR platform. During waveform generation, the example encodes and packs an image into a radio frame. Then, on reception, the example decodes the image from the received LTE waveform.",
+          "thumbnailURL": "../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_06.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "identifier": "lte.SDRImageTransmissionReceptionUsingLTEWaveformExample",
+          "name": "SDRImageTransmissionReceptionUsingLTEWaveformExample",
+          "url": "transmission-and-reception-of-an-image-using-lte-toolbox-and-a-single-pluto-radio.html"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')"
+
+        }</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "SDRImageTransmissionReceptionUsingLTEWaveformExample.mlx",
+        "hPlotPositions.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fe">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ex">
+
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This example shows how to transmit and receive an image using an LTE waveform and a software-defined radio (SDR)."><meta xmlns="http://www.w3.org/1999/xhtml" content="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_06.png" itemprop="thumbnailUrl">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/site6_offcanvas_v2.css" rel="stylesheet" type="text/css">
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/l10n.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/f1help.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/docscripts.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/underscore-min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/use_platform_screenshots.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/suggest.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/overload.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/helpservices.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/productfilter.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/product_group.js"></script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/saxonjs/SaxonJS2.rt.js"></script><script xmlns="http://www.w3.org/1999/xhtml">
+            window.history.replaceState(window.location.href, null, ""); // Initialize
+            window.onload = function() {    
+            mystylesheetLocation = "../includes/shared/scripts/product_group-sef.json";
+            mysourceLocation = "../../../docset/docset.xml";
+            product_help_location = "supportpkg/plutoradio";
+            pagetype = "section";
+            doccentertype = "product";
+            langcode = "";
+            getProductFilteredList(mystylesheetLocation, mysourceLocation, product_help_location, pagetype, doccentertype, langcode);  
+            }
+          </script><script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/scripts/livecontrolpopover.js"></script>
+
+
+
+
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/bootstrap.min.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/product/scripts/global.js"></script>
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_base.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link xmlns="http://www.w3.org/1999/xhtml" href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script xmlns="http://www.w3.org/1999/xhtml" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div xmlns="http://www.w3.org/1999/xhtml" id="doc_header_spacer" class="header"></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="section_header level_3"><div class="container-fluid"><div class="row" id="mobile_search_row"><div class="col-sm-6 col-md-7 has_horizontal_local_nav" id="section_header_title"><div class="section_header_content"><div class="section_header_title"><h1><a href="../../../documentation-center.html">Help Center</a></h1></div></div></div><div class="col-xs-12 col-sm-6 col-md-5" id="mobile_search"><div class="search_nested_content_container"><form id="docsearch_form" name="docsearch_form" method="get" data-release="R2023a" data-language="en" action="../../../templates/searchresults.html"><div class="input-group tokenized_search_field"><label class="sr-only">Search Help</label><input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch"> <div class="input-group-btn"><button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button></div></div></form></div><button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div><div class="visible-xs" id="search_actuator"><button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div></div></div></div><div class="row-offcanvas row-offcanvas-left">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sidebar-offcanvas" id="sidebar">
+<nav class="offcanvas_nav" role="navigation">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle"><button type="button" class="btn"><span class="sr-only">Off-Canvas Navigation Menu Toggle
+                  Off-Canvas Navigation Menu Toggle</span><span class="icon-menu"></span></button><span class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="-1" aria-hidden="true"></span></div><div class="nav_list_wrapper" id="nav_list_wrapper"><nav class="offcanvas_nav" role="navigation"><ul class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul class="nav_disambiguation"><li><a href="../index.html?s_tid=CRUX_lftnav">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../application-specific-examples.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Application-Specific</span></a></li></ul><ul class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Image Transmission and Reception Using LTE Waveform and SDR</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-section">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-1" class="intrnllnk">Introduction</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-2" class="intrnllnk">Example Setup</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-3" class="intrnllnk">Transmitter Design: System Architecture</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-4" class="intrnllnk">Receiver Design: System Architecture</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-5" class="intrnllnk">Further Exploration</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-6" class="intrnllnk">SDR Troubleshooting</a></li><li><a href="#SDRImageTransmissionReceptionUsingLTEWaveformExample-7" class="intrnllnk">Selected Bibliography</a></li></ul>
+</nav></div></nav>
+<script src="../includes/product/scripts/offcanvas_v2.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="offcanvas_content_container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sticky_header_container"><div class="horizontal_nav"><div class="horizontal_nav_container"><div class="offcanvas_horizontal_nav"><div class="container-fluid"><div class="row"><div class="col-sm-12 hidden-xs"><nav class="navbar navbar-default" role="navigation" id="subnav"><div><ul class="nav navbar-nav crux_browse"><li id="crux_nav_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></nav></div><div class="visible-xs"><div class="container-fluid"><div class="row"><div class="col-xs-9"><div class="mobile_crux_nav_trigger"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="icon-arrow-down icon_16"></span></button><ul class="dropdown-menu"><li id="crux_nav_mobile_documentation" class="crux_resource active">Documentation</li><li id="crux_nav_mobile_example" class="crux_resource"><a href="../examples.html?category=application-specific-examples&amp;s_tid=CRUX_topnav">Examples</a></li><li id="crux_nav_mobile_function" class="crux_resource"><a href="../referencelist.html?type=function&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Functions</a></li><li id="crux_nav_mobile_block" class="crux_resource"><a href="../referencelist.html?type=block&amp;category=application-specific-examples&amp;s_tid=CRUX_topnav">Blocks</a></li></ul></div></div></div><div class="col-xs-3"><div class="translate_placeholder"></div></div></div></div></div></div></div></div></div></div></div><div class="content_container" id="content_container" itemprop="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="product_info_alert"></div><section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en" data-language="en"><div id="pgtype-example">
+<section itemprop="content"><div class="example_icon"></div><h1 class="r2023a" itemprop="title content" id="mw_4e8f84c2-21bf-46c7-a33e-b0c15feee8ad">Image Transmission and Reception Using LTE Waveform and SDR</h1><div class="examples_short_list hidden_ios_android"><div data-pane="metadata" class="panel metadata_container panel-default"><div class="panel-body metadata_content"><p class="add_margin_5">This example uses:</p><ul class="list-unstyled add_border_bottom example_product_list" itemprop="requiredprods"><li><a href="matlab:matlab.internal.language.introspective.showAddon('LS')">LTE Toolbox</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('USRPEMBED')">Communications Toolbox Support Package for USRP Embedded Series Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('XILINXZYNQ')">Communications Toolbox Support Package for Xilinx Zynq-Based Radio</a></li><li><a href="matlab:matlab.internal.language.introspective.showAddon('PLUTO')">Communications Toolbox Support Package for Analog Devices ADALM-PLUTO Radio</a></li></ul><a class="btn btn_secondary btn-block" href="matlab:openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" data-ex-genre="Live Script">Open Live Script</a></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="lte-SDRImageTransmissionReceptionUsingLTEWaveformExample"><meta itemprop="exampletitle" content="Image Transmission and Reception Using LTE Waveform and SDR"></div><span id="SDRImageTransmissionReceptionUsingLTEWaveformExample" class="anchor_target"></span><p class="shortdesc">This example shows how to transmit and receive an image using an LTE waveform and a software-defined radio (SDR). The example generates a single or multi-antenna LTE waveform for simultaneous transmission and reception on a single SDR platform. During waveform generation, the example encodes and packs an image into a radio frame. Then, on reception, the example decodes the image from the received LTE waveform. </p><div class="procedure"><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-1">Introduction</h3><div class="informalfigure"><div id="d124e5002" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_01.png" height="213" width="583"></p></div></div><p>The LTE Toolbox&#8482; generates standard-compliant baseband IQ downlink and uplink reference measurement channel (RMC) waveforms and downlink test model (E-TM) waveforms. Using an SDR such as the Xilinx&#174; Zynq&#174;-Based Radio, you can modulate these waveforms for RF transmission and reception.</p><p>This example imports an image file and packs it into multiple radio frames of a baseband RMC waveform generated by using the LTE Toolbox. The example creates a continuous RF LTE waveform by using the repeated transmission functionality of a supported SDR. The repeated transmission functionality transfers the baseband RMC waveform to the hardware memory on the SDR and transmits the waveform continuously over the air without gaps. If you use an SDR device capable of multiple channel transmission and reception, the example generates and transmits a multi-antenna LTE waveform using LTE Transmit Diversity.</p><p>The example captures the resultant waveform by using the same SDR. If you have the appropriate hardware, the example uses multi-channel reception in the receiver.</p><p>This example supports these SDRs.</p><div class="itemizedlist"><ul><li><p>ADALM-Pluto from the Communications Toolbox Support Package for Analog Devices&#174; ADALM-Pluto Radio</p></li><li><p>USRP&#8482; E310/E312 from the Communications Toolbox Support Package for USRP&#8482; Embedded Series Radio</p></li><li><p>AD936x/FMCOMMS5 from the Communications Toolbox Support Package for Xilinx&#174; Zynq&#174;-Based Radio</p></li></ul></div><p>Alternatively, if an SDR is not available, the example supports simulating an additive white gaussian noise (AWGN) channel or passing the waveform directly to the decode stage with no impairments. </p><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-2">Example Setup</h3><p>Before running the example, set the <code class="literal">channel</code> variable to one of these options:</p><div class="itemizedlist"><ul><li><p><code class="literal">OverTheAir</code>: Use an SDR to transmit and receive the WLAN waveform</p></li><li><p><code class="literal">GaussianNoise</code>: Pass the transmission waveform through an AWGN channel (default)</p></li><li><p><code class="literal">NoImpairments</code>: Pass the transmission waveform through with no impairments</p></li></ul></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>channel = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_07.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="&#34;GaussianNoise&#34;" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">"GaussianNoise"</span></span>;</pre></div></div></div><p>If you set <code class="literal">channel</code> to <code class="literal">OverTheAir</code>, configure the transmit gain and center frequency, and set <code class="literal">deviceName</code> to the desired SDR:</p><div class="itemizedlist"><ul><li><p>Set to <code class="literal">Pluto</code> to use the ADALM-Pluto Radio (default)</p></li><li><p>Set to <code class="literal">E3xx</code> to use the USRP Embedded Series Radio</p></li><li><p>Set to <code class="literal">AD936x</code> or <code class="literal">FMCOMMS5</code> to use the Xilinx Zynq-Based Radio</p></li></ul></div><p>If you set channel to <code class="literal">GaussianNoise</code>, set the signal-to-noise ratio (SNR) for the receive waveform.</p><span id="mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_8889D854" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> channel == <span style="color:#A020F0">"OverTheAir"</span>
+    deviceName = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_08.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="&#34;Pluto&#34;" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">"Pluto"</span></span>;
+    centerFrequency = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_09.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="2200000000" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">2200000000</span></span>;
+    txGain = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_10.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="-10" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">-10</span></span>;
+<span style="color:#0000FF">elseif</span> channel == <span style="color:#A020F0">"GaussianNoise"</span>
+    <span style="color:#228B22">% Specify SNR of received signal for a simulated channel</span>
+    SNR = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_11.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="20" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">20</span></span>;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Configure these parameters for LTE waveform generation.</p><span id="mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_63764520" class="anchor_target"></span><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>txsim.RC = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_12.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="'R.7'" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">'R.7'</span></span>;          <span style="color:#228B22">% Base RMC configuration, 10 MHz bandwidth</span>
+txsim.NCellID = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_13.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="88" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">88</span></span>;     <span style="color:#228B22">% Cell identity</span>
+txsim.NFrame = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_14.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="700" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">700</span></span>;      <span style="color:#228B22">% Initial frame number</span>
+txsim.NumAntennas = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_15.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="1" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">1</span></span>; <span style="color:#228B22">% Number of transmit and receive antennas</span></pre></div></div></div><p>Configure all the scopes and figures for the example.</p><p>Set up a handle for the image plot.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> ~exist(<span style="color:#A020F0">"imFig"</span>, <span style="color:#A020F0">"var"</span>) || ~ishandle(imFig)
+    imFig = figure;
+    imFig.NumberTitle = <span style="color:#A020F0">"off"</span>;
+    imFig.Name = <span style="color:#A020F0">"Image Plot"</span>;
+    imFig.Visible = <span style="color:#A020F0">"off"</span>;
+<span style="color:#0000FF">else</span>
+    clf(imFig); <span style="color:#228B22">% Clear figure</span>
+    imFig.Visible = <span style="color:#A020F0">"off"</span>;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Set up a handle for the channel estimate plots.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> ~exist(<span style="color:#A020F0">"hhest"</span>, <span style="color:#A020F0">"var"</span>) || ~ishandle(hhest)
+    hhest = figure(<span style="color:#A020F0">"Visible"</span>,<span style="color:#A020F0">"Off"</span>);
+    hhest.NumberTitle = <span style="color:#A020F0">"off"</span>;
+    hhest.Name = <span style="color:#A020F0">"Channel Estimate"</span>;
+<span style="color:#0000FF">else</span>
+    clf(hhest); <span style="color:#228B22">% Clear figure</span>
+    hhest.Visible = <span style="color:#A020F0">"off"</span>;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Set up a spectrum scope to view the received waveform later in the example.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>spectrumScope = spectrumAnalyzer( <span style="color:#0000FF">...</span>
+    SpectrumType=<span style="color:#A020F0">"power-density"</span>, <span style="color:#0000FF">...</span>
+    Title=<span style="color:#A020F0">"Received Baseband LTE Signal Spectrum"</span>, <span style="color:#0000FF">...</span>
+    YLabel=<span style="color:#A020F0">"Power spectral density"</span>, <span style="color:#0000FF">...</span>
+    ShowLegend=true);</pre></div></div></div><p>Set up the constellation diagram viewer for the equalized physical downlink shared channel (PDSCH) symbols.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>constellation = comm.ConstellationDiagram(Title=<span style="color:#A020F0">"Equalized PDSCH Symbols"</span>, <span style="color:#0000FF">...</span>
+    ShowReferenceConstellation=false);</pre></div></div></div><p>Determine and set the positions for all figures in this example.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[positionsValid,positions] = hPlotPositions;
+<span style="color:#0000FF">if</span> positionsValid
+    imFig.Position = positions(5,:);
+    hhest.Position = positions(1,:);
+    spectrumScope.Position = positions(6,:);
+    constellation.Position = positions(3,:);
+<span style="color:#0000FF">end</span></pre></div></div></div><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-3">Transmitter Design: System Architecture</h3><p>The general structure of the LTE transmitter consists of these steps:</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>Import and convert an image to a binary data stream.</p></li><li><p>Generate a baseband LTE signal using LTE Toolbox, packing the binary data stream into the transport blocks of the downlink shared channel (DL-SCH).</p></li><li><p>If using an SDR, prepare the baseband signal for transmission using the SDR hardware and send the baseband data to the SDR for continuous transmission at the desired center frequency.</p></li></ol></div><p><strong class="emphasis bold">Prepare Image File</strong></p><p>The example reads data from the image file, scales it for transmission, and converts it to a binary data stream. The size of the transmitted image directly impacts the number of LTE radio frames required for the transmission of the image data. A scaling factor of <code class="literal">0.5</code> requires five LTE radio frame transmissions. Increasing the scaling factor results in more frame transmissions. Reducing the scaling factor reduces the number of frames.</p><p>Specify the image file name and its scaling factor.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fileTx = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_16.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="'peppers.png'" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">'peppers.png'</span></span>;                                         <span style="color:#228B22">% Image file name</span>
+scale = <span class="live_control_container"><img tabindex="-1" alt="" src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_17.png"><span data-examplename="openExample('lte/SDRImageTransmissionReceptionUsingLTEWaveformExample')" tabindex="0" data-controlvalue="0.5" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="top" data-html="true" class="popover_trigger add_cursor_pointer live_control_equivalent_value">0.5</span></span>;                                          <span style="color:#228B22">% Image scaling factor</span></pre></div></div></div><p>Import the specified image file and covert it to a binary stream.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fData = imread(fileTx);                                                 <span style="color:#228B22">% Read image data from file</span>
+origSize = size(fData);                                                 <span style="color:#228B22">% Original input image size</span>
+scaledSize = max(floor(scale.*origSize(1:2)),1);                        <span style="color:#228B22">% Calculate new image size</span>
+heightIx = min(round(((1:scaledSize(1))-0.5)./scale+0.5),origSize(1));
+widthIx = min(round(((1:scaledSize(2))-0.5)./scale+0.5),origSize(2));
+fData = fData(heightIx,widthIx,:);                                      <span style="color:#228B22">% Resize image</span>
+imsize = size(fData);                                                   <span style="color:#228B22">% Store new image size</span>
+binData = dec2bin(fData(:),8);                                          <span style="color:#228B22">% Convert to 8 bit unsigned binary</span>
+trData = reshape((binData-<span style="color:#A020F0">'0'</span>).',1,[]).';                               <span style="color:#228B22">% Create binary stream</span></pre></div></div></div><p>Using the previously created handle for the image plot, display the transmit image. Later in the example, if the LTE waveform is successfully decoded, the received image displays beneath the transmitted image. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Plot transmit image</span>
+figure(imFig);
+imFig.Visible = <span style="color:#A020F0">"on"</span>;
+subplot(211);
+imshow(fData);
+title(<span style="color:#A020F0">"Transmitted Image"</span>);
+subplot(212);
+title(<span style="color:#A020F0">"Received image will appear here..."</span>);
+set(gca,<span style="color:#A020F0">"Visible"</span>,<span style="color:#A020F0">"off"</span>); <span style="color:#228B22">% Hide axes</span></pre></div></div></div><div class="informalfigure"><div id="d124e5176" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_02.png" alt="Figure Image Plot contains an axes object. The axes object with title Transmitted Image contains an object of type image." width="560"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>set(findall(gca, <span style="color:#A020F0">"type"</span>, <span style="color:#A020F0">"text"</span>), <span style="color:#A020F0">"visible"</span>, <span style="color:#A020F0">"on"</span>); <span style="color:#228B22">% Unhide title</span></pre></div></div></div><p><strong class="emphasis bold">Generate Baseband LTE Signal</strong></p><p>Use the <a href="../../../lte/ref/ltermcdl.html" data-docid="lte_ref#bt260sg" class="a"><code class="olink">lteRMCDL</code></a><span role="cross_prod"> (LTE Toolbox)</span> function to generate the default configuration parameters for an RMC as defined in TS36.101 Annex A.3 [ <a href="transmission-and-reception-of-an-image-using-lte-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_2F5DE27E" class="intrnllnk">1</a> ]. The parameters within the configuration structure <code class="literal">rmc</code> allow customization as required.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rmc = lteRMCDL(txsim.RC);</pre></div></div></div><p>Calculate the required number of LTE frames based on the size of the image data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>trBlkSize = rmc.PDSCH.TrBlkSizes;
+txsim.TotFrames = ceil(numel(trData)/sum(trBlkSize(:)));</pre></div></div></div><p>Customize RMC parameters</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rmc.NCellID = txsim.NCellID;
+rmc.NFrame = txsim.NFrame;
+rmc.TotSubframes = txsim.TotFrames*10; <span style="color:#228B22">% 10 subframes per frame</span>
+rmc.CellRefP = txsim.NumAntennas;      <span style="color:#228B22">% Configure number of cell reference ports</span>
+rmc.PDSCH.RVSeq = 0;</pre></div></div></div><p>Fill subframe 5 with dummy data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rmc.OCNGPDSCHEnable = <span style="color:#A020F0">"On"</span>;
+rmc.OCNGPDCCHEnable = <span style="color:#A020F0">"On"</span>;</pre></div></div></div><p>If transmitting over two or more channels, enable transmit diversity.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> rmc.CellRefP &gt;= 2
+    rmc.PDSCH.TxScheme = <span style="color:#A020F0">"TxDiversity"</span>;    
+    rmc.OCNGPDSCH.TxScheme = <span style="color:#A020F0">"TxDiversity"</span>;
+<span style="color:#0000FF">else</span>
+    rmc.PDSCH.TxScheme = <span style="color:#A020F0">"Port0"</span>;
+    rmc.OCNGPDSCH.TxScheme = <span style="color:#A020F0">"Port0"</span>;
+<span style="color:#0000FF">end</span>
+rmc.PDSCH.NLayers = txsim.NumAntennas;
+fprintf(<span style="color:#A020F0">"\nGenerating LTE transmit waveform:\n"</span>+ <span style="color:#0000FF">...</span>
+    <span style="color:#A020F0">"  Packing image data into %d frame(s).\n\n"</span>, txsim.TotFrames);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Generating LTE transmit waveform:
+  Packing image data into 5 frame(s).
+</pre></div></div></div><p>Use the <a href="../../../lte/ref/ltermcdltool.html" data-docid="lte_ref#bt24_40" class="a"><code class="olink">lteRMCDLTool</code></a><span role="cross_prod"> (LTE Toolbox)</span> to generate a baseband waveform, <code class="literal">eNodeBOutput</code>, a fully populated resource grid, <code class="literal">txGrid</code>, and the full configuration of the RMC. The tool takes the binary stream, <code class="literal">trData</code>, created from the input image file and packs it into multiple transport blocks in the PDSCH.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Pack the image data into a single LTE frame</span>
+[eNodeBOutput,txGrid,rmc] = lteRMCDLTool(rmc,trData);</pre></div></div></div><p><strong class="emphasis bold">Transmit LTE Waveform</strong></p><p>If using an SDR, create an <code class="literal">sdrTransmitter</code> object using the <code class="literal">sdrtx</code> function. Set the center frequency, sample rate, gain, and channel configuration to the corresponding properties of the <code class="literal">sdrTransmitter</code> object. Then, use the <code class="literal">transmitRepeat</code> function to transfer the baseband LTE transmission to the SDR platform for continuous transmission.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> channel == <span style="color:#A020F0">"OverTheAir"</span>
+
+    <span style="color:#228B22">% Transmitter properties</span>
+    sdrTransmitter = sdrtx(deviceName);
+    sdrTransmitter.BasebandSampleRate = rmc.SamplingRate; <span style="color:#228B22">% 15.36 MHz for default RMC (R.7) with a bandwidth of 10 MHz</span>
+    sdrTransmitter.CenterFrequency = centerFrequency;
+    sdrTransmitter.Gain = txGain;
+    sdrTransmitter.ChannelMapping = 1:txsim.NumAntennas;
+
+    <span style="color:#228B22">% Pass the SDR I/O directly to host skipping FPGA on Zynq Radio or USRP</span>
+    <span style="color:#228B22">% Embedded Series Radio</span>
+    <span style="color:#0000FF">if</span> deviceName ~= <span style="color:#A020F0">"Pluto"</span>
+        sdrTransmitter.ShowAdvancedProperties = true;
+        sdrTransmitter.BypassUserLogic = true;
+    <span style="color:#0000FF">end</span>
+
+    fprintf(<span style="color:#A020F0">"\nGenerating LTE transmit waveform:\n"</span>)
+
+    <span style="color:#228B22">% Scale the normalized signal to avoid saturation of RF stages</span>
+    powerScaleFactor = 0.8;
+    eNodeBOutput = eNodeBOutput.*(1./max(abs(eNodeBOutput))*powerScaleFactor);
+
+    <span style="color:#228B22">% Transmit RF waveform</span>
+    transmitRepeat(sdrTransmitter,eNodeBOutput);
+<span style="color:#0000FF">end</span></pre></div></div></div><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-4">Receiver Design: System Architecture</h3><p>The general structure of the LTE receiver consists of these steps:</p><div class="orderedlist"><ol style="list-style: decimal;"><li><p>If using an SDR, capture a suitable number of frames of the transmitted LTE signal. Otherwise, apply AWGN to the <code class="literal">eNodeBOutput</code> or apply no impairments.</p></li><li><p>Determine and correct the frequency offset of the received signal.</p></li><li><p>Synchronize the captured signal to the start of an LTE frame.</p></li><li><p>OFDM demodulate the received signal to get an LTE resource grid.</p></li><li><p>Perform a channel estimation for the received signal.</p></li><li><p>Decode the PDSCH and DL-SCH to obtain the transmitted data from the transport blocks of each radio frame.</p></li><li><p>Recombine received transport block data to form the received image.</p></li></ol></div><p>This example plots the power spectral density of the captured waveform, and shows visualizations of the estimated channel, equalized PDSCH symbols, and received image.</p><p><strong class="emphasis bold">Set Up SDR Receiver</strong></p><p>Capture one more LTE frame than transmitted to allow for timing offset wraparound in receiver processing.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>framesPerCapture = txsim.TotFrames+1;   <span style="color:#228B22">% Number of LTE frames to capture.</span>
+captureTime = framesPerCapture * 10e-3; <span style="color:#228B22">% Capture time in seconds</span></pre></div></div></div><p>Create an SDR receiver System Object with the specified properties for the device used for the image transmission. The sample rate of the receiver is 15.36MHz, which is the standard sample rate for capturing an LTE bandwidth of 50 resource blocks (RBs). 50 RBs is equivalent to a signal bandwidth of 10 MHz.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> channel == <span style="color:#A020F0">"OverTheAir"</span>
+
+    sdrReceiver = sdrrx(deviceName);
+    sdrReceiver.BasebandSampleRate = sdrTransmitter.BasebandSampleRate;
+    sdrReceiver.CenterFrequency = sdrTransmitter.CenterFrequency;
+    sdrReceiver.OutputDataType = <span style="color:#A020F0">"double"</span>;
+    sdrReceiver.ChannelMapping = 1:txsim.NumAntennas;
+
+    <span style="color:#0000FF">if</span> deviceName ~= <span style="color:#A020F0">"Pluto"</span>
+        sdrReceiver.ShowAdvancedProperties = true;
+        sdrReceiver.BypassUserLogic = true;
+    <span style="color:#0000FF">end</span>
+
+    fprintf(<span style="color:#A020F0">"\nStarting a new RF capture.\n"</span>)
+
+    rxWaveform = capture(sdrReceiver,captureTime,<span style="color:#A020F0">"Seconds"</span>);
+<span style="color:#0000FF">elseif</span> channel == <span style="color:#A020F0">"GaussianNoise"</span>
+    rxWaveform = awgn(eNodeBOutput,SNR,<span style="color:#A020F0">"measured"</span>);
+<span style="color:#0000FF">else</span> <span style="color:#228B22">% No Impairments</span>
+    rxWaveform = eNodeBOutput;
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Show the power spectral density of the captured waveform.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>spectrumScope.SampleRate = rmc.SamplingRate;
+spectrumScope(rxWaveform);
+release(spectrumScope)</pre></div></div></div><div class="informalfigure"><div id="d124e5274" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_03.png" width="800"></p></div></div><p><strong class="emphasis bold">Set Up LTE Receiver</strong> </p><p>The example simplifies the LTE signal reception by assuming that the transmitted PDSCH properties are known. </p><p>Assume FDD duplexing mode and a normal cyclic prefix length, as well as four cell-specific reference ports (CellRefP) for the master information block (MIB) decode. The MIB provides the number of actual CellRefP. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>enb.PDSCH = rmc.PDSCH;
+enb.DuplexMode = <span style="color:#A020F0">"FDD"</span>;
+enb.CyclicPrefix = <span style="color:#A020F0">"Normal"</span>;
+enb.CellRefP = 4;</pre></div></div></div><p>The sampling rate of the signal controls the captured bandwidth. Obtain the number of RBs captured from a lookup table using the chosen sampling rate.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Bandwidth:    {1.4  3    5    10    20   } MHz</span>
+SampleRateLUT = [1.92 3.84 7.68 15.36 30.72]*1e6;
+NDLRBLUT = [6 15 25 50 100];
+enb.NDLRB = NDLRBLUT(SampleRateLUT==rmc.SamplingRate);
+<span style="color:#0000FF">if</span> isempty(enb.NDLRB)
+    error(<span style="color:#A020F0">"Sampling rate not supported. Supported rates are %s."</span>,<span style="color:#0000FF">...</span>
+        <span style="color:#A020F0">"1.92 MHz, 3.84 MHz, 7.68 MHz, 15.36 MHz, 30.72 MHz"</span>);
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Configure channel estimation to be performed by using cell-specific reference signals. A 9-by-9 averaging window minimizes the effect of noise.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#228B22">% Channel estimation configuration structure</span>
+cec.PilotAverage = <span style="color:#A020F0">"UserDefined"</span>;  <span style="color:#228B22">% Type of pilot symbol averaging</span>
+cec.FreqWindow = 9;                <span style="color:#228B22">% Frequency window size in REs</span>
+cec.TimeWindow = 9;                <span style="color:#228B22">% Time window size in REs</span>
+cec.InterpType = <span style="color:#A020F0">"Cubic"</span>;          <span style="color:#228B22">% 2D interpolation type</span>
+cec.InterpWindow = <span style="color:#A020F0">"Centered"</span>;     <span style="color:#228B22">% Interpolation window type</span>
+cec.InterpWinSize = 3;             <span style="color:#228B22">% Interpolation window size</span></pre></div></div></div><p><strong class="emphasis bold">Process Captured Signal</strong></p><p>As the LTE waveform is continuously transmitted over the air in a loop, the first frame captured by the receiver is not guaranteed to be the first transmitted frame. This means that the frames may be decoded out of sequence. To enable the received frames to be recombined in the correct order, their frame numbers must be determined. The MIB contains information on the current system frame number, and therefore must be decoded. After the frame number has been determined, the example decodes the PDSCH and DL-SCH and displays the equalized PDSCH symbols. No data is transmitted in subframe 5; therefore, the captured data for subframe is ignored for the decoding.</p><p>When the LTE frames have been successfully decoded, the example displays the detected frame number on a frame-by-frame basis and the equalized PDSCH symbol constellation for each subframe. The example also displays an estimate of the channel magnitude frequency response between cell reference point 0 and the receive antenna for each frame.</p><p>Perform a frequency offset correction for known cell ID.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>frequencyOffset = lteFrequencyOffset(enb,rxWaveform);
+rxWaveform = lteFrequencyCorrect(enb,rxWaveform,frequencyOffset);
+fprintf(<span style="color:#A020F0">"\nCorrected a frequency offset of %i Hz.\n"</span>,frequencyOffset)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Corrected a frequency offset of -2.447074e+00 Hz.
+</pre></div></div></div><p>Perform the blind cell search to obtain cell identity and timing offset. Use <code class="literal">"PostFFT"</code> SSS detection method to improve detection speed.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cellSearch.SSSDetection = <span style="color:#A020F0">"PostFFT"</span>; cellSearch.MaxCellCount = 1;
+[NCellID,frameOffset] = lteCellSearch(enb,rxWaveform,cellSearch);
+enb.NCellID = NCellID;
+fprintf(<span style="color:#A020F0">"Detected a cell identity of %i.\n"</span>, NCellID);</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Detected a cell identity of 88.
+</pre></div></div></div><p>Sync the captured samples to the start of an LTE frame, and trim off any samples that are part of an incomplete frame.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxWaveform = rxWaveform(frameOffset+1:end,:);
+samplesPerFrame = 10e-3*rmc.SamplingRate; <span style="color:#228B22">% LTE frames period is 10 ms</span>
+tailSamples = mod(length(rxWaveform),samplesPerFrame);
+rxWaveform = rxWaveform(1:end-tailSamples,:);
+enb.NSubframe = 0;
+fprintf(<span style="color:#A020F0">"Corrected a timing offset of %i samples.\n"</span>,frameOffset)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Corrected a timing offset of 0 samples.
+</pre></div></div></div><p>OFDM demodulate the waveform and perform channel estimation for 4 cell-specific reference ports as the cell-specific reference ports are unknown for the eNodeB.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxGrid = lteOFDMDemodulate(enb,rxWaveform);
+[hest,nest] = lteDLChannelEstimate(enb,cec,rxGrid);
+sfDims = lteResourceGridSize(enb);
+Lsf = sfDims(2); <span style="color:#228B22">% OFDM symbols per subframe</span>
+LFrame = 10*Lsf; <span style="color:#228B22">% OFDM symbols per frame</span>
+numFullFrames = length(rxWaveform)/samplesPerFrame;</pre></div></div></div><p>Initialize these variables for processing the received frames.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rxDataFrame = zeros(sum(enb.PDSCH.TrBlkSizes(:)),numFullFrames);
+recFrames = zeros(numFullFrames,1);
+rxSymbols = []; txSymbols = [];</pre></div></div></div><p>For each frame, decode the MIB, PDSCH, and DL-SCH.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">for</span> frame = 0:(numFullFrames-1)
+    fprintf(<span style="color:#A020F0">"\nPerforming DL-SCH Decode for frame %i of %i in burst:\n"</span>, <span style="color:#0000FF">...</span>
+        frame+1,numFullFrames)
+
+    <span style="color:#228B22">% Extract subframe #0 from each frame of the received resource grid</span>
+    <span style="color:#228B22">% and channel estimate.</span>
+    enb.NSubframe = 0;
+    rxsf = rxGrid(:,frame*LFrame+(1:Lsf),:);
+    hestsf = hest(:,frame*LFrame+(1:Lsf),:,:);
+
+    <span style="color:#228B22">% PBCH demodulation. Extract resource elements (REs)</span>
+    <span style="color:#228B22">% corresponding to the PBCH from the received grid and channel</span>
+    <span style="color:#228B22">% estimate grid for demodulation.</span>
+    enb.CellRefP = 4;
+    pbchIndices = ltePBCHIndices(enb);
+    [pbchRx,pbchHest] = lteExtractResources(pbchIndices,rxsf,hestsf);
+    [~,~,nfmod4,mib,CellRefP] = ltePBCHDecode(enb,pbchRx,pbchHest,nest);
+
+    <span style="color:#228B22">% If PBCH decoding successful CellRefP~=0 then update info</span>
+    <span style="color:#0000FF">if</span> ~CellRefP
+        fprintf(<span style="color:#A020F0">"  No PBCH detected for frame.\n"</span>);
+        <span style="color:#0000FF">continue</span>;
+    <span style="color:#0000FF">end</span>
+    enb.CellRefP = CellRefP;
+
+    <span style="color:#228B22">% Decode the MIB to get current frame number</span>
+    enb = lteMIB(mib,enb);
+
+    <span style="color:#228B22">% Incorporate the nfmod4 value output from the function</span>
+    <span style="color:#228B22">% ltePBCHDecode, as the NFrame value established from the MIB</span>
+    <span style="color:#228B22">% is the system frame number modulo 4.</span>
+    enb.NFrame = enb.NFrame+nfmod4;
+    fprintf(<span style="color:#A020F0">"  Successful MIB Decode.\n"</span>)
+    fprintf(<span style="color:#A020F0">"  Frame number: %d.\n"</span>,enb.NFrame);
+
+    <span style="color:#228B22">% Store received frame number</span>
+    recFrames(frame+1) = enb.NFrame;
+
+    <span style="color:#228B22">% Process subframes within frame (ignoring subframe 5)</span>
+    <span style="color:#0000FF">for</span> sf = 0:9
+        <span style="color:#0000FF">if</span> sf~=5 <span style="color:#228B22">% Ignore subframe 5</span>
+            <span style="color:#228B22">% Extract subframe</span>
+            enb.NSubframe = sf;
+            rxsf = rxGrid(:,frame*LFrame+sf*Lsf+(1:Lsf),:);
+
+            <span style="color:#228B22">% Perform channel estimation with the correct number of CellRefP</span>
+            [hestsf,nestsf] = lteDLChannelEstimate(enb,cec,rxsf);
+
+            <span style="color:#228B22">% Physical control format indicator channel (PCFICH)</span>
+            <span style="color:#228B22">% demodulation. Extract REs corresponding to the PCFICH from</span>
+            <span style="color:#228B22">% the received grid and channel estimate for demodulation.</span>
+            pcfichIndices = ltePCFICHIndices(enb);
+            [pcfichRx,pcfichHest] = lteExtractResources(pcfichIndices,rxsf,hestsf);
+            [cfiBits,recsym] = ltePCFICHDecode(enb,pcfichRx,pcfichHest,nestsf);
+
+            <span style="color:#228B22">% Control format indicator (CFI) decoding</span>
+            enb.CFI = lteCFIDecode(cfiBits);
+
+            <span style="color:#228B22">% Get PDSCH indices</span>
+            [pdschIndices,pdschIndicesInfo] = ltePDSCHIndices(enb, enb.PDSCH, enb.PDSCH.PRBSet);
+            [pdschRx, pdschHest] = lteExtractResources(pdschIndices, rxsf, hestsf);
+
+            <span style="color:#228B22">% Perform deprecoding, layer demapping, demodulation and</span>
+            <span style="color:#228B22">% descrambling on the received data using the estimate of</span>
+            <span style="color:#228B22">% the channel</span>
+            [rxEncodedBits, rxEncodedSymb] = ltePDSCHDecode(enb,enb.PDSCH,pdschRx,<span style="color:#0000FF">...</span>
+                pdschHest,nestsf);
+
+            <span style="color:#228B22">% Append decoded symbol to stream</span>
+            rxSymbols = [rxSymbols; rxEncodedSymb{:}]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+
+            <span style="color:#228B22">% Transport block sizes</span>
+            outLen = enb.PDSCH.TrBlkSizes(enb.NSubframe+1);
+
+            <span style="color:#228B22">% Decode DownLink Shared Channel (DL-SCH)</span>
+            [decbits{sf+1}, blkcrc(sf+1)] = lteDLSCHDecode(enb,enb.PDSCH,<span style="color:#0000FF">...</span>
+                outLen, rxEncodedBits);  <span style="color:#228B22">%#ok&lt;SAGROW&gt;</span>
+
+            <span style="color:#228B22">% Recode transmitted PDSCH symbols for EVM calculation</span>
+            <span style="color:#228B22">% Encode transmitted DLSCH</span>
+            txRecode = lteDLSCH(enb,enb.PDSCH,pdschIndicesInfo.G,decbits{sf+1});
+            <span style="color:#228B22">% Modulate transmitted PDSCH</span>
+            txRemod = ltePDSCH(enb, enb.PDSCH, txRecode);
+            <span style="color:#228B22">% Decode transmitted PDSCH</span>
+            [~,refSymbols] = ltePDSCHDecode(enb, enb.PDSCH, txRemod);
+            <span style="color:#228B22">% Add encoded symbol to stream</span>
+            txSymbols = [txSymbols; refSymbols{:}]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+
+            constellation(rxEncodedSymb{:}); <span style="color:#228B22">% Plot current constellation</span>
+            release(constellation); <span style="color:#228B22">% Release previous constellation plot            </span>
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Reassemble decoded bits</span>
+    fprintf(<span style="color:#A020F0">"  Retrieving decoded transport block data.\n"</span>);
+    rxdata = [];
+    <span style="color:#0000FF">for</span> i = 1:length(decbits)
+        <span style="color:#0000FF">if</span> i~=6 <span style="color:#228B22">% Ignore subframe 5</span>
+            rxdata = [rxdata; decbits{i}{:}]; <span style="color:#228B22">%#ok&lt;AGROW&gt;</span>
+        <span style="color:#0000FF">end</span>
+    <span style="color:#0000FF">end</span>
+
+    <span style="color:#228B22">% Store data from receive frame</span>
+    rxDataFrame(:,frame+1) = rxdata;
+
+    <span style="color:#228B22">% Plot channel estimate between CellRefP 0 and the receive antennae</span>
+    focalFrameIdx = frame*LFrame+(1:LFrame);
+    figure(hhest);
+    hhest.Visible = <span style="color:#A020F0">"On"</span>;
+    surf(abs(hest(:,focalFrameIdx,1,1)));
+    shading <span style="color:#A020F0">flat</span>;
+    xlabel(<span style="color:#A020F0">"OFDM symbol index"</span>);
+    ylabel(<span style="color:#A020F0">"Subcarrier index"</span>);
+    zlabel(<span style="color:#A020F0">"Magnitude"</span>);
+    title(<span style="color:#A020F0">"Estimate of Channel Magnitude Frequency Response"</span>);
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing DL-SCH Decode for frame 1 of 5 in burst:
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 700.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Retrieving decoded transport block data.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing DL-SCH Decode for frame 2 of 5 in burst:
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 701.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Retrieving decoded transport block data.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing DL-SCH Decode for frame 3 of 5 in burst:
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 702.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Retrieving decoded transport block data.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing DL-SCH Decode for frame 4 of 5 in burst:
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 703.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Retrieving decoded transport block data.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Performing DL-SCH Decode for frame 5 of 5 in burst:
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Successful MIB Decode.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Frame number: 704.
+</pre></div></div></div><div class="informalfigure"><div id="d124e5366" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_04.png" width="600"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Retrieving decoded transport block data.
+</pre></div></div></div><div class="informalfigure"><div id="d124e5372" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_05.png" alt="Figure Channel Estimate contains an axes object. The axes object with title Estimate of Channel Magnitude Frequency Response, xlabel OFDM symbol index, ylabel Subcarrier index contains an object of type surface." width="560"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> channel == <span style="color:#A020F0">"OverTheAir"</span>
+    release(sdrTransmitter);
+    release(sdrReceiver);
+<span style="color:#0000FF">end</span></pre></div></div></div><p><strong class="emphasis bold">Result Qualification and Display</strong></p><p>To determine the quality of the received data, the example calculates the bit error rate (BER) between the transmitted and received data. The received data reforms into an image.</p><p>Determine the index of first transmitted frame (lowest received frame number).</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[~,frameIdx] = min(recFrames);</pre></div></div></div><p>Initialize these variables for image reconstruction.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>decodedRxDataStream = zeros(length(rxDataFrame(:)),1);
+frameLen = size(rxDataFrame,1);</pre></div></div></div><p>Recombine the received data blocks (in correct order) into a continuous stream.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">for</span> n=1:numFullFrames
+    currFrame = mod(frameIdx-1,numFullFrames)+1;                                 <span style="color:#228B22">% Get current frame index</span>
+    decodedRxDataStream((n-1)*frameLen+1:n*frameLen) = rxDataFrame(:,currFrame);
+    frameIdx = frameIdx+1;                                                       <span style="color:#228B22">% Increment frame index</span>
+<span style="color:#0000FF">end</span></pre></div></div></div><p>Use the EVM and error rate System Objects, to calculate the EVM and bit error rate of the decoded data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre><span style="color:#0000FF">if</span> ~isempty(rxSymbols)
+    evmCalculator = comm.EVM();
+    evmCalculator.MaximumEVMOutputPort = true;
+    [evm.RMS,evm.Peak] = evmCalculator(txSymbols, rxSymbols);
+    fprintf(<span style="color:#A020F0">"  EVM peak = %0.3f%%\n"</span>,evm.Peak);
+    fprintf(<span style="color:#A020F0">"  EVM RMS  = %0.3f%%\n"</span>,evm.RMS);
+
+    <span style="color:#228B22">% Perform bit error rate (BER) calculation</span>
+    bitErrorRate = comm.ErrorRate;
+    err = bitErrorRate(decodedRxDataStream(1:length(trData)), trData);
+    fprintf(<span style="color:#A020F0">"  Bit Error Rate (BER) = %0.5f.\n"</span>,err(1));
+    fprintf(<span style="color:#A020F0">"  Number of bit errors = %d.\n"</span>,err(2));
+    fprintf(<span style="color:#A020F0">"  Number of transmitted bits = %d.\n"</span>,length(trData));
+<span style="color:#0000FF">else</span>
+    fprintf(<span style="color:#A020F0">"  No transport blocks decoded.\n"</span>);
+<span style="color:#0000FF">end</span></pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  EVM peak = 33.306%
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  EVM RMS  = 8.429%
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Bit Error Rate (BER) = 0.00000.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Number of bit errors = 0.
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>  Number of transmitted bits = 1179648.
+</pre></div></div></div><p>Recreate the image from the received data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>str = reshape(sprintf(<span style="color:#A020F0">'%d'</span>,decodedRxDataStream(1:length(trData))), 8, []).';
+decdata = uint8(bin2dec(str));
+receivedImage = reshape(decdata,imsize);
+
+<span style="color:#0000FF">if</span> exist(<span style="color:#A020F0">"imFig"</span>, <span style="color:#A020F0">"var"</span>) &amp;&amp; ishandle(imFig) <span style="color:#228B22">% If TX figure is open</span>
+    figure(imFig); subplot(212);
+<span style="color:#0000FF">else</span>
+    figure; subplot(212);
+<span style="color:#0000FF">end</span>
+
+imshow(receivedImage);
+title(sprintf(<span style="color:#A020F0">"Received Image: %dx%d Antenna Configuration"</span>,txsim.NumAntennas, txsim.NumAntennas));</pre></div></div></div><div class="informalfigure"><div id="d124e5410" class="mediaobject"><p><img src="../../../examples/lte/win64/SDRImageTransmissionReceptionUsingLTEWaveformExample_06.png" alt="Figure Image Plot contains 2 axes objects. Axes object 1 with title Transmitted Image contains an object of type image. Axes object 2 with title Received Image: 1x1 Antenna Configuration contains an object of type image." width="564"></p></div></div><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-5">Further Exploration</h3><div class="itemizedlist"><ul><li><p>If using an SDR, try reducing the transmitter gain to impair the quality of the received image and to increase the number of bit errors. Otherwise, reduce the signal-to-noise ratio (<a href="transmission-and-reception-of-an-image-using-lte-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_8889D854" class="intrnllnk"><code class="literal">SNR</code></a>).</p></li><li><p>If using a supported multi-channel SDR, try increasing the number of antennas (<a href="transmission-and-reception-of-an-image-using-lte-toolbox-and-a-single-pluto-radio.html#mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_63764520" class="intrnllnk"><code class="literal">txsim.NumAntennas</code></a>) to visualize the benefit of using multi-channel transmission.</p></li></ul></div><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-6">SDR Troubleshooting</h3><div class="itemizedlist"><ul><li><p>ADALM-PLUTO Radio <a href="common-problems-and-fixes.html" data-docid="plutoradio_ug#bvn89q2-68" class="a">Common Problems and Fixes</a></p></li><li><p>USRP Embedded Series Radio <a href="../../../supportpkg/usrpembeddedseriesradio/ug/common-problems-and-fixes.html" data-docid="usrpembeddedseriesradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for USRP Embedded Series Radio)</span></p></li><li><p>Xilinx Zynq-Based Radio <a href="../../../supportpkg/xilinxzynqbasedradio/ug/common-problems-and-fixes.html" data-docid="xilinxzynqbasedradio_ug#bu1kohy-57" class="a">Common Problems and Fixes</a><span role="cross_prod"> (Communications Toolbox Support Package for Xilinx Zynq-Based Radio)</span></p></li></ul></div><h3 class="title" id="SDRImageTransmissionReceptionUsingLTEWaveformExample-7">Selected Bibliography</h3><span id="mw_rtc_SDRImageTransmissionReceptionUsingLTEWaveformExample_M_2F5DE27E" class="anchor_target"></span><div class="orderedlist"><ol style="list-style: decimal;"><li><p>3GPP TS 36.101. "User Equipment (UE) radio transmission and reception." 3rd Generation Partnership Project; Technical Specification Group Radio Access Network; Evolved Universal Terrestrial Radio Access (E-UTRA).</p></li></ol></div></div></section>
+    </div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h2 class="h3 modal-title">Open Example</h2></div><div class="modal-body" id="dialog-body"><p>You have a modified version of this example. Do you want to open this example with your edits?</p></div><div class="modal-footer"><a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, open this example and discard my edits</a><a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a></div></div></div></div>
+<div class="clearfix"></div>
+<div align="center" class="feedbackblock" id="mw_docsurvey"><script src="https://www.mathworks.com/help/docsurvey/docfeedback.js"></script>
+<script>loadSurveyHidden();</script>
+<link rel="stylesheet" href="https://www.mathworks.com/help/docsurvey/release/index-css.css" type="text/css">
+<script src="https://www.mathworks.com/help/docsurvey/release/bundle.index.js"></script>
+
+<script>initDocSurvey();</script></div></section>
+
+
+</div>
+</div>
+</div>
+</div><!--close_0960-->
+<footer xmlns="http://www.w3.org/1999/xhtml" id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">© 1994-2023 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</div><!--close_0970-->
+</body>
+</html>
