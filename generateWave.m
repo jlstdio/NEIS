@@ -1,17 +1,10 @@
 %% Define system parameters
-Fc = 3.0e9; % Carrier frequency: 2.452 GHz | 3.0GHz
+Fc = 2.452e9;% 3.0e9; % Carrier frequency: 2.452 GHz | 3.0GHz
 Fs = 1e6; % Sample rate: 1 MHz
-T = 2; % Duration in seconds
+T = 1; % Duration in seconds
 N = T * Fs; % Total number of samples
 
-%% Generate a chirp signal
-startFreq = 2.9e9; % Start frequency of 2.9 GHz
-endFreq = 3.1e9; % End frequency of 3.1 GHz
-t = (0:N-1) / Fs; % Time vector for the duration of the signal
-tx_waveform = chirp(t, startFreq, T, endFreq, 'linear');
-
 %% Setup PlutoSDR transmitter
-Fc = (startFreq + endFreq) / 2; % Center frequency for the chirp
 tx = sdrtx('Pluto');
 tx.CenterFrequency = Fc;
 tx.BasebandSampleRate = Fs;
@@ -26,35 +19,58 @@ rx.SamplesPerFrame = N;
 rx.GainSource = 'Manual';
 rx.Gain = 30; % Adjust the gain as needed
 
-%% Tx & Rx -> STFT
-% Transmit and receive the signal, performing STFT
-transmitRepeat(tx, tx_waveform); % Transmit continuously in a loop
 
-% Prepare for STFT
-spectrogramData = [];
-
-for i = 1:T % Loop for 10 seconds
-    [rxSignal, ~] = rx(); % Receive one second of data
-    spectrogramData = [spectrogramData; rxSignal]; % Append received signal for STFT
-end
-
-% Stop transmission
-release(tx);
+%% Frequency range
+startFreq = 2.052e9; % Start frequency: 2.052 GHz
+endFreq = 2.852e9; % End frequency: 2.852 GHz
+stepFreq = 0.2e9; % Frequency step
 
 windowLength = 128; % Shorter for better time resolution
 overlap = windowLength - 128; % High overlap for smoothness
 
-% Perform STFT
-[S,F,T,P] = spectrogram(spectrogramData, windowLength, overlap, 256, Fs, 'yaxis');
-
-% Plot the STFT
+%% Calculate the number of iterations and prepare the figure
+numIterations = length(startFreq:stepFreq:endFreq);
 figure;
-surf(T, F/1e6, 10*log10(abs(P)), 'EdgeColor', 'none');
-axis xy; axis tight; colormap(jet); view(0, 90);
-xlabel('Time (s)');
-ylabel('Frequency (MHz)');
-title('STFT Magnitude (dB)');
 
-%% Save
-% Save the received signal to a MAT file
-save('water_signal_3Ghz.mat', 'spectrogramData');
+%% Loop through the frequency range
+for FreqIndex = 1:numIterations
+    FreqStart = startFreq + (FreqIndex - 1) * stepFreq;
+
+    % Generate a chirp signal
+    chrp = dsp.Chirp;
+    chrp.SweepDirection = 'Unidirectional';
+    chrp.InitialFrequency = FreqStart;
+    chrp.TargetFrequency = FreqStart + 0.2e9;
+    chrp.TargetTime = 1;
+    chrp.SweepTime = 1;
+    chrp.SamplesPerFrame = 1000;
+    chrp.SampleRate = Fs;
+    tx_waveform = hilbert(chrp());
+
+    % Transmit and receive the signal, performing STFT
+    transmitRepeat(tx, tx_waveform); % Transmit continuously in a loop
+
+    % Process each received signal segment
+    rxSignal = zeros(N, 1);
+    for i = 1:T % Loop for designated seconds
+        [tempSignal, ~] = rx(); % Receive one second of data
+        rxSignal = rxSignal + tempSignal; % Accumulate received signal
+    end
+
+    % Stop transmission
+    release(tx);
+
+    % Perform STFT on the accumulated signal
+    [S, F, T, P] = spectrogram(rxSignal, windowLength, overlap, 256, Fs, 'yaxis');
+
+    % Plot the STFT for the current frequency step
+    subplot(numIterations, 1, FreqIndex);
+    surf(T, F/1e6, 10*log10(abs(P)), 'EdgeColor', 'none');
+    axis xy; axis tight; colormap(jet); view(0, 90);
+    xlabel('Time (s)');
+    ylabel('Frequency (MHz)');
+    title(sprintf('STFT Magnitude (dB) - Freq %.2f GHz', FreqStart / 1e9));
+end
+
+% Save the data if necessary
+% save('spectrogramData.mat', 'spectrogramData');

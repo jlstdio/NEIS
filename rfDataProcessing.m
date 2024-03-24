@@ -5,7 +5,7 @@ T = 2; % Duration in seconds
 Amplitude = 2;
 
 %% bring in data
-data = load('water_signal_3Ghz.mat');
+data = load('noWater_2.652Ghz_chrip.mat');
 spectrogramData = data.spectrogramData;
 
 %% data processing
