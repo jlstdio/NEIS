@@ -1,10 +1,9 @@
-fs = 1e6;
 sw = dsp.SineWave;
-sw.Amplitude = 0.5;
-sw.Frequency = 100e3;
+sw.Amplitude = 1;
+sw.Frequency = FreqStart + 0.1e9;
 sw.ComplexOutput = true;
-sw.SampleRate = fs;
-sw.SamplesPerFrame = 5000; % to meet waveform size requirements
+sw.SampleRate = Fs;
+sw.SamplesPerFrame = 1000; % to meet waveform size requirements
 tx_waveform = sw();
 
 radio = sdrtx('Pluto');

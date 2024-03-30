@@ -1,5 +1,5 @@
 %% Define system parameters
-Fc = 2.452e9;% 3.0e9; % Carrier frequency: 2.452 GHz | 3.0GHz
+Fc = 3.4e9;% 3.0e9; % Carrier frequency: 2.452 GHz | 3.0GHz
 Fs = 1e6; % Sample rate: 1 MHz
 T = 1; % Duration in seconds
 N = T * Fs; % Total number of samples
@@ -21,8 +21,8 @@ rx.Gain = 30; % Adjust the gain as needed
 
 
 %% Frequency range
-startFreq = 2.052e9; % Start frequency: 2.052 GHz
-endFreq = 2.852e9; % End frequency: 2.852 GHz
+startFreq = 3.0e9; % Start frequency: 2.052 GHz
+endFreq = 3.8e9; % End frequency: 2.852 GHz
 stepFreq = 0.2e9; % Frequency step
 
 windowLength = 128; % Shorter for better time resolution
@@ -35,12 +35,13 @@ figure;
 %% Loop through the frequency range
 for FreqIndex = 1:numIterations
     FreqStart = startFreq + (FreqIndex - 1) * stepFreq;
+    %disp(FreqStart); % debugging
 
     % Generate a chirp signal
     chrp = dsp.Chirp;
     chrp.SweepDirection = 'Unidirectional';
     chrp.InitialFrequency = FreqStart;
-    chrp.TargetFrequency = FreqStart + 0.2e9;
+    chrp.TargetFrequency = FreqStart + stepFreq;
     chrp.TargetTime = 1;
     chrp.SweepTime = 1;
     chrp.SamplesPerFrame = 1000;
@@ -49,16 +50,18 @@ for FreqIndex = 1:numIterations
 
     % Transmit and receive the signal, performing STFT
     transmitRepeat(tx, tx_waveform); % Transmit continuously in a loop
+    %pause(1);
 
-    % Process each received signal segment
-    rxSignal = zeros(N, 1);
-    for i = 1:T % Loop for designated seconds
-        [tempSignal, ~] = rx(); % Receive one second of data
-        rxSignal = rxSignal + tempSignal; % Accumulate received signal
+     % init data
+    rxSignal = [];
+
+    for i = 0:T % Loop for designated seconds
+        [rxSignal, ~] = rx(); % Receive one second of data
     end
 
-    % Stop transmission
+    % Stop tx/rx
     release(tx);
+    release(rx);
 
     % Perform STFT on the accumulated signal
     [S, F, T, P] = spectrogram(rxSignal, windowLength, overlap, 256, Fs, 'yaxis');
@@ -70,7 +73,7 @@ for FreqIndex = 1:numIterations
     xlabel('Time (s)');
     ylabel('Frequency (MHz)');
     title(sprintf('STFT Magnitude (dB) - Freq %.2f GHz', FreqStart / 1e9));
-end
 
-% Save the data if necessary
-% save('spectrogramData.mat', 'spectrogramData');
+    fileName = sprintf('./data/water_280gm_spectrogramData_Mar30_2024_Freq %.2f GHz.mat', FreqStart / 1e9);
+    save(fileName, 'rxSignal');
+end
