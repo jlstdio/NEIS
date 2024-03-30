@@ -74,6 +74,6 @@ for FreqIndex = 1:numIterations
     ylabel('Frequency (MHz)');
     title(sprintf('STFT Magnitude (dB) - Freq %.2f GHz', FreqStart / 1e9));
 
-    fileName = sprintf('./data/proteinHeavy/proteinShakeB_%.2fGHz_03302024.mat', FreqStart / 1e9);
+    fileName = sprintf('./data/oilA_280gm_%.2fGHz_03302024.mat', FreqStart / 1e9);
     save(fileName, 'rxSignal');
 end
