@@ -9,26 +9,25 @@ spectrogramData_A = {};
 spectrogramData_B = {};
 
 %% Data list
-% './data/noWater_spectrogramData_Freq 3.80 GHz.mat'
-% './data/waterUnderneath_spectrogramData_Freq 3.00 GHz.mat'
-% './data/water_280gm_spectrogramData_Freq 3.00 GHz.mat'
-% './data/coffeeA_282gm_spectrogramData_Freq 3.80 GHz.mat'
-% './data/coffeeB_283gm_spectrogramData_Mar28_2024_Freq 3.80 GHz.mat'
-% './data/proteinShakeA_255gm_spectrogramData_Mar28_2024_Freq 3.00 GHz.mat'
+% './data/air/air_%.2fGHz_03302024.mat'
+% './data/proteinHeavy/proteinShakeA_255gm_03282024_3.80 GHz.mat'
+% './data/waterHeavy/water_280gm_Freq %.2f GHz.mat'
+% './data/waterHeavy/coffeeA_282gm_spectrogramData_Freq %.2f GHz.mat'
+% './data/waterHeavy/coffeeB_283gm_spectrogramData_Mar28_2024_Freq %.2f GHz.mat'
 
 frequencies = [3.00, 3.20, 3.40, 3.60, 3.80];
 FreqArrSize = length(frequencies);
 
 % Loop through each frequency and load the corresponding data
 for i = 1:FreqArrSize
-    filename = sprintf('./data/water_280gm_spectrogramData_Freq %.2f GHz.mat', frequencies(i));
+    filename = sprintf('./data/air/air_%.2fGHz_03252024.mat', frequencies(i));
     data = load(filename);  % Load the file
     spectrogramData_water{end+1} = data.rxSignal;  % Append the data to the cell array
 end
 
 % Loop through each frequency and load the corresponding data
 for i = 1:FreqArrSize
-    filename = sprintf('./data/water_280gm_spectrogramData_Mar30_2024_Freq %.2f GHz', frequencies(i));
+    filename = sprintf('./data/air/air_%.2fGHz_03302024_1.mat', frequencies(i));
     data = load(filename);  % Load the file
     spectrogramData_A{end+1} = data.rxSignal;  % Append the data to the cell array
 end
@@ -36,7 +35,7 @@ end
 
 % Loop through each frequency and load the corresponding data
 for i = 1:FreqArrSize
-    filename = sprintf('./data/noWater_spectrogramData_Freq %.2f GHz', frequencies(i));
+    filename = sprintf('./data/waterHeavy/water_280gm_%.2fGHz_03252024.mat', frequencies(i));
     data = load(filename);  % Load the file
     spectrogramData_B{end+1} = data.rxSignal;  % Append the data to the cell array
 end
@@ -110,7 +109,7 @@ end
 %zlabel('Power Density Difference (dB)');
 %title('Power Density Difference between Transmitter and Receiver over Time');
 
-time = 1000;
+time = 100;
 
 % Plot the averaged power density difference
 figure;
@@ -118,9 +117,12 @@ numPlots = 5;
 for i = 1:numPlots
     subplot(numPlots, 1, i); % Create subplot (5 rows, 1 column, i-th position)
     plot(F_W{i}/Fs, power_density_diff_W{i}(:, time), 'LineWidth', 2);
+    %plot(F_W{i}/Fs, mean(power_density_diff_W{i}, 2), 'LineWidth', 2);
     hold on; % Hold on to the current plot
     plot(F_A{i}/Fs, power_density_diff_A{i}(:, time), 'LineWidth', 2);
+    %plot(F_A{i}/Fs, mean(power_density_diff_A{i}, 2), 'LineWidth', 2);
     plot(F_B{i}/Fs, power_density_diff_B{i}(:, time), 'LineWidth', 2);
+    %plot(F_B{i}/Fs, mean(power_density_diff_B{i}, 2), 'LineWidth', 2);
     hold off; % Release the plot
     xlabel('F (MHz)');
     ylabel('Avg Power Density Difference (dB)');
